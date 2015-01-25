@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#ix-schedule td {
+  vertical-align: top;
+  background-color: #fefef0;
+}
+
+td.ant {
+  background-color: #f0f0ef !important;
+}
+
+#ix-schedule th {
+  vertical-align: bottom;
+  background-color: #124340;
+  color: white;
+}
+
+#ix-schedule td:first-child {
+  background-color:#2184B6;
+  width:50px;
+  color:white;
+}
+
+#ix-schedule td:first-child + td {
+  background-color:#DED781;
+}
