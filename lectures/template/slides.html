@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Introduction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../assets/css/slides.css">
+  <script data-main="../assets/js/slides.js" src="../../third-js/requirejs/require.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h1>Title 1</h1>
+      <h2>Title 2</h2>
+      <h3>Title 3</h3>
+      <h4>Title 4</h4>
+      <p>Paragraph paragraph</p>
+      <p style="font-size:60%">\[ \begin{aligned}
+      \nabla \times \vec{\mathbf{B}} -\, \frac1c\,
+      \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; =
+      \frac{4\pi}{c}\vec{\mathbf{j}} \\ \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi
+      \rho \\
+      \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\,
+      \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+      \nabla \cdot \vec{\mathbf{B}} &amp; = 0 \end{aligned}
+      \]</p>
+    </section>
+    <section data-markdown>
+      <script type="text/template">
+## Markdown support
+
+Write content using inline or external Markdown.
+Instructions and more info available
+in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+```
+<section data-markdown>
+  ## Markdown support
+
+  Write content using inline or external Markdown.
+  Instructions and more info available
+  in the [readme](https://github.com/hakimel/reveal.js#markdown).
+</section>
+```
+      </script>
+    </section>
+    <section>
+      <h2>Pretty Code</h2>
+      <pre type="text/code" href="code.js">
+      </pre>
+    </section>
+    <section>
+      <h2>Pretty Code</h2>
+      <pre type="text/code" href="code.js">
+      </pre>
+    </section>
+    <section>
+      <h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+            function linkify( selector ) {
+              if( supports3DTransforms ) {
+
+                var nodes = document.querySelectorAll( selector );
+
+                for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+                  var node = nodes[i];
+
+                  if( !node.className ) {
+                    node.className += ' roll';
+                  }
+                }
+              }
+            }
+          </code></pre>
+    </section>
+    <section>
+      <p>Paragraph paragraph</p>
+      <pre><code data-trim>
+        (def lazy-fib
+        (concat
+        [0 1]
+        ((fn rfib [a b]
+        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+      </code></pre>
+    </section>
+    <section>
+      <h2>Tabular Tables</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>Item</th>
+          <th>Value</th>
+          <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Apples</td>
+          <td>$1</td>
+          <td>7</td>
+        <tr>
+        <tr>
+          <td>Lemonade</td>
+          <td>$2</td>
+          <td>18</td>
+        <tr>
+        <tr>
+          <td>Bread</td>
+          <td>$3</td>
+          <td>2</td>
+        <tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+</div>
+<script src="../assets/js/slides.js"></script>
+
+</body>
+</html>
