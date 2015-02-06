@@ -1,8 +1,16 @@
-
+/**
+ * Attach stylesheet rules to <HEAD>
+ * @param cssRules
+ */
 function addStyles(cssRules) {
   $('head').append('<style>' + cssRules + '</style>');
 }
 
+/**
+ * Generate style for cutting out a card from a deck of cards
+ *
+ * @returns {string}
+ */
 function generateAllCardStyles() {
   var style = '', row, col;
   for (var i = 0; i < 52; i++) {
@@ -13,7 +21,9 @@ function generateAllCardStyles() {
   }
   return style;
 }
-
+/**
+ * Generate style for 3 row x 7 columns arrangment
+ */
 function generateCardStyles() {
   var style = '';
   for (var row = 0; row < 3; row++) {
@@ -25,6 +35,9 @@ function generateCardStyles() {
   return style;
 }
 
+/**
+ * Display the 21 cards
+ */
 function buildCards(cards) {
   var card, cardsEl = $('#cards'), k;
   cardsEl.empty();
@@ -41,6 +54,9 @@ function buildCards(cards) {
   $('#column-selection').show();
 }
 
+/**
+ * Display the final guess of the card
+ */
 function resolveCard(candidate) {
   var card, cardsEl = $('#cards'), row = 1, col = 3;
   cardsEl.empty();
@@ -51,6 +67,12 @@ function resolveCard(candidate) {
   $('#column-selection').hide();
 }
 
+/**
+ * Split cards into 3 different arrays
+ *
+ * @param cards
+ * @returns Array
+ */
 function splitCardsTrio(cards) {
   var parts = [[], [], []], i = 0;
   _.each(cards, function (card) {
@@ -60,12 +82,25 @@ function splitCardsTrio(cards) {
   return parts;
 }
 
+/**
+ * Initialise cards
+ *
+ * @returns Array
+ */
 function initCards() {
   var cards = _.range(52);
   cards = _.shuffle(cards)
   return cards.slice(0, 21);
 }
 
+/**
+ * Return intersection of previous candidates and the newly selected cards
+ *
+ * @param cards
+ * @param candidates current candidates
+ * @param k selected row
+ * @returns Array new candidates
+ */
 function getCandidates(cards, candidates, k) {
   var a = _.intersection(
     cards.slice(k * 7, (k + 1) * 7),
@@ -74,6 +109,13 @@ function getCandidates(cards, candidates, k) {
   return a;
 }
 
+/**
+ * Shuffle the cards
+ *
+ * @param cards
+ * @param candidates
+ * @returns {Array} 21 cards
+ */
 function obfuscateCards(cards, candidates) {
   var others = _.difference(cards, candidates);
   others = _.shuffle(others);
@@ -90,9 +132,13 @@ function obfuscateCards(cards, candidates) {
   return cards;
 }
 
+/**
+ * Main function
+ */
 function main() {
 
-  var cards, candidates, k;
+  var cards, candidates; // access these common vars via closure
+  var k; // selected row
   addStyles(generateAllCardStyles() + generateCardStyles());
 
   function init() {
@@ -118,7 +164,7 @@ function main() {
         return;
       }
       candidates = getCandidates(cards, candidates, k);
-      if (candidates.length === 1) {
+      if (candidates.length === 1) { // finally only one card is selected
         resolveCard(candidates[0]);
       } else {
         step();
@@ -127,7 +173,7 @@ function main() {
   });
 }
 
-_.mixin(s.exports());
+_.mixin(s.exports()); // attach underscore string to _
 $(document).ready(function () {
   main();
 });
