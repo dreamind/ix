@@ -1,252 +1,58 @@
-.card{
-  margin:0px;
-  padding:0px;
-  position:absolute;
-  width:79px;
-  height:123px;
-  background-image:url(cards.png);
-  background-repeat:no-repeat;
-  background-attachment:scroll;
-  border:none;
+.card {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  width: 79px;
+  height: 123px;
+  background-image: url(cards.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  border: none;
 }
 
-#container{
-  margin:auto;
-  padding:10px;
-  width:600px;
-  position:relative;
+#container {
+  margin: auto;
+  padding: 5px;
+  width: 700px;
+  position: relative;
 }
 
-#header{
-  position:relative;
-  text-align:center;
+#header {
+  position: relative;
 }
 
-#cards{
-  position:relative;
-  width: 280px;
-  height: 500px;
-  margin:auto;
-  clear:both;
+#step-button {
+  margin-left: 50px;
 }
 
-#form{
-  position:relative;
-  text-align:center;
+#cards {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  float: left;
 }
 
-#col_selection{
-  position:relative;
-  text-align:center;
-  padding:10px;
+#row-selection {
+  width: 220px;
+  height: 450px;
+  float: left;
+  margin-left: 10px;
+  position: relative;
 }
 
-
-.card_club_1{
-  background-position: -0px -0px;
+#row-selection div {
+  position: absolute;
+  left: 0;
 }
 
-.card_club_2{
-  background-position: -79px -0px;
+#row-selection div:first-child {
+  top: 70px;
 }
 
-.card_club_3{
-  background-position: -158px -0px;
+#row-selection div:nth-child(2) {
+  top: 220px;
 }
 
-.card_club_4{
-  background-position: -237px -0px;
+#row-selection div:nth-child(3) {
+  top: 370px;
 }
-
-.card_club_5{
-  background-position: -316px -0px;
-}
-
-.card_club_6{
-  background-position: -395px -0px;
-}
-
-.card_club_7{
-  background-position: -474px -0px;
-}
-
-.card_club_8{
-  background-position: -553px -0px;
-}
-
-.card_club_9{
-  background-position: -632px -0px;
-}
-
-.card_club_10{
-  background-position: -711px -0px;
-}
-
-.card_club_jack{
-  background-position: -790px -0px;
-}
-
-.card_club_queen{
-  background-position: -869px -0px;
-}
-
-.card_club_king{
-  background-position: -948px -0px;
-}
-
-.card_diamond_1{
-  background-position: -0px -123px;
-}
-
-.card_diamond_2{
-  background-position: -79px -123px;
-}
-
-.card_diamond_3{
-  background-position: -158px -123px;
-}
-
-.card_diamond_4{
-  background-position: -237px -123px;
-}
-
-.card_diamond_5{
-  background-position: -316px -123px;
-}
-
-.card_diamond_6{
-  background-position: -395px -123px;
-}
-
-.card_diamond_7{
-  background-position: -474px -123px;
-}
-
-.card_diamond_8{
-  background-position: -553px -123px;
-}
-
-.card_diamond_9{
-  background-position: -632px -123px;
-}
-
-.card_diamond_10{
-  background-position: -711px -123px;
-}
-
-.card_diamond_jack{
-  background-position: -790px -123px;
-}
-
-.card_diamond_queen{
-  background-position: -869px -123px;
-}
-
-.card_diamond_king{
-  background-position: -948px -123px;
-}
-
-.card_heart_1{
-  background-position: -0px -246px;
-}
-
-.card_heart_2{
-  background-position: -79px -246px;
-}
-
-.card_heart_3{
-  background-position: -158px -246px;
-}
-
-.card_heart_4{
-  background-position: -237px -246px;
-}
-
-.card_heart_5{
-  background-position: -316px -246px;
-}
-
-.card_heart_6{
-  background-position: -395px -246px;
-}
-
-.card_heart_7{
-  background-position: -474px -246px;
-}
-
-.card_heart_8{
-  background-position: -553px -246px;
-}
-
-.card_heart_9{
-  background-position: -632px -246px;
-}
-
-.card_heart_10{
-  background-position: -711px -246px;
-}
-
-.card_heart_jack{
-  background-position: -790px -246px;
-}
-
-.card_heart_queen{
-  background-position: -869px -246px;
-}
-
-.card_heart_king{
-  background-position: -948px -246px;
-}
-
-.card_spade_1{
-  background-position: -0px -369px;
-}
-
-.card_spade_2{
-  background-position: -79px -369px;
-}
-
-.card_spade_3{
-  background-position: -158px -369px;
-}
-
-.card_spade_4{
-  background-position: -237px -369px;
-}
-
-.card_spade_5{
-  background-position: -316px -369px;
-}
-
-.card_spade_6{
-  background-position: -395px -369px;
-}
-
-.card_spade_7{
-  background-position: -474px -369px;
-}
-
-.card_spade_8{
-  background-position: -553px -369px;
-}
-
-.card_spade_9{
-  background-position: -632px -369px;
-}
-
-.card_spade_10{
-  background-position: -711px -369px;
-}
-
-.card_spade_jack{
-  background-position: -790px -369px;
-}
-
-.card_spade_queen{
-  background-position: -869px -369px;
-}
-
-.card_spade_king{
-  background-position: -948px -369px;
-}
-​
