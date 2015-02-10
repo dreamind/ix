@@ -1,5 +1,5 @@
 var jsPath = '../../third-js/';
-var revealPath = jsPath + 'revealjs/';
+var revealPath = jsPath + 'reveal.js/';
 var revealPluginPath = revealPath + 'plugin/';
 
 // Start the main app logic.
