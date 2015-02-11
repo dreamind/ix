@@ -30,8 +30,20 @@ requirejs([
     $(document).ready(function () {
       var qs = window.location.href.match(/\?(.*)?src=(.*)/);
       if (qs) {
-        $.get(qs[2], function (data) {
-          $('body').innerHTML = data;
+        var url = qs[2];
+        $.get(url, function (data) {
+          var body = $('body')[0];
+          body.innerHTML = '';
+          if (url.match(/.*\.md$/)) { // ends with md
+            var div = document.createElement( "div" );
+            var script = document.createElement( "script");
+            script.setAttribute('type', 'text/x-markdown');
+            script.innerHTML = data;
+            $(div).append(script);
+            $(body).append(div);
+          } else {
+            body.innerHTML = data;
+          }
           go();
         });
       } else {
