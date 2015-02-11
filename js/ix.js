@@ -3,7 +3,7 @@ var ix = {};
 (function() {
   var path = window.location.href.match(/[^\/]+?\/(ix)\/(.*)/);
   if (path) {
-    ix.appPath = new Array(path[2].length + 1).join('../');
+    ix.appPath = new Array(path[2].match(/\//g).length + 1).join('../');
   } else {
     ix.appPath = '/';
   }
