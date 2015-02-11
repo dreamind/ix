@@ -1,7 +1,12 @@
 var ix = {};
 
 (function() {
-  ix.appPath = '/'; // hardcoded for now
+  var path = window.location.href.match(/[^\/]+?\/(ix)\/(.*)/);
+  if (path) {
+    ix.appPath = _.repeat('../', path[2].length);
+  } else {
+    ix.appPath = '/';
+  }
   ix.jsPath = ix.appPath + 'third-js/';
 
   ix.markdown = function (node, md) {
