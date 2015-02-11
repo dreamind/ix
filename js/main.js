@@ -1,13 +1,6 @@
 
 requirejs.config({
   baseUrl: ix.jsPath,
-  map: {
-    "uri": { // fixes URI deps
-      "IPv6": "false",
-      "punycode": "false",
-      "SecondLevelDomains": "false"
-    }
-  }
 });
 
 // Start the main app logic.
