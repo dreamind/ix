@@ -43,10 +43,4 @@ var ix = {};
     });
   };
 
-  ix.launch = function () {
-    ix.slurpMarkdown();
-    ix.doHighlight();
-    ix.slurpCode();
-  }
-
 }());

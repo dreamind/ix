@@ -13,7 +13,7 @@ requirejs([
   function (marked, jquery) {
 
     // requirejs has its own 'this'
-      console.log(marked, jquery,$);
+    console.log(marked, jquery, $);
     window.marked = marked;
 
     $(document).ready(function () {
@@ -29,19 +29,12 @@ requirejs([
             async: true,
             callback: function () {
               hljs.initHighlighting();
-              $("pre[type='text/code']").each(function (idx, node) {
-                var url = node.getAttribute("href");
-                $.get(url, function (data) {
-                  node.innerHTML = data;
-                  hljs.highlightBlock(node);
-                });
-
-              })
+              ix.slurpCode();
             }
-          },          {
-           src: revealPluginPath + 'markdown/marked.js',
-           condition: function () { return !!document.querySelector('[data-markdown]'); }
-           },
+          }, {
+            src: revealPluginPath + 'markdown/marked.js',
+            condition: function () { return !!document.querySelector('[data-markdown]'); }
+          },
           {
             src: revealPluginPath + 'markdown/markdown.js',
             condition: function () { return !!document.querySelector('[data-markdown]'); },
@@ -53,10 +46,10 @@ requirejs([
           {src: revealPluginPath + '/math/math.js', async: true}
         ]
       });
-      Reveal.addEventListener( 'ready', function( event ) {
+      Reveal.addEventListener('ready', function (event) {
         // event.currentSlide, event.indexh, event.indexv
         //hljs.initHighlighting();
-      } );
+      });
     });
   }
 );

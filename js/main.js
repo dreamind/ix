@@ -1,7 +1,13 @@
 
-
 requirejs.config({
-  baseUrl: ix.jsPath
+  baseUrl: ix.jsPath,
+  map: {
+    "uri": { // fixes URI deps
+      "IPv6": "false",
+      "punycode": "false",
+      "SecondLevelDomains": "false"
+    }
+  }
 });
 
 // Start the main app logic.
@@ -14,9 +20,23 @@ requirejs([
   ],
   function (marked) {
 
+    function go () {
+      ix.slurpMarkdown();
+      ix.doHighlight();
+      ix.slurpCode();
+    }
+
     window.marked = marked; // overwrite
     $(document).ready(function () {
-      ix.launch();
+      var qs = window.location.href.match(/\?(.*)?src=(.*)/);
+      if (qs) {
+        $.get(qs[2], function (data) {
+          $('body').innerHTML = data;
+          go();
+        });
+      } else {
+        go();
+      }
     });
   }
 );
