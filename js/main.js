@@ -10,14 +10,17 @@ requirejs([
     ix.jsPath + 'underscore/underscore.js',
     ix.jsPath + 'underscore.string/underscore.string.js',
     ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
-    ix.jsPath + 'reveal.js/plugin/highlight/highlight.js'
+    ix.jsPath + 'reveal.js/plugin/highlight/highlight.js',
+    ix.jsPath + 'es6-promise/promise.min.js'
   ],
   function (marked, jq, u, s) {
 
     function go () {
-      ix.slurpMarkdown();
-      ix.doHighlight();
-      ix.slurpCode();
+      ix.slurpMarkdown(function () {
+        ix.slurpCode(function () {
+          ix.doHighlight();
+        });
+      });
     }
 
     _.mixin(s.exports());

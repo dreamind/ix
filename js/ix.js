@@ -17,29 +17,38 @@ var ix = {};
     hljs.highlightBlock(node);
   };
 
-  ix.slurpMarkdown = function () {
+  ix.slurpMarkdown = function (callback) {
+    var k = 0;
     $("script[type='text/x-markdown']").each(function (i, node) {
       var url = node.getAttribute("src");
       if (url) {
+        k++;
         $.get(url, function (data) {
           ix.markdown(node, data);
+          k--;
+          if (!k) { callback(); }
         });
       } else {
         ix.markdown(node, node.innerHTML);
       }
     });
+    if (!k) { callback(); }
   };
 
-  ix.slurpCode = function () {
+  ix.slurpCode = function (callback) {
+    var k = 0;
     $("pre[type='text/code']").each(function (i, node) {
       var url = node.getAttribute("href");
+      k++;
       $.get(url, function (data) {
         var codeNode = document.createElement( "code" );
         $(node).append(codeNode);
         codeNode.innerHTML = data;
-        ix.highlight(codeNode);
+        k--;
+        if (!k) { callback(); }
       });
     });
+    if (!k) { callback(); }
   };
 
   ix.doHighlight = function () {
