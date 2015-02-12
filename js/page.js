@@ -23,6 +23,17 @@ requirejs([
           if (ix.launch) { ix.launch(); }
         });
       });
+
+      // fix parent iframe
+      var D = document;
+      var h = Math.max(
+        Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+        Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+        Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+      );
+      if (parent) {
+        parent.postMessage({type: "ifh" , value: h}, "*");
+      }
     }
 
     _.mixin(s.exports());

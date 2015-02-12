@@ -1,5 +1,3 @@
-<title>Subject Overview</title>
-
 Subject Description
 -------------------
 
@@ -7,7 +5,7 @@ This subject explores various computational methods to represent, transform, and
 
 How is this subject different to Foundations of Computing?
 ----------------------------------------------------------
-This subject builds on the knowledge and skills developed in Foundations of Computings.
+This subject builds on the knowledge and skills developed in Foundations of Computing.
 
 Foundations of Computing | Foundation of Informatics
 --- | ---
@@ -17,7 +15,7 @@ static data | live (web) data sources in context
 Python | Python, XML, XHTML, JSON, CSS
 programming skills (machine-oriented) | applied (human-oriented)
 
-The programming component of the subject will use Python, which you have learned in Foundation of Computings. If you feel that you need to refresh your Python skills, you can go through a series of self-paced online worksheets, included in the Informatics Virtual Learning Environment (IVLE). You will need to use the Firefox web browser to access IVLE. You will also need to know your University username and password.
+The programming component of the subject will use Python, which you have learned in Foundation of Computing. If you feel that you need to refresh your Python skills, you can go through a series of self-paced online worksheets, included in the [Informatics Virtual Learning Environment (IVLE)](http://ivle.informatics.unimelb.edu.au).
 
 Staff
 -----
@@ -30,22 +28,20 @@ Coordinator/Lecturer |	Mr Ivo Widjaja | ivow(at)unimelb(dot)edu(dot)au
 Coordinator/Lecturer	| Mr Anthony Stell |	anthony.stell(at)unimelb(dot)edu(dot)au
 Tutor | &nbsp; | &nbsp;
 
-The lecturers are responsible for the overall organization of the subject and for the selection of lecture material, workshop exercises and practical assignments.
-
-The lecturers may be contacted by email appointment.
+The subject coordinators are responsible for the overall organization of the subject and for the design of lecture material, workshop exercises, and assignments. For any enquiries, the lecturers may be contacted by email appointment.
 
 Lectures and Workshops
 ----------------------
 
-Each week, two lectures are offered on Monday and Tuesday. The purpose of lectures is to present the principles of the subject along with worked examples, and to introduce the material that will be developed in workshops. Much of the information presented in lectures will be available via the subject homepage
+Each week, two lectures are offered on Monday and Tuesday. The purpose of lectures is to present the principles of the subject along with worked examples, and to introduce the material that will be developed in workshops. Much of the information presented in lectures will be linked from the LMS subject schedule.
 
-Each week, starting in week two of semester, you will be expected to attend a two-hour workshop (tutorial & practical lab), held in the lab in the Alice Hoy Building. The purposes of workshops are:
+Each week, **starting in week two of semester**, you will be expected to attend a two-hour workshop (tutorial & practical lab). The purposes of workshops are:
 
-to work on the week's worksheet;
-to give you an opportunity to raise questions about the subject;
-to address any problems you are having;
-to work with your project team; and
-to discuss other relevant aspects of the subject.
+- to work on the week's worksheet;
+- to give you an opportunity to raise questions about the subject;
+- to address any problems you are having;
+- to work with your project team; and
+- to discuss other relevant aspects of the subject.
 
 Attendance at workshops is compulsory.
 
