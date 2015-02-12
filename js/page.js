@@ -1,10 +1,11 @@
 
 requirejs.config({
-  baseUrl: ix.jsPath,
+  baseUrl: ix.jsPath
 });
 
 // Start the main app logic.
 requirejs([
+    // WARNING: change in sequence will impact the callback
     ix.jsPath + 'reveal.js/plugin/markdown/marked.js',
     ix.jsPath + 'jquery/jquery.js',
     ix.jsPath + 'underscore/underscore.js',
@@ -19,6 +20,7 @@ requirejs([
       ix.slurpMarkdown(function () {
         ix.slurpCode(function () {
           ix.doHighlight();
+          if (ix.launch) { ix.launch(); }
         });
       });
     }
@@ -33,14 +35,14 @@ requirejs([
           var body = $('body')[0];
           body.innerHTML = '';
           if (url.match(/.*\.md$/)) { // ends with md
-            var div = document.createElement( "div" );
             var script = document.createElement( "script");
             script.setAttribute('type', 'text/x-markdown');
             script.innerHTML = data;
+            var div = document.createElement( "div" );
             $(div).append(script);
             $(body).append(div);
           } else {
-            body.innerHTML = data;
+            body.innerHTML = ix.escape(data);
           }
           go();
         });

@@ -7,7 +7,7 @@ function linkify( selector ) {
       var node = nodes[i];
 
       if( !node.className ) {
-        node.className += ' roll';
+        node.className += ' roll<a href="link">hello</a>';
       }
     }
   }
