@@ -20,6 +20,12 @@ var ix = {
     hljs.highlightBlock(node);
   };
 
+  ix.fixLinks = function () {
+    $('a').each(function (i, node) {
+      node.setAttribute('target', '_blank');
+    });
+  };
+
   ix.escape = function (snippet) {
     // escaping HTML codes
     return snippet.replace(
