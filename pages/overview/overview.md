@@ -82,7 +82,7 @@ How to get help
 
 - **LMS Discussion Forum**: This is the best place to have your (non-personal/confidential) questions answered, not only by the lecturers, but by other students. Subscribe to the forum and search answers in the existing threads before posting your own.
 - **Your Tutor**: Your tutor will be available to answer most questions you have about the content of the subject. However, your tutor is not available for consultation outside workshop times, unless for a specific help session. Please refrain yourself from spamming your tutor with questions.
-- **Your Lecturer**: You should also feel free to approach your lecturer - he is the final arbiter of all that happens in the subject. Immediately after lecturers is also a reasonable time to ask quick questions. You are welcome to contact lecturers by email, but note that general questions of interest to other students should be sent directly to the Discussion Forum, where lecturers (or other students) will help.
+- **Your Lecturer**: You should also feel free to approach your lecturer - he is the final arbiter of all that happens in the subject. Immediately after lecture is also a reasonable time to ask quick questions. You are welcome to contact lecturers by email, but note that general questions of interest to other students should be sent directly to the Discussion Forum, where lecturers (or other students) will help.
 
 Academic honesty and plagiarism
 -----------------------
