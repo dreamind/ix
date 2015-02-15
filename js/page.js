@@ -21,7 +21,7 @@ requirejs([
         ix.slurpCode(function () {
           ix.doHighlight();
           if (ix.launch) { ix.launch(); }
-          ix.fixLinks();
+          ix.doLinks();
           // fix parent iframe
           var D = document;
           var h = Math.max(

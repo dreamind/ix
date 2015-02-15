@@ -8,8 +8,18 @@
   <script src="../../js/ix.js"></script>
   <script src="schedule.js"></script>
   <script data-main="../../js/page.js" src="../../third-js/requirejs/require.js"></script>
+  <style>
+    .all {
+      background-color: #f0fefe !important;
+    }
+    .ant {
+      background-color: #fef0fe !important;
+    }
+    .ivo {
+      background-color: #f0fef0 !important;
+    }
+  </style>
 </head>
-<body>
 <body>
 <header>
   <h1>Subject Schedule</h1>
@@ -42,16 +52,15 @@
   <tr>
     <td>1<br/>Mar 2</td>
     <td>Introduction</td>
-    <td>
-      <a base="lms" href="w01-intro.pdf">Introduction</a>
-      <a base="lms" href="w01-intro-print.pdf"><i class="fa fa-print"></i></a>
-      <a base="lms" href="w01-intro.ppt"><i class="fa fa-file-powerpoint-o"></i></a>
-      <a base="lms" href="w01-intro.ppt"><i class="fa fa-file-code-o"></i></a>
+    <td class="all">
+      <a base="ix-lecture" href="01-a-introduction/index.md">
+        Introduction
+      </a>
     </td>
-    <td>
-      <a base="lms" href="info20002-w01-persisting-data.pdf">Introduction</a>
-      <a base="lms" href="w01-intro-print.pdf"><i class="fa fa-print"></i></a>
-      <a base="lms" href="w01-intro.ppt"><i class="fa fa-file-powerpoint-o"></i></a>
+    <td class="ivo">
+      <a base="disable" href="01-b-introduction/index.md">
+        Introduction
+      </a>
     </td>
     <td>No Workshop</td>
     <td>&nbsp;</td>
@@ -60,16 +69,15 @@
   <tr>
     <td>2<br/>Mar 9</td>
     <td>Representing Data</td>
-    <td>
-      <a base="lms" href="info20002-w01-persisting-data.pdf">
+    <td class="ivo">
+      <a base="disable" href="">
         Information, Data and Meaning
       </a>
-      <a base="lms" href="w01-intro-print.pdf"><i class="fa fa-print"></i></a>
-      <a base="lms" href="w01-intro.ppt"><i class="fa fa-file-powerpoint-o"></i></a>
     </td>
-    <td>
-      <a base="lms" href="info20002-w01-persisting-data.pdf">
-        Information, Data and Meaning</a> (Internationalisation)
+    <td class="ivo">
+      <a base="disable" href="">
+        Information, Data and Meaning
+      </a> (Internationalisation)
     </td>
     <td>
       <a href="https://sites.google.com/site/info2002y14s1/workshops/w7cgi">
@@ -84,10 +92,13 @@
       Mar 16
     </td>
     <td>Representing Data</td>
-    <td><a base="lms" href="info20002-w02-xml.pdf">XML (Data Design)</a>
-      <a href="data_analysis.ppt">(A)</a></td>
-    <td><a base="lms" href="info20002-w02-xml-design.pdf">JSON (Data
-      Exchange) </a><a href="data_analysis.ppt">(A)</a><br/></td>
+    <td class="ant">
+      <a base="lms" href="info20002-w02-xml.pdf">XML (Data Design)</a>
+    </td>
+    <td class="ant">
+      <a base="lms" href="info20002-w02-xml-design.pdf">JSON (Data Exchange)
+      </a>
+    </td>
     <td><a href="workshops/w2xml">Working
       and Designing with XML and
       JSON</a><a base="lms" href="info20002-w09-collab.ppt"></a> (A)

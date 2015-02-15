@@ -1,0 +1,12 @@
+<summary>
+  <column>
+    <name type="integer"></name>
+    <property name="mean"></property>
+    <property name="q1"></property>
+    <property name="q3"></property>
+    <unique>
+      <value></value>
+    </unique>
+  </column>
+
+  <summary>

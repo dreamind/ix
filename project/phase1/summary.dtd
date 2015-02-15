@@ -1,31 +1,3 @@
-Aim
----
-
-Task
-----
-
-
-**Input specification**
-
-
-To provide summary statistics
-
-- Attribute name
-- Type: Integer, float, String
-- Mean
-- lower quartile
-- upper quartile
-- Median
-- Mode
-- Min
-- Max
-- Standard deviation
-- Unique values
-
-**Output specification**
-
-
-```
 <!DOCTYPE summary [
   <!ELEMENT summary (attribute*)>
   <!ELEMENT attribute (name,property+)>
@@ -36,4 +8,3 @@ To provide summary statistics
   <!ATTLIST property name (mean|q1|q3|median|mode|min|max|sd) #REQUIRED>
   <!ATTLIST name type (integer|float|string) #REQUIRED>
 ]>
-```

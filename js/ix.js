@@ -2,15 +2,26 @@ var ix = {
   appPath: '/',
   jsPath: '/third-js/',
   bases: {
+    lms: 'https://app.lms.unimelb.edu.au/bbcswebdav/courses/INFO20002_2015_SM1/slides/%s',
+    gsheet: 'https://docs.google.com/spreadsheet/ccc?%s',
+    gsite: 'https://sites.google.com/site/gssheet/%s'
+  },
+  icons: {
+    print: '<i class="fa fa-print"></i>',
+    pdf: '<i class="fa fa-file-pdf-o"></i>',
+    ppt: '<i class="fa fa-file-powerpoint-o"></i>',
+    code: '<i class="fa fa-file-code-o"></i>'
   }
 };
 
 (function() {
   var path = window.location.href.match(/[^\/]+?\/(ix)\/(.*)/);
   if (path) {
-    ix.appPath = new Array(path[2].match(/\//g).length + 1).join('../');
+    // ix.appPath = new Array(path[2].match(/\//g).length + 1).join('../');
+    ix.appPath = '/ix/';
   }
   ix.jsPath = ix.appPath + 'third-js/';
+  ix.bases['ix-lecture'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'lectures/%s';
 
   ix.markdown = function (node, md) {
     $(node).replaceWith(marked(md));
@@ -20,9 +31,26 @@ var ix = {
     hljs.highlightBlock(node);
   };
 
-  ix.fixLinks = function () {
+  ix.doLinks = function () {
+    var target = $('body')[0].getAttribute('target');
     $('a').each(function (i, node) {
-      node.setAttribute('target', '_blank');
+      if (target) {
+        node.setAttribute('target', target);
+      }
+      var base = node.getAttribute('base');
+      if (base) {
+        if (base === 'disable') {
+          var innerHTML = node.innerHTML;
+          $(node).replaceWith(innerHTML);
+        } else {
+          var href = node.getAttribute('href');
+          node.setAttribute('href', _.sprintf(ix.bases[base], href));
+        }
+      }
+      var file = node.getAttribute('file');
+      if (file) {
+        node.innerHTML = ix.icons[file];
+      }
     });
   };
 
