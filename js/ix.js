@@ -22,6 +22,7 @@ var ix = {
   }
   ix.jsPath = ix.appPath + 'third-js/';
   ix.bases['ix-lecture'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'lectures/%s';
+  ix.bases['ix-workshop'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'workshops/%s';
 
   ix.markdown = function (node, md) {
     $(node).replaceWith(marked(md));
