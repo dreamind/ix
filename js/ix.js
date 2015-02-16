@@ -50,7 +50,7 @@ var ix = {
       }
       var file = node.getAttribute('file');
       if (file) {
-        node.innerHTML = ix.icons[file];
+        node.innerHTML = ix.icons[file] + node.innerHTML;
       }
     });
   };

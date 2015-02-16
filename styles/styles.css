@@ -3,7 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,400italic,700italic&subset=latin,latin-ext);
 
 body {
-  padding: 50px;
+  padding: 2em;
+  margin: 0;
   font: 1.2em/1.44 "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #777;
   font-weight: 400;
@@ -13,6 +14,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #222;
   margin: 1em 0 0.5em 0;
+}
+
+h1:first-child, h2:first-child {
+  margin-top: 0;
 }
 
 p, ul, ol, table, pre, dl {
