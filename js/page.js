@@ -22,6 +22,7 @@ requirejs([
           ix.doHighlight();
           if (ix.launch) { ix.launch(); }
           ix.doLinks();
+          ix.doMath();
           // fix parent iframe
           var D = document;
           var h = Math.max(
@@ -44,7 +45,6 @@ requirejs([
         var url = qs[2];
         $.get(url, function (data) {
           var body = $('body')[0];
-          body.innerHTML = '';
           if (url.match(/.*\.md$/)) { // ends with md
             var script = document.createElement( "script");
             script.setAttribute('type', 'text/x-markdown');
@@ -52,10 +52,11 @@ requirejs([
             var div = document.createElement( "div" );
             $(div).append(script);
             $(body).append(div);
+            go();
           } else {
-            body.innerHTML = ix.escape(data);
+            body.innerHTML = ix.escapeHTML(data);
+            go();
           }
-          go();
         });
       } else {
         go();

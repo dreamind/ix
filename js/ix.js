@@ -10,7 +10,9 @@ var ix = {
     print: '<i class="fa fa-print"></i>',
     pdf: '<i class="fa fa-file-pdf-o"></i>',
     ppt: '<i class="fa fa-file-powerpoint-o"></i>',
-    code: '<i class="fa fa-file-code-o"></i>'
+    code: '<i class="fa fa-file-code-o"></i>',
+    data: '<i class="fa fa-file-excel-o"></i>',
+    link: '<i class="fa fa-external-link"></i>'
   }
 };
 
@@ -55,7 +57,27 @@ var ix = {
     });
   };
 
-  ix.escape = function (snippet) {
+  ix.doMath = function (callback) {
+    $("div[class='math']")
+      .contents()
+      .filter(function (){ return this.nodeType == 8; })
+      .each(function (i, node) {
+        var mathBlob = node.nodeValue;
+        var parent = node.parentNode;
+        $(parent).empty();
+        parent.innerHTML = mathBlob;
+      });
+    MathJax.Hub.Queue(
+      ["Typeset", MathJax.Hub, $('body')[0]],
+      ["mathDone", ix],
+      ["resetEquationNumbers", MathJax.InputJax.TeX]
+    );
+  };
+
+  ix.mathDone = function () {
+  };
+
+  ix.escapeHTML = function (snippet) {
     // escaping HTML codes
     return snippet.replace(
       /(<code class="html">)((.*?\n)*?)(<\/code>)/g,

@@ -1,3 +1,4 @@
+<script type="text/x-markdown">
 Aims
 ----
 
@@ -21,26 +22,25 @@ Given a CSV file, you need to find out and calculate the following information f
 Calculate the five-number-summaries of each column of the CSV data. Five-number-summary consists of the following.
 
 - **Minimum value**
-- **Lower quartile (\\(Q_1\\))**
-- **Median (\\(Q_2\\))**
-- **Upper quartile (\\(Q_3\\))**
+- **Lower quartile \\(Q_1\\)**
+- **Median \\(Q_2\\)**
+- **Upper quartile \\(Q_3\\)**
 - **Maximum value**
 
-Let \\(n\\) be the number of observations; we arrange the data in ascending order. We define:
+</script>
 
-<div class="math">
-<!--
-$$\begin{aligned}
-median\_rank = \frac{n+1}{2} \\
-quartile\_rank = \frac{\lfloor median\_rank \rfloor+1}{2}
-\end{aligned}$$
--->
-</div>
+\[\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x &#8211; y &#8211; xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{aligned} \]
 
-
+Let n be the number of observations; we arrange the data in ascending order. We define:
+median rankquartile rank=n+12=⌊median rank⌋+12,
 where ⌊x⌋ is the value of x truncated down to the next smallest whole number.
 
 
+<script type="text/x-markdown">
 Depending on the types, you need also to find the following:
 
 - **Mode**, the most common value in the column
@@ -57,7 +57,7 @@ Tasks
 
 You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. Your program would detect the data type and calculate the **five-number-summary** of each column (or attribute) in the CSV file. The result of this processing should then be written down to an XML file called `output.xml`.
 
-This XML file should be well-formed valid against the following DTD (<a href="summary.dtd" file="code"> `summary.dtd`</a>).
+This XML file should be well-formed valid against the following DTD.
 
 ```
 <!DOCTYPE summary [
@@ -115,3 +115,4 @@ Fail to follow the submission instruction will incur you penalty.
   http://archive.ics.uci.edu/ml/datasets/Wine
 - Iris Data Set, Famous Iris database (Fisher, 1936).<br />
   http://archive.ics.uci.edu/ml/datasets/Iris
+</script>
