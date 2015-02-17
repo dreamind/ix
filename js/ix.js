@@ -58,6 +58,7 @@ var ix = {
   };
 
   ix.doMath = function (callback) {
+    ix.mathCallback = callback;
     $("div[class='math']")
       .contents()
       .filter(function (){ return this.nodeType == 8; })
@@ -75,6 +76,11 @@ var ix = {
   };
 
   ix.mathDone = function () {
+    if (ix.mathCallback) { ix.mathCallback(); }
+  };
+
+  ix.doTitle = function () {
+    $(document)[0].title = $('body title').text() || $('h1').text();
   };
 
   ix.escapeHTML = function (snippet) {

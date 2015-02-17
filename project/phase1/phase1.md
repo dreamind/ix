@@ -1,7 +1,12 @@
+Project Phase 1 (Individual, 10%)
+=================================
+
+**This project specification may be changed at any time.**
+
 Aims
 ----
 
-This phase is to be done *individually*. In this phase you will:
+In this phase you will:
 
 - refresh your Python skills and knowledge
 - implement simple descriptive statistics using Python
@@ -18,15 +23,15 @@ Given a CSV file, you need to find out and calculate the following information f
   * float: real number that supports decimal point, e.g. 3.14, 777.8 and 1.0
   * string: categorical values, e.g. Male/Female and RAIN/SUNNY/CLOUDY
 
-Calculate the five-number-summaries of each column of the CSV data. Five-number-summary consists of the following.
+Calculate the **five-number-summary** of each column of the CSV data. Five-number-summary is descriptive statistical properties proposed by Tukey [1]. The summary provides a concise report of central tendency and distribution of a data set. It consists of the following.
 
 - **Minimum value**
-- **Lower quartile (\\(Q_1\\))**
+- **Lower/first quartile (\\(Q_1\\))**
 - **Median (\\(Q_2\\))**
-- **Upper quartile (\\(Q_3\\))**
+- **Upper/third quartile (\\(Q_3\\))**
 - **Maximum value**
 
-Let \\(n\\) be the number of observations; we arrange the data in ascending order. We define:
+Let \\(n\\) be the number of data (rows) in the column and the data is arranged in ascending order. Ranks for median and quartiles are defined [2]:
 
 <div class="math">
 <!--
@@ -37,16 +42,16 @@ quartile\_rank = \frac{\lfloor median\_rank \rfloor+1}{2}
 -->
 </div>
 
+where \\(\lfloor x \rfloor\\) operation behaves likes Python's [`floor(x)`](https://docs.python.org/2/library/math.html#math.floor) function. If the rank is not an integer, the value of median or quartile is taken from the average of the two closest values that enclose the rank.
 
-where ⌊x⌋ is the value of x truncated down to the next smallest whole number.
+**Example**: Consider a list of 8 numbers: \\(1, 1, 2, 3, 5, 8, 13, 21\\). The median rank is \\(\frac{8+1}{2} = 4.5\\); so the median is the average of the 4th and 5th numbers, \\(\frac{3 + 5}{2} = 4\\). To find the first and third quartiles, splitting the list into two halves. The medians of the two groups are the first and third quartiles correspondingl. The first quartile rank is \\(\frac{\lfloor 4.5 \rfloor+1}{2} = 2.5\\), and the first quartile is \\(\frac{1 + 2}{2} = 1.5\\). Using the same method, the third quartile is equal to \\(\frac{8 + 13}{2} = 10.5\\). The minimum and maximum numbers are 1 and 21. The five-number summary would be \\(1, 1.5, 4, 10.5, 21\\).
 
-
-Depending on the types, you need also to find the following:
+Depending on the types, you also need to find the following:
 
 - **Mode**, the most common value in the column
 - **Unique values**, unique values of all the column values
 
-Not all information is applicable to all data types. Please use the following guide in producing the output:
+Please use the following constraints in producing the output:
 
 - For numerical columns, with float and integer data type, provide *five-number-summary*,
 - For string provide *unique values* in the column.
@@ -55,7 +60,7 @@ Not all information is applicable to all data types. Please use the following gu
 Tasks
 -----
 
-You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. Your program would detect the data type and calculate the **five-number-summary** of each column (or attribute) in the CSV file. The result of this processing should then be written down to an XML file called `output.xml`.
+You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. Your program would detect the data type and calculate the five-number-summary of each column (or attribute) in the CSV file. The result of this processing should then be written down to an XML file called `output.xml`.
 
 This XML file should be well-formed valid against the following DTD (<a href="summary.dtd" file="code"> `summary.dtd`</a>).
 
@@ -84,6 +89,8 @@ This XML file should be well-formed valid against the following DTD (<a href="su
   * <a file="data" href="wine.csv"> Wine Data Set</a>
   * <a file="data" href="iris.csv"> Iris Data Set</a>
 
+[TO DO: validate.py]
+
 ### Marking Scheme
 
 Your program will be marked according to:
@@ -97,15 +104,17 @@ Your program will be marked according to:
 **Due Data: Friday Week 4, 5pm**:<br />
 **Late penalty: 1 mark for each late day**:
 
-You need to submit a single Python file called `phase1.py`. You can safely assume that `input.csv` can be located in the same directory with your `.py` file. Submit your work through the Submission section of the LMS.
+You need to submit a single Python file called `phase1.py`. You can safely assume that `input.csv` and `summary.dtd` are available in the same directory with your `.py` file. Submit your work through the Submission section of the LMS.
 
 Fail to follow the submission instruction will incur you penalty.
 
 ### References
 
-1. Dodge, Y. (2008). Exploratory Data Analysis. The Concise Encyclopedia of Statistics
+1. Tukey, J. W. (1977). Exploratory Data Analysis. Addison-Wesley, Reading, MA.
+2. Dodge, Y. (2008). Exploratory Data Analysis. The Concise Encyclopedia of Statistics
   , pp 192-194 <a href="http://link.springer.com.ezp.lib.unimelb.edu.au/referenceworkentry/10.1007/978-0-387-32833-1_136/fulltext.html" file="link"></a>.
-2. Lichman, M. (2013). UCI Machine Learning Repository. Irvine, CA: University of California, School of Information and Computer Science <a href="http://archive.ics.uci.edu/ml" file="link"></a>.
+3. Lichman, M. (2013). UCI Machine Learning Repository. Irvine, CA: University of California, School of Information and Computer Science <a href="http://archive.ics.uci.edu/ml" file="link"></a>.
+4. Langford, E. (2006). Quartiles in Elementary Statistics. Journal of Statistics Education Volume 14, Number 3 <a href="www.amstat.org/publications/jse/v14n3/langford.html" file="link"></a>.
 
 ### Note on Datasets
 
