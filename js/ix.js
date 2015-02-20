@@ -59,7 +59,8 @@ var ix = {
 
   ix.doMath = function (callback) {
     ix.mathCallback = callback;
-    $("div[class='math']")
+    var mathPresent = 0;
+    $("div[class='math']") // only supported within external markdown
       .contents()
       .filter(function (){ return this.nodeType == 8; })
       .each(function (i, node) {
@@ -67,12 +68,15 @@ var ix = {
         var parent = node.parentNode;
         $(parent).empty();
         parent.innerHTML = mathBlob;
+        mathPresent = 1;
       });
-    MathJax.Hub.Queue(
-      ["Typeset", MathJax.Hub, $('body')[0]],
-      ["mathDone", ix],
-      ["resetEquationNumbers", MathJax.InputJax.TeX]
-    );
+    if (mathPresent) {
+      MathJax.Hub.Queue(
+        ["Typeset", MathJax.Hub, $('body')[0]],
+        ["mathDone", ix],
+        ["resetEquationNumbers", MathJax.InputJax.TeX]
+      );
+    }
   };
 
   ix.mathDone = function () {
