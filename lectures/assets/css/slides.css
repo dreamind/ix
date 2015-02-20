@@ -4,14 +4,35 @@
 
 .cover {
   text-align: left;
-
 }
 
+
+
+.reveal {
+  color: #e0eeee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none !important;
+}
+
+.reveal h1 {
+  color: #66aab6;
+  font-size: 2em; }
+
+.reveal h2 {
+  font-size: 1.4em; }
+
+.reveal h3 {
+  font-size: 1.2em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
 .cover h1 {
-  font-size: 2em;
+  font-size: 2.2em;
   color: #66aab6;
   line-height: 0.7em;
-  font-weight: 300;
   text-transform: none !important;
 }
 
@@ -20,4 +41,19 @@
   color: #DED781;
   font-weight: 300;
   text-transform: none !important;
+}
+
+.reveal p {
+  text-align: left;
+}
+
+strong {
+  color: #996600;
+  font-weight: 700;
+}
+
+em {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  color: #996600;
 }
