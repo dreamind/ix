@@ -15,12 +15,19 @@ requirejs([
   ],
   function (marked, jq, u, s) {
 
+    if (window.location.href.indexOf('print-pdf') > 0) {
+      $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'css/print/paper.css') );
+    };
+
     _.mixin(s.exports()); // mix underscore string
     window.marked = marked; // requirejs has its own 'this'
 
     $(document).ready(function () {
       Reveal.initialize({
+        controls: true,
+        progress: true,
         history: true,
+        center: false,
         dependencies: [
           {
             src: revealPath + 'lib/js/classList.js',
