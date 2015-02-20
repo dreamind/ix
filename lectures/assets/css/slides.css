@@ -68,3 +68,17 @@ em {
 .reveal {
   font-size: 32px;
 }
+
+.reveal .footer {
+  text-align: left !important;
+  font-size: 0.5em;
+  margin-top: 0.8em;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center !important;
+}

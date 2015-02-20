@@ -7,60 +7,186 @@
   <link rel="stylesheet" href="../assets/css/slides.css">
   <script src="../../js/ix.js"></script>
   <script data-main="../assets/js/slides.js" src="../../third-js/requirejs/require.js"></script>
+  <style>
+    .crypt {
+      font-size: 1em !important;
+    }
+  </style>
 </head>
 <body>
 <div class="reveal">
   <div class="slides">
     <section class="cover">
-      <h1>overview</h1>
+      <h1>information, data, and meaning</h1>
       <h2>info-20002: foundations of informatics</h2>
     </section>
     <section data-markdown>
       <script type="text/template">
-        <h1>What (is it all about)?</h1>
+        <h1>What is information?</h1>
 
-- **Concepts** <br />Information, Representation, Processing, Analysis, and Visualisation
-- **Hands on** <br />XML, JSON, HTTP, CGI, HTML, CSS, Spreadsheet, Python
-- **Applied/In-context** <br />Use Cases
-- **Subjective** <br />Human/Social aspect of Information
+The word information derives from the Latin
+informare (in + formare), meaning to give
+form, shape, or character to. It is therefore to
+be the formative principle of, or to imbue with
+some specific character or quality.
+
+*von Baeyer, H. C. Information: The New Language of Science. Chapter 3, pp 20-21.*
       </script>
     </section>
     <section data-markdown>
       <script type="text/template">
-        <h1>Information, Data, and Knowledge</h1>
+        <h1>What is information?</h1>
 
-      </script>
-    </section>
-    <section data-markdown data-background="#ffffff">
-      <script type="text/template">
-        <iframe style="width:800px; height:600px" src="reader/reader.html"></iframe>
-      </script>
-    </section>
-    <section data-markdown data-background="#ffffff">
-      <script type="text/template">
-        <h1>Data Visualisation</h1>
-        <img src="images/preattentive.png"  style="width:600px;" />
-      </script>
-    </section>
-    <section data-markdown data-background="#ffffff">
-      <script type="text/template">
-        <h1>Data Visualisation</h1>
-        <img src="images/viz.png"  style="width:800px;" />
+In Oxford English Dictionary:
+
+- From: “a teaching; an instruction; a piece of advice” ...
+- To:
+  1. "As a mathematically defined quantity divorced from any concept of news or meaning (see quots. 1925, 1928, 19481, 19482); spec. one which represents the degree of choice exercised in the selection or formation of one particular symbol, message, etc., out of a number of possible ones, and which is defined logarithmically in terms of the statistical probabilities of occurrence of the symbol or the elements of the message." (def. 2c)
+  2. "Contrasted with data: that which is obtained by the processing of data." (def. 2d)
+
+<div class="footer">
+  <div>[1] Gleick, J. <a href="http://www.nybooks.com/blogs/nyrblog/2010/dec/08/information-palace/">The Information Palace</a></div>
+<div>[2] OED, <a href="http://www.oed.com/viewdictionaryentry/Entry/95568">information</a></div></div>
       </script>
     </section>
     <section data-markdown>
       <script type="text/template">
-        <h1>Data Analysis</h1>
+        <h1>Information in and out of context</h1>
 
+- OED #1: Information as a fact<br />
+  Mathematically defined quantity, Shannon's bits, out-of-context. There is no distinction of values between:
+  * `"4566 7450 2344 1935 AMEX 08/17"`<br />
+  * `"I am floating like a butterfly"`
+- OED #2: Information as a subjective entity<br />
+  Data within organisations, in a social context. Data is raw facts, information is processed data.
+  "A pragmatic definition defines the topic as the most valuable form of content
+  in a continuum starting at *data*, encompassing *information*, and ending at *knowledge*." [2]
+
+
+<div class="footer"><div>[1] Shannon, C. (1948). <a href="http://plan9.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf">A Mathematical Theory of Communication</a>, Bell System Technical Journal (27)</div>
+<div>[2] Grover, V., Davenport, T. H., <a href="http://www.tandfonline.com.ezp.lib.unimelb.edu.au/doi/abs/10.1080/07421222.2001.11045672">General Perspectives on Knowledge Management: Fostering a Research Agenda</a>, J. of Management Information Systems (18)1</div></div>
       </script>
+
+
+
+
     </section>
-    <section data-markdown data-background="images/lastfm.png">
+
+
+    <section>
+      <h4><strong>The original Enigma ciphertext</strong></h4>
+      <pre class="crypt align-center">
+NCZW VUSX PNYM INHZ XMQX
+SFWX WLKJ AHSH NMCO CCAK
+UQPM KCSM HKSE INJU SBLK
+IOSX CKUB HMLL XCSJ USRR
+DVKO HULX WCCB GVLI YXEO
+AHXR HKKF VDRE WEZL XOBA
+FGYU JQUK GRTV UKAM EURB
+VEKS UHHV OYHA BCJW MAKL
+FKLM YFVN RIZR VVRT KOFD
+ANJM OLBG FFLE OPRG TFLV
+RHOW OPBE KVWM UQFM PWPA
+RMFH AGKX IIBG
+</pre>
+      <span class="footer">[1] <a href="http://users.telenet.be/d.rijmenants/en/m4project.htm">Stefan Krah's M4 project</a></span>
+    </section>
+    <section>
+      <h4><strong>The decrypted text (plain text)</strong></h4>
+      <pre class="crypt align-center">
+VONV ONJL OOKS JHFF TTTE
+INSE INSD REIZ WOYY QNNS
+NEUN INHA LTXX BEIA NGRI
+FFUN TERW ASSE RGED RUEC
+KTYW ABOS XLET ZTER GEGN
+ERST ANDN ULAC HTDR EINU
+LUHR MARQ UANT ONJO TANE
+UNAC HTSE YHSD REIY ZWOZ
+WONU LGRA DYAC HTSM YSTO
+SSEN ACHX EKNS VIER MBFA
+ELLT YNNN NNNO OOVI ERYS
+ICHT EINS NULL
+</pre>
+      <span class="footer">[1] <a href="http://users.telenet.be/d.rijmenants/en/m4project.htm">Stefan Krah's M4 project</a></span>
+    </section>
+    <section>
+      <h4><strong>The decrypted text rearranged</strong></h4>
+      <pre class="crypt align-left" style="font-size:0.7em !important;">
+VON VON JLOOKSJ HFFTTT EINS EINS DREI ZWO YY QNNS NEUN
+INHALT XX BEI ANGRIFF UNTER WASSER GEDRUECKT Y WABOS X
+LETZTER GEGNERSTAND NUL ACHT DREI NUL UHR
+MARQU ANTON JOTA NEUN ACHT SEYHS DREI Y
+ZWO ZWO NUL GRAD Y ACHT SM Y STOSSE NACH X
+EKNS VIER MB FAELLT Y NNN NNN OOO VIER Y SICHT EINS NULL
+</pre>
+      <span class="footer">[1] <a href="http://users.telenet.be/d.rijmenants/en/m4project.htm">Stefan Krah's M4 project</a></span>
+    </section>
+
+    <section>
+      <h4><strong>After clean up, normalise abbreviations and numbers</strong></h4>
+      <pre class="crypt align-left" style="font-size:0.7em !important;">
+Von Looks: Funktelegramm 1132/19
+Inhalt:
+Bei Angriff unter Wasser gedrueckt, Wasserbomben.
+Letzter Gegnerstandort 08:30 Uhr,
+Marine Quadrat AJ 9863, 220 Grad, 8 Seemeilen, stosse nach.
+14 Millibar faellt, NNO 4, Sicht 10.
+</pre>
+      <span class="footer">[1] <a href="http://users.telenet.be/d.rijmenants/en/m4project.htm">Stefan Krah's M4 project</a></span>
+    </section>
+
+    <section>
+      <h4><strong>English translation</strong></h4>
+      <pre class="crypt align-left" style="font-size:0.7em !important;">
+From Looks: Radio signal 1132/19
+Contents:
+Forced to submerge during attack, depth charges.
+Last enemy location 08:30h, Naval Grid AJ 9863,
+220 degrees, 8 nautical miles, (I am) following (the enemy).
+(Barometer) 1014 Millibar (tendency) falling,
+North North East 4, visibility 10.
+      </pre>
+      <span class="footer">[1] <a href="http://users.telenet.be/d.rijmenants/en/m4project.htm">Stefan Krah's M4 project</a></span>
+    </section>
+
+    <section data-markdown>
       <script type="text/template">
-        <h1>Data Analysis</h1>
-        <!-- Social Network -->
+Chain of Information
+====================
 
+- Encoded Text (Morse Code)
+- Encrypted Text (Enigma Code)
+- Decrypted Text (German raw)
+- Post-processed Text (German clean)
+- Translated Text (English plain text)
       </script>
     </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Chain of Information
+====================
+
+- Encoded Text (Morse Code)
+- Encrypted Text (Enigma Code) &larr; Cryptanalysis
+- Decrypted Text (German raw) &larr; Linguistic
+- Post-processed Text (German clean) &larr; Multilingual
+- Translated Text (English plain text) &larr; Social Context
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Data, Information, and Meaning
+==============================
+
+- Data
+- Information
+- Knowledge
+- Wisdom
+      </script>
+    </section>
+
   </div>
 </div>
 </body>
