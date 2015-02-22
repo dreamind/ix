@@ -63,6 +63,8 @@ em {
 
 .reveal section img {
   box-shadow: none;
+  border: none !important;
+  background-color: transparent !important;
 }
 
 .reveal {
@@ -82,3 +84,4 @@ em {
 .align-center {
   text-align: center !important;
 }
+
