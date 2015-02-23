@@ -8,6 +8,7 @@ var ix = {
   },
   icons: {
     print: '<i class="fa fa-print"></i>',
+    html: '<i class="fa fa-file-html-o"></i>',
     pdf: '<i class="fa fa-file-pdf-o"></i>',
     ppt: '<i class="fa fa-file-powerpoint-o"></i>',
     code: '<i class="fa fa-file-code-o"></i>',
@@ -23,6 +24,11 @@ var ix = {
     ix.appPath = '/ix/';
   }
   ix.jsPath = ix.appPath + 'third-js/';
+
+  ix.docPath = window.location.href.match(/pages\/page\.html\?src=(\/.+?\/)[^\/]+\.(md|htm)/);
+  if (ix.docPath) {
+    ix.docPath = ix.docPath[1];
+  }
   ix.bases['ix-lecture'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'lectures/%s';
   ix.bases['ix-workshop'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'workshops/%s';
 
@@ -35,20 +41,22 @@ var ix = {
   };
 
   ix.doLinks = function () {
+    var innerHTML;
+
     var target = $('body')[0].getAttribute('target');
     $('a').each(function (i, node) {
       if (target) {
         node.setAttribute('target', target);
       }
       var base = node.getAttribute('base');
-      if (base) {
-        if (base === 'disable') {
-          var innerHTML = node.innerHTML;
-          $(node).replaceWith(innerHTML);
-        } else {
-          var href = node.getAttribute('href');
-          node.setAttribute('href', _.sprintf(ix.bases[base], href));
-        }
+      var href = node.getAttribute('href');
+      if (base === 'disable') {
+        innerHTML = node.innerHTML;
+        $(node).replaceWith(innerHTML);
+      } else if (base in ix.bases) {
+        node.setAttribute('href', _.sprintf(ix.bases[base], href));
+      } else if (ix.docPath) {
+        node.setAttribute('href', ix.docPath + href);
       }
       var file = node.getAttribute('file');
       if (file) {
