@@ -55,12 +55,21 @@ var ix = {
         $(node).replaceWith(innerHTML);
       } else if (base in ix.bases) {
         node.setAttribute('href', _.sprintf(ix.bases[base], href));
-      } else if (ix.docPath) {
+      } else if (href.substring(0,4) !== 'http' && ix.docPath) {
         node.setAttribute('href', ix.docPath + href);
       }
       var file = node.getAttribute('file');
       if (file) {
         node.innerHTML = ix.icons[file] + node.innerHTML;
+      }
+    });
+    $('img').each(function (i, node) {
+      var base = node.getAttribute('base');
+      var src = node.getAttribute('src');
+      if (base in ix.bases) {
+        node.setAttribute('src', _.sprintf(ix.bases[base], src));
+      } else if (src.substring(0,4) !== 'http' && ix.docPath) {
+        node.setAttribute('src', ix.docPath + src);
       }
     });
   };
