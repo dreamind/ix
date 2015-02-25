@@ -14,7 +14,7 @@ Providing an alternative view-point to using XML, we look at JSON in this lectur
 
 <!--
 
-Workshop: Data design and exchange
+Workshop: Data design and exchange (git test)
 
 
 ### Readings
