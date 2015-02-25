@@ -11,7 +11,8 @@ requirejs([
     revealPath + 'lib/js/head.min.js',
     revealPath + 'js/reveal.js',
     ix.jsPath + 'es6-promise/promise.min.js',
-    ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    ix.jsPath + 'highcharts-release/highcharts.js'
   ],
   function (marked, jq, u, s) {
 
@@ -59,6 +60,7 @@ requirejs([
       Reveal.addEventListener('ready', function (event) {
         // event.currentSlide, event.indexh, event.indexv
       });
+      ix.doOnLoads();
     });
   }
 );

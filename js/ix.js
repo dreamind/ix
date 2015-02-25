@@ -14,7 +14,8 @@ var ix = {
     code: '<i class="fa fa-file-code-o"></i>',
     data: '<i class="fa fa-file-excel-o"></i>',
     link: '<i class="fa fa-external-link"></i>'
-  }
+  },
+  onLoads: []
 };
 
 (function() {
@@ -32,12 +33,21 @@ var ix = {
   ix.bases['ix-lecture'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'lectures/%s';
   ix.bases['ix-workshop'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'workshops/%s';
 
+  ix.register = function (f) {
+    ix.onLoads.push(f);
+  };
   ix.markdown = function (node, md) {
     $(node).replaceWith(marked(md));
   };
 
   ix.highlight = function (node) {
     hljs.highlightBlock(node);
+  };
+
+  ix.doOnLoads = function () {
+    _.each(ix.onLoads, function (f) {
+      f();
+    })
   };
 
   ix.doLinks = function () {

@@ -12,7 +12,8 @@ requirejs([
     ix.jsPath + 'underscore.string/underscore.string.js',
     ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
     ix.jsPath + 'reveal.js/plugin/highlight/highlight.js',
-    ix.jsPath + 'es6-promise/promise.min.js'
+    ix.jsPath + 'es6-promise/promise.min.js',
+    ix.jsPath + 'highcharts-release/highcharts.js'
   ],
   function (marked, jq, u, s) {
 
