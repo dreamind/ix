@@ -1,6 +1,8 @@
 var revealPath = ix.jsPath + 'reveal.js/';
 var revealPluginPath = revealPath + 'plugin/';
 
+
+
 // Start the main app logic.
 requirejs([
     // WARNING: change in sequence will impact the callback
@@ -11,16 +13,26 @@ requirejs([
     revealPath + 'lib/js/head.min.js',
     revealPath + 'js/reveal.js',
     ix.jsPath + 'es6-promise/promise.min.js',
-    ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    ix.jsPath + 'highcharts-release/highcharts.js'
+
   ],
   function (marked, jq, u, s) {
+
+    ix.highchartsTheme();
+    if (window.location.href.indexOf('print-pdf') > 0) {
+      $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'css/print/paper.css') );
+    };
 
     _.mixin(s.exports()); // mix underscore string
     window.marked = marked; // requirejs has its own 'this'
 
     $(document).ready(function () {
+
       Reveal.initialize({
+        controls: true,
+        progress: true,
         history: true,
+        center: false,
         dependencies: [
           {
             src: revealPath + 'lib/js/classList.js',
@@ -44,14 +56,14 @@ requirejs([
             async: true
           },
           { src: revealPluginPath + 'zoom-js/zoom.js', async: true },
-          { src: revealPluginPath + 'notes/notes.js', async: true }
-          // using manual inclusion of MathJax to avoid remote dependencies
-          // { src: revealPluginPath + 'math/math.js', async: true }
+          { src: revealPluginPath + 'notes/notes.js', async: true },
+          { src: revealPluginPath + 'math/math.js', async: true, mathjax: ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML' }
         ]
       });
       Reveal.addEventListener('ready', function (event) {
         // event.currentSlide, event.indexh, event.indexv
       });
+      ix.doOnLoads();
     });
   }
 );
