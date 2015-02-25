@@ -1,0 +1,15 @@
+Lectures - Information, Data and Meaning
+========================================
+
+These lectures introduce the theoretical aspects of information. Here, we elaborate the
+
+- <a target="_blank" href="information.html" file="html"> What is information slides</a>
+- <a target="_blank" href="theory.html" file="html"> Measuring information slides</a>
+- <a target="_blank" href="semantics.html" file="html"> Information and Meaning slides</a>
+- <a target="_blank" href="lang.html" file="html"> Encoding and Languages</a>
+
+### Readings
+- BBC News. (20??). [Online amateurs crack Nazi codes](http://news.bbc.co.uk/2/hi/technology/4763854.stm).
+- A little bit more on Shannon. (.uk/BookInfoTheory/InfoTheoryBookChapter01.html)
+- A little bit more on Turing. (.uk/BookInfoTheory/InfoTheoryBookChapter01.html)
+

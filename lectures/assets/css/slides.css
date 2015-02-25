@@ -2,7 +2,7 @@
 @import "../../../third-js/reveal.js/css/theme/black.css";
 @import "../../../third-js/reveal.js/lib/css/zenburn.css";
 
-.cover {
+.cover, section {
   text-align: left;
 }
 
