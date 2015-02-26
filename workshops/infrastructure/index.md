@@ -1,9 +1,7 @@
-Workshop - Infrastructure
+﻿Workshop - Infrastructure
 =========================
 
-This workshop introduces students to the fundamental mechanics of computer communication across the Internet. We discuss HTTP, HTML (briefly – this is covered in more detail in week 4) and CGI – their construction, history and the basics of how they are used to transmit information. Slides are presented on each area then a set of guided questions are provided to complete during the tutorial which show how to use the tools for exploring HTTP and CGI. Finally a set of more extended exercises are provided which students can complete outside class – these require more in-depth construction of HTML forms and Python scripts to understand HTTP and CGI more fully.
-
-This workshop is designed to introduce you to infrastructure concepts that underpin the use of the Internet for informatics and data processing. Specifically we will be looking at the Hypertext Transfer Protocol (HTTP), Common Gateway Interface (CGI) and briefly Hypertext Markup Language (HTML). These three areas are fundamental to understanding the mechanics of information transfer across networks, and are therefore an essential platform to building knowledge in informatics.
+This workshop introduces students to infrastructure concepts that underpin the use of the Internet for informatics and data processing. Specifically we will be looking at the Hypertext Transfer Protocol (HTTP), Common Gateway Interface (CGI) and briefly Hypertext Markup Language (HTML). These three areas are fundamental to understanding the mechanics of information transfer across networks, and are therefore an essential platform to building knowledge in informatics.
 
 The structure of the workshop will be a slide presentation on each area, followed by a series of guided questions for you to work through and understand the basic concept. The answers to these will be covered within the workshop. This will be followed by a set of exercises that are for you to complete at the end of the workshop and in your own time to develop your understanding and prepare for the final exam. Answers to these questions will be made available a week after the workshop.
 
@@ -11,7 +9,7 @@ A. Hyper-Text Transfer Protocol (HTTP)
 -----------------------------------
 Presentation: slides 1 to 10.
 
-Open up Putty (Windows à Put “putty” into the search box).
+Open up Putty (Windows button then put “putty” into the search box).
 Configure the screen as shown in figure 1.
 
 <img src="images/image001.png">
@@ -43,6 +41,8 @@ Open a terminal using Putty as described above and connect to www.unimelb.edu.au
 
 Now connect to www.google.com. To do this, follow the instructions as for question 1, but will also need to set the proxy for the University network in Putty as shown in figure 4.
 
+<img src="images/image004.png">
+
 Figure 4: in the Proxy section of Putty, select “HTTP” for the Proxy type and for the Proxy hostname put in `http://pac.proxy.unimelb.edu.au/cgi-bin/proxy.pac`.
 
 1. What HTTP code has been returned this time?
@@ -59,7 +59,7 @@ Presentation: slides 11 and 12.
 
 Note that this is a *very* brief discussion about HTML just to understand what is being communicated across the network using HTTP. The details of mark-up languages will be covered in week 4.
 
-Open up a browser and navigate to this page `http://[server]/form_example.html`. Click on “View” à “Source” (or ctrl-U as the keyboard shortcut) and look at the output returned.
+Open up a browser and navigate to this page `http://[server]/form_example.html`. Click on “View” then “Source” (or ctrl-U as the keyboard shortcut) and look at the output returned.
 
 **Question 1**
 
@@ -110,12 +110,34 @@ Finally, serve this page `http://[server]/fieldstore.py` and add the parameters 
 Exercises
 ---------
 
+1. HTTP is a stateless protocol, by which we mean that it has no memory of one transaction to the next.
 
-1. HTTP is a stateless protocol, by which we mean that it has no memory of one transaction to the next. Using python for the CGI script submit information using an HTML form and display this output in HTML output from the CGI script. In the HTML output, write another form that outputs more HTML using a second CGI script. Pass some information between these pages using the `<input type="hidden">` tag. Can you see how this allows one page to *remember* another and pass information down a chain of HTTP requests? Can you think of another way for pages to remember the conversation from one HTTP conversation to the next (hint: think about persistent data).
+  1. Create an HTML form to submit some parameters to another page (you can use slide 13 as a template or look up `http://www.w3schools.com` for help).
+  2. Pass a parameter to a CGI script, which you will write using Python, using the `<input type="hidden">` tag.
+  3. The CGI script will output HTML displaying the value of all the parameters that you've passed through, including the hidden ones.
+  4. Now, in the HTML page that has been output, add another form.
+  5. Pass one of the parameters into this new form and repeat the process to pass the information to a new CGI script and HTML output (creating a chain).
+  6. Briefly sketch in a block diagram the sequence of HTML form, CGI scripts and parameters passed between them.
 
-2. As demonstrated above, you can display environment variables on a server by invoking a form, and these provide information about the client (e.g. `HTTP_USER_AGENT`). You can manipulate these client variables by changing the lines on your HTTP request (the commands starting with `GET…`). Write an HTTP request that includes information on the `HTTP_USER_AGENT` and the `HTTP_REFERER` (an environment variable that represents where the CGI script has been called from). Can you make these variables display whatever you, as the client wants? What are the security implications of this?
+   Can you see how this process allows one page to *remember* another and pass information down a chain of HTTP requests? Can you think of another way for pages to remember the conversation from one HTTP conversation to the next (hint: think about persistent data and text files).
 
-3. Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate these calculations and data between pages using HTTP, but their size makes this communication difficult. For example, an HTML form reads in a CSV (comma-separated value) spreadsheet of temperature readings for every day for the major capital cities in Australia (therefore 8 * 365 cells) and outputs a variety of statistical metrics: the mean, median, standard deviation, etc. Outline a way to communicate this information from the page that is reading the CSV file to another page using HTML, HTTP and CGI.
+
+2. As demonstrated above, you can display environment variables on a server by invoking a form, and these provide information about the client (e.g. `HTTP_USER_AGENT`). You can manipulate these client variables by changing the lines on your HTTP request (the commands starting with `GET…` in question 1 under HTTP). Write an HTTP request that includes information on the `HTTP_USER_AGENT` and the `HTTP_REFERER` (an environment variable that represents where the CGI script has been called from). As the client, can you control what the server displays for these variables? What are the security implications of this?
+
+3. Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP and CGI, but their size makes this communication difficult.
+
+  1. Using this `data-set`, write a CGI script that reads in the CSV file and outputs the data to an HTML table. How long does it take to render?
+
+  2. Instead of reading one line at a time, trying reading several at a time.  
+    1. Is there an optimum size of line numbers?
+    2. Is there an overhead in finding the place in the data-set again?
+
+  3. Is the way the information organised important? Why?
+
+  4. Is there a way to manage the user experience that helps with the processing time?
+    1. Is there a way to process the data in the background?
+
+For references to help, try `https://docs.python.org/2/library/csv.html` for handling CSV files in Python and `http://www.w3schools.com` for HTML table tags.
 
 
 Other Resources
