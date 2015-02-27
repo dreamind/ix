@@ -93,6 +93,10 @@ em {
   background-color: transparent !important;
 }
 
+.figure {
+    margin-top: 1.4em !important;
+    margin-bottom: 1.4em !important;    
+}
 .reveal {
   font-size: 28px;
 }

@@ -8,7 +8,7 @@ var ix = {
   },
   icons: {
     print: '<i class="fa fa-print"></i>',
-    html: '<i class="fa fa-file-html-o"></i>',
+    html: '<i class="fa fa-file-text-o"></i>',
     pdf: '<i class="fa fa-file-pdf-o"></i>',
     ppt: '<i class="fa fa-file-powerpoint-o"></i>',
     code: '<i class="fa fa-file-code-o"></i>',

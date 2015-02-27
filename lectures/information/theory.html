@@ -102,9 +102,19 @@ H_0(X)=\log_b \left | X\right |
 
       <ul>
         <li>Shannon's Entropy probabilistic-based measurement</li>
+        <li>Information as events (random variable), e.g. tossing coins, receiving a piece of text</li>
         <li>Hartley works for uniformly distributed symbol, Shannon's for non-uniform distribution</li>
         <li>Measure of the amount of uncertainty in selecting a particular symbol from symbol space</li>
+        <li>The more unpredictable a symbol is, the higher its information value</li>        
       </ul>
+      <div class="footer">
+        <div>[1] Hartley, R. V. L. (1928). <a href="http://dx.doi.org.ezp.lib.unimelb.edu.au/10.1002/j.1538-7305.1928.tb01236.x">"Transmission of information,"</a>, Bell System Technical Journal 7(3): 535-563</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Entropy of Information</h2>
+
       <p>Let:</p>
       <ul>
         <li>a message space of \(n\) symbols in a possible space \(X\).
@@ -124,7 +134,7 @@ H_0(X)=\log_b \left | X\right |
         <div>[1] Hartley, R. V. L. (1928). <a href="http://dx.doi.org.ezp.lib.unimelb.edu.au/10.1002/j.1538-7305.1928.tb01236.x">"Transmission of information,"</a>, Bell System Technical Journal 7(3): 535-563</div>
       </div>
     </section>
-
+    
     <section>
       <h2>Entropy of a Binary Message</h2>
 
@@ -133,7 +143,7 @@ H_0(X)=\log_b \left | X\right |
       <ul style="font-size:0.7em; line-height: 2em !important;">
         <li>Case 1: Only Heads<br />
           \(H = -(1 \log_2 1 + 0 \log_2 0) = 0\) bit</li>
-        <li>Case 2: Biased coin<br /> 
+        <li>Case 2: Biased coin, 80% Heads and 20% Tails<br /> 
           \(H = -(0.8 \log_2 0.8 + 0.2 \log_2 0.2) = 1.85\) bit</li>
         <li>Case 3: Fair Coin<br />
           \(H = -(2 \times 0.5 \log_2 0.5 = 1\) bit</li>
@@ -157,11 +167,11 @@ H_0(X)=\log_b \left | X\right |
                   data: [1, 0]
                   },
                 {
-                  name: 'Case 2: H = 1.85',
+                  name: 'Case 2: H = 0.72',
                   data: [0.8, 0.2]
                 },
                 {
-                  name: 'Case 3: H = 2',
+                  name: 'Case 3: H = 1',
                   data: [0.5, 0.5]
                 }
               ];
@@ -209,7 +219,48 @@ H_0(X)=\log_b \left | X\right |
     
     <section>
       <h2>Properties of Entropy</h2>
-
+      <div id="binary-entropy" class="figure" style="width:50%"></div>
+      <script>
+        ix.register(function () {
+          var n = 20;
+          var a = _.map(_.range(n+1), function(i) { p = i/n; h = -p * Math.log2(p) - (1-p) * Math.log2(1-p); return [i/n, isNaN(h) ? 0 : h ];});
+          var data = _.reduce(a, function (m,n) { return m.concat([n]); }, [])
+          
+        $('#binary-entropy').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Binary Entropy Function'
+        },
+        xAxis: {
+          title: {
+              text: 'p(x=Head)'
+          }
+        },
+        yAxis: {
+            title: {
+                text: 'H(X)'
+            },
+                min: 0,
+                max: 1            
+        },
+        plotOptions: {
+            spline: {
+                lineWidth: 4,
+                marker: {
+                    enabled: false
+                }
+            }
+          },        
+        series: [{
+            data: data
+        }],
+        tooltip: { enabled: false },
+        legend: { enabled: false},
+      });
+    });
+      </script>
       <ul class="smaller">
         <li>\(H\) is maximum when all \(p(x_i)\) are equal.</li>
         <li>\(H\) is minimum when any of \(p(x_i)\) is 1.</li>
@@ -226,7 +277,7 @@ H_0(X)=\log_b \left | X\right |
         <li>Case 2: \(H = -(0.4 \log_2 0.4 + 0.3 \log_2 0.3 + 0.2 \log_2 0.2 + 0.1 \log_2 0.1) = 1.85\)</li>
         <li>Case 3: \(H = -(4 \times \frac{1}{4} \log_2 \frac{1}{4}) = 2\)</li>
       </ul>
-      <table id="fig-entropy">
+      <table class="figure" id="fig-entropy">
         <tr>
           <td class="first"></td>
           <td></td>

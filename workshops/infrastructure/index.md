@@ -5,6 +5,8 @@ This workshop introduces students to infrastructure concepts that underpin the u
 
 The structure of the workshop will be a slide presentation on each area, followed by a series of guided questions for you to work through and understand the basic concept. The answers to these will be covered within the workshop. This will be followed by a set of exercises that are for you to complete at the end of the workshop and in your own time to develop your understanding and prepare for the final exam. Answers to these questions will be made available a week after the workshop.
 
+<a target="_blank" href="infrastructure.ppt" file="ppt"> Slides used for this workshop</a>
+
 A. Hyper-Text Transfer Protocol (HTTP)
 -----------------------------------
 Presentation: slides 1 to 10.
@@ -14,19 +16,19 @@ Configure the screen as shown in figure 1.
 
 <img src="images/image001.png">
 
-Figure 1: the configuration screen for Putty. Put in the hostname “www.unimelb.edu.au”,port “80”, connection type “Raw”, Close window on exit “Never”.
+*Figure 1*: the configuration screen for Putty. Put in the hostname “www.unimelb.edu.au”,port “80”, connection type “Raw”, Close window on exit “Never”.
 
 Open notepad and write the following HTTP request information as shown in figure 2.
 
 <img src="images/image002.png">
 
-Figure 2: HTTP text to copy into the Putty window
+*Figure 2*: HTTP text to copy into the Putty window
 
 As the webpage returned will likely be large, you may need to set the scrollable size by editing the Lines of Scrollback to “20000” under the Window section, as shown in figure 3.
 
 <img src="images/image003.png">
 
-Figure 3: configuring the scroll size of the Putty window
+*Figure 3*: configuring the scroll size of the Putty window
 
 **Question 1**
 
@@ -108,7 +110,6 @@ Exercises
 ---------
 
 1. HTTP is a stateless protocol, by which we mean that it has no memory of one transaction to the next.
-
   1. Create an HTML form to submit some parameters to another page (you can use slide 13 as a template or look up `http://www.w3schools.com` for help).
   2. Pass a parameter to a CGI script, which you will write using Python, using the `<input type="hidden">` tag.
   3. The CGI script will output HTML displaying the value of all the parameters that you've passed through, including the hidden ones.
@@ -118,12 +119,11 @@ Exercises
 
    Can you see how this process allows one page to *remember* another and pass information down a chain of HTTP requests? Can you think of another way for pages to remember the conversation from one HTTP conversation to the next (hint: think about persistent data and text files).
 
-
 2. Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP and CGI, but their size makes this communication difficult.
 
   1. Using this `data-set`, write a CGI script that reads in the CSV file and outputs the data to an HTML table. How long does it take to render?
 
-  2. Instead of reading one line at a time, trying reading several at a time.  
+  2. Instead of reading one line at a time, trying reading several at a time.
     1. Is there an optimum size of line numbers?
     2. Is there an overhead in finding the place in the data-set again?
 
@@ -132,8 +132,7 @@ Exercises
   4. Is there a way to manage the user experience that helps with the processing time?
     1. Is there a way to process the data in the background?
 
-For references to help, try `https://docs.python.org/2/library/csv.html` for handling CSV files in Python and `http://www.w3schools.com` for HTML table tags.
-
+  For references to help, try `https://docs.python.org/2/library/csv.html` for handling CSV files in Python and `http://www.w3schools.com` for HTML table tags.
 
 3. As demonstrated above, you can display environment variables on a server by invoking a form, and these provide information about the client (e.g. `HTTP_USER_AGENT` and 'HTTP_REFERER). You can manipulate and hide these client variables by changing settings in your browser. What are the security implications of this? A demonstration of this will only work on browsers where you have administrator rights - speak to your tutor to see how this could be done on Mozilla Firefox.
 
