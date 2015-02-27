@@ -11,4 +11,3 @@ This lecture explores the motivation behind markup languages to represent data (
 Providing an alternative view-point to using XML, we look at JSON in this lecture. The history and relation to Javascript, its advantages and disadvantages compared to other data formats (XML, YAML, etc), and its usage and adoption in the development of more recent Internet technologies such as Big Data.
 
 <a href="json.ppt" file="ppt"> Power Point Slides</a>
-
