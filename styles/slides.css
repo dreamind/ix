@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,300italic,700italic&subset=latin,latin-ext);
+@import "../third-js/reveal.js/css/reveal.css";
+@import "../third-js/reveal.js/css/theme/sky.css";
+@import "../third-js/reveal.js/lib/css/zenburn.css";
+
+body {
+  background: #cdefef;
+  background: -moz-radial-gradient(center, circle cover, #fefeff 30%, #cdefef 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(30%, #fefeff), color-stop(100%, #cdefef));
+  background: -webkit-radial-gradient(center, circle cover, #fefeff 30%, #cdefef 100%);
+  background: -o-radial-gradient(center, circle cover, #fefeff 30%, #cdefef 100%);
+  background: -ms-radial-gradient(center, circle cover, #fefeff 30%, #cdefef 100%);
+  background: radial-gradient(center, circle cover, #fefeff 30%, #cdefef 100%);
+  background-color: #fefeff;
+}
+
+.cover, section {
+  text-align: left;
+}
+
+.reveal {
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: 0 !important;
+}
+
+.reveal h1 {
+  color: #66aab6;
+  font-size: 2em;
+}
+
+.reveal h2 {
+  font-size: 1.4em; }
+
+.reveal h3 {
+  font-size: 1.2em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
+.cover h1 {
+  margin-top: 4em;
+  font-size: 2.2em;
+  color: #66aab6;
+  line-height: 0.7em;
+  text-transform: none !important;
+}
+
+.cover h2 {
+  font-size: 1.2em;
+  color: #ccaa33;
+  font-weight: 700 !important;
+  text-transform: none !important;
+}
+
+.reveal table {
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+
+.reveal p {
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.reveal table {
+  font-size: 0.9em;
+}
+
+strong {
+  color: #996600;
+  font-weight: 700;
+}
+
+em {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  color: #996600;
+}
+
+.reverse {
+ background-color: white;
+}
+
+.reveal section img {
+  box-shadow: none;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.reveal {
+  font-size: 28px;
+}
+
+.reveal .footer {
+  text-align: left !important;
+  font-size: 0.5em;
+  margin-top: 0.8em;
+}
+
+.align-left {
+  text-align: left !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.smaller {
+  font-size: 0.9em !important;
+}
+
+.reveal ul {
+  font-size: 0.9em;
+  line-height: 1.4 !important;
+}

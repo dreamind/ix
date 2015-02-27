@@ -13,11 +13,10 @@ requirejs([
     revealPath + 'lib/js/head.min.js',
     revealPath + 'js/reveal.js',
     ix.jsPath + 'es6-promise/promise.min.js',
-    ix.jsPath + 'highcharts-release/highcharts.js'
+    ix.jsPath + 'highcharts-release/highcharts.src.js'
 
   ],
   function (marked, jq, u, s) {
-
     ix.highchartsTheme();
     if (window.location.href.indexOf('print-pdf') > 0) {
       $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'css/print/paper.css') );

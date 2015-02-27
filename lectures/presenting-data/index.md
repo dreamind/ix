@@ -12,3 +12,16 @@ Closely tied to the use of markup language on the web is the ability to maintain
 
 <a href="css.ppt" file="ppt"> Power Point Slides</a>
 
+### Resources
+- HTML, CSS and JS Code Playgrounds, which allow instant rendering of the web page
+  * brackets (desktop editor). http://brackets.io/
+  * tinkerbin. http://tinkerbin.herokuapp.com/
+  * codepen. http://codepen.io/
+- Color scheme designer
+  * colorable. http://jxnblk.com/colorable/
+  * Adobe Color CC (previously kuler). https://color.adobe.com/
+- Font matter
+  * google.com/fonts
+- Compatibility issue
+  * moderniz
+  * caniuse

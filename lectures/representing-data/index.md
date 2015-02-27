@@ -12,12 +12,3 @@ Providing an alternative view-point to using XML, we look at JSON in this lectur
 
 <a href="json.ppt" file="ppt"> Power Point Slides</a>
 
-<!--
-
-Workshop: Data design and exchange
-
-
-### Readings
--
--->
-
