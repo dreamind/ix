@@ -17,10 +17,20 @@
     </section>
 
     <section >
-      <video controls style="width:100%;height:100%">
+      <video controls style="width:80%;height:80%">
         <source data-src="http://video.ted.com/talk/stream/2006/None/HansRosling_2006-320k.mp4" type="video/mp4">
       </video>
-
+      <div class="footer">
+        Source: TED Talks (2006). <a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen">Hans Rosling: The best stats you've ever seen</a>. Creative Commons BY-NC-ND.
+      </div>
+      <aside class="notes">
+        The video summarises what the subject is all about and shows various aspects of informatics.
+        It shows the abundance of data in the last, shared by many government agencies, UN, public organisation and private organisation like Twitter and Google.
+        It shows the importance of visualisation to provide a analytical bridge to the data.
+        The viz shows at least four different types of information: time, life exp, population, income.
+        In this subject, we're going to see how it could be analysed and constructed systematically.
+        Another important factor, in the beginning of videos, subjectivity and context, how human has preconceived idea on information and how that changes meaning and interpretation of data.
+      </aside>
     </section>
 
     <section data-markdown>
@@ -32,37 +42,61 @@
 - **Applied/In-context** <br />Use Cases
 - **Subjective** <br />Human/Social aspect of Information
       </script>
+      <aside class="notes">
+        - Information life cycle
+        - Many of you may know, but we're trying to bring different angle to this tools
+        - Informatics in Society
+        - Allows us to see the human aspect of information. We also talk about interactvity and touch on HCI
+      </aside>      
     </section>
+    
     <section data-markdown>
       <script type="text/template">
         <h2>"Information is that which reduces uncertainty”</h2>
         <p><em>(Claude Shannon)</em></p>
+      <aside class="notes">
+        - Start with theoretical foundation
+        - Look various abstraction level of ix and what info is 
+        - We rely on Shannon the father of information theory
+        - One of the important aspect of info is how to measure
+        Human has fondness of quantifying stuff. 
+      </aside>          
       </script>
     </section>
+    
     <section data-markdown>
       <script type="text/template">
         <iframe style="width:800px; height:600px" src="reader/reader.html"></iframe>
       </script>
-      <!-- 
+      <aside class="notes">
         - Measure information (entropy)
-        - as uncertainty
-        - The unit of information
-        - uncertain about the card that you think
+        - in the communication context, exhange of information
+        - As the amount of uncertainty needs to be removed to know the actual symbol
+        - Uncertain about the card that you think
         - And attempt to remove the information by asking some question
         - How many questions we should ask before I can find out the card
-      -->      
+      </aside>          
     </section>
-    <section style="text-align:center !important">
-        <img src="images/preattentive.png"  style="width:100%;" />
-    </section>
+    
     <section>
       <img src="images/obama-2015-sotu.png" style="width:100%;" />
-      <!-- 
-        - Analysis: quantitative qualitative 
+      <div class="footer">
+        Source: <a href="http://time.com/3675798/state-union-transgender/">TIME Magazine</a>
+      </div>
+      <aside class="notes">
+        - Analysis: quantitative vs qualitative
         - Sentiment Analysis Twitter
-        - Spread of flu with the help of geotagging
-      -->
+        - Spread of influenza by means of geotagging
+      </aside>
     </section>
+    
+    <section>
+      <img src="images/inaugural.png" style="height:500px;" />
+      <div class="footer">
+        <div>Frequency distribution of the words "america" and "war" in the collection of US President Inaugural Address.</div>
+        <div><a href="codes/nltk-demo.zip">Source Code</a> (using <a href="http://www.nltk.org">NLTK</a>)</div>
+      </div>
+    </section>    
   </div>
 </div>
 </body>

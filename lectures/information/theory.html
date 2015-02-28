@@ -348,9 +348,12 @@ H_0(X)=\log_b \left | X\right |
     <section>
       <p>\(H\) indicates the theoretical bounds for the average bits needed to represent/compress the symbols.</p>
       <ul>
-        <li>Consider a message constructed from tossing a biased coin: 80% H (Head) and 20% T (Tail)</li>
-        <li>Encode H as 0 and T as 10</li>
-        <li>Average message length = (0.8 x 1 + 0.2 x 2 ) bit = 0.</li>
+        <li>Consider a message constructed from A, T, G, C with distibution of [0.4, 0.3, 0.2, 0.1]</li>
+        <li>Binary encode A as 00, T as 01, G as 10, and C as 11 (fixed-length)</li>
+        <li>Average message length = (0.4 x 2 + 0.3 x 2 + 0.2 x 2 + 0.1 x 2) bit = 2</li>
+        <li>Binary encode A as 0, T as 10, G as 110, and C as 111</li>
+        <li>Average message length = (0.4 x 1 + 0.3 x 2 + 0.2 x 3 + 0.1 x 3) bit = 1.9 > H = 1.85</li>
+        <li>Using variable-length encoding (Huffman), 5% smaller</li>        
       </ul>
     </section>
 <!--

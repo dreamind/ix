@@ -7,6 +7,7 @@ This lecture will provide an overview of the subject: who, when, where, and what
 - <a href="overview-astell.ppt" file="ppt"> Overview Slides - 2</a>
 - <a target="_blank" href="introduction.html" file="html"> Introduction Slides</a>
   (<a href="introduction.pdf" file="print"> PDF version</a>)
+- <a href="codes/nltk-demo.zip" file="code"> Code - Natural Language Processing Demo</a>
 
 ### Readings
 - Yeung, R. W. (2008). The Science of Information, [Chapter 1](http://link.springer.com.ezp.lib.unimelb.edu.au/chapter/10.1007/978-0-387-79234-7_1).
