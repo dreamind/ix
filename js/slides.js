@@ -17,7 +17,7 @@ requirejs([
 
   ],
   function (marked, jq, u, s) {
-    ix.highchartsTheme();
+    
     if (window.location.href.indexOf('print-pdf') > 0) {
       $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'css/print/paper.css') );
     };
@@ -26,7 +26,7 @@ requirejs([
     window.marked = marked; // requirejs has its own 'this'
 
     $(document).ready(function () {
-
+      ix.highchartsTheme();
       Reveal.initialize({
         controls: true,
         progress: true,
