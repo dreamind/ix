@@ -10,6 +10,5 @@ These lectures introduce the theoretical aspects of information. Here, we elabor
 
 ### Readings
 - BBC News. (20??). [Online amateurs crack Nazi codes](http://news.bbc.co.uk/2/hi/technology/4763854.stm).
-- A little bit more on Shannon. (.uk/BookInfoTheory/InfoTheoryBookChapter01.html)
-- A little bit more on Turing. (.uk/BookInfoTheory/InfoTheoryBookChapter01.html)
-
+- [A little bit more about Shannon](https://www.youtube.com/watch?v=z2Whj_nL-x8)
+- Davis, S., Gillon, B. S. (2004). [Semantics: A Reader.](http://site.ebrary.com/lib/unimelb/reader.action?docID=10254380). Oxford University Press.

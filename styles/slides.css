@@ -123,3 +123,8 @@ em {
   font-size: 0.9em;
   line-height: 1.4 !important;
 }
+
+.reveal pre {
+    box-shadow: none;
+    border: none !important;   
+}

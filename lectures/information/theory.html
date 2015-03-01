@@ -47,16 +47,17 @@ Binary Code
 ===========
 
 - Two-symbol language: two alphabets "0" and "1", binary digits
+- Bit is equivalent to the selection between two equally likely choices
 - Information quantity depends on the number of alternative message choices encoded in the binary system
-- Bit is equivalent to the choice between two equally likely choices
 - Most economical information encoding (von Baeyer, 2004)
-- Consider encoding a number between 0 and 127 inclusive using a set of numbered flags.
-  Number 126 can be represented using various encodings as follows:
       </script>
     </section>
 
     <section data-markdown>
       <script type="text/template">
+Consider encoding a number between 0 and 127 inclusive using a set of numbered flags.
+Number 126 can be represented using various encodings as follows:
+        
 | Method        | Required flags           | Encoded number  |
 | ------------- |-------------|-----|
 | One number each flag | 128 | 126 |
@@ -270,6 +271,7 @@ H_0(X)=\log_b \left | X\right |
     <section>
       <h2>Example with 4 symbols</h2>
 
+
       <p>Consider a message space of A, T, G, C characters with various probability distributions.
       </p>
       <ul style="font-size:0.7em; line-height: 2em !important;">
@@ -345,16 +347,19 @@ H_0(X)=\log_b \left | X\right |
       </script>
     </section>
 
-    <section>
-      <p>\(H\) indicates the theoretical bounds for the average bits needed to represent/compress the symbols.</p>
-      <ul>
-        <li>Consider a message constructed from A, T, G, C with distibution of [0.4, 0.3, 0.2, 0.1]</li>
-        <li>Binary encode A as 00, T as 01, G as 10, and C as 11 (fixed-length)</li>
-        <li>Average message length = (0.4 x 2 + 0.3 x 2 + 0.2 x 2 + 0.1 x 2) bit = 2</li>
-        <li>Binary encode A as 0, T as 10, G as 110, and C as 111</li>
-        <li>Average message length = (0.4 x 1 + 0.3 x 2 + 0.2 x 3 + 0.1 x 3) bit = 1.9 > H = 1.85</li>
-        <li>Using variable-length encoding (Huffman), 5% smaller</li>        
-      </ul>
+    <section data-markdown>
+      <script type="text/template">
+\\(H\\) indicates the theoretical bounds for the average bits needed to represent/compress the symbols. Consider a message constructed from `A`, `T`, `G`, `C` with distibution of \\([0.4, 0.3, 0.2, 0.1]\\)
+
+- Binary encode `A` as `00`, `T` as `01`, `G` as `10`, and `C` as `11` (fixed-length)
+- Average message length = <br />\\((0.4 \\times 2 + 0.3 \\times 2 + 0.2 \\times 2 + 0.1 \\times 2) = 2\\)
+
+Alternatively:
+
+- Binary encode `A` as `0`, `T` as `10`, `G` as `110`, and `C` as `111` (variable-length)
+- Average message length = <br />\\((0.4 \\times 1 + 0.3 \\times 2 + 0.2 \\times 3 + 0.1 \\times 3) = 1.9 > H = 1.85\\)
+- Using variable-length encoding (in this case [Huffman coding](http://mathworld.wolfram.com/HuffmanCoding.html)), the size is 5% smaller
+      </script>
     </section>
 <!--
     <section data-markdown>
