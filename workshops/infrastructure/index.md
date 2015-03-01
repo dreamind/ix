@@ -112,29 +112,28 @@ Exercises
 1. HTTP is a stateless protocol, by which we mean that it has no memory of one transaction to the next.
   1. Create an HTML form to submit some parameters to another page (you can use slide 13 as a template or look up `http://www.w3schools.com` for help).
   2. Pass a parameter to a CGI script, which you will write using Python, using the `<input type="hidden">` tag.
-  3. The CGI script will output HTML displaying the value of all the parameters that you've passed through, including the hidden ones.
+  3. The CGI script will output HTML displaying the value of all the parameters that you've passed through, including the hidden ones. (Note: remember to specify the content type of the HTML output from the CGI script)
   4. Now, in the HTML page that has been output, add another form.
   5. Pass one of the parameters into this new form and repeat the process to pass the information to a new CGI script and HTML output (creating a chain).
   6. Briefly sketch in a block diagram the sequence of HTML form, CGI scripts and parameters passed between them.
 
    Can you see how this process allows one page to *remember* another and pass information down a chain of HTTP requests? Can you think of another way for pages to remember the conversation from one HTTP conversation to the next (hint: think about persistent data and text files).
 
-2. Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP and CGI, but their size makes this communication difficult.
+2. Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP, HTML and CGI, but their size makes this communication difficult.
 
-  1. Using this `data-set`, write a CGI script that reads in the CSV file and outputs the data to an HTML table. How long does it take to render?
+  1. Using this [data-set](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/wk2_infrastructure_data.csv), write a CGI script that reads in the CSV file and outputs the data to an HTML table. 
 
-  2. Instead of reading one line at a time, trying reading several at a time.
-    1. Is there an optimum size of line numbers?
-    2. Is there an overhead in finding the place in the data-set again?
+  2. How long does it take to render? (Note: you may want to use the `time.clock()` Python library and function for this)
 
-  3. Is the way the information organised important? Why?
+  3. Is the way the information organised in the data important for the data processing time? What would be the impact if the lines in the data-set were of differing length?
 
-  4. Is there a way to manage the user experience that helps with the processing time?
-    1. Is there a way to process the data in the background?
+  4. Consider the user experience of viewing this data. If the data takes a long time to render, can you think of a way to process some information in the background whilst presenting initial results? Add this solution to your code (hint: think about breaking the data up into pages).
 
-  For references to help, try `https://docs.python.org/2/library/csv.html` for handling CSV files in Python and `http://www.w3schools.com` for HTML table tags.
+  5. When breaking up the data processing in the question above, is there an overhead in finding the last processing place in the data-set again?
 
-3. As demonstrated above, you can display environment variables on a server by invoking a form, and these provide information about the client (e.g. `HTTP_USER_AGENT` and 'HTTP_REFERER). You can manipulate and hide these client variables by changing settings in your browser. What are the security implications of this? A demonstration of this will only work on browsers where you have administrator rights - speak to your tutor to see how this could be done on Mozilla Firefox.
+  For references to help, try the [Python CSV library](https://docs.python.org/2/library/csv.html) for handling CSV files in Python and [w3schools](http://www.w3schools.com) for HTML tags.
+
+3. As demonstrated above, you can display environment variables on a server by invoking a form, and these provide information about the client (e.g. `HTTP_USER_AGENT` and `HTTP_REFERER`). You can manipulate and hide these client variables by changing settings in your browser. What are the security implications of this? A demonstration of this will only work on browsers where you have administrator rights - speak to your tutor to see how this could be done on Mozilla Firefox.
 
 
 Other Resources
