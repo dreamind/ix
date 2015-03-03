@@ -34,7 +34,7 @@ information theory
 - Bit as the fundamental unit of information.
 
 <div class="footer">
-  <div>[1] Shannon, C. (1948). <a href="http://plan9.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf">A Mathematical Theory of Communication</a>, Bell System Technical Journal (27)</div>
+  <div>Shannon, C. (1948). <a href="http://plan9.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf">A Mathematical Theory of Communication</a>, Bell System Technical Journal (27)</div>
   <div>Klir, G. J., Wierman, M. J. (1999). <a href="http://link.springer.com.ezp.lib.unimelb.edu.au/book/10.1007/978-3-7908-1869-7">"Uncertainty-Based Information. Elements of Generalized Information Theory"</a></div>
 </div>
 
@@ -76,12 +76,12 @@ Number 126 can be represented using various encodings as follows:
 <li>Selecting up a particular symbol on a finite set \(X\) of uniformly discrete symbols.</li>
 <li>The amount of information needed to remove the uncertainty.</li>
 <li>The amount of uncertainty associated with a set of \(n\) alternatives.</li>
-<li>Quantifies how many \(n\)-choice questions need to be asked to uncover the selected symbol<br/>
+<li>Quantifies how many \(b\)-choice questions need to be asked to uncover the selected symbol<br/>
   <!--(for binary digit the questions would be yes/no questions)--></li>
 </ul>
 \[
 \begin{aligned}
-H_0(X)=\log_b \left | X\right |
+H_0(X)=\log_b \left | X\right | = \log_b n
 \end{aligned}
 \]
 <p>
@@ -105,11 +105,11 @@ H_0(X)=\log_b \left | X\right |
         <li>Shannon's Entropy probabilistic-based measurement</li>
         <li>Information as events (random variable), e.g. tossing coins, receiving a piece of text</li>
         <li>Hartley works for uniformly distributed symbol, Shannon's for non-uniform distribution</li>
-        <li>Measure of the amount of uncertainty in selecting a particular symbol from symbol space</li>
+        <li>Measure of the amount of uncertainty in selecting a symbol from symbol space</li>
         <li>The more unpredictable a symbol is, the higher its information value</li>        
       </ul>
       <div class="footer">
-        <div>[1] Hartley, R. V. L. (1928). <a href="http://dx.doi.org.ezp.lib.unimelb.edu.au/10.1002/j.1538-7305.1928.tb01236.x">"Transmission of information,"</a>, Bell System Technical Journal 7(3): 535-563</div>
+  <div>Shannon, C. (1948). <a href="http://plan9.bell-labs.com/cm/ms/what/shannonday/shannon1948.pdf">A Mathematical Theory of Communication</a>, Bell System Technical Journal (27)</div>
       </div>
     </section>
 
@@ -131,9 +131,6 @@ H_0(X)=\log_b \left | X\right |
       H(X)=- \sum_{i=1}^{n} p(x_i) \log p(x_i)
       \end{aligned}
       \]
-      <div class="footer">
-        <div>[1] Hartley, R. V. L. (1928). <a href="http://dx.doi.org.ezp.lib.unimelb.edu.au/10.1002/j.1538-7305.1928.tb01236.x">"Transmission of information,"</a>, Bell System Technical Journal 7(3): 535-563</div>
-      </div>
     </section>
     
     <section>
@@ -145,7 +142,7 @@ H_0(X)=\log_b \left | X\right |
         <li>Case 1: Only Heads<br />
           \(H = -(1 \log_2 1 + 0 \log_2 0) = 0\) bit</li>
         <li>Case 2: Biased coin, 80% Heads and 20% Tails<br /> 
-          \(H = -(0.8 \log_2 0.8 + 0.2 \log_2 0.2) = 1.85\) bit</li>
+          \(H = -(0.8 \log_2 0.8 + 0.2 \log_2 0.2) = 0.72\) bit</li>
         <li>Case 3: Fair Coin<br />
           \(H = -(2 \times 0.5 \log_2 0.5 = 1\) bit</li>
       </ul>
