@@ -1,10 +1,10 @@
 Lectures - Information, Data and Meaning
 ========================================
 
-These lectures introduce the theoretical aspects of information. Here, we elaborate the
+These lectures introduce the theoretical aspects of information. 
 
-- <a target="_blank" href="information.html" file="html"> What is Information Slides</a>
-- <a target="_blank" href="theory.html" file="html"> Measuring Information Slides</a>
+- <a target="_blank" href="information.html" file="html"> What is Information Slides</a> (<a href="information.pdf" file="print"> PDF version</a>)
+- <a target="_blank" href="theory.html" file="html"> Measuring Information Slides</a> (<a href="theory.pdf" file="print"> PDF version</a>)
 <div style="display:none">
 <a target="_blank" href="semantics.html" file="html"> Information and Meaning Slides</a>
 <a target="_blank" href="lang.html" file="html"> Encoding and Languages</a>
