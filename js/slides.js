@@ -10,11 +10,11 @@ requirejs([
     ix.jsPath + 'jquery/jquery.js',
     ix.jsPath + 'underscore/underscore.js',
     ix.jsPath + 'underscore.string/underscore.string.js',
+    ix.jsPath + 'highcharts-release/highcharts.src.js',
     revealPath + 'lib/js/head.min.js',
     revealPath + 'js/reveal.js',
     ix.jsPath + 'es6-promise/promise.min.js',
-    ix.jsPath + 'highcharts-release/highcharts.src.js'
-
+    //ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML' 
   ],
   function (marked, jq, u, s) {
     
@@ -25,44 +25,13 @@ requirejs([
     _.mixin(s.exports()); // mix underscore string
     window.marked = marked; // requirejs has its own 'this'
 
-    $(document).ready(function () {
+    $(document).ready(function () {       
+      ix.initReveal();
       ix.highchartsTheme();
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: false,
-        dependencies: [
-          {
-            src: revealPath + 'lib/js/classList.js',
-            condition: function () { return !document.body.classList; }
-          },
-          {
-            src: revealPluginPath + 'highlight/highlight.js',
-            async: true,
-            callback: function () {
-              ix.slurpCode(function () {
-                ix.doHighlight();
-              });
-            }
-          }, {
-            src: revealPluginPath + 'markdown/marked.js',
-            condition: function () { return !!document.querySelector('[data-markdown]'); }
-          },
-          {
-            src: revealPluginPath + 'markdown/markdown.js',
-            condition: function () { return !!document.querySelector('[data-markdown]'); },
-            async: true
-          },
-          { src: revealPluginPath + 'zoom-js/zoom.js', async: true },
-          { src: revealPluginPath + 'notes/notes.js', async: true },
-          { src: revealPluginPath + 'math/math.js', async: true, mathjax: ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML' }
-        ]
-      });
-      Reveal.addEventListener('ready', function (event) {
-        // event.currentSlide, event.indexh, event.indexv
-      });
       ix.doOnLoads();
+      ix.initMathjax(); // very last to make sure all DOM is built
+      // TO DO:
+      // May need to call reveal.js to relayout
     });
   }
 );

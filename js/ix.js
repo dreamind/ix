@@ -43,6 +43,74 @@ var ix = {
   ix.highlight = function (node) {
     hljs.highlightBlock(node);
   };
+  
+  ix.configMathjax = function () {
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: "none",
+      tex2jax: {
+        inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+        displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+        processEscapes: false
+      },
+      // skipStartupTypeset: true,
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      mathjax: ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML' 
+    });    
+  };  
+  
+  ix.initMathjax = function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG';
+    document.getElementsByTagName("head")[0].appendChild(script);  
+  };
+
+  ix.initReveal = function () {
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
+      // math: {
+      //   mathjax: ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+      // },
+      dependencies: [
+        {
+          src: revealPath + 'lib/js/classList.js',
+          condition: function () { return !document.body.classList; }
+        },
+        {
+          src: revealPluginPath + 'highlight/highlight.js',
+          async: true,
+          callback: function () {
+            ix.slurpCode(function () {
+              ix.doHighlight();
+            });
+          }
+        }, {
+          src: revealPluginPath + 'markdown/marked.js',
+          condition: function () { return !!document.querySelector('[data-markdown]'); }
+        },
+        {
+          src: revealPluginPath + 'markdown/markdown.js',
+          condition: function () { return !!document.querySelector('[data-markdown]'); },
+          async: true
+        },
+        { src: revealPluginPath + 'zoom-js/zoom.js', async: true },
+        { src: revealPluginPath + 'notes/notes.js', async: true }
+        // { src: revealPluginPath + 'math/math.js', async: true }
+      ]
+    });
+    Reveal.addEventListener('ready', function (event) {
+      // event.currentSlide, event.indexh, event.indexv
+      // MathJax.Hub.Queue(
+      //   ["Typeset", MathJax.Hub, $('body')[0]],
+      //   ["mathDone", ix],
+      //   ["resetEquationNumbers", MathJax.InputJax.TeX]
+      // );
+    });    
+  };  
 
   ix.doOnLoads = function () {
     _.each(ix.onLoads, function (f) {

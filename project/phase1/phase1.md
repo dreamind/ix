@@ -46,6 +46,22 @@ where \\(\lfloor x \rfloor\\) operation behaves likes Python's [`floor(x)`](http
 
 **Example**: Consider a list of 8 numbers: \\(1, 1, 2, 3, 5, 8, 13, 21\\). The median rank is \\(\frac{8+1}{2} = 4.5\\); so the median is the average of the 4th and 5th numbers, \\(\frac{3 + 5}{2} = 4\\). To find the first and third quartiles, splitting the list into two halves. The medians of the two groups are the first and third quartiles correspondingl. The first quartile rank is \\(\frac{\lfloor 4.5 \rfloor+1}{2} = 2.5\\), and the first quartile is \\(\frac{1 + 2}{2} = 1.5\\). Using the same method, the third quartile is equal to \\(\frac{8 + 13}{2} = 10.5\\). The minimum and maximum numbers are 1 and 21. The five-number summary would be \\(1, 1.5, 4, 10.5, 21\\).
 
+<style>
+table:nth-of-type(1) {
+
+}
+table:nth-of-type(1) td, table:nth-of-type(1) th {
+  width: 30px;
+}
+
+</style>
+
+|\\(n\\)th | 1 |   | 2 |     | 3 |   | 4 |   | 5 |   | 6 |      | 7  |   | 8 |
+|----------|---|---|---|-----|---|---|---|---|---|---|---|------|----|---|---|
+|data      | 1 |   | 1 |     | 2 |   | 3 |   | 5 |   | 8 |      | 13 |   | 21|
+|quartiles |   |   |   | 1.5 |   |   |   |   |   |   |   | 10.5 |    |   |   |
+|median    |   |   |   |     |   |   |   | 4 |   |   |   |      |    |   |   |
+
 Depending on the types, you also need to find the following:
 
 - **Mode**, the most common value in the column
@@ -55,7 +71,7 @@ Please use the following constraints in producing the output:
 
 - For numerical columns, with float and integer data type, provide *five-number-summary*,
 - For string provide *unique values* in the column.
-- For integer and string column, find out the *mode*.
+- For all column, find out the *mode*.
 
 Tasks
 -----
@@ -81,8 +97,7 @@ This XML file should be well-formed valid against the following DTD (<a href="su
 ### Requirements
 
 - Your program should be able to identify three data types: *integer*, *float*, and *string*.
-- If a column contains data of two different types, the type of the column should be set to the more general one.
- Example: The type of a column with a mix of integer and float should be set as float. A column with float and string values should be set as a string column.
+- Assume each column contains data of one type.
 - You should develop your own pure Python implementation of the data-processing. You should not use non-standard Python libraries like `numpy` or `scipy` to produce the five-number-summary. You can use still use Python's `set`, however.
 - Several CSV files will be tested against your program. Test your program at least against the following datasets:
   * <a file="data" href="adult.csv"> Census Income Data Set</a>
