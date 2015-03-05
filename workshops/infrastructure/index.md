@@ -146,3 +146,9 @@ Other Resources
 - **WireShark** (https://www.wireshark.org) – this is a full-on (and award-winning) packet analyser. It gives detailed information on network connectivity to your computer and it’s relation to the wider Internet. Very useful in troubleshooting network issues and seeing exactly what your computer’s surrounding environment looks like.
 
 - All scripts in these exercises are available from [this IVLE zip file](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/week2_scripts.zip).
+
+
+Readings
+--------
+
+- **The Cuckoo's Egg**, Cliff Stoll (2005) - a fascinating read about one of the earliest hackers of the Internet, being tracked and hunted by a pioneer of Internet technology in California. A highly readable computer crime story, it also gives great insight into how the protocols of the Internet (such as HTTP) were developed and used back in the 80's.
