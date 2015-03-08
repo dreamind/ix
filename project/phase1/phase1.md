@@ -23,6 +23,8 @@ Given a CSV file, you need to find out and calculate the following information f
   * float: real number that supports decimal point, e.g. 3.14, 777.8 and 1.0
   * string: categorical values, e.g. Male/Female and RAIN/SUNNY/CLOUDY
 
+Assume each column of teh CSV file contains only data of the same type.
+
 Calculate the **five-number-summary** of each column of the CSV data. Five-number-summary is descriptive statistical properties proposed by Tukey [1]. The summary provides a concise report of central tendency and distribution of a data set. It consists of the following.
 
 - **Minimum value**
@@ -47,10 +49,15 @@ where \\(\lfloor x \rfloor\\) operation behaves likes Python's [`floor(x)`](http
 **Example**: Consider a list of 8 numbers: \\(1, 1, 2, 3, 5, 8, 13, 21\\). The median rank is \\(\frac{8+1}{2} = 4.5\\); so the median is the average of the 4th and 5th numbers, \\(\frac{3 + 5}{2} = 4\\). To find the first and third quartiles, splitting the list into two halves. The medians of the two groups are the first and third quartiles correspondingl. The first quartile rank is \\(\frac{\lfloor 4.5 \rfloor+1}{2} = 2.5\\), and the first quartile is \\(\frac{1 + 2}{2} = 1.5\\). Using the same method, the third quartile is equal to \\(\frac{8 + 13}{2} = 10.5\\). The minimum and maximum numbers are 1 and 21. The five-number summary would be \\(1, 1.5, 4, 10.5, 21\\).
 
 <style>
-table:nth-of-type(1) {
-
+table {
+  margin: 10px auto 20px;
 }
+
 table:nth-of-type(1) td, table:nth-of-type(1) th {
+  width: 30px;
+}
+
+table:nth-of-type(2) td, table:nth-of-type(2) th {
   width: 30px;
 }
 
@@ -62,21 +69,29 @@ table:nth-of-type(1) td, table:nth-of-type(1) th {
 |quartiles |   |   |   | 1.5 |   |   |   |   |   |   |   | 10.5 |    |   |   |
 |median    |   |   |   |     |   |   |   | 4 |   |   |   |      |    |   |   |
 
+Another example:
+
+|\\(n\\)th | 1 |   | 2 |   | 3 |   | 4 |   | 5 |   | 6 |   | 7  |
+|----------|---|---|---|---|---|---|---|---|---|---|---|---|----|
+|data      | 2 |   | 4 |   | 6 |   | 8 |   | 9 |   | 9 |   | 13 |
+|quartiles |   |   |   | 5 |   |   |   |   |   | 9 |   |   |    |
+|median    |   |   |   |   |   |   | 8 |   |   |   |   |   |    |
+
 Depending on the types, you also need to find the following:
 
-- **Mode**, the most common value in the column
-- **Unique values**, unique values of all the column values
+- **Mode(s)**, the most common value(s) in the column, except when the value only appears once.
+- **Unique values**, unique values of all the values in the column
 
 Please use the following constraints in producing the output:
 
-- For numerical columns, with float and integer data type, provide *five-number-summary*,
-- For string provide *unique values* in the column.
-- For all column, find out the *mode*.
+- For all columns, find out their *mode(s)*.
+- For numerical columns (float and integer types), provide *five-number-summary*,
+- For string provide *unique values* of the column values.
 
 Tasks
 -----
 
-You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. Your program would detect the data type and calculate the five-number-summary of each column (or attribute) in the CSV file. The result of this processing should then be written down to an XML file called `output.xml`.
+You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. Your program would detect the data type and calculate the five-number-summary of each column (or attribute) in the CSV file. The result of this processing should then be written into an XML file called `output.xml`. Assume `input.xml`, `output.xml`, and your Python program reside in the same directory.
 
 This XML file should be well-formed valid against the following DTD (<a href="summary.dtd" file="code"> `summary.dtd`</a>).
 
@@ -97,22 +112,19 @@ This XML file should be well-formed valid against the following DTD (<a href="su
 ### Requirements
 
 - Your program should be able to identify three data types: *integer*, *float*, and *string*.
-- Assume each column contains data of one type.
 - You should develop your own pure Python implementation of the data-processing. You should not use non-standard Python libraries like `numpy` or `scipy` to produce the five-number-summary. You can use still use Python's `set`, however.
 - Several CSV files will be tested against your program. Test your program at least against the following datasets:
   * <a file="data" href="adult.csv"> Census Income Data Set</a>
   * <a file="data" href="wine.csv"> Wine Data Set</a>
   * <a file="data" href="iris.csv"> Iris Data Set</a>
 
-[TO DO: validate.py]
-
 ### Marking Scheme
 
 Your program will be marked according to:
 
-- Correctness of the data processing  (4 marks)
-- Validity of the XML file (4 marks)
-- Quality of implementation (2 marks)
+- Correctness of the data processing (50%) 
+- Wellformed-ness and validity of the XML files (30%)
+- Quality of implementation, including code quality (20%)
 
 ### Submission
 

@@ -1,10 +1,10 @@
-<!DOCTYPE summary [
   <!ELEMENT summary (attribute*)>
-  <!ELEMENT attribute (name,property+)>
-  <!ELEMENT unique (value+)>
+  <!ELEMENT attribute (name, property*, modes?, unique?)>
   <!ELEMENT name (#PCDATA)>
   <!ELEMENT property (#PCDATA)>
+  <!ELEMENT modes (mode+)>
+  <!ELEMENT mode (#PCDATA)>
+  <!ELEMENT unique (value+)>
   <!ELEMENT value (#PCDATA)>
-  <!ATTLIST property name (mean|q1|q3|median|mode|min|max|sd) #REQUIRED>
-  <!ATTLIST name type (integer|float|string) #REQUIRED>
-]>
+  <!ATTLIST property name (min|q1|median|q3|max) #REQUIRED>
+  <!ATTLIST attribute type (integer|float|string) #REQUIRED>
