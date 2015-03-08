@@ -32,6 +32,7 @@ var ix = {
   }
   ix.bases['ix-lecture'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'lectures/%s';
   ix.bases['ix-workshop'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'workshops/%s';
+  ix.bases['ix-project'] = ix.appPath + 'pages/page.html?src=' + ix.appPath + 'project/%s';
 
   ix.register = function (f) {
     ix.onLoads.push(f);

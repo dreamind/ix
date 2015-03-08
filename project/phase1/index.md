@@ -23,9 +23,9 @@ Given a CSV file, you need to find out and calculate the following information f
   * float: real number that supports decimal point, e.g. 3.14, 777.8 and 1.0
   * string: categorical values, e.g. Male/Female and RAIN/SUNNY/CLOUDY
 
-Assume each column of teh CSV file contains only data of the same type.
+Assume the first row of the CSV file contains the attribute name and each column contains data of the same type.
 
-Calculate the **five-number-summary** of each column of the CSV data. Five-number-summary is descriptive statistical properties proposed by Tukey [1]. The summary provides a concise report of central tendency and distribution of a data set. It consists of the following.
+Calculate the **five-number-summary** of each numerical column (integer and float) of the CSV data. Five-number-summary is descriptive statistical properties proposed by Tukey [1]. The summary provides a concise report of central tendency and distribution of a data set. It consists of the following:
 
 - **Minimum value**
 - **Lower/first quartile (\\(Q_1\\))**
@@ -46,7 +46,7 @@ quartile\_rank = \frac{\lfloor median\_rank \rfloor+1}{2}
 
 where \\(\lfloor x \rfloor\\) operation behaves likes Python's [`floor(x)`](https://docs.python.org/2/library/math.html#math.floor) function. If the rank is not an integer, the value of median or quartile is taken from the average of the two closest values that enclose the rank.
 
-**Example**: Consider a list of 8 numbers: \\(1, 1, 2, 3, 5, 8, 13, 21\\). The median rank is \\(\frac{8+1}{2} = 4.5\\); so the median is the average of the 4th and 5th numbers, \\(\frac{3 + 5}{2} = 4\\). To find the first and third quartiles, splitting the list into two halves. The medians of the two groups are the first and third quartiles correspondingl. The first quartile rank is \\(\frac{\lfloor 4.5 \rfloor+1}{2} = 2.5\\), and the first quartile is \\(\frac{1 + 2}{2} = 1.5\\). Using the same method, the third quartile is equal to \\(\frac{8 + 13}{2} = 10.5\\). The minimum and maximum numbers are 1 and 21. The five-number summary would be \\(1, 1.5, 4, 10.5, 21\\).
+**Example**: Consider a list of 8 numbers: \\(1, 1, 2, 3, 5, 8, 13, 21\\). The median rank is \\(\frac{8+1}{2} = 4.5\\); so the median is the average of the 4th and 5th numbers, \\(\frac{3 + 5}{2} = 4\\). To find the first and third quartiles, splitting the list into two halves. The medians of the two groups are the first and third quartiles correspondingly. The first quartile rank is \\(\frac{\lfloor 4.5 \rfloor+1}{2} = 2.5\\), and the first quartile is \\(\frac{1 + 2}{2} = 1.5\\). Using the same method, the third quartile is equal to \\(\frac{8 + 13}{2} = 10.5\\). The minimum and maximum numbers are 1 and 21. The five-number summary would be \\(1, 1.5, 4, 10.5, 21\\).
 
 <style>
 table {
@@ -77,21 +77,22 @@ Another example:
 |quartiles |   |   |   | 5 |   |   |   |   |   | 9 |   |   |    |
 |median    |   |   |   |   |   |   | 8 |   |   |   |   |   |    |
 
-Depending on the types, you also need to find the following:
+You also need to find the following:
 
 - **Mode(s)**, the most common value(s) in the column, except when the value only appears once.
 - **Unique values**, unique values of all the values in the column
 
-Please use the following constraints in producing the output:
-
-- For all columns, find out their *mode(s)*.
-- For numerical columns (float and integer types), provide *five-number-summary*,
-- For string provide *unique values* of the column values.
 
 Tasks
 -----
 
-You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. Your program would detect the data type and calculate the five-number-summary of each column (or attribute) in the CSV file. The result of this processing should then be written into an XML file called `output.xml`. Assume `input.xml`, `output.xml`, and your Python program reside in the same directory.
+You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. For each column (or attribute) in the CSV file, your program would detect the data type and do the following: 
+
+- For all columns, find out their *mode(s)*.
+- For numerical columns (float and integer types), provide *five-number-summary*,
+- For string, provide *unique values* of the column values.
+
+The result of this process should then be written into an XML file called `output.xml`. Assume `input.xml`, `output.xml`, and your Python program reside in the same directory.
 
 This XML file should be well-formed valid against the following DTD (<a href="summary.dtd" file="code"> `summary.dtd`</a>).
 
