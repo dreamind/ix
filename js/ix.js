@@ -44,7 +44,7 @@ var ix = {
   ix.highlight = function (node) {
     hljs.highlightBlock(node);
   };
-  
+
   ix.configMathjax = function () {
     MathJax.Hub.Config({
       showProcessingMessages: false,
@@ -56,15 +56,16 @@ var ix = {
       },
       // skipStartupTypeset: true,
       TeX: { equationNumbers: { autoNumber: "AMS" } },
-      mathjax: ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML' 
-    });    
-  };  
-  
+      mathjax: ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    });
+  };
+
   ix.initMathjax = function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG';
-    document.getElementsByTagName("head")[0].appendChild(script);  
+    // script.src  = ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG';
+    script.src  = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js';
+    document.getElementsByTagName("head")[0].appendChild(script);
   };
 
   ix.initReveal = function () {
@@ -110,13 +111,49 @@ var ix = {
       //   ["mathDone", ix],
       //   ["resetEquationNumbers", MathJax.InputJax.TeX]
       // );
-    });    
-  };  
+    });
+  };
 
   ix.doOnLoads = function () {
     _.each(ix.onLoads, function (f) {
       f();
     })
+  };
+
+  ix.doHtmls = function () {
+    //<p>\{}</p>
+    htmls = document.evaluate("//p[starts-with(text(), '\\{')]", document, null, XPathResult.ANY_TYPE, null);
+
+    if (!htmls) { return; }
+    var html = htmls.iterateNext();
+    var changes = [];
+    while (html) {
+      var el = $(html);
+      changes.push(el);
+      html = htmls.iterateNext();
+    }
+    _.each(changes, function (el) {
+      var next, toMove = [], go = 1, text;
+
+      while (go) {
+        next = el.next()[0];
+        if (next) {
+          text = next.innerHTML;
+          if (text.match(/\}/)) {
+            var el2 = $("<" + el[0].innerHTML.match(/\{(.*)/)[1] + ">");
+            el.replaceWith(el2);
+            _.each(toMove, function (c) {
+              el2.append(c);
+            });
+            $(next).remove();
+            go = 0;
+          } else {
+            toMove.push($(next).detach());
+            //el[0].appendChild(next);
+          }
+        }
+      }
+    });
   };
 
   ix.doLinks = function () {
