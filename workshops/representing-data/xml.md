@@ -129,37 +129,46 @@ You can access the XML attributes of an element using the `get()` method or `att
     >>> print root.get("title")
     Queen Elizabeth II
 
-Accessing XML text
-Let's now use another sample of XML data. Create a new XML file in IVLE by typing in (or using copy and paste) the following code:
+**Accessing XML text**
 
-<?xml version="1.0" encoding="utf-8"?>
-<book id="book001">
-    <author>Salinger, J. D.</author>
-    <title>The Catcher in the Rye</title>
-    <price>44.95</price>
-    <language>English</language>
-    <publish_date>1951-07-16</publish_date>
-    <publisher>Little, Brown and Company</publisher>
-    <isbn>0-316-76953-3</isbn>
-    <description>A story about a few important days in the life of Holden Caulfield</description>
-</book>
+Let's now use another sample of XML data. Create a new XML file in IVLE that contains the following:
 
-Save the file as book.xml. This XML looks different to the royal.xml in that it has some text content within each element. To access the text content of an element (text between start and end tag), use text properties of that element. Type in the following code in the IVLE Console, and check the result.
+    <?xml version="1.0" encoding="utf-8"?>
+    <book id="book001">
+      <author>Salinger, J. D.</author>
+      <title>The Catcher in the Rye</title>
+      <price>44.95</price>
+      <language>English</language>
+      <publish_date>1951-07-16</publish_date>
+      <publisher>Little, Brown and Company</publisher>
+      <isbn>0-316-76953-3</isbn>
+      <description>A story about a few important days in the life of Holden Caulfield</description>
+    </book>
 
->>> from lxml import etree
->>> xmltree = etree.parse('book.xml')
->>> root = xmltree.getroot()
->>> for child in root:
-...        print child.tag + ": " + child.text
+Save the file as `book.xml`. This XML looks different to the `royal.xml` in that it has some text content within each element. To access the text content of an element (text between start and end tag), use `text` properties of that element. Type in the following code in the IVLE Console, and check the result.
 
+    >>> from lxml import etree
+    >>> xmltree = etree.parse('book.xml')
+    >>> root = xmltree.getroot()
+    >>> for child in root:
+    ...   print child.tag + ": " + child.text
 
 Exercise 5
 
-Write a Python script that presents the data inside book.xml in a web page. Use an HTML table to format the data. See the following example below.
+Write a Python script that presents the data inside `book.xml` in a web page. Use an HTML table to format the data. See the following example below.
 
+<table border="0" cellpadding="5" cellspacing="1">
+<tr bgcolor="#CCCC99"><td><b>Author</b></td><td><b>Salinger, J. D.</b></td></tr>
+<tr bgcolor="#CCCC99"><td><b>Title</b></td><td><b>The Catcher in the Rye</b></td></tr>
+<tr bgcolor="#CCCC99"><td>Price</td><td>44.95</td></tr>
+<tr bgcolor="#CCCC99"><td>Language</td><td>English</td></tr>
+<tr bgcolor="#CCCC99"><td>Publish date</td><td>1951-07-16</td></tr>
+<tr bgcolor="#CCCC99"><td>Publisher</td><td>Little, Brown and Company</td></tr>
+<tr bgcolor="#CCCC99"><td>Isbn</td><td>0-316-76953-3</td></tr>
+<tr bgcolor="#CCCC99"><td>Description</td><td>A story about a few important days in the life of Holden Caulfield</td></tr>
+</table>
 
-
-Tips and Hints:
+*Tips and Hints:*
 To print a web page using Python script, you need to specify the Content-Type before printing out the HTML. The script below displays current temperature in New York.
 
 from lxml import etree
