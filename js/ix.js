@@ -63,8 +63,8 @@ var ix = {
   ix.initMathjax = function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    // script.src  = ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG';
-    script.src  = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js';
+    script.src  = ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG';
+    //script.src  = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js';
     document.getElementsByTagName("head")[0].appendChild(script);
   };
 
