@@ -206,8 +206,8 @@ var ix = {
     if (mathPresent) {
       MathJax.Hub.Queue(
         ["Typeset", MathJax.Hub, $('body')[0]],
-        ["mathDone", ix],
-        ["resetEquationNumbers", MathJax.InputJax.TeX]
+        ["mathDone", ix]
+        // ["resetEquationNumbers", MathJax.InputJax.TeX]
       );
     }
   };
