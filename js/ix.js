@@ -217,7 +217,7 @@ var ix = {
   };
 
   ix.doTitle = function () {
-    $(document)[0].title = $('body title').text() || $('h1').text();
+    $(document)[0].title = $('body > title').text() || $('h1').text();
   };
 
   ix.escapeHTML = function (snippet) {

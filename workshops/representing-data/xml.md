@@ -153,7 +153,9 @@ Save the file as `book.xml`. This XML looks different to the `royal.xml` in that
     >>> for child in root:
     ...   print child.tag + ": " + child.text
 
-Exercise 5
+\\{div class="exercise"
+
+#### Exercise
 
 Write a Python script that presents the data inside `book.xml` in a web page. Use an HTML table to format the data. See the following example below.
 
@@ -169,80 +171,103 @@ Write a Python script that presents the data inside `book.xml` in a web page. Us
 </table>
 
 *Tips and Hints:*
-To print a web page using Python script, you need to specify the Content-Type before printing out the HTML. The script below displays current temperature in New York.
+To print a web page using Python script, you need to specify the `Content-Type` before printing out the HTML. The script below displays current temperature in New York.
 
-from lxml import etree
+    from lxml import etree
 
-# Get the XML data of the current weather at Central Park, New York
-xmltree = etree.parse("http://w1.weather.gov/xml/current_obs/KNYC.xml")
-root = xmltree.getroot()
-location = root.find("location").text
-temp = root.find("temperature_string").text
+    # Get the XML data of the current weather at Central Park, New York
+    xmltree = etree.parse("http://w1.weather.gov/xml/current_obs/KNYC.xml")
+    root = xmltree.getroot()
+    location = root.find('location').text
+    temp = root.find('temperature_string').text
 
-# Display the location and temperature in HTML
-print "Content-Type: text/html\n"
-print "<html><body>"
-print "<p>Current temperature at %s is %s</p>" % ( location, temp )
-print "</body></html>"
+    # Display the location and temperature in HTML
+    print 'Content-Type: text/html\n'
+    print '<html><body>'
+    print '<p>Current temperature at %s is %s</p>' % (location, temp)
+    print '</body></html>'
 
+\\}
 
-Building XML tree
+Building XML data
+----------------
+
 Appending a new element
 Let's go back to the book.xml example.
 
-<?xml version="1.0" encoding="utf-8"?>
-<book id="book001">
-    <author>Salinger, J. D.</author>
-    <title>The Catcher in the Rye</title>
-    <price>44.95</price>
-    <language>English</language>
-    <publish_date>1951-07-16</publish_date>
-    <publisher>Little, Brown and Company</publisher>
-    <isbn>0-316-76953-3</isbn>
-    <description>A story about a few important days in the life of Holden Caulfield</description>
-</book>
+    <?xml version="1.0" encoding="utf-8"?>
+    <book id="book001">
+        <author>Salinger, J. D.</author>
+        <title>The Catcher in the Rye</title>
+        <price>44.95</price>
+        <language>English</language>
+        <publish_date>1951-07-16</publish_date>
+        <publisher>Little, Brown and Company</publisher>
+        <isbn>0-316-76953-3</isbn>
+        <description>A story about a few important days in the life of Holden Caulfield</description>
+    </book>
 
 As usual, to access or to manipulate this XML data, import lxml library, parse the XML tree, and get the root of the tree:
->>> from lxml import etree
->>> xmltree = etree.parse('book.xml')
->>> root = xmltree.getroot()
-To create a new XML element, use etree.Element() function:
->>> new_element = etree.Element('genre')
->>> new_element.text = 'Novel'
->>> root.append( new_element )
->>> etree.tostring( root[-1] ) # see the last element, the newly appended element
-<genre>Novel</genre>
-You can also create new element using SubElement() function:
 
->>> new_element = etree.SubElement(root, "price")
->>> new_element.text = '23.95'
->>> for e in root: # check whether the new element is added
-...    print e.tag
-['author', 'title', 'price', 'language', 'publish_date', 'publisher', 'pages', 'isbn', 'description', 'price']
+    >>> from lxml import etree
+    >>> xmltree = etree.parse('book.xml')
+    >>> root = xmltree.getroot()
+    
+To create a new XML element, use `etree.Element()` function:
 
-Inserting a new XML element
-Use insert() to insert a new element at specific location
+    >>> new_element = etree.Element('genre')
+    >>> new_element.text = 'Novel'
+    >>> root.append( new_element )
+    >>> etree.tostring(root[-1]  # the last element, the newly appended element
+    <genre>Novel</genre>
+    
+You can also create new element using `SubElement()` function:
 
->>> root.insert(4, etree.Element("country")) # insert at location 0
->>> root[4].text = "United States"
->>> etree.tostring( root[4] ) # display the first element
-<country>United States</country>
+    >>> new_element = etree.SubElement(root, "price")
+    >>> new_element.text = '23.95'
+    >>> for e in root: # check whether the new element is added
+    ...   print e.tag
+    ['author', 'title', 'price', 'language', 'publish_date', 'publisher', 'pages', 'isbn', 'description', 'price']
 
-Setting attributes of an element
-Assuming you have added price element as last element under root in the book.xml. You can set the attribute of the price element using set() command.
+Use `insert()` to insert a new element at a specific location:
 
->>> root[-1].set("currency", "USD" ) # get the last element of the root
->>> print etree.tostring( root[-1] )
-<price currency="USD">23.95</price>
+    >>> root.insert(4, etree.Element("country"))
+    >>> root[4].text = "United States"
+    >>> etree.tostring(root[4]) 
+    <country>United States</country>
+
+Assuming you have added the `price` element in the book.xml. You can set the attribute of the price element using `set()` command.
+
+    >>> root[-1].set("currency", "USD") # get the last element of the root
+    >>> print etree.tostring(root[-1])
+    <price currency="USD">23.95</price>
 
 Alternatively, you can use attrib property:
 
->>> root[-1].attrib["currency"] = "USD"
+    >>> root[-1].attrib["currency"] = "USD"
+    
+**Serialising XML data (printing as web content or writing into a file)**
 
-Exercise
+You can get the whole XML string, by supplying the root of the tree to the `etree.tostring()` function:
+  
+    output = etree.tostring(root, pretty_print=True, encoding="UTF-8")
 
+To write to a file, simply use the XML string in the file write operation:
+    
+    open('output.xml', 'w').write(output)
 
+You can also display the XML data in the browser by adding appropriate `Content-Type`:
 
-Assuming you have completed the tasks above, replace the text and the attribute of the price element to set the book price to 25 AUD.
-Create a new element called pages, set its content to 277, and append it to the root. Confirm that the new element is including, by issuing the following command: print etree.tostring( root[-1] ). It should return <pages>277</pages>
-With xml data from royal.xml, add a new attribute marriedTo to the element associated with Prince Andrew. Set the value to "Sarah Ferguson".
+    ...
+    # Display the location and temperature in HTML
+    print 'Content-Type: text/xml\n'
+    print output
+    
+\\{div class="exercise"
+
+#### Exercise
+
+- Assuming you have completed the tasks above, replace the text and the attribute of the price element to set the book price to 25 AUD.
+- Create a new element called pages, set its content to 277, and append it to the root. Confirm that the new element is including, by issuing the following command: print etree.tostring( root[-1] ). It should return <pages>277</pages>
+
+\\}
