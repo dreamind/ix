@@ -1,4 +1,4 @@
-Workshop - Representing Data
+ï»¿Workshop - Representing Data
 =========================
 
 This workshop will allow students to have hands-on experience of designing and exchanging data using both formats - XML and JSON - covered in this week, as well as providing exposure to associated technologies such as Javascript and JQuery. The experience will provide the tools that will be heavily used in the individual and group projects (e.g. development of XML DTD designs).
@@ -29,17 +29,17 @@ Previously in this workshop, you created the following XML file to represent a b
     <description>A story about a few important days in the life of Holden Caulfield</description>
 </book>`
 
-1. Now represent this file as JSON. [Note: create the new file in IVLE, give it the name book.json, and save as “Text”.]
+1. Now represent this file as JSON. [Note: create the new file in IVLE, give it the name book.json, and save as â€œTextâ€.]
 2. Validate your JSON solution against [JSONLint](http://www.jsonlint.com). [Note: as with the XML validator, be careful of white-space or missing control characters]
-3. In your JSON solution, add “Spanish” and “German” as two extra languages represented as an array. Save this file as book2.json. Validate it on JSONLint.
-4. Now modify the “publish_date” parameter. Make this an array of two objects that have properties of “edition” (“first”,”second”) and “date” (“1951-07-16”,”1979-01-01”). Save this file as book3.json. Validate it on JSONLint.
+3. In your JSON solution, add â€œSpanishâ€ and â€œGermanâ€ as two extra languages represented as an array. Save this file as book2.json. Validate it on JSONLint.
+4. Now modify the â€œpublish_dateâ€ parameter. Make this an array of two objects that have properties of â€œeditionâ€ (â€œfirstâ€,â€secondâ€) and â€œdateâ€ (â€œ1951-07-16â€,â€1979-01-01â€). Save this file as book3.json. Validate it on JSONLint.
 
 
 **Question 2**
 
 Now we're going to import JSON data into an HTML page and format it. Copy and paste this [HTML file](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week3/scripts/jquery_book_example.html) into the same directory as book3.json.
 
-1. Replace all the references in the file to “data.json” with “book3.json” and uncomment line 47 (adding output for ID and publish dates). Serve the file and click the button marked “Get and parse JSON”. What is output on screen?
+1. Replace all the references in the file to â€œdata.jsonâ€ with â€œbook3.jsonâ€ and uncomment line 47 (adding output for ID and publish dates). Serve the file and click the button marked â€œGet and parse JSONâ€. What is output on screen?
 2. Retrieve some of the root items in book3.json and render them as bold and italic (hint: use the `<strong>` and `<em>` tags around the text)
 3. Add the following code in the <head> section of the HTML page:
     
@@ -61,7 +61,7 @@ Exercises
 
 1. Express the following CSV book listing [data-set](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week3/scripts/ms_book_sample.csv) in JSON (converted to CSV from this [MS XML Sample file](https://msdn.microsoft.com/en-us/library/ms762271.aspx) )
 
-2. The following Javascript command can be run to return the titles of all of the books in this data-set beginning with the letter “T” [example JS command]. Using similar Javascript commands as queries, answer the following questions:
+2. The following Javascript command can be run to return the titles of all of the books in this data-set beginning with the letter â€œTâ€ [example JS command]. Using similar Javascript commands as queries, answer the following questions:
   1. How many books were published before 2000, and what were their titles?
   2. Grouped by publisher name, how many books were published in German after 2002?
   3. Listing their names, how many publishers have books published in French with a price over $50?

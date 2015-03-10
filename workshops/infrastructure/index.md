@@ -110,7 +110,7 @@ Exercises
 ---------
 
 1. HTTP is a stateless protocol, by which we mean that it has no memory of one transaction to the next.
-  1. Create an HTML form to submit some parameters to another page (you can use slide 13 as a template or look up `http://www.w3schools.com` for help).
+  1. Create an HTML form to submit some parameters to another page (you can use slide 13 as a template or look up `http://www.w3schools.com` for help. Note that you should use the "serve" version of the file URI in IVLE to add to the form method, rather than the file listing URI).
   2. Pass a parameter to a CGI script, which you will write using Python, using the `<input type="hidden">` tag.
   3. The CGI script will output HTML displaying the value of all the parameters that you've passed through, including the hidden ones. (Note: remember to specify the content type of the HTML output from the CGI script)
   4. Now, in the HTML page that has been output, add another form.
