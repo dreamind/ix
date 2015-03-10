@@ -1,4 +1,7 @@
-This is the first workshop of Foundations of Informatics. The goal of this workshop is to revisit your experience with IVLE and to get you started with XML concepts, and lxml package, a Python library used to work with XML file.
+Workshop - eXtensible Markup Language (XML)
+=====================
+
+The goal of this workshop is to revisit your experience with IVLE and to get you started with XML concepts, and lxml package, a Python library used to work with XML file.
 
  **A piece of Python code preceded with `>>>` needs to be executed in IVLE or Python Console.**
 
