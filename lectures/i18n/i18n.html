@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Information and Meaning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../styles/slides.css">
+  <script src="../../js/ix.js"></script>
+  <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
+  <script src="js/encoding.js"></script>
+  <script>
+
+    ix.slide = {
+      chartColumnBasic: function (id, x, y, xlabel, ylabel) {
+        $(id).highcharts({
+          chart: {
+            type: 'column',
+            marginLeft: 100,
+            height: 400,
+            width: 700
+          },
+          title: {
+            text: null
+          },
+          xAxis: {
+            categories: x,
+            labels: {
+              style: {
+                fontSize: '1.5em'
+              }
+            },
+            title: {
+              text: xlabel
+            }
+          },
+          yAxis: {
+            allowDecimals: true,
+            lineWidth: 0,
+            title: {
+              text: ylabel
+            }
+          },
+          plotOptions: {
+            series: {
+              dataLabels: {
+                enabled: true,
+                style: {
+                  fontSize: '1.5em'
+                }
+              }
+            }
+          },
+          credits: {enabled: false},
+          tooltip: {enabled: false},
+          legend: {enabled: false},
+          series: [
+            {
+              data: y
+            }
+          ]
+        });
+
+      }
+    };
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section class="cover">
+      <h1>internationalisation and unicode</h1>
+      <h2>info-20002: foundations of informatics</h2>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Information as Signs
+====================
+
+- Data as signals (Shannon's Information) ignores the meaning of its content
+- Information in context considers observers (subject) and what the information means to them
+- Information as a language and a system of signs
+- Semiotics: study of meaning making, formal doctrine of signs (Peirce)
+- It includes:
+  - *Syntactics*: formal structures of signs, grammar/rules of signs construction and relation.
+  - *Semantics*: relation between signs and objects (the things to which they refer) in the mind of the observers.
+  - *Pragmatics*: relation between signs and their context (of the observer that interact with the things).
+  </script>
+    </section>
+
+    <section>
+      <h2>Diversity of languages of website content</h2>
+      <div style="display:none">
+      <table id="lang-stat-content-data" style="width:100%;margin:1em;font-size:0.7em">
+        <tr><td>1</td><td>English</td><td>55.5%</td></tr>
+        <tr><td>2</td><td>Russian</td><td>6.0%</td></tr>
+        <tr><td>3</td><td>German</td><td>5.8%</td></tr>
+        <tr><td>4</td><td>Japanese</td><td>5.0%</td></tr>
+        <tr><td>5</td><td>Spanish</td><td>4.6%</td></tr>
+        <tr><td>6</td><td>French</td><td>4.0%</td></tr>
+        <tr><td>7</td><td>Chinese</td><td>2.8%</td></tr>
+        <tr><td>8</td><td>Portuguese</td><td>2.5%</td></tr>
+        <tr><td>9</td><td>Italian</td><td>1.9%</td></tr>
+        <tr><td>10</td><td>Polish</td><td>1.7%</td></tr>
+        <tr><td>11</td><td>Others</td><td>10.2%</td></tr>
+      </table>
+      </div>
+
+      <div style="width:100%">
+        <div id="lang-stat-content-chart" class="figure" style="margin:auto"></div>
+      </div>
+
+      <script>
+        ix.register(function () {
+          categories = _.reduce($('#lang-stat-content-data tr td:nth-child(2)'), function (m, td) { return m.concat([$(td).text()]); }, []);
+          data = _.reduce($('#lang-stat-content-data tr td:nth-child(3)'), function (m, td) { return m.concat([parseFloat($(td).text())]); }, []);
+          ix.slide.chartColumnBasic('#lang-stat-content-chart', categories, data, 'Country', 'Percentage');
+        });
+      </script>
+      <div class="footer">
+        <div>W3Techs.com.
+          <a href="http://w3techs.com/technologies/overview/content_language/all">Usage
+            of content languages for websites.</a> Retrieved Mar 2015.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Diversity of languages of website users</h2>
+      <div style="width:100%">
+        <div id="lang-stat-user-chart" class="figure" style="margin:auto"></div>
+      </div>
+
+      <script>
+        ix.register(function () {
+          var categories = [
+            'English', 'Chinese', 'Spanish', 'Japanese', 'Portuguese', 'German',
+            'Arabic', 'French', 'Russian', 'Korean', 'Others'
+          ];
+          var data = [
+            27, 25, 8, 5, 4, 4, 3, 3, 3, 2, 17
+          ];
+          ix.slide.chartColumnBasic('#lang-stat-user-chart', categories, data, 'Country', 'Percentage');
+        });
+      </script>
+      <div class="footer">
+        <div>Internet World Stats.
+          <a href="http://www.internetworldstats.com/stats7.htm">Number of Internet Users by Language as of 31 May 2011.</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div id="tree-container" style="width:600px;margin-left:0px"></div>
+      <style>
+        g.node {
+          font-family: Verdana, Helvetica;
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        circle.node-dot {
+          fill: lightsalmon;
+          stroke: red;
+          stroke-width: 1px;
+        }
+
+        path.link {
+          fill: none;
+          stroke: gray;
+        }
+      </style>
+      <script>
+      ix.register(function () {
+        buildTree("#tree-container");
+
+      });
+      </script>
+    </section>
+  </div>
+</div>
+</body>
+</html>
