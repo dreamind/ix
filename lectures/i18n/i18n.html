@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../../styles/slides.css">
   <script src="../../js/ix.js"></script>
   <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
-  <script src="js/encoding.js"></script>
   <script>
 
     ix.slide = {
@@ -149,19 +148,89 @@ Information as Signs
         </div>
       </div>
     </section>
+
+    <section data-background="images/un.png" style="color:white;">
+      <div class="footer">
+        http://www.un.org
+      </div>
+    </section>
+
+    <section data-background="images/rio2016.png" data-background-size="1200px" style="color:white;">
+      <div class="footer">
+        http://www.rio2016.com/en
+      </div>
+    </section>
+
+    <section data-background="images/sign4langs.png" style="color:white;">
+      <div class="footer">
+        http://www.rio2016.com/en
+      </div>
+    </section>
+
     <section>
-      <div id="tree-container" style="width:600px;margin-left:0px"></div>
+      <img src="images/sign5langs.png" style="width:100%">
+      <div class="footer">
+        http://www.rio2016.com/en
+      </div>
+    </section>
+
+    <section>
+      <h1>i18n &amp; L10n</h1>
+      <h3>localization</h3>
+      <p>modifying or adapting an application to fit the requirements of a particular locale</p>
+      <p>a <em>locale</em> is a collection of parameters that the defines a specific language, country, script, rules, and coded character set</p>
+      <h3>internationalization</h3>
+      <p>designing an application so that it can operate in multiple locales without any engineering change to the application.</p>
+      <div class="footer">
+        <div>
+          <a href="http://www-01.ibm.com/software/globalization/index.html">
+            IBM Software - Globalize your business
+          </a>
+        </div>
+        <div>
+          <a href="https://msdn.microsoft.com/en-us/goglobal/bb688110.aspx">
+            Microsoft - Globalization step by step
+          </a>
+        </div>
+      </div>
+    </section>
+
+      <style>
+      #i18n-issues table td:first-child {
+        color: #887766;
+      }
+      </style>    
+
+    <section data-markdown id="i18n-issues">
+      <script type="text/template">
+issues in i18n &amp; L10n
+=====================
+
+| &nbsp; | &nbsp; |
+| ---------:|---|
+|characters set &amp; encoding | Welcome or Καλώς Ήρθατε |
+|language translations | Hello or Bonjour |
+|currency format | $ £ € ¥ |
+|numerical format | 1,457 or 1.457 |
+|date/time format | 08/09/2008 (*8 September* or *9 August*?) |
+      </script>
+    </section>
+
+    <section>
+      <div id="tree-container" style="width:800px;height:600px;margin-left:0px"></div>
       <style>
         g.node {
-          font-family: Verdana, Helvetica;
-          font-size: 12px;
+          font-size: 1em;
+        }
+
+        .edgelabel {
           font-weight: bold;
         }
 
         circle.node-dot {
-          fill: lightsalmon;
-          stroke: red;
-          stroke-width: 1px;
+          fill: #cccccc;
+          stroke: #666666;
+          stroke-width: 4px;
         }
 
         path.link {
@@ -169,10 +238,27 @@ Information as Signs
           stroke: gray;
         }
       </style>
+      <script src="js/encoding.js"></script>
       <script>
       ix.register(function () {
-        buildTree("#tree-container");
-
+        var treeData = {
+          name: "é",
+          children: [
+            {name: "e9"},
+            {name: "e9"},
+            {name: "c3e9"},
+            {name: "00e9"},
+            {name: "82"}
+          ],
+          labels: [
+            'latin-1 / iso-8859-1',
+            'cp1252',
+            'utf-8',
+            'utf-16',
+            'cp437'
+          ]
+        };
+        ix.figures.encoding("#tree-container", treeData);
       });
       </script>
     </section>

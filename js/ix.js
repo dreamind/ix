@@ -15,7 +15,8 @@ var ix = {
     data: '<i class="fa fa-file-excel-o"></i>',
     link: '<i class="fa fa-external-link"></i>'
   },
-  onLoads: []
+  onLoads: [],
+  figures: {}
 };
 
 (function() {

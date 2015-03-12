@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,300italic,700italic&subset=latin,latin-ext);
 @import "../third-js/reveal.js/css/reveal.css";
-@import "../third-js/reveal.js/css/theme/sky.css";
+@import "../third-js/reveal.js/css/theme/ix.css";
 @import "../third-js/reveal.js/lib/css/zenburn.css";
 
 body {
@@ -38,10 +38,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.4em; }
 
 .reveal h3 {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  font-weight: 700 !important;
+}
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1em;
+  font-weight: 700 !important;
+}
 
 .cover h1 {
   margin-top: 4em;
@@ -95,7 +99,7 @@ em {
 
 .figure {
     margin-top: 1.4em !important;
-    margin-bottom: 1.4em !important;    
+    margin-bottom: 1.4em !important;
 }
 .reveal {
   font-size: 28px;
@@ -127,5 +131,5 @@ em {
 
 .reveal pre {
     box-shadow: none;
-    border: none !important;   
+    border: none !important;
 }
