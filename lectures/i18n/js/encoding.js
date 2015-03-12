@@ -64,7 +64,7 @@
       .attr("class", "link")
       .attr('marker-end', 'url(#arrowhead)')
       .attr("d", link)
-      .attr("id", function (d, i) {return 'edgepath' + i});
+      .attr("id", function (d, i) {return containerName + 'edgepath' + i});
 
     var edgelabels = layoutRoot.selectAll(".edgelabel")
       .data(links)
@@ -81,7 +81,7 @@
       });
 
     edgelabels.append('svg:textPath')
-      .attr('xlink:href', function (d, i) {return '#edgepath' + i})
+      .attr('xlink:href', function (d, i) {return '#' + containerName + 'edgepath' + i})
       .style("pointer-events", "none")
       .text(function (d, i) {return treeData.labels[i]; });
 

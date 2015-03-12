@@ -1,7 +1,7 @@
 Project Phase 1 (Individual, 10%)
 =================================
 
-**This project specification may be changed at any time.**
+**This project specification may be changed at any time (Last updated: 12 March 2015, 3pm).**
 
 Aims
 ----
@@ -92,7 +92,7 @@ You need to write a Python program that reads an existing CSV file called `input
 - For numerical columns (float and integer types), provide *five-number-summary*,
 - For string, provide *unique values* of the column values.
 
-The result of this process should then be written into an XML file called `output.xml`. Assume `input.xml`, `output.xml`, and your Python program reside in the same directory.
+The result of this process should then be written into an XML file called `output.xml`. Assume `input.csv`, `output.xml`, and your Python program reside in the same directory.
 
 This XML file should be well-formed valid against the following DTD (<a href="summary.dtd" file="code"> `summary.dtd`</a>).
 
@@ -113,6 +113,7 @@ This XML file should be well-formed valid against the following DTD (<a href="su
 ### Requirements
 
 - Your program should be able to identify three data types: *integer*, *float*, and *string*.
+- You may use Python `csv` module. 
 - You should develop your own pure Python implementation of the data-processing. You should not use non-standard Python libraries like `numpy` or `scipy` to produce the five-number-summary. You can use still use Python's `set`, however.
 - Several CSV files will be tested against your program. Test your program at least against the following datasets:
   * <a file="data" href="adult.csv"> Census Income Data Set</a>

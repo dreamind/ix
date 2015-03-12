@@ -132,4 +132,11 @@ em {
 .reveal pre {
     box-shadow: none;
     border: none !important;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.8em;
+}
+
+.reveal pre code{
+    padding: 10px;
 }
