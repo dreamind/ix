@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Information and Meaning</title>
+  <title>Ii18n and L10n</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="../../styles/slides.css">
   <script src="../../js/ix.js"></script>
@@ -69,22 +69,6 @@
     <section class="cover">
       <h1>internationalisation and unicode</h1>
       <h2>info-20002: foundations of informatics</h2>
-    </section>
-
-    <section data-markdown>
-      <script type="text/template">
-Information as Signs
-====================
-
-- Data as signals (Shannon's Information) ignores the meaning of its content
-- Information in context considers observers (subject) and what the information means to them
-- Information as a language and a system of signs
-- Semiotics: study of meaning making, formal doctrine of signs (Peirce)
-- It includes:
-  - *Syntactics*: formal structures of signs, grammar/rules of signs construction and relation.
-  - *Semantics*: relation between signs and objects (the things to which they refer) in the mind of the observers.
-  - *Pragmatics*: relation between signs and their context (of the observer that interact with the things).
-  </script>
     </section>
 
     <section>
@@ -235,10 +219,12 @@ A character is a indivisible unit of text. A character set defines the range of 
     
     <section data-markdown>
       <script type="text/template">
-ASCII (American Standard Code for Information Interchange)
+ASCII
 =====================
 
-- !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+<span style="font-size:16px; font-weight:bold">``!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~``</span>
+
+- American Standard Code for Information Interchange
 - Supports Basic Latin characters
 - Limited support for European languages
   **é** in *café* is not available 
@@ -319,9 +305,29 @@ Character Encoding
     </section>
 
 
+    
+    <section data-markdown>
+      <script type="text/template">
+Browser encoding        
+=========================
 
+It's best to specify the encoding used in your HTML page.
 
+    <DOCTYPE html>
+    <html>
+    <head>
+      <meta http-equiv="content-type" 
+            content="text/html; charset=UTF-8" />
+    </head>
+    <body> 
+    ...
 
+    </script>
+    </section>    
+
+    <section data-background="white">
+<img src="images/chrome-encoding.png" style="height:800px;">
+    </section>
 
     <section>
       <div id="tree-container" style="width:800px;height:600px;margin-left:0px"></div>
@@ -574,7 +580,8 @@ producing data in utf-8
     <section data-markdown>
       <script type="text/template">
 
-**UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)**
+    **UnicodeEncodeError: 'ascii' codec can't encode characters in 
+    position 0-2: ordinal not in range(128)**
 
 in line:
 
@@ -599,17 +606,26 @@ dignosis
 'ascii'
 ```
 
-4. But the Unicode string contains values (>127) that can not be encoded as ASCII (0-127)
+4. But the Unicode string contains characters that can not be encoded as ASCII (0-127)
     
-Solution: encode manually using utf-8 encoding.
+Solution: Explicitly encode using UTF-8 encoding.
 
     print '<li>', sentence.text.encode('utf-8'), '</li>'
       </script>
     </section>    
-    
 
-    
-    
+    <section data-markdown>
+      <script type="text/template">
+Supporting internationalization in Python
+========================================
+        
+- Logically store all characters in Unicode 
+- Perform all string processing in Unicode string
+- **Decode early**: Data from file or from user input should be stored/processed as Unicode string (decode your python byte string to Unicode string). 
+**Encode last**: If you have to serialize a Unicode string to a device (to a web page using print or to a file using `write()`, encode your Unicode strings using appropriate encoding supported by the device (e.g. "utf-8" ).
+- In receiving/displaying characters from user input/output, you need to know the supported encoding of the I/O device (keyboard, screen, or web browser). 
+      </script>
+    </section> 
         
     <section data-markdown>
       <script type="text/template">
@@ -632,6 +648,73 @@ Locale
       '5:40:35 PM 9/16/2008 Tuesday'
     </script>
     </section>
+    
+    <section data-markdown>
+      <script type="text/template">
+Managing translation      
+=====================
+
+- support software ability to deal with certain cultural issues in various locales (countries) without requiring the programmer to know all the detail about those locales 
+- the issues: formatting of numerical value, monetary value, and date
+- use Python's `locale` module
+
+      >>> import locale
+      >>> import time
+      >>> locale.setlocale(locale.LC_ALL, 'English_Australia')
+      'English_Australia.1252'
+      >>> time.strftime('%X %x %A') # time, date, day of week
+      '5:40:19 PM 16/09/2008 Tuesday'
+      >>> locale.setlocale(locale.LC_ALL, 'English_US')
+      'English_United States.1252'
+      >>> time.strftime('%X %x %A')
+      '5:40:35 PM 9/16/2008 Tuesday'
+    </script>
+    </section>
+    
+    <section data-background="white">
+      <style>
+      .multi-box {
+        width: 800px;
+        height: 170px;
+        padding: 5px;
+        border: #cccccc 1px solid !important;    
+        margin-bottom: 5px !important;    
+      }
+      </style>
+<div class="multi-box">
+<img src="images/multi-english.png" style="width:520px">
+</div>
+<div class="multi-box">      
+<img src="images/multi-italian.png" style="width:570px">
+</div>
+<div class="multi-box">      
+<img src="images/multi-singhalese.png" style="width:450px">
+</div>
+    </section>        
+
+    
+    <section data-markdown>
+      <script type="text/template">
+supporting multiple translations: bad
+=====================
+
+    ...
+    fs = cgi.FieldStorage()
+    lang = fs.get_first("lang")
+    if lang == "English":
+      print "Hello"
+    elif lang == "French":
+      print "Bonjour" 
+    elif lang == "Italian":
+      print "Alo"
+    ...
+
+    </script>
+    </section>
+    
+    <section>
+<img src="images/multi-ling.png" style="width:700px">
+    </section>        
         
 
 

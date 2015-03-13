@@ -44,6 +44,7 @@ requirejs([
       ix.initReveal();
       ix.highchartsTheme();
       ix.doOnLoads();
+      ix.doTitle();
       ix.initMathjax(); // very last to make sure all DOM is built
       // TO DO:
       // May need to call reveal.js to relayout
