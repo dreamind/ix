@@ -19,7 +19,9 @@
 		overflow: visible;
 	}
 	body {
-		background: #fff;
+        /*
+        background-color: #ffffff; 
+		background: #fff;*/
 		font-size: 20pt;
 		width: auto;
 		height: auto;

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ii18n and L10n</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../styles/slides.css">
+  <link rel="stylesheet" href="charset/table.css">
+  <script src="../../js/ix.js"></script>
+  <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>Diversity of languages of website content</h2>
+      <div style="display:none">
+      <table id="lang-stat-content-data">
+        <tr><td>1</td><td>English</td><td>55.5%</td></tr>
+        <tr><td>2</td><td>Russian</td><td>6.0%</td></tr>
+        <tr><td>3</td><td>German</td><td>5.8%</td></tr>
+        <tr><td>4</td><td>Japanese</td><td>5.0%</td></tr>
+        <tr><td>5</td><td>Spanish</td><td>4.6%</td></tr>
+        <tr><td>6</td><td>French</td><td>4.0%</td></tr>
+        <tr><td>7</td><td>Chinese</td><td>2.8%</td></tr>
+        <tr><td>8</td><td>Portuguese</td><td>2.5%</td></tr>
+        <tr><td>9</td><td>Italian</td><td>1.9%</td></tr>
+        <tr><td>10</td><td>Polish</td><td>1.7%</td></tr>
+        <tr><td>11</td><td>Others</td><td>10.2%</td></tr>
+      </table>
+      </div>
+      <div style="width:100%">
+        <div id="lang-stat-content-chart" class="figure" style="margin:auto"></div>
+      </div>
+      <script>
+        ix.register(function () {
+          categories = _.reduce($('#lang-stat-content-data tr td:nth-child(2)'), 
+            function (m, td) { return m.concat([$(td).text()]); }, []);
+          data = _.reduce($('#lang-stat-content-data tr td:nth-child(3)'), 
+            function (m, td) { return m.concat([parseFloat($(td).text())]); }, []);
+          ix.doChart.column('#lang-stat-content-chart', categories, data, 'Country', 'Percentage');
+        });
+      </script>
+      <div class="footer">
+        <div>W3Techs.com.
+          <a href="http://w3techs.com/technologies/overview/content_language/all">
+            Usage of content languages for websites.</a> Retrieved Mar 2015.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Diversity of languages of website users</h2>
+      <div style="width:100%">
+        <div id="lang-stat-user-chart" class="figure" style="margin:auto"></div>
+      </div>
+
+      <script>
+        ix.register(function () {
+          var categories = [
+            'English', 'Chinese', 'Spanish', 'Japanese', 'Portuguese', 'German',
+            'Arabic', 'French', 'Russian', 'Korean', 'Others'
+          ];
+          var data = [
+            27, 25, 8, 5, 4, 4, 3, 3, 3, 2, 17
+          ];
+          ix.doChart.column('#lang-stat-user-chart', categories, data, 'Country', 'Percentage');
+        });
+      </script>
+      <div class="footer">
+        <div>Internet World Stats.
+          <a href="http://www.internetworldstats.com/stats7.htm">Number of Internet Users by Language as of 31 May 2011.</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cover">
+      <h1>information in a global world</h1>
+      <h2>info-20002: foundations of informatics</h2>
+    </section>    
+<!--
+    
+    <section data-background="images/un.png">
+      <p>
+        <a href="http://www.un.org">http://www.un.org</a>
+      </p>
+    </section> -->
+    
+  </div>
+</div>
+</body>
+</html>
