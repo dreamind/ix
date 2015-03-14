@@ -16,7 +16,8 @@ var ix = {
     link: '<i class="fa fa-external-link"></i>'
   },
   onLoads: [],
-  figures: {}
+  figures: {},
+  tables: {}
 };
 
 (function() {
@@ -285,4 +286,56 @@ var ix = {
 
   };
 
+  ix.doChart = {
+    column: function (id, x, y, xlabel, ylabel) {
+      $(id).highcharts({
+        chart: {
+          type: 'column',
+          marginLeft: 100,
+          height: 400,
+          width: 700
+        },
+        title: {
+          text: null
+        },
+        xAxis: {
+          categories: x,
+          labels: {
+            style: {
+              fontSize: '1.5em'
+            }
+          },
+          title: {
+            text: xlabel
+          }
+        },
+        yAxis: {
+          allowDecimals: true,
+          lineWidth: 0,
+          title: {
+            text: ylabel
+          }
+        },
+        plotOptions: {
+          series: {
+            dataLabels: {
+              enabled: true,
+              style: {
+                fontSize: '1.5em'
+              }
+            }
+          }
+        },
+        credits: {enabled: false},
+        tooltip: {enabled: false},
+        legend: {enabled: false},
+        series: [
+          {
+            data: y
+          }
+        ]
+      });
+
+    }
+  };
 }());

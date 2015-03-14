@@ -2657,7 +2657,7 @@ var charset_ascii = [
   },
   {
     "byte": 32,
-    "character": " ",
+    "character": "SP",
     "codepoint": "0020"
   },
   {
@@ -3132,7 +3132,7 @@ var charset_ascii = [
   },
   {
     "byte": 127,
-    "character": "",
+    "character": "DEL",
     "codepoint": "007F"
   }
 ];

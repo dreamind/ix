@@ -1,0 +1,39 @@
+.charset-table {
+    margin: 0px !important;
+    border: transparent 1px solid !important;
+  background-color: transparent !important
+}
+.charset-table td {
+    font-family: 'Source Sans Pro', serif;
+  text-align: center;
+  font-size: 10px;
+  width: 50px;
+  height: 20px;
+  color: #333333;
+  background-color: #eeeeee;
+  vertical-align: middle;
+  padding: 3px 4px 0px 4px;
+  margin: 1px;    
+  border: transparent 0px solid !important;
+
+}
+    .charset-table td div {
+      text-align: right;
+      width: 20px;
+      float:right;
+      font-size:12px;
+      /*border:red 1px solid;*/
+    }
+  .charset-table td div.character {
+    text-align: left;
+    width: 40px;
+    float:left ;
+    font-size:16px;
+    font-weight:bold;
+    clear:both;
+  }
+  .charset-table td div.codepoint {
+    text-align: left;
+    float:left ;
+    font-size:12px;
+  }

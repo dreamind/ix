@@ -3,94 +3,30 @@
 <head>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>  
-  <script src="charset.js"></script>    
+  <script src="charset.js"></script> 
+  <script src="table.js"></script> 
+  <link rel="stylesheet" href="table.css">
   <style>
-  #charset-table table {
-    
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
   }
-  #charset-table td {
-    text-align: center;
-    font-size: 10px;
-    width: 60px;
-    height: 35px;
-    color: #333333;
-    background-color: #eeeeee;
-    vertical-align: middle;
-    padding: 3px 6px 0px 6px;
-    margin: 1px;    
-  }
-      #charset-table td div {
-        text-align: right;
-        width: 20px;
-        float:right;
-        /*border:red 1px solid;*/
-      }
-    #charset-table td div.character {
-      text-align: left;
-      width: 50px;
-      float:left ;
-      font-size:20px;
-      font-weight:bold;
-      clear:both;
-    }
-    #charset-table td div.codepoint {
-      text-align: left;
-      float:left ;
-    }
   </style>
-  <script>
-
-  function change(charset) {
-    var tds = $('#charset-table table td');
-  
-    tds.each(function(x, td) {
-      var  cell = '&nbsp;';
-      char = charset[x];
-     var hex = x.toString(16).toUpperCase()
-      hex = "00".substr(0, 2 - hex.length) + hex;
-      if (char && char.character) {
-        cell = '<div class="character">' + char.character + '</div>'; 
-        cell += '<div class="byte">' + hex + '</div>';
-        cell += '<div class="codepoint">' + char.codepoint + '</div>';      
-      } else {
-        cell = '<div class="character">&nbsp;</div>'; 
-        cell += '<div class="byte">' + hex + '</div>';
-        cell += '<div class="codepoint">&nbsp;</div>';      
-      }
-      $(td).html(cell);       
-    });    
-  }  
-    
+  <script>    
 $(document).ready(function () {
-  var idx = 2;
-  var table = $("<table/>"), row, cell, td;
-  var charsets = [charset_iso88591, charset_ascii, charset_cp1252];
-  var charset = charset_iso88591;
-  
-  for (var i = 0; i < 16; i++) {
-    row = $("<tr/>");
-    for (var j = 0; j < 16; j++) {
-      cell = '&nbsp;';
-      char = charset[i*16+j];
-      if (char.character) {
-        cell = '<div class="character">' + char.character + '</div>'; 
-        cell += '<div class="byte">' + char.byte.toString(16).toUpperCase() + '</div>';
-        cell += '<div class="codepoint">' + char.codepoint + '</div>';      
-      }
-      td = $('<td/>').html(cell); 
-      row.append(td);
-    }    
-    table.append(row);  
-  }      
-  $('#charset-table').append(table);
-  $('#charset-table').click(function () {
+  var id = '#charset-table';
+  var idx = 0;
+  var charsets = [charset_ascii, charset_cp1252, charset_iso88591];
+    
+  ix.tables.charset.init(id);
+  $(id).click(function () {
     idx++;
     if (idx === 3) { idx = 0; }
-    change(charsets[idx]);
+    ix.tables.charset.update(id, charsets[idx]);
   });
-  change(charset_cp1252);
+  ix.tables.charset.update(id, charset_ascii);
 });
-
   </script>
 </head>
 <body>

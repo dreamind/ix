@@ -5,76 +5,22 @@
   <title>Ii18n and L10n</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="../../styles/slides.css">
+  <link rel="stylesheet" href="charset/table.css">
   <script src="../../js/ix.js"></script>
   <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
-  <script>
-
-    ix.slide = {
-      chartColumnBasic: function (id, x, y, xlabel, ylabel) {
-        $(id).highcharts({
-          chart: {
-            type: 'column',
-            marginLeft: 100,
-            height: 400,
-            width: 700
-          },
-          title: {
-            text: null
-          },
-          xAxis: {
-            categories: x,
-            labels: {
-              style: {
-                fontSize: '1.5em'
-              }
-            },
-            title: {
-              text: xlabel
-            }
-          },
-          yAxis: {
-            allowDecimals: true,
-            lineWidth: 0,
-            title: {
-              text: ylabel
-            }
-          },
-          plotOptions: {
-            series: {
-              dataLabels: {
-                enabled: true,
-                style: {
-                  fontSize: '1.5em'
-                }
-              }
-            }
-          },
-          credits: {enabled: false},
-          tooltip: {enabled: false},
-          legend: {enabled: false},
-          series: [
-            {
-              data: y
-            }
-          ]
-        });
-
-      }
-    };
-  </script>
 </head>
 <body>
 <div class="reveal">
   <div class="slides">
     <section class="cover">
-      <h1>internationalisation and unicode</h1>
+      <h1>information in a global world</h1>
       <h2>info-20002: foundations of informatics</h2>
     </section>
 
     <section>
       <h2>Diversity of languages of website content</h2>
       <div style="display:none">
-      <table id="lang-stat-content-data" style="width:100%;margin:1em;font-size:0.7em">
+      <table id="lang-stat-content-data">
         <tr><td>1</td><td>English</td><td>55.5%</td></tr>
         <tr><td>2</td><td>Russian</td><td>6.0%</td></tr>
         <tr><td>3</td><td>German</td><td>5.8%</td></tr>
@@ -88,22 +34,22 @@
         <tr><td>11</td><td>Others</td><td>10.2%</td></tr>
       </table>
       </div>
-
       <div style="width:100%">
         <div id="lang-stat-content-chart" class="figure" style="margin:auto"></div>
       </div>
-
       <script>
         ix.register(function () {
-          categories = _.reduce($('#lang-stat-content-data tr td:nth-child(2)'), function (m, td) { return m.concat([$(td).text()]); }, []);
-          data = _.reduce($('#lang-stat-content-data tr td:nth-child(3)'), function (m, td) { return m.concat([parseFloat($(td).text())]); }, []);
-          ix.slide.chartColumnBasic('#lang-stat-content-chart', categories, data, 'Country', 'Percentage');
+          categories = _.reduce($('#lang-stat-content-data tr td:nth-child(2)'), 
+            function (m, td) { return m.concat([$(td).text()]); }, []);
+          data = _.reduce($('#lang-stat-content-data tr td:nth-child(3)'), 
+            function (m, td) { return m.concat([parseFloat($(td).text())]); }, []);
+          ix.doChart.column('#lang-stat-content-chart', categories, data, 'Country', 'Percentage');
         });
       </script>
       <div class="footer">
         <div>W3Techs.com.
-          <a href="http://w3techs.com/technologies/overview/content_language/all">Usage
-            of content languages for websites.</a> Retrieved Mar 2015.
+          <a href="http://w3techs.com/technologies/overview/content_language/all">
+            Usage of content languages for websites.</a> Retrieved Mar 2015.
         </div>
       </div>
     </section>
@@ -123,7 +69,7 @@
           var data = [
             27, 25, 8, 5, 4, 4, 3, 3, 3, 2, 17
           ];
-          ix.slide.chartColumnBasic('#lang-stat-user-chart', categories, data, 'Country', 'Percentage');
+          ix.doChart.column('#lang-stat-user-chart', categories, data, 'Country', 'Percentage');
         });
       </script>
       <div class="footer">
@@ -133,29 +79,20 @@
       </div>
     </section>
 
-    <section data-background="images/un.png" style="color:white;">
-      <div class="footer">
-        http://www.un.org
-      </div>
-    </section>
-
-    <section data-background="images/rio2016.png" data-background-size="1200px" style="color:white;">
-      <div class="footer">
-        http://www.rio2016.com/en
-      </div>
-    </section>
-
-    <section data-background="images/sign4langs.png" style="color:white;">
-      <div class="footer">
-        http://www.rio2016.com/en
-      </div>
-    </section>
-
     <section>
       <img src="images/sign5langs.png" style="width:100%">
-      <div class="footer">
-        http://www.rio2016.com/en
-      </div>
+    </section>
+    
+    <section data-background="images/un.png">
+      <p>
+        <a href="http://www.un.org">http://www.un.org</a>
+      </p>
+    </section>
+
+    <section data-background="images/rio2016.png" data-background-size="1200px">
+      <p>
+        2016 rio olympics<br /><a href="http://www.rio2016.com/en">http://www.rio2016.com/en</a>
+      </p>
     </section>
 
     <section>
@@ -202,20 +139,33 @@ issues in i18n &amp; L10n
 
     <section data-markdown>
       <script type="text/template">
-Character sets
+character sets
 =====================
 
 A character is a indivisible unit of text. A character set defines the range of a character collection. Examples: 
 
-| Charset | num. of chars | encoding
+| charset | num. of chars | encoding
 | ---------:|---:|---|
 |ASCII (Basic Latin)|	128	|7-bit ASCII|
-|ISO-8859-1 (Latin-1 Western European)|	191|	8-bit ISO-8859-1|
+|ISO-8859-1<br />(Latin-1 Western European)|	191|	8-bit ISO-8859-1|
 |Windows-1252	|251|	8-bit Windows-1252|
 |GB2312 (Simplified Chinese)	| 6,763	| EUC-CN, HZ|
 |Unicode	| 1,114,112	|UTF-8, UTF-16, UTF-32|
       </script>
     </section>
+    
+    <section>
+      <div id="charset-table-ascii"></div>
+      <script src="charset/charset.js"></script>  
+      <script src="charset/table.js"></script>        
+  <script>
+      ix.register(function () {
+        var id = '#charset-table-ascii';
+        ix.tables.charset.init(id);
+        ix.tables.charset.update(id, charset_ascii);        
+      });
+  </script>      
+    </section>    
     
     <section data-markdown>
       <script type="text/template">
@@ -227,7 +177,7 @@ ASCII
 - American Standard Code for Information Interchange
 - Supports Basic Latin characters
 - Limited support for European languages
-  **é** in *café* is not available 
+- **é** in *café* is not supported
   
 How can we support other languages:
 
@@ -236,55 +186,27 @@ How can we support other languages:
   - Shift-JIS: Japanese
   - Windows-1251: Cyrillic (Russian, Bulgarian, etc.)
   - Big5, GB2312: Chinese
-- Problems: overlaps across encoding of various character sets.
+- Problems: overlaps across encodings/representation of these proprietary character sets.
     </script>
     </section>
     
     <section>
-      <div id="charset-table"></div>
-      <script src="js/charset.js"></script>  
-  <script>
-
-      ix.register(function () {
-    var table = $("<table/>"), row, cell, td;
-  //charset_iso88591, charset_ascii, charset_cp1252
-  var charset = charset_iso88591;
-  
-  for (var i = 0; i < 16; i++) {
-    row = $("<tr/>");
-    for (var j = 0; j < 16; j++) {
-      cell = '&nbsp;';
-      char = charset[i*16+j];
-      if (char.character) {
-        cell = '<div class="character">' + char.character + '</div>'; 
-        cell += '<div class="byte">' + char.byte + '</div>';
-        cell += '<div class="codepoint">' + char.codepoint + '</div>';      
-      }
-      td = $('<td/>').html(cell); 
-      row.append(td);
-    }    
-    table.append(row);  
-  }      
-  $('#charset-table').append(table)
-  
-});
-
-  </script>      
-    </section>
+      <div class="footer"><a href="charset/table.html">Comparison of ASCII, Windows 1252, and ISO-8859-1</a> (click to cycle)<br />&nbsp;</div>
+      <iframe style="width:900px;height:600px;" src="charset/table.html"></iframe>
+    </section>    
         
     <section data-markdown>
       <script type="text/template">
 Unicode        
 =====================
 
-- Aim: to provide a universal character set that encapsulates almost all characters in the world's languages
+- Provide a universal character set that encapsulates almost all characters in the world's languages
 - A collection of abstract characters, each identified by an integer/number called **code point** and **unique name** (coded character set)
-- In Unicode, code point is NOT the way computer represents (encodes) the character, but it is used to identify the character. 
+- In Unicode, code point is NOT the way computer represents (encodes) the character, but it is used to identify the character
 
-`é` `U+00E9` `'LATIN SMALL LETTER E WITH ACUTE'`
-----------------------------------------
+<p style="font-size:1em;font-weight:bold"><span style="color:green;font-size:2em">`é`</span>&nbsp; `U+00E9` `'LATIN SMALL LETTER E WITH ACUTE'`</p>
 
-- `00E9` is the code point of the character. 
+- `00E9` is the code point of the character
 - `LATIN SMALL LETTER E WITH ACUTE` is the name of the character
     </script>
     </section>
@@ -292,44 +214,26 @@ Unicode
 
     <section data-markdown>
       <script type="text/template">
-Character Encoding        
+character encoding        
 =========================
 
-- A character is NOT the physical (binary) representation in a file, in a web page or in a device. A character is an abstract entity, its actual representation is determined by **character encoding**; encoding maps a logical character to a numerical value.
-- The terms character set and encoding are often used interchangeably (while it is not a problem for ASCII &amp; Windows 1252, it is problematic for Unicode).
-- Encoding is a mapping between a logical representation of a character to its physical representation, 
-- Encoding maps a character to (one or more) bytes
-- Encoding is needed for interpreting a piece of data: text file, XML file, web page (which are blobs of bytes)
-- Programmers need to know the encoding of data that goes into or comes from a device (keyboard, screen, or web browser). 
+- A character is NOT the physical (binary) representation in a file, in a web page or in a device. A character is an abstract entity, its actual representation is determined by **character encoding**; encoding maps a logical character to a numerical value
+- The terms character set and encoding are often used interchangeably (while it is not a problem for ASCII &amp; Windows 1252, it is problematic for Unicode)
     </script>
     </section>
-
-
     
     <section data-markdown>
       <script type="text/template">
-Browser encoding        
+character encoding        
 =========================
 
-It's best to specify the encoding used in your HTML page.
-
-    <DOCTYPE html>
-    <html>
-    <head>
-      <meta http-equiv="content-type" 
-            content="text/html; charset=UTF-8" />
-    </head>
-    <body> 
-    ...
-
+- Encoding is a mapping from a logical representation of a character to its physical representation 
+- Encoding maps a character to (one or more) bytes
     </script>
     </section>    
 
-    <section data-background="white">
-<img src="images/chrome-encoding.png" style="height:800px;">
-    </section>
-
     <section>
+      <h2>various encodings of <strong>é</strong></h2>
       <div id="tree-container" style="width:800px;height:600px;margin-left:0px"></div>
       <style>
         g.node {
@@ -376,19 +280,68 @@ It's best to specify the encoding used in your HTML page.
       });
       </script>
     </section>
+    
+    <section data-markdown>
+      <script type="text/template">
+encoding of input and output
+=========================
+
+- Encoding is needed for interpreting a piece of data: text file, XML file, web page (which are blobs of bytes)
+- Programmers need to know the encoding of data that goes into or comes from a device (keyboard, screen, or web browser)
+
+Example: it's best to specify the encoding used in your HTML page.
+
+    <DOCTYPE html>
+    <html>
+    <head>
+      <meta http-equiv="content-type" 
+            content="text/html; charset=UTF-8" />
+    </head>
+    <body> 
+    ...
+
+    </script>
+    </section>    
+
+    <section data-background="white">
+<h2>chrome browser encoding</h2>
+<img src="images/chrome-encoding.png" style="height:800px;">
+    </section>    
+    
+    <section data-background="images/baidu-utf-8.png">
+<!--<h2>baidu.com - utf-8</h2>
+<img src="images/baidu-utf-8.png" style="height:800px;">-->
+    </section>    
+
+    <section data-background="images/baidu-windows-1252.png">
+<!--<h2>baidu.com - windows-1252</h2>
+<img src="images/baidu-windows-1252.png" style="height:800px;">-->
+    </section>    
 
     <section>
       <h2>Unicode encoding</h2>
 <ul>      
-<li>ASCII characters are encoded as 1 byte (single way of encoding)</li>
+<li>ASCII characters are encoded as 1 byte (a single way of encoding)</li>
 <li>Unicode uses variable length encoding: 1-4 bytes (multiple ways of encoding: UTF-8, UT-16, UTF-32)</li>
 </ul>
 
 <div id="fig-unicode-encoding" style="width:800px;height:300px;margin-left:0px"></div>
 
-<p>é (code point U+00E9) belongs to Latin-1 Supplement group in Unicode.
-http://www.unicode.org/charts/PDF/U0080.pdf
-Encoding http://macchiato.com/unicode/convert.html</p>
+<div class="footer">
+  <ul>
+  <li>
+      <strong>é</strong> (code point U+00E9) belongs to <a href="http://www.unicode.org/charts/PDF/U0080.pdf">Latin-1 Supplement group in Unicode</a>.      
+  </li>
+  <li>
+    <a href="http://macchiato.com/unicode/convert.html">Unicode encoder</a>    
+  </li>
+  <li>
+    <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=IWS-AppendixA">Mapping codepoints to Unicode encoding</a>
+  </li>
+</ul>
+</div>
+      
+</p>
 
       <script>
       ix.register(function () {
@@ -412,8 +365,8 @@ Encoding http://macchiato.com/unicode/convert.html</p>
     <section>
       <h2>UTF-8 encoding</h2>
 <ul>        
-<li>The most commonly used encoding is UTF-8,</li>
-<li>Backward compatible with ASCII; All ASCII files are also UTF-8 encoded.</li>
+<li>The most commonly used encoding is UTF-8</li>
+<li>Backward compatible with ASCII; all ASCII data are also UTF-8 encoded</li>
 </ul>
 
 <div id="fig-utf-8-encoding" style="width:800px;height:500px;margin-left:0px"></div>
@@ -440,23 +393,26 @@ Encoding http://macchiato.com/unicode/convert.html</p>
       </script>      
     </section>
 
-
+    <section data-background="images/sign4langs.png" style="color:white;">
+    </section>
     
     <section data-markdown>
       <script type="text/template">
 Python and Unicode        
 =====================
 
-Python supports (1) byte string and (2) Unicode string
-Unicode string starts with u prefix
+- Python supports (1) **byte string** and (2) **Unicode string**
+- Unicode string starts with `u` prefix
 
-    >>> e_acute = u'\u00e9' # Unicode string
-    >>> e_acute.encode('utf-8')
-    '\xc3\xa9' # byte string
+```
+>>> e_acute = u'\u00e9' # Unicode string
+>>> e_acute.encode('utf-8')
+'\xc3\xa9' # byte string
+```
 
-Unicode string is an abstract or logical representation of characters. 
-Python byte string is a physical representation.
-Sending to a file, web page, device, you need to encode.
+- Unicode string is an abstract or logical representation of characters. 
+- Python byte string is a physical representation.
+- Sending to a file, web page, device, you need to encode.
     </script>
     </section>
 
@@ -522,6 +478,8 @@ consuming unicode
 =====================
 
 ```
+demo.1.xml
+
 <?xml version="1.0" encoding="UTF-8"?>
 <demo>    
   <sentence lang="chinese">我爱你</sentence>    	
@@ -566,7 +524,17 @@ producing data in utf-8
     print '    <title>Unicode demo</title>'
     print '  </head>'
     print '  <body>'
+    ...
   
+    </script>
+    </section>        
+
+    <section data-markdown>
+      <script type="text/template">
+producing data in utf-8 (cont'd)        
+----------------------
+
+    ...
     print '<ul>'
     for sentence in root:
       # attempt to print Unicode string directly    
@@ -575,10 +543,12 @@ producing data in utf-8
     ...
     
     </script>
-    </section>        
-
+    </section>   
+    
     <section data-markdown>
       <script type="text/template">
+producing data in utf-8 (output)        
+----------------------
 
     **UnicodeEncodeError: 'ascii' codec can't encode characters in 
     position 0-2: ordinal not in range(128)**
@@ -593,22 +563,20 @@ in line:
     
     <section data-markdown>
       <script type="text/template">
-dignosis
+diagnosis
 ========
 
 1. `sentence.text` is a Unicode string
-2. Everytime you send a Unicode string to a device, a network, or a disk (e.g. using `print` or `file.write()`), the *Unicode string* needs to be encoded to as *byte string*. If programmer do not do that explicitly, Python does this for automatically.
-3. Since no encoding is specified, it uses the default encoding which is "ascii". 
-
+2. Everytime you send a Unicode string to a device, a network, or a disk (e.g. using `print` or `file.write()`), the *Unicode string* needs to be encoded to as *byte string*. If programmer do not do that explicitly, Python does this for you automatically.
+3. Since no encoding is specified, it uses the default `ascii`. 
 ```
 >>> import sys
 >>> sys.getdefaultencoding()
 'ascii'
 ```
-
-4. But the Unicode string contains characters that can not be encoded as ASCII (0-127)
+4. But not all Unicode characters can be encoded as ASCII (0-127)
     
-Solution: Explicitly encode using UTF-8 encoding.
+**Solution**: Explicitly encode using UTF-8 encoding.
 
     print '<li>', sentence.text.encode('utf-8'), '</li>'
       </script>
@@ -616,42 +584,20 @@ Solution: Explicitly encode using UTF-8 encoding.
 
     <section data-markdown>
       <script type="text/template">
-Supporting internationalization in Python
+supporting internationalization in Python
 ========================================
         
 - Logically store all characters in Unicode 
 - Perform all string processing in Unicode string
 - **Decode early**: Data from file or from user input should be stored/processed as Unicode string (decode your python byte string to Unicode string). 
-**Encode last**: If you have to serialize a Unicode string to a device (to a web page using print or to a file using `write()`, encode your Unicode strings using appropriate encoding supported by the device (e.g. "utf-8" ).
+- **Encode last**: If you have to serialize a Unicode string to a device (to a web page using print or to a file using `write()`, encode your Unicode strings using appropriate encoding supported by the device (e.g. "utf-8" ).
 - In receiving/displaying characters from user input/output, you need to know the supported encoding of the I/O device (keyboard, screen, or web browser). 
       </script>
     </section> 
         
     <section data-markdown>
       <script type="text/template">
-Locale        
-=====================
-
-- support software ability to deal with certain cultural issues in various locales (countries) without requiring the programmer to know all the detail about those locales 
-- the issues: formatting of numerical value, monetary value, and date
-- use Python's `locale` module
-
-      >>> import locale
-      >>> import time
-      >>> locale.setlocale(locale.LC_ALL, 'English_Australia')
-      'English_Australia.1252'
-      >>> time.strftime('%X %x %A') # time, date, day of week
-      '5:40:19 PM 16/09/2008 Tuesday'
-      >>> locale.setlocale(locale.LC_ALL, 'English_US')
-      'English_United States.1252'
-      >>> time.strftime('%X %x %A')
-      '5:40:35 PM 9/16/2008 Tuesday'
-    </script>
-    </section>
-    
-    <section data-markdown>
-      <script type="text/template">
-Managing translation      
+locale        
 =====================
 
 - support software ability to deal with certain cultural issues in various locales (countries) without requiring the programmer to know all the detail about those locales 
@@ -672,6 +618,7 @@ Managing translation
     </section>
     
     <section data-background="white">
+<h1>managing translation</h1>
       <style>
       .multi-box {
         width: 800px;
@@ -695,7 +642,7 @@ Managing translation
     
     <section data-markdown>
       <script type="text/template">
-supporting multiple translations: bad
+lost in translations
 =====================
 
     ...
@@ -713,17 +660,10 @@ supporting multiple translations: bad
     </section>
     
     <section>
-<img src="images/multi-ling.png" style="width:700px">
-    </section>        
-        
+<h1>separation of concerns</h1>
 
-
-    <section data-markdown>
-      <script type="text/template">
-=====================
-
-    </script>
-    </section>
+<img src="images/multi-ling.png" style="width:800px">
+    </section>         
         
   </div>
 </div>
