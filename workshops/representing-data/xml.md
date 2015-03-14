@@ -357,7 +357,7 @@ http://validator.w3.org/#validate_by_input
 
 To validate your XML file, copy its content and paste it into the online validator.
 
-Now modify `simplebook.xml` by changing the <writer> tag to <reader>, and revalidate the XML. Inspect the response given by the validator.
+Now modify `simplebook.xml` by changing the `<writer>` tag to `<reader>`, and revalidate the XML. Inspect the response given by the validator.
 
 \\}
 
