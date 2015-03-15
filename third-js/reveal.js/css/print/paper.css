@@ -1,12 +1,11 @@
 /* Default Print Stylesheet Template
    by Rob Glazebrook of CSSnewbie.com
+   Modified by Ivo Widjaja
    Last Updated: June 4, 2008
 
    Feel free (nay, compelled) to edit, append, and
    manipulate this file as you see fit. */
 
-
-@media print {
 
 	/* SECTION 1: Set default width, margin, float, and
 	   background. This prevents elements from extending
@@ -19,9 +18,8 @@
 		overflow: visible;
 	}
 	body {
-        /*
         background-color: #ffffff; 
-		background: #fff;*/
+		background: #fff;
 		font-size: 20pt;
 		width: auto;
 		height: auto;
@@ -142,7 +140,7 @@
 	}
 	.reveal .slides section {
 		visibility: visible !important;
-		position: static !important;
+		position: relative !important;
 		width: 100% !important;
 		height: auto !important;
 		display: block !important;
@@ -201,4 +199,21 @@
 		font-size: 0.8em;
 	}
 
+    .print-pdf .reveal .slide-background {
+      /*display: none !important;*/
+      z-index: -10000;
+      top: 35px !important;
+      left: 0px !important;
+      position: absolute !important;
+      width: 960px !important;
+      height: 700px !important;
+      opacity: 0 !important;
+      zoom: 0.8 !important;
+      opacity: 0.5 !important;
+      /*visibility: hidden !important;*/
+  }
+  .reveal pre code {
+    background: white !important;
+    color: black !important; 
+    border: 1px grey solid !important;
 }
