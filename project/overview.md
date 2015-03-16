@@ -14,7 +14,7 @@ The project is divided into three phases of increasing complexity. The first pha
 
 ### Phase 1 – Design and analysis of data representation (individual, 10%, due around week 4).
 
-Your task is to produce XML data that contains some basic statistical properties of a given dataset. Detail on phase 1.
+Your task is to produce XML data that contains some basic statistical properties of a given dataset. <a base="ix-project" href="phase1/index.md">Detail on phase 1</a>.
 
 ### Phase 2 – Solving a practical data manipulation problem (individual & group, 10%, due around week 8).
 
