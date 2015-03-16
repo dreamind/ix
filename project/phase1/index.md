@@ -1,7 +1,7 @@
 Project Phase 1 (Individual, 10%)
 =================================
 
-**This project specification may be changed at any time (Last updated: 12 March 2015, 3pm).**
+**This project specification may be changed at any time (Last updated: 16 March 2015, 4.30pm).**
 
 Aims
 ----
@@ -99,14 +99,15 @@ This XML file should be well-formed valid against the following DTD (<a href="su
 ```
 <!DOCTYPE summary [
   <!ELEMENT summary (attribute*)>
-  <!ELEMENT attribute (name, property*, mode?, unique?)>
+  <!ELEMENT attribute (name, property*, modes?, unique?)>
   <!ELEMENT name (#PCDATA)>
   <!ELEMENT property (#PCDATA)>
+  <!ELEMENT modes (mode+)>
   <!ELEMENT mode (#PCDATA)>
   <!ELEMENT unique (value+)>
   <!ELEMENT value (#PCDATA)>
   <!ATTLIST property name (min|q1|median|q3|max) #REQUIRED>
-  <!ATTLIST name type (integer|float|string) #REQUIRED>
+  <!ATTLIST attribute type (integer|float|string) #REQUIRED>
 ]>
 ```
 
