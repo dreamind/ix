@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,300italic,700italic&subset=latin,latin-ext);
+@import "../third-js/fontawesome/css/font-awesome.min.css";
 @import "../third-js/reveal.js/css/reveal.css";
 @import "../third-js/reveal.js/css/theme/ix.css";
 @import "../third-js/reveal.js/lib/css/zenburn.css";

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>language identification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../styles/slides.css">
+  <script src="../../js/ix.js"></script>
+  <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
+  <style>
+    .crypt {
+      font-size: 1em !important;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section class="cover">
+      <h1>language identification</h1>
+      <h2>info-20002: foundations of informatics</h2>
+    </section>
+
+    <section>
+<h1>how to identify a piece of text</h1>
+<div style="position: relative; width: 820px; height: 400px; margin: 20px"> 
+<div style="position: absolute; left: 0px; top: 0px; width: 400px; height: 400px; text-align:right;">
+  <i class="fa fa-file-text-o" style="font-size:300px; color:#aaaaaa; margin-bottom:8px;"></i><br />
+  <span>unknown text (\(T\))</span>
+</div>  
+<div style="width:400px; padding-left:50px; top:50px; left:420px; position: absolute;">
+  <ul>
+    <li>English?</li>
+    <li>Chinese?</li>
+    <li>German?</li>
+    <li>Italian?</li>
+    <li>Spanish?</li>
+  </ul>
+</div>  
+</div>
+    </section>
+    
+    <section data-markdown>
+      <script type="text/template">
+how to identify a piece of text
+===================
+
+- human:
+  - by looking at the character set: you (English) or 你 (Chinese)
+  - by looking at the words: colour (Australian English) or color (American English)
+- computer: 
+  - a particular technique of data analysis: a classification task
+  - by looking at the frequency distribution of the characters
+  - each language has a unique *character frequency distribution* (\\(cfd_i\\))
+  - recognising words is difficult since it needs to maintain dictionaries of multiple languages
+  </script>
+    </section>
+
+<style>
+#cfd table {
+  border: 0px;
+}
+
+#cfd table td, #cfd table th {
+  border: 0px;
+  width: 50px;
+  font-size: 1em;
+}
+
+#cfd table th {
+  font-size: 1em;
+}
+
+
+#cfd table td:first-child {
+  color:#cccccc;
+}
+
+#cfd table tr:nth-child(1) td {
+  border-bottom: #aaaaaa 1px solid;
+}
+
+#cfd table td i.fa {
+  color:#cccccc;
+  font-size: 50px;
+}
+
+#distance table {
+  margin: 20px;  
+}
+
+#distance table tr:nth-child(1) th {
+  border: 0px;
+}
+
+#distance ul {
+  display: block;
+  position: absolute;
+  left: 320px;
+  top: 200px;
+}
+
+</style>
+    <section data-markdown id="cfd">
+      <script type="text/template">
+character frequency distribution
+===================
+
+|&nbsp;|<i class="fa fa-file-text-o" ></i>|<i class="fa fa-file-text-o" ></i>|<i class="fa fa-file-text-o" ></i> |<i class="fa fa-file-text-o" ></i> |
+| --|:---:|:---:|:---:|:----:|
+| &nbsp;|English|Spanish|Italian|Chinese|
+| 1 | e | e | e | 的 |
+| 2 | t | a | a | 一 |
+| 3 | a | o | i | 是 |
+| 4 | o | s | o | 不 |
+  </script>
+    </section>
+    
+    <section data-markdown id="distance">
+      <script type="text/template">
+distance between languages
+===================
+
+|<i class="fa fa-file-text-o" ></i>|<i class="fa fa-file-text-o" ></i>|
+|:---:|:---:|
+|English|Spanish|
+| e | e | 
+| t | a | 
+| a | o | 
+| o | s | 
+| i | r | 
+| n | n | 
+| s | i | 
+| h | d | 
+| r | l | 
+| d | t | 
+
+- Comparing ranking of character frequencies
+- Pairwise comparison between two characters
+- English: `'t' < 'o', 't' < 'n', 's' < 'n'`
+- Spanish: `'o' < 't', 'n' < 't', 'n' < 's'`
+
+  </script>
+    </section>         
+
+    <section data-markdown>
+      <script type="text/template">
+how to classify
+--------------------
+
+  - generate \\(cfd\\) for all possible candidate languages \\(i\\)  using some known text (e.g UNHRD)
+  - generate \\(cfd_x\\) for the unknown text \\(T_x\\)
+  - the language of \\(T_x\\) is the language \\(i\\) where \\(cfd_i\\) and \\(cfd_x\\) has the closest *distance*
+  - one type of distance: difference in ranking of characters (Kendall Tau, Spearman's Rank)
+  - Kendall Tau distance: measuring the pairwise disagreements/discordant between two lists (rankings of characters)  
+  </script>
+    </section>
+
+
+
+  </div>
+</div>
+</body>
+</html>

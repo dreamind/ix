@@ -498,7 +498,7 @@ consuming utf-8 xml
 `lxml`'s `etree` provides Unicode string where necessary
 
     from lxml import etre
-    etree = etree.parse( "demo.1.xml" )
+    etree = etree.parse( "demo-1.xml" )
     root = tree.getroot()
     for sentence in root:
       print type(sentence.text) # the type of is <unicode>
@@ -511,7 +511,7 @@ producing data in utf-8
 =====================
 
     from lxml import etre
-    etree = etree.parse("demo.1.xml")
+    etree = etree.parse("demo-1.xml")
     root = tree.getroot()
     print "Content-Type: text/html\n"
 

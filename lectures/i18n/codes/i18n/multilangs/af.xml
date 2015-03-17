@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version='1.2'>
+	<file original='l10n_demo.py' source-language='en' target-language='af' datatype='plaintext'>
+	<body>
+		<trans-unit id='input_name'>
+			<source>Please enter your name</source>
+			<target>Tik asseblief jou naam in</target>
+		</trans-unit>
+		<trans-unit id='hi'>
+			<source>Hello,</source>
+			<target>Hello,</target>
+		</trans-unit>
+		<trans-unit id='today_is'>
+			<source>Today is</source>
+			<target>Dit is vandag</target>
+		</trans-unit>
+		<trans-unit id='time_now'>
+			<source>The time now is</source>
+			<target>Dit is nou</target>
+		</trans-unit>
+	</body>
+	</file>
+</xliff>
