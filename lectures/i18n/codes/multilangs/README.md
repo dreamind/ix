@@ -1,0 +1,4 @@
+- Run with Apache httpd using cgi
+- Change shebang line to point to your own python interpreter
+- Use languages-nix.xml on Mac OS X or Ubuntu
+- Use languages-win.xml on Windows

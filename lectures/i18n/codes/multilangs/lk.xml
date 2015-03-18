@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version='1.2'>
-	<file original='l10n_demo.py' source-language='en' target-language='af' datatype='plaintext'>
+	<file original='multilangs.py' source-language='en' target-language='lk' datatype='plaintext'>
 	<body>
 		<trans-unit id='input_name'>
 			<source>Please enter your name</source>
-			<target>Tik asseblief jou naam in</target>
+			<target>&#3462;&#3514;&#3540;&#3510;&#3549;&#3520;&#3505;&#3530;</target>
 		</trans-unit>
 		<trans-unit id='hi'>
 			<source>Hello,</source>
-			<target>Hello,</target>
+			<target>&#3505;&#3512;,</target>
 		</trans-unit>
 		<trans-unit id='today_is'>
 			<source>Today is</source>
-			<target>Dit is vandag</target>
+			<target>&#3461;&#3503; &#3503;&#3538;&#3505;&#3514;</target>
 		</trans-unit>
 		<trans-unit id='time_now'>
 			<source>The time now is</source>
-			<target>Dit is nou</target>
+			<target>&#3503;&#3536;&#3505;&#3530; &#3520;&#3545;&#3517;&#3535;&#3520; &#3508;&#3523;&#3530;&#3520;&#3515;&#3536;</target>
 		</trans-unit>
 	</body>
 	</file>

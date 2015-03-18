@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" locale-encoding="utf-8"?>
+<languages>
+	<lang trans-src="en.xml" locale="English_US" locale-enc="cp1252">English</lang>
+	<lang trans-src="it.xml" locale="Italian" locale-enc="cp1252">Italian</lang>
+	<lang trans-src="af.xml" locale="Afrikaans" locale-enc="cp1252">Afrikaans</lang>
+	<lang trans-src="lk.xml" locale="English_US" locale-enc="cp1252">Sinhalese</lang>
+</languages>
