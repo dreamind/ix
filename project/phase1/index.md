@@ -114,7 +114,8 @@ This XML file should be well-formed valid against the following DTD (<a href="su
 ### Requirements
 
 - Your program should be able to identify three data types: *integer*, *float*, and *string*.
-- You may use Python `csv` module. 
+- You may use Python `csv` module.
+- You may use Python `sort` function.
 - You should develop your own pure Python implementation of the data-processing. You should not use non-standard Python libraries like `numpy` or `scipy` to produce the five-number-summary. You can use still use Python's `set`, however.
 - Several CSV files will be tested against your program. Test your program at least against the following datasets:
   * <a file="data" href="adult.csv"> Census Income Data Set</a>
