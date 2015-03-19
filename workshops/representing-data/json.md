@@ -11,6 +11,8 @@ JSON Presentation: slides 1 to 7
 
 Previously in this workshop, you created the following XML file to represent a book (`book.xml`):
 
+\\{div class="exercise"
+
     <?xml version="1.0" encoding="utf-8"?>
     <book id="book001">
         <author>Salinger, J. D.</author>
@@ -23,48 +25,58 @@ Previously in this workshop, you created the following XML file to represent a b
         <description>A story about a few important days in the life of Holden Caulfield</description>
     </book>
 
-1. Now represent this file as JSON. [Note: create the new file in IVLE, give it the name `book.json`, and save as “Text”.]
+\\}
+
+
+1. Represent this file as JSON. Create the new file in IVLE, give it the name `book.json`, and save as 'Text'. Begin with the following text and expand from there:
+
+\\{div class="exercise"
+
+	{
+    		"id": "book001",
+		"author": "Salinger, J. D."
+	}
+
+\\}
+
 2. Validate your JSON solution against [JSONLint](http://www.jsonlint.com). [Note: as with the XML validator, be careful of white-space or missing control characters]
-3. In your JSON solution, add `"Spanish"` and `"German"` as two extra languages represented as an array. Save this file as `book2.json`. Validate it on JSONLint.
-4. Now modify the `publish_date` parameter. Make this an array of two objects that have properties of `"edition"` (`"first"`, `"second"`) and `"date"` (`"1951-07-16"`,`"1979-01-01”`). Save this file as `book3.json`. Validate it on JSONLint.
+
+3. In your JSON solution, add `Spanish` and `German` as two extra languages represented as an array. Save this file as `book2.json`. Validate it on [JSONLint](http://www.jsonlint.com).
+
+
+4. Now modify the `publish_date` parameter. Make this an array of two objects that have properties of `edition` (`first`, `second`) and `date` (`1951-07-16`,`1979-01-01`) respectively. Save this file as `book3.json`. Validate it on [JSONLint](http://www.jsonlint.com).
 
 **Question 2**
 
-Now we're going to import JSON data into an HTML page and format it. Copy and paste this [HTML file](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week3/scripts/jquery_book_example.html) into the same directory as book3.json.
+Now create a python code that represents the HTML table (seen before in the XML workshop). Note that IVLE escapes the double-quotes characters so the JSON cannot be read in directly from the file. You need to load and modify the string with the following code:
+
+\\{div class="exercise"
+
+	import json
+
+	with open ("book.json", "r") as myfile:
+	    json_str= '' + myfile.read()
+
+	json_str = json_str.replace('\\"','"')
+	json_obj = json.loads(json_str)
+
+\\}
+
+
+**Question 3**
+
+Now we're going to import JSON data into an HTML page and format it. Copy and paste this [HTML file](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week4/scripts/jquery_book_example.html) into the same directory as book3.json.
 
 1. Replace all the references in the file to `data.json` with `book3.json` and uncomment line 47 (adding output for ID and publish dates). Serve the file and click the button marked **Get and parse JSON**. What is output on screen?
 2. Retrieve some of the root items in `book3.json` and render them as bold and italic (hint: use the `<strong>` and `<em>` tags around the text)
-3. Add the following code in the `<head>` section of the HTML page:
-
-```    
-<script>
-  $(function() {
-    $( "#menu" ).menu();
-  });
-</script>
-
-<style>
-  .ui-menu { width: 150px; }
-</style>
-```
-
-Now build up a JQuery menu of the root and sub-items in book3.json, using a nested combination of `<ul>` and `<li>` tags. Use the [lecture example](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week3/scripts/jquery_examples.html) as a template if you wish.
 
 
 \\{div class="exercise"
 
 #### Exercises
 
-1. Express the following CSV book listing [data-set](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week3/scripts/ms_book_sample.csv) in JSON (converted to CSV from this [MS XML Sample file](https://msdn.microsoft.com/en-us/library/ms762271.aspx) )
+1. Now create a large HTML file using JSON retrieved from a public interface [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON).
 
-2. The following Javascript command can be run to return the titles of all of the books in this data-set beginning with the letter “T” [example JS command]. Using similar Javascript commands as queries, answer the following questions:
-  1. How many books were published before 2000, and what were their titles?
-  2. Grouped by publisher name, how many books were published in German after 2002?
-  3. Listing their names, how many publishers have books published in French with a price over $50?
-
-  You may wish to consult the [w3schools.com tutorial](http://www.w3schools.com/js/default.asp) on Javascript.
-
-3. Run the following JSON data in Javascript using the `eval()` method: [JSON with executable Javascript embedded]. What is the result?
 
 \\}
 
@@ -79,5 +91,3 @@ Other Resources
 - **Google Chrome Developer Tools** - [Developer Tools](https://developer.chrome.com/devtools). User guide to the invaluable developer suite in Google Chrome that allows you to analyse and debug CSS, Javascript and other browser-based technologies that had been mysterious for so long.
 
 - **Mozilla Firebug Plugin** - [FireBug](http://getfirebug.com/). Mozilla's version of this. Also very, very useful.
-
-- All scripts in these exercises are available from [this IVLE zip file](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week3/scripts/week3_scripts.zip).
