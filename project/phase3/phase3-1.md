@@ -25,6 +25,7 @@ Having a group for your phase 3, start off with the following tasks:
   - http://www.bom.gov.au/
   - http://www.cdc.gov/DataStatistics/
   - http://openflights.org/data.html
+  - https://data.melbourne.vic.gov.au/
 - The selected dataset (or datasets) should have reasonable amount of data. It should contain about 1000 rows, a number of dimensions (categorical values) and several measurements (numerical values). 
 - You may select two different datasets that you may want to correlate from two different sources. For example: (i) dataset of birth rate by country from United Nations, and (ii) dataset of internet users by country from CIA World Factbook. 
 - You may also select a dataset that contains geometry or geospatial information (location).
