@@ -3,7 +3,7 @@
 
 The JSON workshop allows students to explore the properties of JavaScript Object Notation as a method of representing, storing and exchanging data. The workshop will start with a brief presentation re-iterating syntax rules from the lecture and emphasising the tools that we will be using to explore JSON (Javascript, JQuery and the Mozilla and Chrome development suites). We will then go through two guided questions that create and manipulate JSON representations and validate them against JSONLint, and also represent the JSON information in HTML and JQuery. The extended exercise questions ask for more complex representation in JSON, introduce the use of Javascript as a database query engine, and explore the security implications of JSON being Javascript executable.
 
-<a target="_blank" href="json_workshop.ppt" file="ppt">Slides used for this workshop - JSON</a>
+<a target="_blank" href="json_workshop.ppt" file="ppt"> Slides used for this workshop - JSON</a>
 
 JSON Presentation: slides 1 to 7
 
@@ -11,57 +11,42 @@ JSON Presentation: slides 1 to 7
 
 Previously in this workshop, you created the following XML file to represent a book (`book.xml`):
 
-\\{div class="exercise"
-
     <?xml version="1.0" encoding="utf-8"?>
     <book id="book001">
-        <author>Salinger, J. D.</author>
-        <title>The Catcher in the Rye</title>
-        <price>44.95</price>
-        <language>English</language>
-        <publish_date>1951-07-16</publish_date>
-        <publisher>Little, Brown and Company</publisher>    
-        <isbn>0-316-76953-3</isbn>
-        <description>A story about a few important days in the life of Holden Caulfield</description>
+      <author>Salinger, J. D.</author>
+      <title>The Catcher in the Rye</title>
+      <price>44.95</price>
+      <language>English</language>
+      <publish_date>1951-07-16</publish_date>
+      <publisher>Little, Brown and Company</publisher>
+      <isbn>0-316-76953-3</isbn>
+      <description>A story about a few important days in the life of Holden Caulfield</description>
     </book>
 
-\\}
-
-
 1. Represent this file as JSON. Create the new file in IVLE, give it the name `book.json`, and save as 'Text'. Begin with the following text and expand from there:
-
-\\{div class="exercise"
-
-	{
-    		"id": "book001",
-		"author": "Salinger, J. D."
-	}
-
-\\}
+    ```
+    {
+      "id": "book001",
+      "author": "Salinger, J. D."
+    }```
 
 2. Validate your JSON solution against [JSONLint](http://www.jsonlint.com). [Note: as with the XML validator, be careful of white-space or missing control characters]
 
 3. In your JSON solution, add `Spanish` and `German` as two extra languages represented as an array. Save this file as `book2.json`. Validate it on [JSONLint](http://www.jsonlint.com).
 
-
 4. Now modify the `publish_date` parameter. Make this an array of two objects that have properties of `edition` (`first`, `second`) and `date` (`1951-07-16`,`1979-01-01`) respectively. Save this file as `book3.json`. Validate it on [JSONLint](http://www.jsonlint.com).
+
 
 **Question 2**
 
-Now create a python code that represents the HTML table (seen before in the XML workshop). Note that IVLE escapes the double-quotes characters so the JSON cannot be read in directly from the file. You need to load and modify the string with the following code:
+Now create a python code that represents the HTML table (seen before in the XML workshop).
 
-\\{div class="exercise"
+    import json
 
-	import json
+    json_obj = json.load(open('book.json'))
 
-	with open ("book.json", "r") as myfile:
-	    json_str= '' + myfile.read()
-
-	json_str = json_str.replace('\\"','"')
-	json_obj = json.loads(json_str)
-
-\\}
-
+    # write your Python code from this point
+    # ...
 
 **Question 3**
 
@@ -77,14 +62,12 @@ Now we're going to import JSON data into an HTML page and format it. Copy and pa
 
 1. Now create a large HTML file using JSON retrieved from a public interface [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON).
 
-
 \\}
-
 
 Other Resources
 ---------------
 
-- **www.json.org** - This is the JSON specification in reference, but still readable, format. It describes the syntax rules in five pictures and with a brief glossary. It also provides useful links to (current, as of recent access) language-specific JSON parsers and community groups.
+- **http://www.json.org** - This is the JSON specification in reference, but still readable, format. It describes the syntax rules in five pictures and with a brief glossary. It also provides useful links to (current, as of recent access) language-specific JSON parsers and community groups.
 
 - **Javascript, the good parts** Douglas Crockford (2008), [Javascript: the good parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1425589713&sr=8-1&keywords=javascript+the+good+parts) - Even though this is a reference book, Crockford is a very engaging writer and it is quite thin so is readable from cover-to-cover. I recommend trying to do this or dipping in to read a couple of chapters at random - if you're even just slightly interested in Javascript and JSON it is well worth it.
 
