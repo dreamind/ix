@@ -60,7 +60,17 @@ Now we're going to import JSON data into an HTML page and format it. Copy and pa
 
 #### Exercises
 
-1. Now create a large HTML file using JSON retrieved from a public interface [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON).
+Now produce a large HTML file from a JSON data source retrieved from a public interface. You display the data in an appropriate format, e.g. table. As an example, you can use [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON). 
+
+You can also use any other public JSON data sources:
+
+- [Absolute Drinks API](https://addb.absolutdrinks.com/docs/)
+- [Weather data from Yahoo Developer API](https://developer.yahoo.com/everything.html)
+- [rottentomatoes.com](http://developer.rottentomatoes.com/docs/read/JSON)
+- Tumblr. For example [comedycentral tumblr page](http://comedycentral.tumblr.com/api/read/json)
+- [Free Data Feeds](http://gomashup.com/cms/free_data_feeds)
+
+Note that many of these sources require you to use an API Key (which you can apply quite instantly).
 
 \\}
 
@@ -69,7 +79,7 @@ Other Resources
 
 - **http://www.json.org** - This is the JSON specification in reference, but still readable, format. It describes the syntax rules in five pictures and with a brief glossary. It also provides useful links to (current, as of recent access) language-specific JSON parsers and community groups.
 
-- **Javascript, the good parts** Douglas Crockford (2008), [Javascript: the good parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1425589713&sr=8-1&keywords=javascript+the+good+parts) - Even though this is a reference book, Crockford is a very engaging writer and it is quite thin so is readable from cover-to-cover. I recommend trying to do this or dipping in to read a couple of chapters at random - if you're even just slightly interested in Javascript and JSON it is well worth it.
+- Douglas Crockford (2008). [Javascript: the good parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1425589713&sr=8-1&keywords=javascript+the+good+parts) - Even though this is a reference book, Crockford is a very engaging writer and it is quite thin so is readable from cover-to-cover. I recommend trying to do this or dipping in to read a couple of chapters at random - if you're even just slightly interested in Javascript and JSON it is well worth it.
 
 - **Google Chrome Developer Tools** - [Developer Tools](https://developer.chrome.com/devtools). User guide to the invaluable developer suite in Google Chrome that allows you to analyse and debug CSS, Javascript and other browser-based technologies that had been mysterious for so long.
 

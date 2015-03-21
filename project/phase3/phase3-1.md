@@ -1,4 +1,4 @@
-# Phase 3: Milestone 1 - Data Exploration.
+# Phase 3: Milestone 1 - Group Work and Data Exploration.
 
 By the end of week 4, you must ideally form a group of three students. Some of you might be tempted to do the phase 2 and 3 of the project individually, but working in group is one of the most important skills in software development or in any projects involving a large problem-solving work. Try as much as possible to form a group with students in your allocated practical workshop because some of your workshop time will be allocated for doing group work.
 
@@ -32,9 +32,17 @@ Having a group for your phase 3, start off with the following tasks:
 - The complexity and sophistication of your selected dataset(s) is part of the assessment.
 - You will use the selected dataset to build a web application that helps you aggregate, summarise, investigate relationship among the attributes, and finding interesting patterns.
 
+Use the following questions to discuss about your data:
+
+- Is the data in tabular format?
+- Is the number of data columns greater than the number of rows?
+- What are the data types of the attribute columns?
+- Is the dataset sparse (contains many missing items)?
+- What is the license of data? Is it public domain? What is its *terms of use*?
+
 ## Deliverables
 
-By the end of week 6, you need to submit to your subject coordinator:
+In week 5, you need to submit to the subject coordinator:
 
 - The final team members
 - Your choice of domain and candidate datasets
@@ -77,7 +85,7 @@ Any student who believes that some member of the group is not making a reasonabl
 
 2. *What happens if a group member does not do their fair share of the work?*<br />One potential problem with group projects is that one or more members of the group do not do their fair share of the work. Such people are said to "ride of the coat-tails of others". You can help prevent this from happening by apportioning tasks to group members early in the project, and keeping good records of what work each member agreed to do, when they were supposed to do it, and when they completed it. You may have disagreements about how to divide up the workload, but ultimately you will need a system in place to resolve such disputes. If all else fails, you should advise the teaching staff of any problems that you cannot resolve, as early as possible. The earlier these issues are raised, the more likelihood there is that a remedy will be found.
 
-3. *How can we keep track of which person did which part of the work?*<br />By keeping clear written records throughout the duration of the project. If you are writing code, then it is good to keep a log of all the modifications that are made to the code, by which person, and on what date. You will each do this in your development log file. It is also essential to keep the revision history of the files you are working on. Subversion will assist you in this.
+3. *How can we keep track of which person did which part of the work?*<br />By keeping clear written records throughout the duration of the project. If you are writing code, then it is good to keep a log of all the modifications that are made to the code, by which person, and on what date. You will each do this in your development log file. It is also essential to keep the revision history of the files you are working on. Version control tools or code management tools (like Subversion) will assist you in this.
 
 4. *What happens if certain members of the group have a major disagreement which cannot be reconciled within the group?*<br />Bring it to the attention of the teaching staff as early as possible.
 
