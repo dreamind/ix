@@ -21,7 +21,7 @@ Closely tied to the use of markup language on the web is the ability to maintain
   * colorable. http://jxnblk.com/colorable/
   * Adobe Color CC (previously kuler). https://color.adobe.com/
 - Font matter
-  * google.com/fonts
+  * http://google.com/fonts
 - Compatibility issue
-  * moderniz
-  * caniuse
+  * http://modernizr.com
+  * http://caniuse.com
