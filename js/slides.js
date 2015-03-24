@@ -35,7 +35,7 @@ requirejs([
 
     if (window.location.href.indexOf('print-pdf') > 0) {
       $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'css/print/paper.css') );
-      $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'lib/css/github.css') );
+      $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', revealPath + 'css/print/github.css') );
     };
 
     _.mixin(s.exports()); // mix underscore string

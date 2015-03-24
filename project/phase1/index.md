@@ -1,7 +1,7 @@
 Project Phase 1 (Individual, 10%)
 =================================
 
-**This project specification may be changed at any time (Last updated: 16 March 2015, 4.30pm).**
+**This project specification may be changed at any time (Last updated: 24 March 2015, 11.30pm).**
 
 Aims
 ----
@@ -86,11 +86,11 @@ You also need to find the following:
 Tasks
 -----
 
-You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. For each column (or attribute) in the CSV file, your program would detect the data type and do the following: 
+You need to write a Python program that reads an existing CSV file called `input.csv`. Assume that the first line of the CSV contains the column names. For each column (or attribute) in the CSV file, your program would detect the data type and do the following:
 
 - For all columns, find out their *mode(s)*.
 - For numerical columns (float and integer types), provide *five-number-summary*,
-- For string, provide *unique values* of the column values.
+- For string, provide *unique values* of the column values. For example, if a column contains the following data `['A','B','C','A','A','C','D']`, then the unique values are `['A','B','C','D']`.
 
 The result of this process should then be written into an XML file called `output.xml`. Assume `input.csv`, `output.xml`, and your Python program reside in the same directory.
 
@@ -121,12 +121,13 @@ This XML file should be well-formed valid against the following DTD (<a href="su
   * <a file="data" href="adult.csv"> Census Income Data Set</a>
   * <a file="data" href="wine.csv"> Wine Data Set</a>
   * <a file="data" href="iris.csv"> Iris Data Set</a>
+- Optionally, the DTD can be included in your XML. This will help the validation process.
 
 ### Marking Scheme
 
 Your program will be marked according to:
 
-- Correctness of the data processing (50%) 
+- Correctness of the data processing (50%). This does not mean that we judge your codes solely based on the final numbers (of your calculation), but we look more closely at the logical flow and problem solving approach in your codes.
 - Wellformed-ness and validity of the XML files (30%)
 - Quality of implementation, including code quality (20%)
 

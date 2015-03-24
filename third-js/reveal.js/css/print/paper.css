@@ -11,14 +11,16 @@
 	   background. This prevents elements from extending
 	   beyond the edge of the printed page, and prevents
 	   unnecessary background images from printing */
+@media print {
 	html {
 		background: #fff;
 		width: auto;
 		height: auto;
 		overflow: visible;
 	}
+
 	body {
-        background-color: #ffffff; 
+		background-color: #ffffff;
 		background: #fff;
 		font-size: 20pt;
 		width: auto;
@@ -45,7 +47,7 @@
 	/* SECTION 3: Set body font face, size, and color.
 	   Consider using a serif font for readability. */
 	body, p, td, li, div {
-		font-size: 20pt!important;
+		font-size: 20pt !important;
 		font-family: Georgia, "Times New Roman", Times, serif !important;
 		color: #000;
 	}
@@ -53,8 +55,8 @@
 	/* SECTION 4: Set heading font face, sizes, and color.
 	   Differentiate your headings from your body text.
 	   Perhaps use a large sans-serif for distinction. */
-	h1,h2,h3,h4,h5,h6 {
-		color: #000!important;
+	h1, h2, h3, h4, h5, h6 {
+		color: #000 !important;
 		height: auto;
 		line-height: normal;
 		font-family: Georgia, "Times New Roman", Times, serif !important;
@@ -62,12 +64,18 @@
 		text-align: left;
 		letter-spacing: normal;
 	}
+
 	/* Need to reduce the size of the fonts for printing */
-	h1 { font-size: 28pt !important;  }
+	h1 { font-size: 28pt !important; }
+
 	h2 { font-size: 24pt !important; }
+
 	h3 { font-size: 22pt !important; }
+
 	h4 { font-size: 22pt !important; font-variant: small-caps; }
+
 	h5 { font-size: 21pt !important; }
+
 	h6 { font-size: 20pt !important; font-style: italic; }
 
 	/* SECTION 5: Make hyperlinks more usable.
@@ -79,6 +87,7 @@
 		font-weight: bold;
 		text-decoration: underline;
 	}
+
 	/*
 	.reveal a:link:after,
 	.reveal a:visited:after {
@@ -87,8 +96,6 @@
 		font-size: 90%;
 	}
 	*/
-
-
 	/* SECTION 6: more reveal.js specific additions by @skypanther */
 	ul, ol, div, p {
 		visibility: visible;
@@ -100,44 +107,45 @@
 		margin: 0;
 		text-align: left !important;
 	}
+
 	.reveal pre,
 	.reveal table {
 		margin-left: 0;
 		margin-right: 0;
 	}
+
 	.reveal pre code {
 		padding: 20px;
 		border: 1px solid #ddd;
 	}
+
 	.reveal blockquote {
 		margin: 20px 0;
 	}
+
 	.reveal .slides {
 		position: static !important;
 		width: 88% !important;
 		height: auto !important;
-
 		left: 0 !important;
 		top: 0 !important;
 		margin-left: 0 !important;
 		margin-top: 0 !important;
 		padding: 0 !important;
 		zoom: 1 !important;
-
 		overflow: visible !important;
 		display: block !important;
-
 		text-align: left !important;
 		-webkit-perspective: none;
-		   -moz-perspective: none;
-		    -ms-perspective: none;
-		        perspective: none;
-
+		-moz-perspective: none;
+		-ms-perspective: none;
+		perspective: none;
 		-webkit-perspective-origin: 50% 50%;
-		   -moz-perspective-origin: 50% 50%;
-		    -ms-perspective-origin: 50% 50%;
-		        perspective-origin: 50% 50%;
+		-moz-perspective-origin: 50% 50%;
+		-ms-perspective-origin: 50% 50%;
+		perspective-origin: 50% 50%;
 	}
+
 	.reveal .slides section {
 		visibility: visible !important;
 		position: relative !important;
@@ -145,52 +153,49 @@
 		height: auto !important;
 		display: block !important;
 		overflow: visible !important;
-
 		left: 0 !important;
 		top: 0 !important;
 		margin-left: 0 !important;
 		margin-top: 0 !important;
 		padding: 60px 20px !important;
 		z-index: auto !important;
-
 		opacity: 1 !important;
-
 		page-break-after: always !important;
-
 		-webkit-transform-style: flat !important;
-		   -moz-transform-style: flat !important;
-		    -ms-transform-style: flat !important;
-		        transform-style: flat !important;
-
+		-moz-transform-style: flat !important;
+		-ms-transform-style: flat !important;
+		transform-style: flat !important;
 		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
-
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		transform: none !important;
 		-webkit-transition: none !important;
-		   -moz-transition: none !important;
-		    -ms-transition: none !important;
-		        transition: none !important;
+		-moz-transition: none !important;
+		-ms-transition: none !important;
+		transition: none !important;
 	}
+
 	.reveal .slides section.stack {
 		padding: 0 !important;
 	}
+
 	.reveal section:last-of-type {
 		page-break-after: avoid !important;
 	}
+
 	.reveal section .fragment {
 		opacity: 1 !important;
 		visibility: visible !important;
-
 		-webkit-transform: none !important;
-		   -moz-transform: none !important;
-		    -ms-transform: none !important;
-		        transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		transform: none !important;
 	}
+
 	.reveal section img {
 		display: block;
 		margin: 15px 0px;
-		background: rgba(255,255,255,1);
+		background: rgba(255, 255, 255, 1);
 		border: 1px solid #666;
 		box-shadow: none;
 	}
@@ -199,21 +204,23 @@
 		font-size: 0.8em;
 	}
 
-    .print-pdf .reveal .slide-background {
-      /*display: none !important;*/
-      z-index: -10000;
-      top: 35px !important;
-      left: 0px !important;
-      position: absolute !important;
-      width: 960px !important;
-      height: 700px !important;
-      opacity: 0 !important;
-      zoom: 0.8 !important;
-      opacity: 0.5 !important;
-      /*visibility: hidden !important;*/
-  }
-  .reveal pre code {
-    background: white !important;
-    color: black !important; 
-    border: 1px grey solid !important;
+	.print-pdf .reveal .slide-background {
+		/*display: none !important;*/
+		z-index: -10000;
+		top: 35px !important;
+		left: 0px !important;
+		position: absolute !important;
+		width: 960px !important;
+		height: 700px !important;
+		opacity: 0 !important;
+		zoom: 0.8 !important;
+		opacity: 0.5 !important;
+		/*visibility: hidden !important;*/
+	}
+
+	.reveal pre code {
+		background: white !important;
+		color: black !important;
+		border: 1px grey solid !important;
+	}
 }
