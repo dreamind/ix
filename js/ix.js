@@ -141,7 +141,7 @@ var ix = {
         next = el.next()[0];
         if (next) {
           text = next.innerHTML;
-          if (text.match(/\}/)) {
+          if (text.match(/\\\}/)) {
             var el2 = $("<" + el[0].innerHTML.match(/\{(.*)/)[1] + ">");
             el.replaceWith(el2);
             _.each(toMove, function (c) {
