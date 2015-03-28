@@ -1,8 +1,9 @@
 Workshop - Presenting Data on the Web
 =========================
 
-This workshop will allow students to gain practical experience in manipulating HTML and CSS so that they can present information on the web. In addition, student will learn how to use CGI interface to build an interactive and dynamic web page.
-
+This workshop will allow students to gain practical experience in manipulating
+HTML and CSS so that they can present information on the web.
+In addition, student will learn how to use CGI interface to build an interactive and dynamic web page.
 
 Part A - HTML and CSS
 ---------------------
@@ -37,7 +38,7 @@ Type in (or copy and paste) the following HTML5 code in the IVLE text editor.
 Save the file in your IVLE space, and name it `table.html`. Serve the file in the browser.
 Observe the output of the HTML page.
 
-Using *embedded* CSS set the boundary of the cells to **1px solid grey-colored** line. You can do this by inserting the following snippet in the `<head>` element.
+Using *embedded* CSS, stylise the table's cells with **1px solid grey-colored** border. You can do this by inserting the following snippet in the `<head>` element.
 
     <style>
     td {
@@ -54,7 +55,7 @@ Preview the HTML page again.
 
 #### Exercise A-2
 
-Now, instead of embedding CSS, place your existing css rule into a separate CSS file (which is called `table.css`). To use this *link* method, replace the `<style>` element with the following line:
+Now, instead of using embedding CSS, place your existing CSS rule into a separate CSS file (which is called `table.css`). To use the *link* method, replace the `<style>` element with the following line:
 
     <link type="text/css" href="table.css" rel="stylesheet">
 
@@ -71,9 +72,9 @@ Preview the HTML page.
 
 \\}
 
-Most modern browsers support CSS3 which allows you to import your typeface of choice. [Google Fonts](http://www.google.com/fonts) provides you an easy way to include fonts from its collection. Go to the site, select a font that you like, and click on the `Quick-use` icon. Follow the instructions and in the **Add this code to your website:** section, you can see various ways to include the selected font to your web page.
+Most modern browsers support CSS3, which allows you to import your typefaces/fonts of choice. [Google Fonts](http://www.google.com/fonts) provides you an easy way to include fonts from its collection. Go to the site, select a font that you like, click on the `Quick-use` icon, and follow the instructions. In the **Add this code to your website:** section, you should see various ways to include the selected font in your web page.
 
-Suppose you select `Lora` font, you can add the following line into your CSS.
+Suppose you select `Lora` font, you need to add the following line into your CSS.
 
     @import url(http://fonts.googleapis.com/css?family=Lora);
 
@@ -120,11 +121,10 @@ Finally, try using CSS3's `:nth-child()` pseudo class to achieve the same effect
 
 \\}
 
-
-Part A - HTML, CSS and CGI
+Part B - HTML, CSS and CGI
 --------------------------
 
-Let's start with the following HTML page (`table2.html`) which displays 3x3 table:
+Let's start with the following HTML page (`table2.html`), which displays 3 x 3 table:
 
     <!DOCTYPE html>
     <html>
@@ -162,14 +162,21 @@ Let's start with the following HTML page (`table2.html`) which displays 3x3 tabl
     </body>
     </html>​
 
-
 \\{div class="exercise"
 
 #### Exercise B-1
 
-Without modifying the HTML code, add some CSS rules so the table will look like as follows:
+Without modifying the HTML code, add some CSS rules so that the table will look like the figure below:
 
-<table width="300" height="200" border="1" bgcolor="white">
+<style>
+
+#table-b-1 td {
+  border: black 1px solid;
+}
+
+</style>
+
+<table id="table-b-1" width="300" height="200" bgcolor="white">
   <tr>
     <td></td><td></td><td></td>
   </tr>
@@ -187,47 +194,75 @@ Without modifying the HTML code, add some CSS rules so the table will look like 
 
 #### Exercise B-2
 
-Now we're going to produce CSS rules dynamically from a Python script. We want to produce a 3 x 3 table with random background color in each cell. See the behaviour of the application here
+Now, we're going to produce CSS rules dynamically from a Python script. We want to produce a 3 x 3 table with a random background color in each cell. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/2/table.html). Reload the page several times to see that random palettes are generated randomly.
 
 In the same directory where `table2.htnl` is, create an empty Python script called `css.py` and add the following lines:
 
     print 'Content-Type: text/css'
     print
     # Write your code from here
+    # ...
 
 Remove the embedded CSS in `table2.htnl` and replace with the following line.
 
     <link type="text/css" href="css.py" rel="stylesheet" />
 
-Now continue writing `css.py` so it produces CSS rules that allow the presentation of the intended effect.
+Now continue writing `css.py` so that it produces the CSS rules that are required to produce the intended effect.
 
 Hint: User `random` module and `random.randint` function.
 
 \\}
 
+While the most common way to specify colour in CSS is to use RGB color space,
+you can also use HSL (Hue Saturation Lightness) color model.
+HSL is a more natural way since you can specify a color by selecting the hue of choice.
+Hue indicates the *kind* of color. Hue covers 360 degrees spectrum in cylindrical color space:
+
+- 0 - Red
+- 60 - Yellow
+- 120 - Green
+- 180 - Cyan
+- 240 - Blue
+- 300 - Magenta
+
+Saturation (0 - 100%), represents the intensity of colour. Lightness (0 - 100%) is the perceived luminance, the brightness of colour.
+As an example, `green` can be specified as `hsl(120, 100%, 50%)`.
+
+<img src="images/hsl-cylinder.png" />
+
+Licence CC-BY-SA-3.0 [from wikimedia](http://commons.wikimedia.org/wiki/File:HSL_color_solid_cylinder_alpha_lowgamma.png)
+
+<div id="fig-hsl" style="width:600px;height:0px;margin-left:0px"></div>
+<script src="js/hsl.js"></script>
+<script>
+ix.register(function () {
+  // ix.figures.hsl("#fig-hsl");
+});
+</script>
+
 \\{div class="exercise"
 
 #### Exercise B-3
 
-We build upon your result of B-2. First, we want to dynamically produce a n x n table with random cell background color (of the same hue), with n supplied ny the user through a CGI-based form input. See the behaviour of the application here.
+We build upon your result of B-2 exercise. First, we want to dynamically produce a `n` x `n` table that contains cells with the background colors of the same hue, with `n` supplied by the user through a CGI-based form input. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/3/form.html).
 
 User will also need to select the hue for the table. Use the following HTML control to allow the hue selection:
 
     <select name="hue">
       <option value="0">Red</option>
-      <option value="1">Yellow</option>
-      <option value="2">Green</option>
-      <option value="3">Cyan</option>
-      <option value="4">Blue</option>
-      <option value="5">Magenta</option>
+      <option value="60">Yellow</option>
+      <option value="120">Green</option>
+      <option value="180">Cyan</option>
+      <option value="240">Blue</option>
+      <option value="300">Magenta</option>
     </select><br />
 
-Hint: Use `colorsys` module to convert color from HSV to RGB color space
-
+Fix the *saturation* at 100% and use random values (between 0 - 100%) for *lightness*.
 \\}
 
 Resources
 ---------
 
 - http://en.wikipedia.org/wiki/HSL_and_HSV
-- https://docs.python.org/2/library/colorsys.html
+- https://docs.python.org/2/library/colorsys.html<br />
+  In Python, you can use `colorsys` module to convert color from HSL to RGB color space.

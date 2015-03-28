@@ -1,19 +1,33 @@
 
-requirejs.config({
+/*requirejs.config({
   baseUrl: ix.jsPath
+});*/
+
+requirejs.config({
+  paths:{
+    jquery: ix.jsPath + 'jquery/jquery',
+    highcharts: ix.jsPath + 'highcharts-release/highcharts'
+  },
+  shim: {
+    highcharts: {
+      exports: 'Highcharts',
+      "deps": [ "jquery"]
+    }
+  }
 });
 
 // Start the main app logic.
 requirejs([
     // WARNING: change in sequence will impact the callback
     ix.jsPath + 'reveal.js/plugin/markdown/marked.js',
-    ix.jsPath + 'jquery/jquery.js',
+    'jquery',
     ix.jsPath + 'underscore/underscore.js',
     ix.jsPath + 'underscore.string/underscore.string.js',
     ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG',
     ix.jsPath + 'reveal.js/plugin/highlight/highlight.js',
     ix.jsPath + 'es6-promise/promise.min.js',
-    ix.jsPath + 'highcharts-release/highcharts.js'
+    'highcharts',
+    ix.jsPath + 'd3/d3.min.js'
   ],
   function (marked, jq, u, s) {
 
