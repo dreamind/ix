@@ -2,8 +2,8 @@ Workshop - Presenting Data on the Web
 =========================
 
 This workshop will allow students to gain practical experience in manipulating
-HTML and CSS so that they can present information on the web.
-In addition, student will learn how to use CGI interface to build an interactive and dynamic web page.
+HTML and CSS so that they can present information efficiently and effectively
+ on the Web. In addition, student will learn how to use CGI interface to build an interactive and dynamic web page.
 
 Part A - HTML and CSS
 ---------------------
@@ -50,7 +50,6 @@ Preview the HTML page again.
 
 \\}
 
-
 \\{div class="exercise"
 
 #### Exercise A-2
@@ -72,9 +71,11 @@ Preview the HTML page.
 
 \\}
 
-Most modern browsers support CSS3, which allows you to import your typefaces/fonts of choice. [Google Fonts](http://www.google.com/fonts) provides you an easy way to include fonts from its collection. Go to the site, select a font that you like, click on the `Quick-use` icon, and follow the instructions. In the **Add this code to your website:** section, you should see various ways to include the selected font in your web page.
+Most modern browsers support CSS3, which allows you to import your typefaces/fonts of choice. [Google Fonts](http://www.google.com/fonts) provides you an easy way to include fonts from its collection. Go to the Google Fonts site, select a font that you
+like, click on the `Quick-use` icon, and follow the instructions. In the **Add this code to your website:** section, you should see various ways to include the selected font in your web page.
 
-Suppose you select `Lora` font, you need to add the following line into your CSS.
+Suppose you have selected `Lora` font, you would need to add the following line into
+your CSS.
 
     @import url(http://fonts.googleapis.com/css?family=Lora);
 
@@ -82,7 +83,7 @@ To apply the font to a particular selector, add the following:
 
     font-family: "Lora", serif;
 
-`serif` here is the alternative font in case browser fails to retrieve the first preference.
+`serif` here is the alternative font in case browser fails to retrieve the first preference (`Lora`).
 
 \\{div class="exercise"
 
@@ -106,11 +107,11 @@ Using CSS2's `:first-child` pseudo class and `+` sibling operator, achieve the f
   * Font color: `black`
   * Background color: color-palette-1
   * Text align: `left`
-- Column 1 of the table
+- Column 2 of the table
   * Font color: `rgb(60,30,0)`
   * Background color: color-palette-2
   * Text align: `center`
-- Column 1 of the table
+- Column 3 of the table
   * Font color: `#736A65`
   * Background color: color-palette-3
   * Text align: `right`
@@ -169,11 +170,9 @@ Let's start with the following HTML page (`table2.html`), which displays 3 x 3 t
 Without modifying the HTML code, add some CSS rules so that the table will look like the figure below:
 
 <style>
-
 #table-b-1 td {
   border: black 1px solid;
 }
-
 </style>
 
 <table id="table-b-1" width="300" height="200" bgcolor="white">
@@ -194,7 +193,7 @@ Without modifying the HTML code, add some CSS rules so that the table will look 
 
 #### Exercise B-2
 
-Now, we're going to produce CSS rules dynamically from a Python script. We want to produce a 3 x 3 table with a random background color in each cell. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/2/table.html). Reload the page several times to see that random palettes are generated randomly.
+Now, we're going to produce CSS rules dynamically from a Python script. We want to produce a 3 x 3 table with a random background color in each cell. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/b-2/table.html). Reload the page several times to see that random palettes are generated randomly.
 
 In the same directory where `table2.htnl` is, create an empty Python script called `css.py` and add the following lines:
 
@@ -203,7 +202,7 @@ In the same directory where `table2.htnl` is, create an empty Python script call
     # Write your code from here
     # ...
 
-Remove the embedded CSS in `table2.htnl` and replace with the following line.
+Remove the embedded CSS in `table2.html` and replace with the following line.
 
     <link type="text/css" href="css.py" rel="stylesheet" />
 
@@ -244,7 +243,7 @@ ix.register(function () {
 
 #### Exercise B-3
 
-We build upon your result of B-2 exercise. First, we want to dynamically produce a `n` x `n` table that contains cells with the background colors of the same hue, with `n` supplied by the user through a CGI-based form input. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/3/form.html).
+We build upon your result of B-2 exercise. Now, we want to dynamically produce an `n` x `n` table that contains cells with the background colors of the same hue, with `n` supplied by the user through a CGI-based form input. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/b-3/form.html).
 
 User will also need to select the hue for the table. Use the following HTML control to allow the hue selection:
 
