@@ -23,3 +23,7 @@ Your task is to solve some data processing problems by using your skills in mana
 ### Phase 3 – Developing an application that enables the presentation, visualisation, and analysis of data (group, 20%, due around week 12).
 
 You will build a non-trivial web-application, which demonstrates the skills and technologies that you have learnt in the subject. It is also an opportunity for you to gain experience working in a team on a challenging task. Details on phase 3.
+
+- <a base="ix-project" href="phase3/phase3-1.md">Phase 3-1: data exploration</a>.
+- <a base="disable" href="phase3/phase3-2.md">Phase 3-2: planning and design</a>.
+- <a base="ix-project" href="phase3/phase3-3.md">Phase 3-3: interactive web application</a>.
