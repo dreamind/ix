@@ -205,13 +205,14 @@ var ix = {
         parent.innerHTML = mathBlob;
         mathPresent = 1;
       });
-    if (mathPresent) {
+      // not necessary to trigger mathjax since the lib is loaded at the very end
+    /*if (mathPresent) {
       MathJax.Hub.Queue(
         ["Typeset", MathJax.Hub, $('body')[0]],
         ["mathDone", ix]
         // ["resetEquationNumbers", MathJax.InputJax.TeX]
       );
-    }
+    }*/
   };
 
   ix.mathDone = function () {

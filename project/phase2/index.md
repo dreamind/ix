@@ -65,14 +65,15 @@ The given data set contains information about 291 popular feature films produced
 
 Using spreadsheet formulas, answer the following questions.
 
-1. Compare the performance among movie genres based on the average metascore of the movies with the same genre. Visualise the comparison using appropriate chart type. Which three genres are the worst performers? Now, compare the performance of each movie rating (PG, G, etc) based on the same measure. Visualise the comparison again. Do PG-rated movies generally score better than R-rated movie? (
+1. Compare the performance among movie genres based on the average metascore of the movies with the same genre. Ignore genres that have less than 5 movies. Visualise the comparison using appropriate chart type. Which three genres are the worst performers? Compare the performance of movie ratings (PG, G, etc) based on the same measure. Again, ignore ratings that have less than 5 movies. Visualise the comparison again. Do PG-rated movies generally score better than R-rated movie?
 2. Which three of the given reviewers in the movie data (Washington Post, Chicago Sun-Times, The New York Times, LA Weekly, Los Angeles Times, Rolling Stone, Wall Street Journal, Entertainment Weekly, Empire, Variety, Salon.com, The Onion (A.V. Club), TV Guide, Slate) are the most consistent with the 'metascore'? You can do this by calculating the average gaps between the metascore value and the score from a particular reviewer. Visualise the average gaps of all reviews to see how close they are to metascore.
-3. Present a table of genre, and the number of movies in each year that a particular actor is featured in. Color the cells that contain these counts so that higher counts can be distinguished from lower counts. Include as the last column the total number of movies the actor is featured in. Present the actor and year in ascending order.
+State your assumption when dealing with missing data.
+3. Present a table of actors versus genres to show the number of movies in each genre that a particular actor is featured in. Color the cells that contain these counts so that higher counts can be distinguished from lower counts. Include as the last column the total number of movies the actor is featured in. Show only actors which have appeared in at least 5 movies. Present the actors and genres in ascending order.
 
-|&nbsp;|...|year|...|
+|&nbsp;|...|genre|...|
 |:---:|:----:|:---:|:---:|
 |...|&nbsp;|&nbsp;|&nbsp;|
-|genre|&nbsp;|&nbsp;|&nbsp;|
+|actor|&nbsp;|&nbsp;|&nbsp;|
 |...|&nbsp;|&nbsp;|&nbsp;|
 
 #### Part 2 - Simple Recommender (group  of three)
@@ -87,7 +88,7 @@ The next similarity score assumes that the audience generally likes movies featu
 - For each actor that the movies share, add 3 to the similarity score
 - If the two movies have the same director, add 2 to the similarity score
 - If the two movies are of the same genre, add 1 to the similarity score
-- Assume \\(x\\) as the difference in years of release, add \\(e^{x/5})\\) to the similarity score
+- Assume \\(x\\) as the difference in years of release, add \\(2 \times e^{-x/2}\\) (rounded to the nearest integer) to the similarity score
 - Return the final similarity score
 - Metascore should be used to break the tie.
 

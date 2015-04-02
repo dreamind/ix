@@ -23,7 +23,6 @@ requirejs([
     'jquery',
     ix.jsPath + 'underscore/underscore.js',
     ix.jsPath + 'underscore.string/underscore.string.js',
-    ix.jsPath + 'MathJax/MathJax.js?config=TeX-AMS-MML_SVG',
     ix.jsPath + 'reveal.js/plugin/highlight/highlight.js',
     ix.jsPath + 'es6-promise/promise.min.js',
     'highcharts',
@@ -39,6 +38,7 @@ requirejs([
           ix.doLinks();
           ix.doTitle();
           ix.doMath();
+          ix.initMathjax();
           ix.doHtmls();
           if (parent) {
             // fix parent iframe
