@@ -123,7 +123,8 @@ This XML file should be well-formed valid against the following DTD (<a href="su
   * <a file="data" href="iris.csv"> Iris Data Set</a>
 - Optionally, the DTD can be included in your XML. This will help the validation process.
 
-### Marking Scheme
+Marking Scheme
+--------------
 
 Your program will be marked according to:
 
@@ -131,16 +132,18 @@ Your program will be marked according to:
 - Wellformed-ness and validity of the XML files (30%)
 - Quality of implementation, including code quality (20%)
 
-### Submission
+Submission
+--------------
 
-**Due Data: Friday Week 4, 5pm**:<br />
+**Due Date: Friday Week 4, 5pm**:<br />
 **Late penalty: 1 mark for each late day**:
 
 You need to submit a single Python file called `phase1.py`. You can safely assume that `input.csv` and `summary.dtd` are available in the same directory with your `.py` file. Submit your work through the Submission section of the LMS.
 
 Fail to follow the submission instruction will incur you penalty.
 
-### References
+Resources
+--------------
 
 1. Tukey, J. W. (1977). Exploratory Data Analysis. Addison-Wesley, Reading, MA.
 2. Dodge, Y. (2008). Exploratory Data Analysis. The Concise Encyclopedia of Statistics
