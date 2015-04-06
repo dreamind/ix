@@ -18,7 +18,7 @@ Your task is to produce XML data that contains some basic statistical properties
 
 ### Phase 2 – Solving a practical data manipulation problem (individual & group, 10%, due around week 8).
 
-Your task is to solve some data processing problems by using your skills in managing, manipulating and visualising data in spreadsheet. Detail on phase 2.
+Your task is to solve some data processing problems by using your skills in managing, manipulating and visualising data in spreadsheet. <a base="ix-project" href="phase2/index.md">Detail on phase 2</a>.
 
 ### Phase 3 – Developing an application that enables the presentation, visualisation, and analysis of data (group, 20%, due around week 12).
 

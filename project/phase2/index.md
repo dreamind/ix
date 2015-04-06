@@ -67,14 +67,17 @@ Using spreadsheet formulas, answer the following questions.
 
 1. Compare the performance among movie genres based on the average metascore of the movies with the same genre. Ignore genres that have less than 5 movies. Visualise the comparison using appropriate chart type. Which three genres are the worst performers? Compare the performance of movie ratings (PG, G, etc) based on the same measure. Again, ignore ratings that have less than 5 movies. Visualise the comparison again. Do PG-rated movies generally score better than R-rated movie?
 2. Which three of the given reviewers in the movie data (Washington Post, Chicago Sun-Times, The New York Times, LA Weekly, Los Angeles Times, Rolling Stone, Wall Street Journal, Entertainment Weekly, Empire, Variety, Salon.com, The Onion (A.V. Club), TV Guide, Slate) are the most consistent with the 'metascore'? You can do this by calculating the average gaps between the metascore value and the score from a particular reviewer. Visualise the average gaps of all reviews to see how close they are to metascore.
-State your assumption when dealing with missing data.
-3. Present a table of actors versus genres to show the number of movies in each genre that a particular actor is featured in. Color the cells that contain these counts so that higher counts can be distinguished from lower counts. Include as the last column the total number of movies the actor is featured in. Show only actors which have appeared in at least 5 movies. Present the actors and genres in ascending order.
+Consider 0 as an empty score. State your assumption when dealing with missing data.
+3. Present a table of actors versus genres to show the number of movies in each genre that a particular actor is featured in. Colour the cells that contain these counts so that higher counts can be distinguished from lower counts. Include as the last column the total number of movies the actor is featured in. Show only actors which have appeared in at least 5 movies. Present the actors and genres in ascending order.
 
 |&nbsp;|...|genre|...|
 |:---:|:----:|:---:|:---:|
 |...|&nbsp;|&nbsp;|&nbsp;|
 |actor|&nbsp;|&nbsp;|&nbsp;|
 |...|&nbsp;|&nbsp;|&nbsp;|
+
+You are not required to provide a single-cell solution, where you try to cramp all the required formulas within one cell.
+Find a balance within succinctness and legibility.
 
 #### Part 2 - Simple Recommender (group  of three)
 
@@ -88,11 +91,11 @@ The next similarity score assumes that the audience generally likes movies featu
 - For each actor that the movies share, add 3 to the similarity score
 - If the two movies have the same director, add 2 to the similarity score
 - If the two movies are of the same genre, add 1 to the similarity score
-- Assume \\(x\\) as the difference in years of release, add \\(2 \times e^{-x/2}\\) (rounded to the nearest integer) to the similarity score
 - Return the final similarity score
-- Metascore should be used to break the tie.
+- If there is a tie, favour the newer movies.
+- If there is still a tie, use the metascore to break this.
 
-Use this *FavActor Similarity score* for your movie recommendation. User will enter the name of a movie in a cell, and your formula would automatically display a list of movies ranked by similarity scores defined above.
+Use this *FavActor Similarity score* for your movie recommendation. User will enter the name of a movie in a cell, and your formula would automatically display a list of movies ranked by similarity scores defined above. Use exact search in finding the movie name and you are not required to support ambiguous/partial movie name query. You can include the movie entered by the user in the results.
 
 Hints: consider using MATCH, INDEX, ARRAYFORMULA functions.
 
@@ -113,7 +116,7 @@ Submission
 **Due Date: Friday Week 8, 5pm**:<br />
 **Late penalty: 1 mark for each late day**:
 
-Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use more than one sheet for a question if it helps you to provide an answer systematically). Name your Google Spreadsheet documents using the following format: INFO20002_2015S1_GROUPNAME (e.g. INFO2002_2015S1_WED10_5). Please find your group name here (TBA).
+Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use more than one sheet for a question if it helps you to provide an answer systematically). Name your Google Spreadsheet documents using the name supplied by your tutor.
 
 Share your Google Spreadsheet to us. Use `Share` > `Sharing Setting`s > `Add People` command, and put down the following emails: `informatix.one@gmail.com` and the email of your tutor. Make sure you give us edit access, not only view access. Make sure you do not change the spreadsheet after deadline because we will overwrite any changes made with the last version just before the due date.
 
