@@ -11,3 +11,6 @@ exemplify the functional aspect of spreadsheet.
 The second lecture looks at more advanced spreadsheet usage, in particular iterative financial calculations and the use of pivot tables for manipulating data-sets.
 
 <a href="spreadsheet2.ppt" file="ppt"> Spreadsheet 2 - Power Point Slides</a>
+
+### Reference resources
+- [Google Sheets reference](https://support.google.com/docs/#topic=2811806)
