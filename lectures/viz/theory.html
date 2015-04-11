@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>information and meaning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../styles/slides.css">
+  <script src="../../js/ix.js"></script>
+  <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
+  <script src="js/figs.js"></script>
+  <style>
+    .crypt {
+      font-size: 1em !important;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section class="cover">
+      <h1>Visualisation</h1>
+      <h2>info-20002: foundations of informatics</h2>
+    </section>
+
+    <section>
+      <h2>various encodings of <strong>é</strong></h2>
+      <style>
+        g.node {
+          font-size: 1em;
+          font-weight: bold;
+        }
+
+        .edgelabel {
+          font-weight: bold;
+        }
+
+        circle.node-dot {
+          fill: #cccccc;
+          stroke: #aaaaaa;
+          stroke-width: 4px;
+        }
+
+        path.link {
+          fill: none;
+          stroke: gray;
+        }
+      </style>
+      <div id="fig1-1"></div>
+
+
+      <script>
+        ix.register(function () {
+          var treeData = {
+            name: "é",
+            children: [
+              {name: "e9"},
+              {name: "e9"},
+              {name: "c3e9"},
+              {name: "00e9"},
+              {name: "82"}
+            ],
+            labels: [
+              'latin-1 / iso-8859-1',
+              'cp1252',
+              'utf-8',
+              'utf-16',
+              'cp437'
+            ]
+          };
+          ix.figures.encoding("#tree-container", treeData);
+        });
+      </script>
+    </section>
+
+    <section>
+      <img src="images/semiotic-triangle-color.png" style="width:80%" />
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Peirce's typology of signs
+==========================
+
+Three forms of "representations" in the sign systems:
+
+- *Icons*: <br>
+  - "Likenesses": direct, similar representations of objects, shared quality.
+  - Road signs, computer icons
+- *Indices*: <br>
+  - "Correspondence in fact": indirect representations of objects.
+- *Symbols*:
+  - "Imputed character": arbitrary representations of objects
+  - A social convention should be established to understand the representation
+
+<div class="footer">
+<a href="http://plato.stanford.edu/entries/peirce-semiotics">"Peirce's Theory of Signs"</a>, from Stanford Encyclopedia of Philosophy.
+</div>
+    </script>
+    </section>
+
+    <section data-background="images/vulcan-salute.jpg" style="color:white;">
+      <div class="footer">
+        Image source: <a href=" http://en.memory-alpha.org/wiki/File:Spock_performing_Vulcan_salute.jpg">Paramount Pictures and/or CBS Studios</a>. Fair use.
+      </div>
+    </section>
+
+
+
+  </div>
+</div>
+</body>
+</html>
