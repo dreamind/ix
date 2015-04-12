@@ -1,4 +1,4 @@
-Lectures - Information, Data and Meaning
+Lectures - Visualisation
 ========================================
 
 These lectures introduce the theoretical aspects of visualisation.
