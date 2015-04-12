@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>information and meaning</title>
+  <title>visualization</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="../../styles/slides.css">
   <script src="../../js/ix.js"></script>
@@ -18,92 +18,242 @@
 <div class="reveal">
   <div class="slides">
     <section class="cover">
-      <h1>Visualisation</h1>
+      <h1>Visualization</h1>
       <h2>info-20002: foundations of informatics</h2>
-    </section>
-
-    <section>
-      <h2>various encodings of <strong>é</strong></h2>
-      <style>
-        g.node {
-          font-size: 1em;
-          font-weight: bold;
-        }
-
-        .edgelabel {
-          font-weight: bold;
-        }
-
-        circle.node-dot {
-          fill: #cccccc;
-          stroke: #aaaaaa;
-          stroke-width: 4px;
-        }
-
-        path.link {
-          fill: none;
-          stroke: gray;
-        }
-      </style>
-      <div id="fig1-1"></div>
-
-
-      <script>
-        ix.register(function () {
-          var treeData = {
-            name: "é",
-            children: [
-              {name: "e9"},
-              {name: "e9"},
-              {name: "c3e9"},
-              {name: "00e9"},
-              {name: "82"}
-            ],
-            labels: [
-              'latin-1 / iso-8859-1',
-              'cp1252',
-              'utf-8',
-              'utf-16',
-              'cp437'
-            ]
-          };
-          ix.figures.encoding("#tree-container", treeData);
-        });
-      </script>
-    </section>
-
-    <section>
-      <img src="images/semiotic-triangle-color.png" style="width:80%" />
     </section>
 
     <section data-markdown>
       <script type="text/template">
-Peirce's typology of signs
+Why Visualisation
 ==========================
 
-Three forms of "representations" in the sign systems:
+#### Pre-attentive Attention
 
-- *Icons*: <br>
-  - "Likenesses": direct, similar representations of objects, shared quality.
-  - Road signs, computer icons
-- *Indices*: <br>
-  - "Correspondence in fact": indirect representations of objects.
-- *Symbols*:
-  - "Imputed character": arbitrary representations of objects
-  - A social convention should be established to understand the representation
+Preattentive processing of visual information is performed automatically on the entire visual field detecting basic features of objects in the display. Such basic features include colors, closure, line ends, contrast, tilt, curvature and size. These simple features are extracted from the visual display in the preattentive system and later joined in the focused attention system into coherent objects. Preattentive processing is done quickly, effortlessly and in parallel without any attention being focused on the display. [Treisman, 1985; Treisman, 1986]
+
 
 <div class="footer">
-<a href="http://plato.stanford.edu/entries/peirce-semiotics">"Peirce's Theory of Signs"</a>, from Stanford Encyclopedia of Philosophy.
+  Treisman, A. (1985). <a href="http://www.sciencedirect.com.ezp.lib.unimelb.edu.au/science/article/pii/S0734189X85800049">Preattentive Processing in Vision</a>. Computer Vision, Graphics, and Image Processing (31):2, pp. 157–177
 </div>
-    </script>
+      </script>
     </section>
 
-    <section data-background="images/vulcan-salute.jpg" style="color:white;">
-      <div class="footer">
-        Image source: <a href=" http://en.memory-alpha.org/wiki/File:Spock_performing_Vulcan_salute.jpg">Paramount Pictures and/or CBS Studios</a>. Fair use.
-      </div>
+    <section data-markdown>
+      <script type="text/template">
+Why Visualisation
+-----------------
+
+<img src="images/preattentive.png" style="width:80%" />
+
+
+<div class="footer">
+  Treisman, A. (1985). <a href="http://www.sciencedirect.com.ezp.lib.unimelb.edu.au/science/article/pii/S0734189X85800049">Preattentive Processing in Vision</a>. Computer Vision, Graphics, and Image Processing 31(2): 157–177
+</div>
+      </script>
     </section>
 
+    <section data-markdown>
+      <script type="text/template">
+Why Visualisation
+-----------------
+
+<img src="images/preattentive-2.png" style="width:60%" />
+
+<p style="font-size: 0.7em">An example of a boundary detection from Treisman's experiments: (a) a boundary defined by a unique feature hue (red circles and red squares on the top, blue circles and blue squares on the bottom) is preattentively classified as horizontal; (b) a boundary defined by a conjunction of features (red circles and blue squares on the left, blue circles and red squares on the right) cannot be preattentively classified as vertical.</p>
+
+
+<div class="footer">
+  Treisman, A. (1985). <a href="http://www.sciencedirect.com.ezp.lib.unimelb.edu.au/science/article/pii/S0734189X85800049">Preattentive Processing in Vision</a>. Computer Vision, Graphics, and Image Processing (31):2, pp. 157–177
+</div>
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Visualization is
+==================
+
+- Way of seeing meaning/relationships in data – prosthetic to our mental models
+
+- Visualisations amplify cognition
+
+- Visualisations provide a space for exploring data
+
+- **Exploratory and explanatory**
+  - “discover the unexpected; describe & explain the expected”
+(National Visualization and Analytics Center, Pacific Northwest Laboratory)
+      </script>
+    </section>
+
+    <section data-markdown data-background="images/napoleon-russian-campaign.png" >
+      <script type="text/template">
+<h2 style="color: white; margin-top: 320px">Visualization in story telling</h2>
+
+<div class="footer">
+  <a style="color: white" href="http://en.wikipedia.org/wiki/French_invasion_of_Russia">Napoleon's 1812 Russian Campagin</a>
+</div>
+      </script>
+    </section>
+
+    <section>
+      <h2>Minard's map of Napoleon's 1812 Russian Campagin</h2>
+      <a href="images/minard-russian-campaign-big.png" target="_blank">
+      <img src="images/minard-russian-campaign.png" />
+      </a>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Visualization is
+==========================
+
+a mapping from *data variables* to *visual variables*
+
+Examples:
+
+- Temperature &rarr; brightness of colour
+- City &rarr; hue of colour
+- City &rarr; location (x coordinate) 
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Data variables
+==========================
+
+- Continuous and discrete variables
+  - **Continuous**<br>
+    Numerical or quantitative (Mackinlay, 2086)<br>
+    Numbers or anything that can have a range
+  - **Discrete**<br>
+    Anything else
+
+- Discrete/categorical
+  - **Ordinal**<br>
+    Ordered/ranked set<br>
+    Example: (N, P, H3, H2B, H2A, H1)
+  - **Nominal**<br>
+    Unordered set<br>
+    Examples: (sydney,melbourne,perth,...) and (male,female)
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Data variables - Steven’s Types (Scales)
+---------------
+
+- **Nominal scale**
+- **Ordinal scale**
+- **Interval scale**
+  - Has no meaningful zero point (no origin)
+  - Express difference (interval) between two measurements
+  - Examples: dates (AD), latitude
+  - Celcius temperature scale
+  - To say that "2°C temperature is twice as hot as 1°C" is NOT meaningful
+- **Ratio scale**
+  - Has a meaningful, unique and non-arbitrary zero point.
+  - Examples: mass, length, duration, angle.
+  - Kelvin temperature scale contains absolute zero point.
+  - It is meaningful to say that "a 2-metre object has "twice the length" of a 1-metre object"
+
+<div class="footer">
+  Stevens, S. S. (1946). <a href="http://www.sciencemag.org.ezp.lib.unimelb.edu.au/content/103/2684/677.full.pdf">"On the Theory of Scales of Measurement"</a>. Science 103 (2684): 677–680.
+</div>
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Visual Variables
+==========================
+
+<img src="images/bertin-semiology.png" style="width:80%" >
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Functions of Visualisation
+==========================
+
+- **Associative function**<br>
+  grouping of all correspondences differentiated by a variable<br>
+  perceived as *similar*
+- **Selective function**<br>
+  isolation of correspondences differentiated by a variable<br>
+  perceived as *different*, forming families
+- **Ordering function** <br>
+  a spontaneous visual perception of rank<br>
+  perceived as *ordered*
+- **Quantitative function**<br>
+  a visual difference between two categories expressed as a numerical ratio<br>
+  perceived as *proportional*
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Variables vs Functions
+----------------------
+
+<img src="images/functions-vs-variables.png" style="width:60%"/>
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Accuracy of Visual Variables
+----------------------
+
+<img src="images/accuracy.png" />
+      </script>
+    </section>
+
+
+    <section data-markdown>
+      <script type="text/template">
+#### Accuracy of Visual Variables
+
+<img src="images/cleveland-errors.png" />
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+What are the data/visual variables?
+-----------------------------------
+
+<img src="images/minard-russian-campaign.png" />
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+What are the data/visual variables?
+-----------------------------------
+
+<img src="images/ben-fry-basketballs.png" />
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Visualisation Steps
+==========================
+
+- **Data Definition**<br>
+Define the visualisation goal and the supporting data variables
+- **Visualisation Selection**<br>
+Select appropriate visual structure
+- **Data Pre-Processing**<br>
+Preparing raw data to visualisation-ready data
+- **Visual Transformation**<br>
+Mapping data variables to visual elements
+
+      </script>
+    </section>
 
 
   </div>
