@@ -113,6 +113,188 @@ Histograms display the distribution of a data variable. Image histograms show th
     Tile Maps for Temporal Patterns
     From Mintz, D., Fitz-Simons, T. & Wayland, M. "Tracking Air Quality Trends with SAS/GRAPH", SUGI 22 Proceedings, 807-812.-->
 
+
+    <section data-markdown>
+      <script type="text/template">
+Bivariate - Pie chart
+----------------------
+
+- A small number of nominal values over a single continuous variable
+- Communicating the rough proportions
+
+<img src="images-2/minards-pie.png" style="width:400px" />
+
+<div class="footer">
+  <div>Data source:
+    <a href="http://www.perceptualedge.com/articles/08-21-07.pdf">Save the Pies for Dessert, Stephen Few
+    </a>
+  </div>
+</div>
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Bivariate - Bar chart
+----------------------
+
+- Continuous values vs nominal values
+- Comparing property of nominal entites
+
+<img src="images-2/playfair-barchart.gif" style="width:400px" />
+
+</script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Bivariate - Scatter plot
+----------------------
+
+- Relationship between two continuous variables
+
+<img src="images-2/scatter.png" style="width:400px" />
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+Bivariate - Line chart
+----------------------
+
+- Display a trend of a continuous variable over time
+- COmmonly used to compare two or more continuous variables
+
+<img src="images-2/nz-greenhouse.png" style="width:500px" />
+
+      </script>
+    </section>
+
+    <!--
+    contrasted appropriately with other visualisations
+    -->
+
+    <section data-markdown>
+      <script type="text/template">
+Guidelines
+======================
+
+- Don't use line chart for comparing nominal variables
+- Don't leave out the origin unless absolutely necessary (especially for ratio variables)
+- Don't change the scale across charts which are intended to be contrasted (rubber scaling)
+- Don't change the ordering of ordinal variables
+- Red-green color blindness
+- Visually impaired people need HIGH contrast
+- Data-Ink ratio/junk chart
+- Set the context for what you are presenting
+  - axes labels, legend, units, captions
+- Determine what numbers need to be presented to get your message across
+  - more numbers vs. less; exact vs. rough; major vs minor axes
+
+<div class="footer">
+  <div>Tufte E., (1983). The Visual Display of Quantitative Information
+  </div>
+</div>
+
+      </script>
+    </section>
+
+    <section>
+      <img src="images-2/doctors-income.gif" style="width:500px">
+    </section>
+
+    <section>
+      <img src="images-2/uni-fees.png">
+    </section>
+
+    <section>
+      <img src="images-2/variations.png">
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+matplotlib
+======================
+
+- plotting library for python
+- produce static/non-interactive visualisation.
+
+<div class="footer">
+  http://matplotlib.org/<br>
+  the tutorial: http://matplotlib.org/users/pyplot_tutorial.html<br>
+  the cookbook: http://wiki.scipy.org/Cookbook/Matplotlib<br>
+  the gallery: http://matplotlib.org/gallery.html
+</div>
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+matplotlib - structure of usage
+======================
+
+- **The `matplotlib` library**<br>
+
+  `>>> import matplotlib`
+
+- **The device dependent backend**<br>
+  Specify the drawing engine that renders the visual to a file or a display device.<br>
+  Example:<br>
+  - 'PS' for creating postscript file
+  - 'SVG' for creating scalar vector graphics (SVG file),
+  - 'Agg' for creating PNG file:
+
+  `>>> matplotlib.use('Agg')`
+
+- **The `pylab` interface**<br>
+  Provide a set of functions on top of the underlying matplotlib library<br>
+  Provide functions like `plot`, `boxplot`, and `bar`
+
+  `>>> from pylab import *`
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+using matplotlib - cgi
+======================
+
+To display the plot result in a web page, put this code at the start of your script:
+
+    import matplotlib
+    matplotlib.use('Agg')
+
+and this code at the end:
+
+    savefig("plot.png", dpi=100)
+    print 'Content-Type: text/html'
+    print
+    print '<html><body>'
+    print '<img src="plot.png"/>'
+    print '</body></html>'
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+using matplotlib - cgi
+======================
+
+To send the plot result directly to the browser, put this code at the start of your script:
+
+    import matplotlib
+    matplotlib.use('Agg')
+
+and this code at the end:
+
+    savefig("plot.png", dpi=100)
+    print 'Content-Type: image/png'
+    print
+    print open("plot.png").read()
+      </script>
+    </section>
+
   </div>
 </div>
 </body>
