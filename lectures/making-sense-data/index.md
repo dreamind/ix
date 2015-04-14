@@ -1,4 +1,4 @@
-Lectures - Making Sense of Data
+﻿Lectures - Making Sense of Data
 ===============================
 
 ## Analysing data
@@ -12,3 +12,5 @@ In this lecture we introduce some of the basic concepts of analytics. We’ve co
 We look at the specific case of analysis of the relationship between two variables in this lecture. Starting with some simple examples of such relationships (direct, indirect, none and confounding variables), we move onto the distinction between discrete and continuous variables, various methods on how to convert a continuous variable to a discrete one, and some of the statistical tools that allow the measurement of relationships between discrete and continuous variables (e.g. Spearman’s rank correlation)
 
 <a href="bivariate-analysis.ppt" file="ppt"> Power Point Slides</a>
+
+### Reference resources
