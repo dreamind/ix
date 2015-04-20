@@ -1,0 +1,1203 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "crtu-weni",
+      "name" : "Selected Trend Table from Health, United States, 2011. Diabetes prevalence and glycemic control among adults 20 years of age and over, by sex, age, and race and Hispanic origin: United States, selected years 1988–1994 through 2003–2006",
+      "attribution" : "Health, United States",
+      "attributionLink" : "http://www.cdc.gov/nchs/hus.htm",
+      "averageRating" : 0,
+      "category" : "Health Statistics",
+      "createdAt" : 1375128759,
+      "description" : "Health, United States is an annual report on trends in health statistics, find more information at http://www.cdc.gov/nchs/hus.htm.",
+      "displayType" : "table",
+      "downloadCount" : 1711,
+      "indexUpdatedAt" : 1428094749,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 4774700,
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1375713070,
+      "publicationGroup" : 1006869,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowsUpdatedAt" : 1375711832,
+      "rowsUpdatedBy" : "g3fc-zmqn",
+      "tableId" : 1020189,
+      "totalTimesRated" : 0,
+      "viewCount" : 841,
+      "viewLastModified" : 1428336841,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : 87226518,
+        "name" : "Category",
+        "dataTypeName" : "text",
+        "fieldName" : "category",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626876,
+        "width" : 340,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "20-44 years",
+          "null" : 0,
+          "largest" : "Percent of poverty level: Below 100%",
+          "top" : [ {
+            "count" : 20,
+            "item" : "All persons"
+          }, {
+            "count" : 19,
+            "item" : "Male"
+          }, {
+            "count" : 18,
+            "item" : "Female"
+          }, {
+            "count" : 17,
+            "item" : "Not Hispanic or Latino: White only"
+          }, {
+            "count" : 16,
+            "item" : "Not Hispanic or Latino: Black or African American only"
+          }, {
+            "count" : 15,
+            "item" : "Mexican"
+          }, {
+            "count" : 14,
+            "item" : "Percent of poverty level: Below 100%"
+          }, {
+            "count" : 13,
+            "item" : "Percent of poverty level: 100% or more"
+          }, {
+            "count" : 12,
+            "item" : "Percent of poverty level: 100%-199%"
+          }, {
+            "count" : 11,
+            "item" : "Percent of poverty level: 200% or more"
+          }, {
+            "count" : 10,
+            "item" : "Percent of poverty level: 200%-399%"
+          }, {
+            "count" : 9,
+            "item" : "Percent of poverty level: 400% or more"
+          }, {
+            "count" : 8,
+            "item" : "20-44 years"
+          }, {
+            "count" : 7,
+            "item" : "45-64 years"
+          }, {
+            "count" : 6,
+            "item" : "65 years and over"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226519,
+        "name" : "Category flag",
+        "dataTypeName" : "number",
+        "fieldName" : "category_flag",
+        "position" : 2,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626878,
+        "width" : 175,
+        "cachedContents" : {
+          "non_null" : 49,
+          "smallest" : "5",
+          "sum" : "287",
+          "null" : 47,
+          "average" : "5.857142857142857",
+          "largest" : "6",
+          "top" : [ {
+            "count" : 20,
+            "item" : "5"
+          }, {
+            "count" : 19,
+            "item" : "6"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226580,
+        "name" : "Group",
+        "dataTypeName" : "text",
+        "fieldName" : "group",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626880,
+        "width" : 227,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "20 years and over, age-adjusted",
+          "null" : 0,
+          "largest" : "20 years and over, crude",
+          "top" : [ {
+            "count" : 20,
+            "item" : "20 years and over, age-adjusted"
+          }, {
+            "count" : 19,
+            "item" : "20 years and over, crude"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226597,
+        "name" : "Group flag",
+        "dataTypeName" : "number",
+        "fieldName" : "group_flag",
+        "position" : 4,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626882,
+        "width" : 164,
+        "cachedContents" : {
+          "non_null" : 51,
+          "smallest" : "4",
+          "sum" : "249",
+          "null" : 45,
+          "average" : "4.882352941176471",
+          "largest" : "7",
+          "top" : [ {
+            "count" : 20,
+            "item" : "4"
+          }, {
+            "count" : 19,
+            "item" : "7"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226598,
+        "name" : "Prevalence",
+        "dataTypeName" : "text",
+        "fieldName" : "prevalence",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626883,
+        "width" : 363,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "Physician-diagnosed and undiagnosed diabetes",
+          "null" : 0,
+          "largest" : "Undiagnosed diabetes",
+          "top" : [ {
+            "count" : 20,
+            "item" : "Physician-diagnosed and undiagnosed diabetes"
+          }, {
+            "count" : 19,
+            "item" : "Physician-diagnosed diabetes"
+          }, {
+            "count" : 18,
+            "item" : "Undiagnosed diabetes"
+          }, {
+            "count" : 17,
+            "item" : "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226599,
+        "name" : "Prevalence note",
+        "dataTypeName" : "text",
+        "fieldName" : "prevalence_note",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626885,
+        "width" : 280,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "Percent of population",
+          "null" : 0,
+          "largest" : "Percent of population with diagnosed diabetes",
+          "top" : [ {
+            "count" : 20,
+            "item" : "Percent of population"
+          }, {
+            "count" : 19,
+            "item" : "Percent of population with diagnosed diabetes"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226600,
+        "name" : "Prevalence flag 1",
+        "dataTypeName" : "number",
+        "fieldName" : "prevalence_flag_1",
+        "position" : 7,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626887,
+        "width" : 304,
+        "cachedContents" : {
+          "non_null" : 81,
+          "smallest" : "1",
+          "sum" : "108",
+          "null" : 15,
+          "average" : "1.333333333333333",
+          "largest" : "2",
+          "top" : [ {
+            "count" : 20,
+            "item" : "1"
+          }, {
+            "count" : 19,
+            "item" : "2"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226601,
+        "name" : "Prevalence flag 2",
+        "dataTypeName" : "number",
+        "fieldName" : "prevalence_flag_2",
+        "position" : 8,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626889,
+        "width" : 304,
+        "cachedContents" : {
+          "non_null" : 27,
+          "smallest" : "2",
+          "sum" : "54",
+          "null" : 69,
+          "average" : "2",
+          "largest" : "2",
+          "top" : [ {
+            "count" : 20,
+            "item" : "2"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226602,
+        "name" : "1988-1994",
+        "dataTypeName" : "number",
+        "fieldName" : "_1988_1994",
+        "position" : 9,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626892,
+        "width" : 208,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "1.0",
+          "sum" : "891.2",
+          "null" : 0,
+          "average" : "9.283333333333333",
+          "largest" : "34.2",
+          "top" : [ {
+            "count" : 20,
+            "item" : "8.4"
+          }, {
+            "count" : 19,
+            "item" : "5.1"
+          }, {
+            "count" : 18,
+            "item" : "4.3"
+          }, {
+            "count" : 17,
+            "item" : "3.6"
+          }, {
+            "count" : 16,
+            "item" : "4.1"
+          }, {
+            "count" : 15,
+            "item" : "3.1"
+          }, {
+            "count" : 14,
+            "item" : "3.3"
+          }, {
+            "count" : 13,
+            "item" : "3.0"
+          }, {
+            "count" : 12,
+            "item" : "2.8"
+          }, {
+            "count" : 11,
+            "item" : "6.0"
+          }, {
+            "count" : 10,
+            "item" : "26.0"
+          }, {
+            "count" : 9,
+            "item" : "18.0"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226603,
+        "name" : "1988-1994 flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_1988_1994_flag",
+        "position" : 10,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626893,
+        "width" : 268,
+        "cachedContents" : {
+          "non_null" : 4,
+          "smallest" : "*",
+          "null" : 92,
+          "largest" : "*",
+          "top" : [ {
+            "count" : 20,
+            "item" : "*"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226604,
+        "name" : "1988-1994 SE",
+        "dataTypeName" : "number",
+        "fieldName" : "_1988_1994_se",
+        "position" : 11,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626895,
+        "width" : 244,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "0.2",
+          "sum" : "86.9",
+          "null" : 0,
+          "average" : "0.9052083333333333",
+          "largest" : "5.7",
+          "top" : [ {
+            "count" : 20,
+            "item" : "0.4"
+          }, {
+            "count" : 19,
+            "item" : "0.6"
+          }, {
+            "count" : 18,
+            "item" : "0.7"
+          }, {
+            "count" : 17,
+            "item" : "1.1"
+          }, {
+            "count" : 16,
+            "item" : "0.8"
+          }, {
+            "count" : 15,
+            "item" : "0.5"
+          }, {
+            "count" : 14,
+            "item" : "0.3"
+          }, {
+            "count" : 13,
+            "item" : "0.9"
+          }, {
+            "count" : 12,
+            "item" : "1.0"
+          }, {
+            "count" : 11,
+            "item" : "0.2"
+          }, {
+            "count" : 10,
+            "item" : "1.9"
+          }, {
+            "count" : 9,
+            "item" : "2.6"
+          }, {
+            "count" : 8,
+            "item" : "2.5"
+          }, {
+            "count" : 7,
+            "item" : "2.9"
+          }, {
+            "count" : 6,
+            "item" : "3.2"
+          }, {
+            "count" : 5,
+            "item" : "3.5"
+          }, {
+            "count" : 4,
+            "item" : "2.1"
+          }, {
+            "count" : 3,
+            "item" : "3.6"
+          }, {
+            "count" : 2,
+            "item" : "2.8"
+          }, {
+            "count" : 1,
+            "item" : "4.3"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226605,
+        "name" : "1988-1994 SE flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_1988_1994_se_flag",
+        "position" : 12,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626897,
+        "width" : 304,
+        "cachedContents" : {
+          "non_null" : 0,
+          "null" : 96
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226606,
+        "name" : "1999-2002",
+        "dataTypeName" : "number",
+        "fieldName" : "_1999_2002",
+        "position" : 13,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626899,
+        "width" : 208,
+        "cachedContents" : {
+          "non_null" : 94,
+          "smallest" : "1.9",
+          "sum" : "838.7",
+          "null" : 2,
+          "average" : "8.922340425531915",
+          "largest" : "32.1",
+          "top" : [ {
+            "count" : 20,
+            "item" : "6.5"
+          }, {
+            "count" : 19,
+            "item" : "2.3"
+          }, {
+            "count" : 18,
+            "item" : "3.2"
+          }, {
+            "count" : 17,
+            "item" : "2.6"
+          }, {
+            "count" : 16,
+            "item" : "3.1"
+          }, {
+            "count" : 15,
+            "item" : "2.7"
+          }, {
+            "count" : 14,
+            "item" : "17.3"
+          }, {
+            "count" : 13,
+            "item" : "32.1"
+          }, {
+            "count" : 12,
+            "item" : "19.9"
+          }, {
+            "count" : 11,
+            "item" : "10.2"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226607,
+        "name" : "1999-2002 flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_1999_2002_flag",
+        "position" : 14,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626900,
+        "width" : 268,
+        "cachedContents" : {
+          "non_null" : 9,
+          "smallest" : "*",
+          "null" : 87,
+          "largest" : "*",
+          "top" : [ {
+            "count" : 20,
+            "item" : "*"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226608,
+        "name" : "1999-2002 SE",
+        "dataTypeName" : "number",
+        "fieldName" : "_1999_2002_se",
+        "position" : 15,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626902,
+        "width" : 244,
+        "cachedContents" : {
+          "non_null" : 94,
+          "smallest" : "0.3",
+          "sum" : "96.1",
+          "null" : 2,
+          "average" : "1.022340425531915",
+          "largest" : "7.0",
+          "top" : [ {
+            "count" : 20,
+            "item" : "0.4"
+          }, {
+            "count" : 19,
+            "item" : "0.6"
+          }, {
+            "count" : 18,
+            "item" : "0.5"
+          }, {
+            "count" : 17,
+            "item" : "1.0"
+          }, {
+            "count" : 16,
+            "item" : "0.7"
+          }, {
+            "count" : 15,
+            "item" : "1.3"
+          }, {
+            "count" : 14,
+            "item" : "1.1"
+          }, {
+            "count" : 13,
+            "item" : "5.0"
+          }, {
+            "count" : 12,
+            "item" : "1.2"
+          }, {
+            "count" : 11,
+            "item" : "0.8"
+          }, {
+            "count" : 10,
+            "item" : "0.3"
+          }, {
+            "count" : 9,
+            "item" : "0.9"
+          }, {
+            "count" : 8,
+            "item" : "2.2"
+          }, {
+            "count" : 7,
+            "item" : "3.1"
+          }, {
+            "count" : 6,
+            "item" : "2.0"
+          }, {
+            "count" : 5,
+            "item" : "2.5"
+          }, {
+            "count" : 4,
+            "item" : "2.8"
+          }, {
+            "count" : 3,
+            "item" : "3.5"
+          }, {
+            "count" : 2,
+            "item" : "3.6"
+          }, {
+            "count" : 1,
+            "item" : "2.9"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226609,
+        "name" : "1999-2002 SE flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_1999_2002_se_flag",
+        "position" : 16,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626904,
+        "width" : 304,
+        "cachedContents" : {
+          "non_null" : 2,
+          "smallest" : "*",
+          "null" : 94,
+          "largest" : "*",
+          "top" : [ {
+            "count" : 20,
+            "item" : "*"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226610,
+        "name" : "2001-2004",
+        "dataTypeName" : "number",
+        "fieldName" : "_2001_2004",
+        "position" : 17,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626905,
+        "width" : 208,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "1.1",
+          "sum" : "839.7",
+          "null" : 0,
+          "average" : "8.746875",
+          "largest" : "26.4",
+          "top" : [ {
+            "count" : 20,
+            "item" : "9.5"
+          }, {
+            "count" : 19,
+            "item" : "9.8"
+          }, {
+            "count" : 18,
+            "item" : "7.5"
+          }, {
+            "count" : 17,
+            "item" : "7.3"
+          }, {
+            "count" : 16,
+            "item" : "7.2"
+          }, {
+            "count" : 15,
+            "item" : "6.7"
+          }, {
+            "count" : 14,
+            "item" : "9.2"
+          }, {
+            "count" : 13,
+            "item" : "5.8"
+          }, {
+            "count" : 12,
+            "item" : "18.1"
+          }, {
+            "count" : 11,
+            "item" : "3.3"
+          }, {
+            "count" : 10,
+            "item" : "4.5"
+          }, {
+            "count" : 9,
+            "item" : "2.3"
+          }, {
+            "count" : 8,
+            "item" : "2.9"
+          }, {
+            "count" : 7,
+            "item" : "4.1"
+          }, {
+            "count" : 6,
+            "item" : "3.5"
+          }, {
+            "count" : 5,
+            "item" : "4.6"
+          }, {
+            "count" : 4,
+            "item" : "3.1"
+          }, {
+            "count" : 3,
+            "item" : "3.7"
+          }, {
+            "count" : 2,
+            "item" : "3.6"
+          }, {
+            "count" : 1,
+            "item" : "3.2"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226611,
+        "name" : "2001-2004 flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_2001_2004_flag",
+        "position" : 18,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626906,
+        "width" : 268,
+        "cachedContents" : {
+          "non_null" : 7,
+          "smallest" : "*",
+          "null" : 89,
+          "largest" : "*",
+          "top" : [ {
+            "count" : 20,
+            "item" : "*"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226612,
+        "name" : "2001-2004 SE",
+        "dataTypeName" : "number",
+        "fieldName" : "_2001_2004_se",
+        "position" : 19,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626907,
+        "width" : 244,
+        "cachedContents" : {
+          "non_null" : 96,
+          "smallest" : "0.2",
+          "sum" : "87.8",
+          "null" : 0,
+          "average" : "0.9145833333333333",
+          "largest" : "4.4",
+          "top" : [ {
+            "count" : 20,
+            "item" : "0.5"
+          }, {
+            "count" : 19,
+            "item" : "0.7"
+          }, {
+            "count" : 18,
+            "item" : "0.9"
+          }, {
+            "count" : 17,
+            "item" : "1.0"
+          }, {
+            "count" : 16,
+            "item" : "1.3"
+          }, {
+            "count" : 15,
+            "item" : "1.1"
+          }, {
+            "count" : 14,
+            "item" : "0.6"
+          }, {
+            "count" : 13,
+            "item" : "0.8"
+          }, {
+            "count" : 12,
+            "item" : "1.2"
+          }, {
+            "count" : 11,
+            "item" : "0.4"
+          }, {
+            "count" : 10,
+            "item" : "1.6"
+          }, {
+            "count" : 9,
+            "item" : "0.3"
+          }, {
+            "count" : 8,
+            "item" : "0.2"
+          }, {
+            "count" : 7,
+            "item" : "1.8"
+          }, {
+            "count" : 6,
+            "item" : "3.1"
+          }, {
+            "count" : 5,
+            "item" : "1.9"
+          }, {
+            "count" : 4,
+            "item" : "2.6"
+          }, {
+            "count" : 3,
+            "item" : "3.4"
+          }, {
+            "count" : 2,
+            "item" : "2.9"
+          }, {
+            "count" : 1,
+            "item" : "1.7"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226613,
+        "name" : "2001-2004 SE flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_2001_2004_se_flag",
+        "position" : 20,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626908,
+        "width" : 304,
+        "cachedContents" : {
+          "non_null" : 0,
+          "null" : 96
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226614,
+        "name" : "2003-2006",
+        "dataTypeName" : "number",
+        "fieldName" : "_2003_2006",
+        "position" : 21,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626909,
+        "width" : 208,
+        "cachedContents" : {
+          "non_null" : 93,
+          "smallest" : "1.1",
+          "sum" : "839.2",
+          "null" : 3,
+          "average" : "9.023655913978495",
+          "largest" : "25.7",
+          "top" : [ {
+            "count" : 20,
+            "item" : "2.6"
+          }, {
+            "count" : 19,
+            "item" : "2.9"
+          }, {
+            "count" : 18,
+            "item" : "4.0"
+          }, {
+            "count" : 17,
+            "item" : "2.0"
+          }, {
+            "count" : 16,
+            "item" : "3.0"
+          }, {
+            "count" : 15,
+            "item" : "14.8"
+          }, {
+            "count" : 14,
+            "item" : "24.7"
+          }, {
+            "count" : 13,
+            "item" : "16.6"
+          }, {
+            "count" : 12,
+            "item" : "4.1"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226615,
+        "name" : "2003-2006 flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_2003_2006_flag",
+        "position" : 22,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626910,
+        "width" : 268,
+        "cachedContents" : {
+          "non_null" : 11,
+          "smallest" : "*",
+          "null" : 85,
+          "largest" : "*",
+          "top" : [ {
+            "count" : 20,
+            "item" : "*"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226616,
+        "name" : "2003-2006 SE",
+        "dataTypeName" : "number",
+        "fieldName" : "_2003_2006_se",
+        "position" : 23,
+        "renderTypeName" : "number",
+        "tableColumnId" : 12626911,
+        "width" : 244,
+        "cachedContents" : {
+          "non_null" : 93,
+          "smallest" : "0.3",
+          "sum" : "86.9",
+          "null" : 3,
+          "average" : "0.9344086021505376",
+          "largest" : "4.3",
+          "top" : [ {
+            "count" : 20,
+            "item" : "0.5"
+          }, {
+            "count" : 19,
+            "item" : "0.7"
+          }, {
+            "count" : 18,
+            "item" : "0.6"
+          }, {
+            "count" : 17,
+            "item" : "0.9"
+          }, {
+            "count" : 16,
+            "item" : "1.2"
+          }, {
+            "count" : 15,
+            "item" : "1.3"
+          }, {
+            "count" : 14,
+            "item" : "1.1"
+          }, {
+            "count" : 13,
+            "item" : "0.8"
+          }, {
+            "count" : 12,
+            "item" : "1.5"
+          }, {
+            "count" : 11,
+            "item" : "1.0"
+          }, {
+            "count" : 10,
+            "item" : "0.4"
+          }, {
+            "count" : 9,
+            "item" : "1.8"
+          }, {
+            "count" : 8,
+            "item" : "0.3"
+          }, {
+            "count" : 7,
+            "item" : "2.4"
+          }, {
+            "count" : 6,
+            "item" : "1.9"
+          }, {
+            "count" : 5,
+            "item" : "2.6"
+          }, {
+            "count" : 4,
+            "item" : "3.2"
+          }, {
+            "count" : 3,
+            "item" : "3.4"
+          }, {
+            "count" : 2,
+            "item" : "1.4"
+          }, {
+            "count" : 1,
+            "item" : "3.0"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 87226617,
+        "name" : "2003-2006 SE flag",
+        "dataTypeName" : "text",
+        "fieldName" : "_2003_2006_se_flag",
+        "position" : 24,
+        "renderTypeName" : "text",
+        "tableColumnId" : 12626912,
+        "width" : 304,
+        "cachedContents" : {
+          "non_null" : 3,
+          "smallest" : "*",
+          "null" : 93,
+          "largest" : "*",
+          "top" : [ {
+            "count" : 20,
+            "item" : "*"
+          } ]
+        },
+        "format" : {
+        }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "custom_fields" : {
+          "Common Core" : {
+            "Contact Email" : "IMTech@cdc.gov",
+            "Bureau Code" : "009:000",
+            "Program Code" : "009:020"
+          }
+        },
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "rdfSubject" : "0",
+        "attachments" : [ {
+          "blobId" : "3944AC04-10F8-40FD-9773-3428F9826824",
+          "name" : "HUS_diabetes_footnotes.htm",
+          "filename" : "HUS_diabetes_footnotes.htm"
+        } ],
+        "rowIdentifier" : "0",
+        "rdfClass" : ""
+      },
+      "owner" : {
+        "id" : "vr5q-rutf",
+        "displayName" : "SFranco",
+        "roleName" : "editor",
+        "screenName" : "SFranco",
+        "rights" : [ "create_datasets", "view_domain", "create_pages", "view_goals", "view_dashboards" ]
+      },
+      "query" : {
+      },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "g3fc-zmqn",
+        "displayName" : "CDC",
+        "profileImageUrlLarge" : "/images/profile/7958/3844/HHS_CDC_ATSDR_rgb_large.jpg",
+        "profileImageUrlMedium" : "/images/profile/7958/3844/HHS_CDC_ATSDR_rgb_thumb.jpg",
+        "profileImageUrlSmall" : "/images/profile/7958/3844/HHS_CDC_ATSDR_rgb_tiny.jpg",
+        "roleName" : "administrator",
+        "screenName" : "CDC",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards" ]
+      },
+      "tags" : [ "hus", "diabetes", "adults" ],
+      "flags" : [ "default" ]
+    }
+  },
+  "data" : [ [ 1, "AA15FABF-91B6-4069-B235-970E2EED2F73", 1, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "9.1", null, "0.4", null, "9.8", null, "0.4", null, "10.7", null, "0.5", null, "10.6", null, "0.5", null ]
+, [ 2, "B7C1C38F-889C-4998-B051-E52AFB7E399C", 2, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "9.6", null, "0.4", null, "10.8", null, "0.6", null, "12.0", null, "0.7", null, "11.5", null, "0.7", null ]
+, [ 3, "0E109CD0-EC3C-46EA-85DC-EC78F539F09D", 3, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.7", null, "0.6", null, "8.8", null, "0.5", null, "9.5", null, "0.5", null, "9.8", null, "0.5", null ]
+, [ 4, "AECEE829-A75E-4491-93E7-7B7861B39E46", 4, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.0", null, "0.4", null, "8.3", null, "0.4", null, "9.1", null, "0.5", null, "9.0", null, "0.6", null ]
+, [ 5, "FCB69E3D-2234-4640-8395-9FD0DB6CE644", 5, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "16.0", null, "0.7", null, "16.3", null, "1.0", null, "15.4", null, "0.9", null, "16.4", null, "0.9", null ]
+, [ 6, "16ED9BE9-44CD-4EE7-A039-1A9B1452A12E", 6, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "14.9", null, "1.1", null, "13.2", null, "0.7", null, "15.2", null, "1.0", null, "16.3", null, "1.2", null ]
+, [ 7, "65412F6D-ED40-428E-8139-AE7BBF4C7826", 7, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "14.2", null, "1.1", null, "14.5", null, "1.3", null, "14.8", null, "1.3", null, "15.1", null, "1.3", null ]
+, [ 8, "4F633CEA-AD40-4AFE-91A6-9B08C94E9EA9", 8, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.4", null, "0.4", null, "8.9", null, "0.5", null, "9.8", null, "0.5", null, "9.9", null, "0.6", null ]
+, [ 9, "036FCAA3-1A30-49FF-BAD6-AC7A68B36C51", 9, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "10.9", null, "0.8", null, "12.6", null, "1.1", null, "12.9", null, "1.1", null, "13.3", null, "1.1", null ]
+, [ 10, "84B09476-C7D6-4056-A187-0FB66042EA4E", 10, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "7.7", null, "0.5", null, "7.7", null, "5.0", null, "8.8", null, "0.6", null, "8.8", null, "0.7", null ]
+, [ 11, "F7E8C077-CC28-4A2D-8A9A-4595086DD746", 11, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.4", null, "0.6", null, "10.0", null, "0.7", null, "10.5", null, "0.8", null, "10.1", null, "1.1", null ]
+, [ 12, "A585A6E8-306F-4FAE-B6C9-2A28AB54F1A3", 12, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "6.8", null, "0.7", null, "5.9", null, "0.5", null, "7.5", null, "0.6", null, "7.4", null, "0.6", null ]
+, [ 13, "D7A7C781-4612-4C39-863D-02742F37E14E", 13, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.4", null, "0.3", null, "9.7", null, "0.4", null, "10.4", null, "0.5", null, "10.7", null, "0.6", null ]
+, [ 14, "D05929E7-4261-4D52-A0B2-5DBA60ABEEDE", 14, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.6", null, "0.4", null, "10.4", null, "0.6", null, "11.5", null, "0.7", null, "11.4", null, "0.8", null ]
+, [ 15, "1E2852FE-CF66-4884-9F54-EA171D001206", 15, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "8.3", null, "0.6", null, "9.0", null, "0.5", null, "9.5", null, "0.5", null, "10.1", null, "0.6", null ]
+, [ 16, "36D8E0C9-4C31-43DC-A30C-0677BAD64CBB", 16, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "7.8", null, "0.3", null, "8.7", null, "0.4", null, "9.5", null, "0.5", null, "9.8", null, "0.7", null ]
+, [ 17, "3924FFDB-389E-4D98-83AF-03FAE94DE65B", 17, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "12.9", null, "0.6", null, "14.1", null, "1.0", null, "13.7", null, "1.0", null, "15.2", null, "0.9", null ]
+, [ 18, "ABA6A764-2305-45B3-9FFE-99C2A4F64D23", 18, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "9.7", null, "0.7", null, "8.5", null, "0.6", null, "9.8", null, "1.2", null, "11.6", null, "1.5", null ]
+, [ 19, "8B387EFB-DE57-4D4F-A3F3-FEDF64D2B66F", 19, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "11.3", null, "0.9", null, "13.0", null, "1.1", null, "11.9", null, "0.9", null, "12.8", null, "1.0", null ]
+, [ 20, "3546C587-9070-4958-825F-47C29FB6AC5F", 20, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "7.8", null, "0.4", null, "8.8", null, "0.5", null, "9.7", null, "0.5", null, "10.2", null, "0.6", null ]
+, [ 21, "5A720EC6-E86E-4D7F-B77C-18527712AE48", 21, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "10.1", null, "0.7", null, "12.6", null, "1.2", null, "12.8", null, "1.1", null, "14.3", null, "1.2", null ]
+, [ 22, "63B26F01-9FC7-49BF-8726-354A6EA2BFC4", 22, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "7.0", null, "0.5", null, "7.5", null, "0.5", null, "8.7", null, "0.5", null, "9.0", null, "0.7", null ]
+, [ 23, "CF370423-32FE-45F1-9FE2-7976993E6119", 23, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "7.3", null, "0.6", null, "9.6", null, "0.8", null, "10.3", null, "0.9", null, "10.5", null, "1.1", null ]
+, [ 24, "E9808B97-51E9-4896-AD2F-4E3A36B2FD13", 24, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "6.5", null, "0.6", null, "6.0", null, "0.6", null, "7.3", null, "0.7", null, "7.6", null, "0.7", null ]
+, [ 25, "B1DCF05A-FE95-45F3-AF90-31C8838EA16E", 25, 1375128812, "709722", 1375128812, "709722", "{\n}", "20-44 years", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "2.6", null, "0.3", null, "3.4", null, "0.5", null, "3.6", null, "0.4", null, "3.6", null, "0.4", null ]
+, [ 26, "22D65DCC-EE73-4886-90A3-2FAE5E04CD2E", 26, 1375128812, "709722", 1375128812, "709722", "{\n}", "45-64 years", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "13.9", null, "0.8", null, "13.0", null, "1.0", null, "13.4", null, "1.0", null, "13.5", null, "1.0", null ]
+, [ 27, "212C8247-A27C-41CA-88C4-9F98B1D71459", 27, 1375128812, "709722", 1375128812, "709722", "{\n}", "65 years and over", null, "20 years and over, crude", null, "Physician-diagnosed and undiagnosed diabetes", "Percent of population", "1", "2", "19.6", null, "1.0", null, "22.4", null, "1.3", null, "26.4", null, "1.6", null, "25.7", null, "1.8", null ]
+, [ 28, "C2355D96-55B3-4637-B39D-ACD65D8FACB7", 28, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.5", null, "0.2", null, "6.6", null, "0.3", null, "7.3", null, "0.3", null, "7.6", null, "0.3", null ]
+, [ 29, "714E162C-D1D7-4DE7-BB44-FDD16E82DD4D", 29, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.5", null, "0.2", null, "7.0", null, "0.4", null, "7.5", null, "0.4", null, "7.5", null, "0.5", null ]
+, [ 30, "DDE194FF-E222-4327-9159-3EAF5184D90F", 30, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.6", null, "0.3", null, "6.2", null, "0.4", null, "7.2", null, "0.4", null, "7.8", null, "0.4", null ]
+, [ 31, "41FA0621-36FE-4C9A-BC33-F7DF0DF8BCA2", 31, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.1", null, "0.2", null, "5.3", null, "0.3", null, "6.2", null, "0.3", null, "6.3", null, "0.3", null ]
+, [ 32, "D2F23C6E-4171-46F7-A993-6DEF87B6A7D7", 32, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "8.8", null, "0.5", null, "11.9", null, "0.8", null, "11.3", null, "0.8", null, "12.6", null, "0.7", null ]
+, [ 33, "FC846F4F-356D-403E-94A4-77F392AB53FD", 33, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "9.8", null, "0.6", null, "10.1", null, "0.6", null, "11.7", null, "0.8", null, "12.1", null, "0.8", null ]
+, [ 34, "AF406A90-D5F3-41D4-AFAC-1A68B4312B75", 34, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "8.8", null, "0.9", null, "9.1", null, "1.2", null, "10.2", null, "1.0", null, "12.8", null, "1.3", null ]
+, [ 35, "CB945863-1CE6-4F96-8E4F-0118EC3F2B0A", 35, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.1", null, "0.2", null, "6.0", null, "0.3", null, "6.7", null, "0.3", null, "6.9", null, "0.3", null ]
+, [ 36, "D50B4848-34C8-4CC8-AFC2-58908B361920", 36, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "6.6", null, "0.4", null, "9.0", null, "0.8", null, "9.2", null, "0.7", null, "8.9", null, "0.7", null ]
+, [ 37, "8878FD2D-B0C5-48CD-B303-0AC38E7892E6", 37, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.6", null, "0.3", null, "5.1", null, "0.3", null, "5.8", null, "0.4", null, "6.2", null, "0.4", null ]
+, [ 38, "64C911CF-B2DE-4CB6-85A6-473C27C34A4C", 38, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.8", null, "0.3", null, "6.8", null, "0.7", null, "6.9", null, "0.7", null, "7.1", null, "0.7", null ]
+, [ 39, "B06BACBC-96D7-472C-B74F-499A11B46E31", 39, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, age-adjusted", "4", "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.3", null, "0.4", null, "3.6", null, "0.4", null, "5.2", null, "0.4", null, "5.6", null, "0.4", null ]
+, [ 40, "768B9EA4-B312-42AB-BB93-2272FE64B1DB", 40, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.1", null, "0.2", null, "6.5", null, "0.3", null, "7.2", null, "0.4", null, "7.7", null, "0.4", null ]
+, [ 41, "0F5E4E64-DD6B-48A3-8719-528D99A3936A", 41, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.8", null, "0.2", null, "6.7", null, "0.4", null, "7.2", null, "0.4", null, "7.4", null, "0.5", null ]
+, [ 42, "2BC3766A-CCD3-46A2-8EEE-0C3CD0FA95D0", 42, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.4", null, "0.3", null, "6.3", null, "0.4", null, "7.1", null, "0.4", null, "8.1", null, "0.5", null ]
+, [ 43, "FBD2E888-1BEF-46CD-ACE6-E84457980B45", 43, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.0", null, "0.2", null, "5.5", null, "0.3", null, "6.4", null, "0.4", null, "6.9", null, "0.4", null ]
+, [ 44, "9BA40313-C585-472E-A7B2-FFED6DF05692", 44, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "6.9", null, "0.4", null, "10.1", null, "0.8", null, "10.1", null, "0.8", null, "11.8", null, "0.7", null ]
+, [ 45, "11302E31-458F-4DFF-BE72-1A4CAF73EACF", 45, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "5.6", null, "0.3", null, "6.5", null, "0.6", null, "7.0", null, "0.6", null, "7.9", null, "0.7", null ]
+, [ 46, "AB4EF0BF-4633-4528-B586-3BC34794420D", 46, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "7.0", null, "0.8", null, "8.1", null, "1.0", null, "8.2", null, "0.8", null, "10.7", null, "1.0", null ]
+, [ 47, "37A0A6C6-CA6C-4857-89FD-CB405A81AB64", 47, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.7", null, "0.2", null, "5.9", null, "0.3", null, "6.7", null, "0.4", null, "7.1", null, "0.4", null ]
+, [ 48, "D8D9958D-EFD9-4787-9C96-6255CDE60FB0", 48, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "6.4", null, "0.3", null, "9.1", null, "0.8", null, "9.2", null, "0.7", null, "9.7", null, "0.7", null ]
+, [ 49, "5E45D913-A7C0-4A49-9A1F-1E9F71A397CA", 49, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.2", null, "0.2", null, "4.9", null, "0.3", null, "5.8", null, "0.4", null, "6.3", null, "0.5", null ]
+, [ 50, "6709AD15-8FC2-472F-8C19-62D14663139C", 50, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.3", null, "0.3", null, "6.5", null, "0.7", null, "6.7", null, "0.8", null, "7.3", null, "0.7", null ]
+, [ 51, "C0EE4827-C05D-424B-98E6-B90C8076701F", 51, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "4.1", null, "0.4", null, "3.7", null, "0.4", null, "5.1", null, "0.4", null, "5.5", null, "0.4", null ]
+, [ 52, "5298E61A-35D6-442E-B652-E3A9FA46BB75", 52, 1375128812, "709722", 1375128812, "709722", "{\n}", "20-44 years", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "1.6", null, "0.2", null, "2.3", null, "0.3", null, "2.5", null, "0.3", null, "2.6", null, "0.3", null ]
+, [ 53, "B563282A-A1D6-4A66-AFBF-A214EB11BAED", 53, 1375128812, "709722", 1375128812, "709722", "{\n}", "45-64 years", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "7.9", null, "0.4", null, "8.5", null, "0.7", null, "9.2", null, "0.7", null, "9.9", null, "0.7", null ]
+, [ 54, "A4C84033-47A1-48AB-BAE9-337A9B97C910", 54, 1375128812, "709722", 1375128812, "709722", "{\n}", "65 years and over", null, "20 years and over, crude", null, "Physician-diagnosed diabetes", "Percent of population", "1", null, "12.9", null, "0.6", null, "15.8", null, "1.0", null, "18.1", null, "1.2", null, "18.3", null, "1.1", null ]
+, [ 55, "8F6FD59D-4ECC-4DB1-AEA4-976B18B36FD9", 55, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "3.6", null, "0.3", null, "3.2", null, "0.3", null, "3.3", null, "0.3", null, "2.9", null, "0.4", null ]
+, [ 56, "55D0FB3F-8EBB-4F29-825B-BF24A6C2364D", 56, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "4.1", null, "0.4", null, "3.8", null, "0.5", null, "4.5", null, "0.5", null, "4.0", null, "0.6", null ]
+, [ 57, "05388954-2C3B-4176-A231-5B1D74780B0F", 57, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "3.1", null, "0.4", null, "2.6", null, "0.4", null, "2.3", null, "0.3", null, "2.0", null, "0.3", null ]
+, [ 58, "811B8C7A-EF49-4E57-8187-DC1437FA53AA", 58, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "2.9", null, "0.3", null, "3.0", null, "0.3", null, "2.9", null, "0.3", null, "2.7", null, "0.5", null ]
+, [ 59, "2676AF96-7912-481B-8DE6-0E2BBF88F98A", 59, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "7.2", null, "0.7", null, "4.4", null, "0.7", null, "4.1", null, "0.6", null, "3.8", null, "0.4", null ]
+, [ 60, "B24E10C6-BE60-4B1C-8D0D-332652F9436C", 60, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "5.0", null, "0.7", null, "3.1", "*", "0.6", null, "3.5", null, "0.7", null, "4.2", null, "0.7", null ]
+, [ 61, "6B574769-B725-416D-9C5E-349CB7D6AEBB", 61, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "5.4", null, "0.9", null, "5.4", null, "0.9", null, "4.6", null, "0.8", null, null, "*", null, "*" ]
+, [ 62, "92EECA8E-41A9-4BDE-8CE0-8C08A9287D6F", 62, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "3.3", null, "0.3", null, "2.9", null, "0.3", null, "3.1", null, "0.3", null, "3.0", null, "0.4", null ]
+, [ 63, "A5840EEB-8725-4A0B-B0C0-68FBFDCE7B44", 63, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "4.3", null, "0.6", null, "3.6", "*", "0.8", null, "3.7", null, "0.7", null, "4.4", null, "0.7", null ]
+, [ 64, "B2EF116C-87C4-4A59-9935-C9133EA54B41", 64, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "3.1", null, "0.4", null, "2.7", null, "0.3", null, "2.9", null, "0.4", null, "2.6", null, "0.4", null ]
+, [ 65, "6D5DF381-4C8B-46E3-AC29-A94753A05D99", 65, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "3.6", null, "0.6", null, "3.2", null, "0.6", null, "3.6", null, "0.6", null, "3.0", "*", "0.6", null ]
+, [ 66, "969A1E19-2961-4187-B624-E40279A7AF2D", 66, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, age-adjusted", "4", "Undiagnosed diabetes", "Percent of population", "2", null, "2.6", null, "0.5", null, "2.3", null, "0.4", null, "2.3", "*", "0.6", null, null, "*", null, "*" ]
+, [ 67, "E921F9C8-2221-4558-BA77-C1EC6C2785CB", 67, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "3.3", null, "0.3", null, "3.2", null, "0.3", null, "3.2", null, "0.3", null, "3.0", null, "0.4", null ]
+, [ 68, "4EAA7894-262B-4FF3-B9BC-05CE6EDF272D", 68, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "3.7", null, "0.4", null, "3.7", null, "0.5", null, "4.3", null, "0.5", null, "4.0", null, "0.6", null ]
+, [ 69, "9D151964-F197-4CC2-AE8F-FBB12752C74D", 69, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "3.0", null, "0.4", null, "2.7", null, "0.4", null, "2.3", null, "0.3", null, "2.0", null, "0.3", null ]
+, [ 70, "70438F4B-83F6-41C1-8014-AAC9E20C9DA6", 70, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "2.8", null, "0.3", null, "3.2", null, "0.3", null, "3.1", null, "0.3", null, "2.9", null, "0.5", null ]
+, [ 71, "1C16FD9C-8B18-4A43-A04D-89BAD3A434AA", 71, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "6.0", null, "0.6", null, "4.0", null, "0.7", null, "3.6", null, "0.6", null, "3.4", null, "0.4", null ]
+, [ 72, "85D8AA77-BE3D-4548-AF8D-D1EA2719A902", 72, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "4.1", null, "0.5", null, "1.9", null, "0.3", null, "2.8", "*", "0.8", null, "3.6", "*", "0.9", null ]
+, [ 73, "1070090C-24FE-4B1C-BB84-539E0FD5F569", 73, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "4.3", null, "0.7", null, "4.9", null, "0.8", null, "3.7", null, "0.6", null, null, "*", null, "*" ]
+, [ 74, "B52846EC-B359-423E-B5EA-B5DF9ABB3008", 74, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "3.0", null, "0.3", null, "2.8", null, "0.3", null, "3.0", null, "0.3", null, "3.1", null, "0.4", null ]
+, [ 75, "A3815C1C-AB70-441C-A013-DC81977F8025", 75, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "3.8", null, "0.5", null, "3.5", "*", "0.8", null, "3.6", null, "0.6", null, "4.6", null, "0.8", null ]
+, [ 76, "0427058B-3B8B-45C7-9739-557B31370412", 76, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "2.8", null, "0.4", null, "2.6", null, "0.3", null, "2.9", null, "0.3", null, "2.6", null, "0.4", null ]
+, [ 77, "127FBB90-077F-41DA-B709-1B0DE3A1CD84", 77, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "3.1", null, "0.5", null, "3.1", "*", "0.6", null, "3.6", null, "0.6", null, "3.2", "*", "0.7", null ]
+, [ 78, "91AA71D5-C9A8-481E-B4AB-3A29E942FECA", 78, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "2.4", "*", "0.5", null, "2.2", null, "0.4", null, "2.3", "*", "0.6", null, "2.1", "*", "0.6", null ]
+, [ 79, "5D729F80-34D8-4BD6-B11E-1BF50804D961", 79, 1375128812, "709722", 1375128812, "709722", "{\n}", "20-44 years", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "1.0", "*", "0.2", null, null, "*", null, "*", "1.1", "*", "0.2", null, "1.1", "*", "0.3", null ]
+, [ 80, "47CE3565-39ED-4304-B9CE-323BF41134D0", 80, 1375128812, "709722", 1375128812, "709722", "{\n}", "45-64 years", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "6.0", null, "0.6", null, "4.5", null, "0.7", null, "4.2", null, "0.7", null, "3.5", null, "0.7", null ]
+, [ 81, "ED545BC3-DE20-4633-B556-754AC33F03A4", 81, 1375128812, "709722", 1375128812, "709722", "{\n}", "65 years and over", null, "20 years and over, crude", null, "Undiagnosed diabetes", "Percent of population", "2", null, "6.7", null, "0.8", null, "6.6", null, "1.0", null, "8.3", null, "1.0", null, "7.3", null, "1.1", null ]
+, [ 82, "038F37D2-5B1A-43A5-B588-DF2A93649292", 82, 1375128812, "709722", 1375128812, "709722", "{\n}", "All persons", "5", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "23.3", null, "1.9", null, "18.4", null, "2.2", null, "14.4", null, "1.8", null, "13.0", null, "1.5", null ]
+, [ 83, "BE82E9EA-9EF9-4E32-88D6-BAEFD0088422", 83, 1375128812, "709722", 1375128812, "709722", "{\n}", "Male", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "20.2", null, "2.6", null, "20.2", null, "3.1", null, "17.5", null, "3.1", null, "14.8", null, "2.4", null ]
+, [ 84, "25E40004-CC0C-4111-98C0-B3EBAFE24D6E", 84, 1375128812, "709722", 1375128812, "709722", "{\n}", "Female", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "25.8", null, "2.6", null, "16.6", null, "2.0", null, "11.6", null, "1.6", null, "11.4", null, "1.9", null ]
+, [ 85, "8AE89F16-9F3D-46EC-9110-1471E5E3AA3B", 85, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: White only", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "20.6", null, "2.5", null, "13.6", null, "2.5", null, "11.5", null, "1.9", null, "8.6", null, "1.3", null ]
+, [ 86, "91FFECDA-841E-45EE-B2D7-E95063479EE5", 86, 1375128812, "709722", 1375128812, "709722", "{\n}", "Not Hispanic or Latino: Black or African American only", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "34.2", null, "2.9", null, "25.4", null, "2.8", null, "20.0", null, "2.6", null, "21.0", null, "2.6", null ]
+, [ 87, "16E8A8A1-794E-4FD5-9822-38D2C0506469", 87, 1375128812, "709722", 1375128812, "709722", "{\n}", "Mexican", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "29.2", null, "3.2", null, "26.5", null, "3.5", null, "22.9", null, "3.4", null, "24.0", null, "3.2", null ]
+, [ 88, "96EDEB3C-24BA-4180-89E1-1226E98D7035", 88, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: Below 100%", "6", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "30.2", null, "3.5", null, "25.6", null, "3.6", null, "16.3", null, "2.9", null, "17.6", null, "3.4", null ]
+, [ 89, "7A307F53-402B-43F8-B3DB-C67E4F977D45", 89, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100% or more", "6", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "21.4", null, "2.1", null, "15.9", null, "2.2", null, "13.8", null, "1.7", null, "12.2", null, "1.4", null ]
+, [ 90, "11B678ED-06E2-4047-9B00-8616EDCD6F19", 90, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 100%-199%", "6", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "24.2", null, "3.6", null, "14.9", "*", "3.6", null, "10.5", "*", "2.6", null, "11.5", "*", "3.0", null ]
+, [ 91, "49CD7E4C-0C67-4F31-93D8-2A88BA18D892", 91, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200% or more", "6", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "20.0", null, "2.8", null, "16.4", null, "2.9", null, "15.5", null, "2.0", null, "12.5", null, "1.5", null ]
+, [ 92, "5C1A0773-7D64-4BE2-9BFB-4F53E1F652B3", 92, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 200%-399%", "6", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "21.2", "*", "4.3", null, "17.3", null, "3.5", null, "15.5", null, "2.7", null, "10.6", "*", "2.2", null ]
+, [ 93, "E6BDC28F-78C3-496E-A447-68326DF6BA50", 93, 1375128812, "709722", 1375128812, "709722", "{\n}", "Percent of poverty level: 400% or more", "6", "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "18.3", "*", "4.3", null, null, "*", null, "*", "15.5", null, "3.1", null, "14.8", null, "2.7", null ]
+, [ 94, "2ECDE025-B838-453B-B896-77DF1310F95A", 94, 1375128812, "709722", 1375128812, "709722", "{\n}", "20-44 years", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "29.5", null, "5.7", null, "32.1", "*", "7.0", null, "19.7", "*", "4.4", null, "24.7", null, "4.3", null ]
+, [ 95, "B38613BF-73EF-4560-AACB-0871E6753162", 95, 1375128812, "709722", 1375128812, "709722", "{\n}", "45-64 years", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "26.0", null, "3.4", null, "19.9", null, "3.1", null, "19.5", null, "2.7", null, "16.6", null, "2.1", null ]
+, [ 96, "69B97F94-9E0E-4B07-A3FE-FAC645A0E794", 96, 1375128812, "709722", 1375128812, "709722", "{\n}", "65 years and over", null, "20 years and over, crude", "7", "Poor glycemic control (A1c greater than 9%) among persons with diagnosed diabetes", "Percent of population with diagnosed diabetes", null, null, "18.0", null, "2.5", null, "10.2", "*", "2.1", null, "6.3", "*", "1.3", null, "4.1", "*", "1.1", null ]
+ ]
+}
