@@ -5,7 +5,7 @@
 Project Phase 2 (Individual and Group, 10%)
 =================================
 
-**This project specification may be changed at any time (Last updated: 2 April 2015).**
+**This project specification may be changed at any time (Last updated: 22 April 2015).**
 
 Aims
 ----
@@ -59,7 +59,7 @@ table:nth-of-type(1) thead th, table:nth-of-type(1) tbody td:first-child {
 
 The given data set contains information about 291 popular feature films produced from 1969 to 2008. The data set captures data such as the movie name, censorship rating, genre, director, actors, score from various critics, and worldwide gross.
 
-[Movie Statistic (Box Office data only)](assets/moviestats_med.csv)
+<a href="assets/moviestats_med.csv" file="data"> Movie Statistic (Box Office data only)</a>
 
 #### Part 1 - Basic Task (individual, one unique question for each person in the group)
 
@@ -110,13 +110,17 @@ Mainly based on the correctness and the quality of your data processing and visu
 - The use of formulas is clear and of reasonable length: no manual data processing (formula should be used appropriately as much as possible), robustness (the spreadsheet could be minimally adjusted to adapt to the change in the data)
 - Output: produces intended results, appropriate choice of visualisation to support the intended goal
 
+The marking sheet is available <a href="assets/phase-2-marking-sheet.doc" file="doc"> here</a>.
+
 Submission
 --------------
 
 **Due Date: Friday Week 8, 5pm**:<br />
 **Late penalty: 1 mark for each late day**:
 
-Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use more than one sheet for a question if it helps you to provide an answer systematically). Name your Google Spreadsheet documents using the name supplied by your tutor.
+Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use multiple sheets for a single question if it helps you to provide an answer systematically but name your sheet systematically, e.g. Q1_STEP1, Q1_STEP2, ...). While there is no limit in the number of sheets that you can create, please use a reasonable amount.
+
+Name your Google Spreadsheet document using the name supplied here (TBA).
 
 Share your Google Spreadsheet to us. Use `Share` > `Sharing Setting`s > `Add People` command, and put down the following emails: `informatix.one@gmail.com` and the email of your tutor. Make sure you give us edit access, not only view access. Make sure you do not change the spreadsheet after deadline because we will overwrite any changes made with the last version just before the due date.
 
