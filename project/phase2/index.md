@@ -120,7 +120,7 @@ Submission
 
 Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use multiple sheets for a single question if it helps you to provide an answer systematically but name your sheet systematically, e.g. Q1_STEP1, Q1_STEP2, ...). While there is no limit in the number of sheets that you can create, please use a reasonable amount.
 
-Name your Google Spreadsheet document using the name supplied here (TBA).
+Name your Google Spreadsheet document using the name supplied <a href="https://docs.google.com/spreadsheets/d/1SaipQFvs3j7IrSvwrCt1HfvzxhOHrwnXPTUpcEoHD2g/pubhtml">here</a>.
 
 Share your Google Spreadsheet to us. Use `Share` > `Sharing Setting`s > `Add People` command, and put down the following emails: `informatix.one@gmail.com` and the email of your tutor. Make sure you give us edit access, not only view access. Make sure you do not change the spreadsheet after deadline because we will overwrite any changes made with the last version just before the due date.
 

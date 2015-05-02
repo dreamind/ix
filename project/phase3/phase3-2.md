@@ -1,4 +1,4 @@
-Week 10 Activities
+Week 9 Activities
 At the end of this workshop you, in a group, will produce a concrete plan to implement what you have set to achieve for the [phase 3] of the project. To help you doing that, address the issues outlined in the following checklist:
 
 - **Application structure**<br />
@@ -10,7 +10,7 @@ Discuss how you share your code. You may use IVLE's SVN or you may use Github. P
 You may want to a group subversion repository for all your work in this project, which your tutor should have helped you set up. If you do not have a group repository, please contact one of the subject coordinators as soon as possible. The repository should contain not just the final polished version of your code: you should be checking in intermediate versions that work to some extent, but are not yet complete, for instance. You should use it as a way of sharing files, and of keeping track of who has done what. Use the commit messages in subversion to assist in identifying what exactly you have contributed to the project, as well as your own development log files.
 
 - **Data management**<br />
-Discuss how the data is stored and processed. The simplest way to store the data is using CSV file. Once your data is processed you can store your data in a intermediary CSV file or in [pickle](https://wiki.python.org/moin/UsingPickle) for faster processing. You can also use SQL-like datastore, SQLite in IVLE. A short tutorial on how to use this is available at the end of this page. 
+Discuss how the data is stored and processed. The simplest way to store the data is using CSV file. Once your data is processed you can store your data in a intermediary CSV file or in [pickle](https://wiki.python.org/moin/UsingPickle) for faster processing. You can also use SQL-like datastore, SQLite in IVLE. A short tutorial on how to use this is available at the end of this page.
 You are allowed to do some off-line data processing (outside IVLE) to speed up your data analysis. However, this should be documented and presented during final presentation because this is a very important aspect of analysis cycle.
 - **The use of other Python libraries**<br />
 You may use other Python libraries as long as they can be easily added to your IVLE's file space. [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) is one of such libraries. It can be really useful when you need to process unstructured datasources and to convert them to structure datasets like CSV.
