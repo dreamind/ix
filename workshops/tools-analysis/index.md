@@ -1,38 +1,75 @@
-Workshop - Tools of Analysis
+﻿Workshop - Tools of Analysis
 =========================
+
+In this week's workshop we do some exercises that highlight the use of specific regularly-used analytical techniques.
+
 
 Part A: Transforming data
 -------------------------
 
-Using the following numerical data-set [data-sample-1.csv](assets/data-sample-1.csv) and skills developed in the HTML/CSS workshop create a visual representation that groups data into certain categories and outputs colours accordingly. You will need to transform the data from numerical to categorical values. Do this using the following three options and show the results for each:
+Using the following numerical data-set [data-sample-1.csv](assets/data-sample-1.csv) and skills developed in the HTML/CSS workshop create a visual representation that groups data into certain categories and outputs colours depending on membership size. You will need to transform the data from numerical to categorical values. Do this using the following methods:
 
-1. Equal intervals – define the maximum/minimum, set the interval size (65), iterate through the data and result in a count for each bin
-2. Quartile intervals – similar to the calculations in phase 1 project, define the maximum/minimum/q1/q3/median, iterate through the data and result in a count for each quartile
-3. Jenks’ natural breaks (optional) – as shown in lectures test all possible intervals (every combination of 260 divided by 4). Get the mean of all the values and get the standard deviation of the overall values array. For each interval tested, get the standard deviation of each class and calculate the goodness of fit. Use the intervals that provide the highest GVF value. For a simple worked example, look at slide 15 of the bivariate analysis lecture. (Note: this exercise will take longer as there are far more combinations to test.)
+1. Equal intervals – read in the data points, define the maximum/minimum, set the interval size, iterate through the data and result in a count for each interval (bin)
+2. Quartile intervals – similar to the calculations in phase 1 project, define the maximum/minimum/q1/q3/median, iterate through the data and result in a count for each quartile (bin)
 
-The data-set has 260 values and can be divided into four categories with the following hex number assignment for color output:
+The data-set has 260 values which should be divided into four categories/bins. A color palette for a range of membership counts has the following hex assignments: 
 
-- Category 1: #000000
-- Category 2: #B20000
-- Category 3: #FF0000
-- Category 4: #E8B2B2
+| Category (count range)| Hex code	|
+|-----------------------|---------------|
+| 1 (0 - 10)		| #000000	|
+| 2 (11 - 20)		| #1A0000	|
+| 3 (21 - 30)		| #330000	|
+| 4 (31 - 40)		| #360000	|
+| 5 (41 - 50)		| #4C0000	|
+| 6 (51 - 60)		| #660000	|
+| 7 (61 - 70)		| #800000	|
+| 8 (71 - 80)		| #900000	|
+| 9 (81 - 90)		| #990000	|
+| 10 (91 - 100)		| #B20000	|
+| 11 (101 - 110)	| #CC0000	|
+| 12 (111 - 120)	| #E60000	|
+| 13 (121 - 130)	| #FF0000	|
+| 14 (131 - 140)	| #FF1919	|
+| 15 (141 - 150)	| #FF2222	|
+| 16 (151 - 160)	| #FF3333	|
+| 17 (161 - 170)	| #FF4D4D	|
+| 18 (171 - 180)	| #FF6666	|
+| 19 (181 - 190)	| #FF7777	|
+| 20 (191 - 200)	| #FF8080	|
+| 21 (201 - 210)	| #FF9999	|
+| 22 (211 - 220)	| #FFB2B2	|
+| 23 (221 - 230)	| #FFC1C1	|
+| 24 (231 - 240)	| #FFCCCC	|
+| 25 (241 - 250)	| #FFE6E6	|
+| 26 (251 - 260)	| #FFFFFF	|
 
-Display your results simply as four labelled boxes in an HTML page, using CSS to color those boxes appropriately.
+
+Display your results simply as four labelled boxes in an HTML page, using CSS to select the appropriate color for each box, depending on the membership count. Compare the two methods above against each other and note the difference in colourings.
+
+
+3. (Optional) Jenks’ natural breaks method – as shown in the example in the slides test all possible intervals (every combination of 260 divided by 4). Get the mean of all the values and get the standard deviation of the overall values array. For each interval tested, get the standard deviation of each class and calculate the goodness of fit. Use the intervals that provide the highest GVF value. For a simple worked example, look at slide 15 of the bivariate analysis lecture. Display the four boxes as above with the appropriate colours. (Note: this exercise will take longer as there are far more combinations to test.)
+
 
 Part B: Specificity and Sensitivity
 ------------------------------------
 
-[The following python program](assets/knn_classifier.py) is known as a **k nearest-neighbour** algorithm, which allows categorical classifications to be made based on proximity to other data points in the set. Study the code and understand the initialisation factors in the main method.
+[The following python program](assets/knn_classifier.py) is known as a **k nearest-neighbour** algorithm, which allows categorical classifications to be made based on proximity to other data points in the set. Study the code and understand the different sections:
 
-The “split” function, allows you to divide the data-set being read into a section for training and a section to test “for real”. Currently this split is set to 0.67 or 2/3, which means that 100 entries will be used to train the model and 50 will be tested and classified. Run the program against the [iris.data](assets/iris.data) data-set (recall this from the phase 1 project) and note what the accuracy of the model is.
+1. Handle the data
+2. Calculate the similarity
+3. Collect the k most similar instances (neighbours)
+4. Devise a predicted response based on those neighbours
+5. Evaluate the accuracy of the predictions
 
-Now change the split to 0.10 and 0.05 (if you get an error on this second one, simply try again). Note the number of records for training that this translates to and also note how this affects the accuracy. What conclusion can you draw?
+The “split” function, allows you to divide the data-set into a section to train the classification model and a section to test this model. Run the program against the [iris.data](assets/iris.data) data-set (recall this from the phase 1 project) and note what the accuracy of the model is. 
 
-Now run these three splits again, but this time add a count of true positives, true negatives, false positives and false negatives and write them into a “confusion matrix” as seen in lectures. What can you interpret about the accuracy of the model used in this program?
+Currently this split is set to 0.67 or 2/3, which means that out of the 150 in the Iris data-set, 100 entries will be used to train the model and 50 will be tested and classified, selected at random. This randomness leads to a non-deterministic output of the classification accuracy - run the program two or three more times and note the accuracy for each.
 
-When you run the program two consecutive times without changing anything, do you get the same answer?
+Now change the split to 0.10 and 0.05. Note the number of records for training that this translates to and also note how this affects the accuracy (run each split at least three times). What conclusion can you draw? (Note that if you get an error when the split number is below 0.10, simply try again until it runs - this error sometimes occurs due to no training data points being assigned).
 
-Of the two categories “false positive” and “false negative”, which do you think is the most misleading in terms of the accuracy of a model and why?
+Now run these three splits again, but this time add and display variables containing counts of true positives, true negatives, false positives and false negatives for one of the categories (e.g. Iris-virginica). Manually write them into a “confusion matrix” as seen in lectures. What information does this give us in addition to the model accuracy? In general, of the two false categories “false positive” and “false negative”, which do you think is the most misleading in terms of the accuracy of a model and why?
+
+
 
 Part C: Measuring Correlation
 -------------------
