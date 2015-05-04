@@ -26,8 +26,8 @@ Having a group for your phase 3, start off with the following tasks:
   - http://www.cdc.gov/DataStatistics/
   - http://openflights.org/data.html
   - https://data.melbourne.vic.gov.au/
-- The selected dataset (or datasets) should have reasonable amount of data. It should contain about 1000 rows, a number of dimensions (categorical values) and several measurements (numerical values). 
-- You may select two different datasets that you may want to correlate from two different sources. For example: (i) dataset of birth rate by country from United Nations, and (ii) dataset of internet users by country from CIA World Factbook. 
+- The selected dataset (or datasets) should have reasonable amount of data. It should contain about 1000 rows, a number of dimensions (categorical values) and several measurements (numerical values).
+- You may select two different datasets that you may want to correlate from two different sources. For example: (i) dataset of birth rate by country from United Nations, and (ii) dataset of internet users by country from CIA World Factbook.
 - You may also select a dataset that contains geometry or geospatial information (location).
 - The complexity and sophistication of your selected dataset(s) is part of the assessment.
 - You will use the selected dataset to build a web application that helps you aggregate, summarise, investigate relationship among the attributes, and finding interesting patterns.
@@ -40,13 +40,6 @@ Use the following questions to discuss about your data:
 - Is the dataset sparse (contains many missing items)?
 - What is the license of data? Is it public domain? What is its *terms of use*?
 
-## Deliverables
-
-In week 5, you need to submit to the subject coordinator:
-
-- The final team members
-- Your choice of domain and candidate datasets
-
 ## Groupwork Guide
 
 #### Working Successfully in a Team
@@ -54,7 +47,7 @@ Working in a team has several benefits. It encourages peer learning, it allows s
 
 Occasionally groups experience difficulties, such as unmet expectations and unequal-participation. Remember that one of the goals is successfully managing these difficulties. We have found there are a few simple strategies can help avoid some of these difficulties:
 
-- At the first meeting, exchange contact details (phone number, email) and arrange the details of the next meeting (time, place, agenda). 
+- At the first meeting, exchange contact details (phone number, email) and arrange the details of the next meeting (time, place, agenda).
 - Keep minutes of all meetings. This should include, who attended, topics discussed, action items (who will do what when), details of next meeting (time, place, agenda)
 - Keep everyone informed. Send minutes and agenda to all group members. Avoid side conversations that exclude one or more group members.
 
@@ -78,7 +71,7 @@ Any student who believes that some member of the group is not making a reasonabl
 - Before submission, contact the tutor as soon as they feel that the group is not working effectively.
 - After submission, summon the group to negotiate an agreed redistribution (e.g. 50% for student 1; 30% for student 2; 20% for student 3). If an agreement is reached, the coversheet with the appropriate distribution must be submitted.
 - If an agreement cannot be reached, the group will need to arrange a meeting with one of the subject coordinators. All group members must attend the meeting. At this meeting a fair redistribution of workload will be negotiated. Students will need to provide evidence of attempts at successful group work; such as invitations to meetings (dated emails or SMS), minutes of meetings (with attendances), and other evidence of work (such as the development log). This evidence is essential before marks can be redistributed.
- 
+
 #### Groupwork Frequently Asked Questions (FAQ)
 
 1. *Who owns the work created by the group?*<br />This is a thorny issue, but in general, the work is owned collectively by the group, not by the individual members. Of course this assumes equal contribution by all members.
