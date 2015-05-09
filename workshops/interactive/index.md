@@ -7,9 +7,21 @@ JavaScript is one of the technologies most commonly used to develop Rich Interne
 
 With a client side scripting, parts of your HTML content/codes can be changed on-the-fly while the page is being viewed in the browser. The changes can be triggered by user input or by the incoming data from the server.
 
-To demonstrate the distinction between the client-side and the server-side scripting, try out the <a href="assets/helloworld.zip">two versions of HelloWorld applications on IVLE</a>. Upload the ZIP file to IVLE, serve `helloword.py` and `helloworld.html` in your browser. Inspect the source code of those two pages and find out the differences.
+\\{div class="exercise"
+
+#### Exercise
+
+To demonstrate the distinction between the client-side and the server-side scripting, try out the <a href="assets/helloworld.zip">two versions of Hello World applications on IVLE</a>. These applications simply print out three lines of "Hello World". Upload the ZIP file to IVLE, serve `helloword.py` and `helloworld.html` in your browser. Inspect the source code of those two pages and find out the differences.
+
+\\}
+
+\\{div class="exercise"
+
+#### Tips:
 
 Read through the [w3schools JavaScript Basic Tutorial](http://www.w3schools.com/js/default.asp) to familiar yourself with the basic programming constructs of the language (iteration, conditionals, etc.)
+
+\\}
 
 Using jQuery for rapid JavaScript development.
 ---------------------------------------------
@@ -23,7 +35,7 @@ A web page is constructed from a collection of HTML elements organised in a tree
 
 Download [dom_event.zip](assets/dom_event.zip) and extract it to your desktop or upload it to IVLE.
 
-Inspect `domv0.html` and `dom.css`. Familiar yourself with how the HTML page is structured and how CSS is used to format the page (revisit the Informatics 2 HTML &amp; CSS lectures, if required). You shall notice that JavaScript code is enclosed within `<script>` tag.
+Inspect `dom-0.html` and `dom.css`. Familiar yourself with how the HTML page is structured and how CSS is used to format the page (revisit the HTML &amp; CSS lectures, if required). You shall notice that JavaScript code is enclosed within `<script>` tag.
 
     <script type="text/javascript">
 
@@ -31,38 +43,44 @@ Inspect `domv0.html` and `dom.css`. Familiar yourself with how the HTML page is 
 
     </script>
 
-`window.onload = putContentV0` means that once the page is loaded, `putContentV0` function will be called.
+`window.onload = initContent` means that once the page is loaded, `initContent` function will be called. This function simply uses `document.getElementById` to get hold of the `content` element and insert HTML code inside the element (Note that `document` is a predefined global variable that represent the whole DOM (similar to `lxml`'s `tree`). This is how DOM access and manipulation can be done by default.
 
-The function simply uses `document.getElementById` to get hold of the `mainheader` element and insert HTML code inside the element. This is how DOM access and manipulation can be done by default.
+Now, we can use jQuery library to make DOM manipulation easier. To do that you first need to include jQuery library. See how this can be done in `dom-1.html`:
 
-Now, we can use jQuery library to make our life easier. To do that you first need to include jQuery library. See how this can be done in `domv1.html`:
+    <script src="../jquery/jquery.js" type="text/javascript"></script>
 
-    <script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+The two lines in `dom-0.html`:
 
-The two lines in `domv0.html`:
-
-    mainheader_element = document.getElementById("mainheader");
-    mainheader_element.innerHTML = "<h1>Hello World from JavaScript</h1>";
+    var content = document.getElementById("content");
+    content.innerHTML = "<h1>Hello World from JavaScript</h1>";
 
 can now be replaced with a more succinct:
 
-    $('#mainheader').html( "<h1>Hello World from jQuery</h1>" );
+    $('#content').html( "<h1>Hello World from jQuery</h1>" );
 
 And:
 
-    window.onload = putContentV0;
+    window.onload = initContent;
 
 is now replaced with:
 
-    $(document).ready(putContentV1);
+    $(document).ready(initContent);
 
 With jQuery you can also manipulate the look and feel of the element using CSS styles:
 
     // now add a bit of color
-    attributes = { "font-family" : "Verdana", "color": "#d3d9c5" };
-    $('#mainheader').css( attributes );
+  	attributes = { "font-family" : "Verdana", "color": "#ff9900" };
+	  $('#content h1').css(attributes);
 
-Notice that with jQuery you can use various CSS selectors to select a set of element(s). It means that you can update multiple elements at the same time. See how this is done in `domv2.html` to format multiple paragraphs (`<p>`).
+Notice that with jQuery you can use various CSS selectors to select a set of element(s). It means that you can update multiple elements at the same time. See how this is done in `dom-2.html` to format multiple paragraphs (`<p>`).
+
+\\{div class="exercise"
+
+#### Exercise
+
+Load/serve `dom-2.html` and look at the HTML generated by the Javascript code. You can do this is Chrome by right-clicking the page and select **Inspect Element**.
+
+\\}
 
 Event Driven Programming
 ------------------------
@@ -71,32 +89,44 @@ Programming using JavaScript usually involves a programming paradigm called [Eve
 
 With jQuery specifying a handler for an event is easy:
 
-    $('selector').click( function_that_handle_the event );
+    $(selector).click(function_that_handle_the_click_event);
 
-Open `eventv0.html` and see that a button and a link are added in the footer:
+Open `event-0.html` and see that two buttons are added in the footer:
 
-    <input id="show_button" type="button" value="Show Main Content" /> |
-    <a id="hide_link" href="#">Hide Main Content</a>
+    <input id="show_button" type="button" value="Show Content" />
+    <input id="hide_button" type="button" value="Hide Content" />
 
-We can set that a function should be called when the button or the hyperlink is click:
+We can set that a function should be called when a button is click:
 
-    function showMainContent(){ $('#maincontent').show('slow'); }
-    function hideMainContent(){ $('#maincontent').hide('slow'); }
+    function showContent() { $('#content').show('slow'); }
+    function hideContent() { $('#content').hide('slow'); }
     ...
-    $('#show_button').click( showMainContent );
-    $('#hide_link').click( hideMainContent );
+    $('#show_button').click(showContent);
+    $('#hide_button').click(hideContent);
 
-Notice that clicking the button will display the maincontent block and clicking the link will hide the same element.
-Often, we can avoid having an explicit function definition, and instead, defining the function directly in the set up of the event handler. Look at `eventv1.html`:
+Notice that clicking the first button will display the content block and the second one will hide the same element. Often, we can avoid having an explicit function definition, and instead, defining the function directly in the set up of the event handler. Look at `event-1.html`:
 
     $('#show_button').click(
-        function(){
-            $('#maincontent').show('slow');
-        }
+      function(){
+        $('#content').show('slow');
+      }
     );
 
+\\{div class="exercise"
+
+#### Exercise
+
 Play around with different events (like hover) and different [effects](http://api.jquery.com/category/effects/) (like [fadeIn](http://api.jquery.com/fadeIn/)).
+
+\\}
+
+\\{div class="exercise"
+
+#### Exercise
+
 Download [`jquery_demo.zip`](assets/jquery_demo.zip) and try to recreate the page without looking at the underlying code.
+
+\\}
 
 
 Ajax (Asynchronous JavaScript and XML)
@@ -108,22 +138,26 @@ This technique is initiated with the JavaScript codes making an Ajax call to a s
 
 <img src="assets/ajax.png">
 
-Download [`ajax.zip`](assets/ajax.zip) and upload the ZIP file to IVLE. This package demonstrates a simple calculator using Ajax call in jQuery.
-Clicking the button will send the expression (data) as part of the Ajax call to a Python script (ajax.py). The result of the expression is returned back by the Python script either as XML or JSON. The success event handler will then display the result in the textarea on page.
+Download [`ajax-xml.zip`](assets/ajax-xml.zip) and upload the ZIP file to IVLE. This package demonstrates a simple calculator using Ajax call in jQuery.
+Clicking the button will send the expression (data) as part of the Ajax call to a Python script (ajax.py). The result of the expression is returned back by the Python script as XML data. The success event handler will then display the result in the textarea on page.
 
 The minimum skeleton for an Ajax call is as the following:
 
-    function formSubmit(){
-        $.ajax( {
-            type        : "POST",
-            url         : "ajax.py",                      // server script
-            dataType    : $('input:radio:checked').val(), // json or xml
-            data        : $('#testform').serialize(),     // put all the form data
-            success     : function(data) {                // event handler
-                // handling the data here
-            }
-        } );
-        return false; // prevent form submission
-    }
+    $.ajax( {
+      type        : "POST",
+      url         : "ajax.py",                 // server script
+      data        : request_data,              // data input to server
+                                               // e.g. form input: $('#form-id').serialize()
+      success     : function(response_data) {  // success event handler
+        // handling the response here
+      }
+    });
 
-Inspect the `ajax.py` to see how the Ajax response is constructed.
+\\{div class="exercise"
+
+#### Exercise
+
+Inspect the `ajax.py` to see how the Ajax response is constructed. Modify both `ajax.py` and `ajax.html` to provide an option to the user for selecting the format of the Ajax response (either as XML or JSON).
+
+\\}
+
