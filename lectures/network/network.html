@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="../../styles/slides.css">
+  <script src="../../js/ix.js"></script>
+  <script data-main="../../js/slides.js" src="../../third-js/requirejs/require.js"></script>
+  <style>
+    .crypt {
+      font-size: 1em !important;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section class="cover">
+      <h1>network of data</h1>
+      <h2>info-20002: foundations of informatics</h2>
+    </section>
+    <section data-markdown>
+      <script type="text/template">
+Network: of Connections, People, and Places
+====================
+
+<iframe style="width:800px;height:600px" frameborder="0" allowfullscreen
+        src="http://www.youtube.com/embed/mPIVI0CbCmg"></iframe>
+
+<div class="footer">
+  <div>[1] Gleick, J. <a href="http://www.nybooks.com/blogs/nyrblog/2010/dec/08/information-palace/">The Information Palace</a></div>
+  <div>[2] OED, <a href="http://www.oed.com/viewdictionaryentry/Entry/95568">information</a></div>
+</div>
+
+      </script>
+    </section>
+    <section data-markdown>
+      <script type="text/template">
+About Network?
+====================
+
+- Who are the most important members of a network?
+- Which members are located in the periphery?
+- Which members have more possibility to connect to others?
+- Which members are the most crucial to maintain the connectedness in a group?
+- Can the network broken down into smaller sub-networks?
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+networks as graphs
+=================================
+
+a collection of nodes (also called vertices), and lines connecting them (usually called edges). In social network a vertex is a person and an edge is a relationship between two persons
+directed graph: edges own directionality between two vertices
+weighted graph: edges have values that indicate a property of the connection between two vertices. For example, stronger or weaker tie
+acyclic: no loop/cycle
+degree: the number of edges of a vertex (indegree/outdegree)
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+networks as graphs
+=================================
+
+
+path: a sequence of vertices that can be traversed by traveling through edges from a starting vertex to an ending vertex.
+geodesic path: the shortest path between two vertices, path with minimum number of edges.
+
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+degree centrality
+=================================
+
+The degree of a vertex:  the number of edges attached to it
+a measure of the importance of a person: people with more friends tend to have more power.
+How many persons you know?
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+eigenvector centrality
+=================================
+
+    Eigenvector centrality of a vertex:Similar to degree centrality, but take into consideration the degree of the neighbors.
+    The importance of a vertex is enhanced by the connectivity to the more important vertices (rather than to the less important ones)
+    People with friends who have many friends. How many persons you know and how important they are?
+    Google PageRankSocialRank
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+closeness centrality
+=================================
+
+The closeness centrality of a vertex:the reciprocal of the average length of geodesic paths between a vertex and all other vertices.
+Closeness centrality measure how close you are in general with other people in the network
+
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+betweenness centrality
+=================================
+
+The betweenness centrality of a vertex:the total proportion of geodesic paths between any two vertices in which the vertex of interest lies.
+a measure of how important a vertex in bridging the flow of information between other vertices.
+      </script>
+    </section>
+
+
+
+    <section data-markdown>
+      <script type="text/template">
+        S. Wasserman and K. Faust, Social Network Analysis. Cambridge University Press, Cambridge (1994).
+
+        http://faculty.ucr.edu/~hanneman/
+
+        yEd Graph Editor (for editing .graphml file)
+        http://www.yworks.com/en/products_yed_about.html
+      </script>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</body>
+</html>
