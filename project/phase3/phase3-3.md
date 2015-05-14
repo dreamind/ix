@@ -1,7 +1,7 @@
 An interactive web application
 ===============================
 
-*This project specification may be updated to make corrections or clarifications; we will make an announcement about significant changes.*
+**This project specification may be updated to make corrections or clarifications; we will make an announcement about significant changes (Last updated: 14 May 2015, 11.30pm).**
 
 **To be completed by small groups (three students)<br />
 Late penalty: You will lose two marks for every day (or part thereof) that your submission is late.**
@@ -25,7 +25,7 @@ You need to design an interactive pivot builder of your selected dataset. This a
 
 Building pivot table means your dataset needs to have two or more categorical attributes (or columns). If your dataset contains only numerical data, generate new categorical attributes by applying equal interval classification (binning) on the selected numerical attributes.
 
-The example application is available [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/solution/phase3/form.py). Note that this example is a very rudimentary solution to part 1. Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks.
+The example application is available [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/solution/phase3/form.py). Note that this example is a very rudimentary solution to part 1. Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks. Please also look at [an example of past student submissions](http://students.informatics.unimelb.edu.au/~zhout1/stuff/pivotal_stocks/cgi.py/pivot)
 
 Part 2: An open-ended task (10%)
 -----------------------------------
@@ -50,6 +50,7 @@ You should produce an interactive web application that has at least the followin
 
 - It should be implemented in Python, and must function correctly when hosted
 on IVLE.
+- You should implement your own Pivot Table builder, do not use Google Pivot table feature or any Python libraries that provide ready-to-use pivot capability. 
 - It must use CGI and forms to get input from the user.
 - It must use valid XHTML or HTML5 to display output to the user.
 - It must use CSS appropriately in providing the visual aspect of the

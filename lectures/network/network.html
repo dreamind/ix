@@ -54,11 +54,11 @@ About Network?
 networks as graphs
 =================================
 
-a collection of nodes (also called vertices), and lines connecting them (usually called edges). In social network a vertex is a person and an edge is a relationship between two persons
-directed graph: edges own directionality between two vertices
-weighted graph: edges have values that indicate a property of the connection between two vertices. For example, stronger or weaker tie
-acyclic: no loop/cycle
-degree: the number of edges of a vertex (indegree/outdegree)
+- a collection of nodes (also called nodes), and lines connecting them (usually called edges). In social network a node is a person and an edge is a relationship between two persons
+- directed graph: edges own directionality between two nodes
+- weighted graph: edges have values that indicate a property of the connection between two nodes. For example, stronger or weaker tie
+- acyclic: no loop/cycle
+- degree: the number of edges of a node (indegree/outdegree)
       </script>
     </section>
 
@@ -68,8 +68,8 @@ networks as graphs
 =================================
 
 
-path: a sequence of vertices that can be traversed by traveling through edges from a starting vertex to an ending vertex.
-geodesic path: the shortest path between two vertices, path with minimum number of edges.
+- path: a sequence of nodes that can be traversed by traveling through edges from a starting node to an ending node.
+- geodesic path: the shortest path between two nodes, path with minimum number of edges.
 
 
       </script>
@@ -80,9 +80,9 @@ geodesic path: the shortest path between two vertices, path with minimum number 
 degree centrality
 =================================
 
-The degree of a vertex:  the number of edges attached to it
-a measure of the importance of a person: people with more friends tend to have more power.
-How many persons you know?
+- The degree of a node: the number of edges attached to it
+- A measure of the importance of a person: people with more friends tend to have more power,
+i.e. How many persons you know?
       </script>
     </section>
 
@@ -91,10 +91,10 @@ How many persons you know?
 eigenvector centrality
 =================================
 
-    Eigenvector centrality of a vertex:Similar to degree centrality, but take into consideration the degree of the neighbors.
-    The importance of a vertex is enhanced by the connectivity to the more important vertices (rather than to the less important ones)
-    People with friends who have many friends. How many persons you know and how important they are?
-    Google PageRankSocialRank
+- Similar to degree centrality, but take into consideration the degree of the neighbors.
+- The importance of a node is enhanced by its connectivity to the more important nodes (rather than to the less important ones)
+- People with friends who have many (important) friends.How many persons you know and how important they are?
+- Google PageRank,SocialRank
       </script>
     </section>
 
@@ -103,8 +103,8 @@ eigenvector centrality
 closeness centrality
 =================================
 
-The closeness centrality of a vertex:the reciprocal of the average length of geodesic paths between a vertex and all other vertices.
-Closeness centrality measure how close you are in general with other people in the network
+- The reciprocal of the average length of geodesic paths between a node and all other nodes
+- Closeness centrality measure how close you are in general with other people in the network
 
 
       </script>
@@ -115,12 +115,10 @@ Closeness centrality measure how close you are in general with other people in t
 betweenness centrality
 =================================
 
-The betweenness centrality of a vertex:the total proportion of geodesic paths between any two vertices in which the vertex of interest lies.
-a measure of how important a vertex in bridging the flow of information between other vertices.
+- the total proportion of geodesic paths between any two nodes in which the node of interest lies.
+- A measure of how important a node in bridging the flow of information between other nodes.
       </script>
     </section>
-
-
 
     <section data-markdown>
       <script type="text/template">
