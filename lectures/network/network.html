@@ -20,24 +20,25 @@
       <h1>network of data</h1>
       <h2>info-20002: foundations of informatics</h2>
     </section>
+
     <section data-markdown>
       <script type="text/template">
-Network: of Connections, People, and Places
-====================
+network: of connections, people, and places
+-------------
 
-<iframe style="width:800px;height:600px" frameborder="0" allowfullscreen
-        src="http://www.youtube.com/embed/mPIVI0CbCmg"></iframe>
+<iframe style="width:800px;height:500px" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/xMs71i3CgJU"></iframe>
+<!-- EZC1czZofyY -->
 
 <div class="footer">
-  <div>[1] Gleick, J. <a href="http://www.nybooks.com/blogs/nyrblog/2010/dec/08/information-palace/">The Information Palace</a></div>
-  <div>[2] OED, <a href="http://www.oed.com/viewdictionaryentry/Entry/95568">information</a></div>
+  <div><a href="http://time.com/3820725/flipkart-mumbai-dabbawalas-online-package-deliveries-amazon/">The Guy Who Brings Your Lunch in Mumbai Now Also Brings You Anything From a New Phone to a Fresh Shirte</a></div>
+  <div><a href="https://www.behance.net/gallery/2327702/Mumbai-Dabbawalas">Dabbawalas - Inforgraphics</a></div>
 </div>
-
       </script>
     </section>
+
     <section data-markdown>
       <script type="text/template">
-About Network?
+about a network
 ====================
 
 - Who are the most important members of a network?
@@ -54,11 +55,18 @@ About Network?
 networks as graphs
 =================================
 
-- a collection of nodes (also called nodes), and lines connecting them (usually called edges). In social network a node is a person and an edge is a relationship between two persons
-- directed graph: edges own directionality between two nodes
-- weighted graph: edges have values that indicate a property of the connection between two nodes. For example, stronger or weaker tie
-- acyclic: no loop/cycle
-- degree: the number of edges of a node (indegree/outdegree)
+- A collection of nodes (vertices) and edges (lines, links, ties) connecting them.
+- In social network, a node is a person and an edge is a relationship between two persons
+- *Directed graph*: edges own directionality between two nodes (vs undirected).
+- *Weighted graph*: edges have values that indicate a property of the connection.
+- *Acyclic*: no loop/cycle
+- *Degree* of a node: the number of edges of a node (indegree/outdegree)
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+<img src="assets/basics.png">
       </script>
     </section>
 
@@ -67,22 +75,168 @@ networks as graphs
 networks as graphs
 =================================
 
+- *Path*: a sequence of nodes that can be traversed by traveling through edges from a starting node to an ending node.
+- *Geodesic path*: the shortest path between two nodes, path with minimum number of edges.
 
-- path: a sequence of nodes that can be traversed by traveling through edges from a starting node to an ending node.
-- geodesic path: the shortest path between two nodes, path with minimum number of edges.
+<img src="assets/between-2.png">
 
+- ABCE, ABDE are geodesic paths between A and E
+- ABCDE is a path between A and E but geodesic one.
+      </script>
+    </section>
+
+    <section>
+        <h1>Graph formal definition</h1>
+<ul>
+  <li>Graph \(G=(V,E)\), where \(V\) is a set of nodes and \(E\) is a set of edges.</li>
+  <li>An edge is defined as \({v,w}\), where \(v,w\in V\)</li>
+  <li>The order of a graph = the number of vertices = \(|G|\)</li>
+  <li>The size of a graph = the number of edges = \(\left\|G\right\|\)</li>
+  <li>The degree of node \(deg(v)\) is the number of edges incident to it </li>
+  <li>The geodesic distance between \(v\) and \(w\) = number of edges in the geodesic path between \(v\) and \(w\) = \(\delta(v,w)\)</li>
+</ul>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+GEXF (Graph Exchange XML Format)
+=================================
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+      <meta lastmodifieddate="2014-05-20">
+      <description>A Web of Hyperlinks</description>
+      </meta>
+      <graph defaultedgetype="directed">
+        <attributes class="node">
+          <attribute id="0" title="url" type="string"/>
+        </attributes>
+        <nodes>
+          <node id="0" label="Gephi">
+            <attvalues>
+              <attvalue for="0" value="http://gephi.org"/>
+            </attvalues>
+          </node>
+          <node id="1" label="Webatlas">
+            <attvalues>
+              <attvalue for="0" value="http://webatlas.fr"/>
+            </attvalues>
+          </node>
+          <node id="2" label="BarabasiLab">
+            <attvalues>
+              <attvalue for="0" value="http://barabasilab.com"/>
+            </attvalues>
+          </node>
+        </nodes>
+        <edges>
+          <edge id="0" source="0" target="1"/>
+          <edge id="1" source="0" target="2"/>
+          <edge id="2" source="1" target="0"/>
+        </edges>
+      </graph>
+    </gexf>
+
+<div class="footer">
+  <div><a href="http://gexf.net/format/schema.html">GEXF Schema</a></div>
+</div>
 
       </script>
     </section>
 
     <section data-markdown>
       <script type="text/template">
+GML (Graph Modelling Language)
+=================================
+
+    graph [
+      directed 1
+      id 888
+      label "Social graph of my friends"
+      node [
+        id 1
+        label "Me"
+        ageAttribute 42
+      ]
+      node [
+        id 2
+        label "Jack"
+        ageAttribute 43
+      ]
+      node [
+        id 3
+        label "Jill"
+        ageAttribute 44
+      ]
+      edge [
+        source 1
+        target 2
+        label "I like Jack"
+      ]
+      edge [
+        source 2
+        target 3
+        label "Jack like Jill"
+      ]
+    ]
+
+<div class="footer">
+  <div><a href="http://www.fim.uni-passau.de/fileadmin/files/lehrstuhl/brandenburg/projekte/gml/gml-technical-report.pdf">GML Specification</a></div>
+</div>
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+analysing graph
+=================================
+
+- Route Problems:
+  - Minumm spanning tree
+  - Shortest Path
+  - Traveling salesman problem
+- Graph coloring
+- General properties
+  - Homophily
+  - Density
+  - Width of the graph
+- Graph drawing/layout
+  - Radial layout
+  - Force-directed
+- Partition/Community detection
+- **Node Centralities**
+      </script>
+    </section>
+
+    <section>
+<h1>centralities</h1>
+
+<img style="float:left;width:400px;" src="assets/four-centralities.png"><div style="float:left;width:450px;margin-left:20px">
+<ul>
+  <li>A = Degree centrality, <br>many neighbours</li>
+  <li>B = Closeness centrality, <br>close to other nodes</li>
+  <li>C = Betweenness centrality, <br>bridging nodes</li>
+  <li>D = Eigenvector centrality, <br>connecte to well-connected nodes</li>
+</ul>
+</div>
+
+<div class="footer">
+  <div>Image source: Claudio Rocchini, Wikimedia</div>
+</div>
+    </section>
+
+
+    <section data-markdown>
+      <script type="text/template">
 degree centrality
 =================================
 
-- The degree of a node: the number of edges attached to it
-- A measure of the importance of a person: people with more friends tend to have more power,
-i.e. How many persons you know?
+<img width="300" src="assets/degree.png">
+
+- "An important person typically knows a large number of people"
+- Based on the degree of a node: the number of edges attached to it.
+
+\\(C_d(v)=deg(v)\\)
       </script>
     </section>
 
@@ -91,21 +245,70 @@ i.e. How many persons you know?
 eigenvector centrality
 =================================
 
-- Similar to degree centrality, but take into consideration the degree of the neighbors.
-- The importance of a node is enhanced by its connectivity to the more important nodes (rather than to the less important ones)
-- People with friends who have many (important) friends.How many persons you know and how important they are?
+<img width="300" src="assets/eigenvector.png">
+
+- "It's not simply how many persons you know, but also who they are."
+- Similar to degree centrality, but take into consideration the degree of the neighbors. The importance of a node is enhanced by its connectivity to the more important nodes.
 - Google PageRank,SocialRank
+
+<div class="footer">
+  <div><a href="http://www.cs.duke.edu/csed/principles/pagerank/"PageRank Explained</a></div>
+</div>
       </script>
     </section>
+
+
+    <section data-markdown>
+      <script type="text/template">
+six degrees of separation
+-------
+
+<iframe style="width:800px;height:500px" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/zK1Cb9qj3qQ"></iframe>
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+distance in graphs
+=======
+
+- Bacon number to Hollywood is [Erdős number](http://wwwp.oakland.edu/enp/) to academia.
+- Bacon number for actor X is the length of the "geodesic path" from Kevin Bacon to X
+- Kevin Bacon himself has a Bacon number of 0
+- Actors who have appeared together with Kevin Bacon in a movie have a Bacon number of 1.
+If N is the smallest Bacon number of any actor with whom Y has worked together, Actor Y's Bacon number is N+1.
+- Average Bacon numbers is about 3.
+- Average clicks from one page to any page in the Internet is [19](http://mashable.com/2013/02/18/19-clicks-internet/).
+
+<!-- Try google "kim kardashian bacon number" -->
+
+<div class="footer">
+  <div>
+    <a href="http://oracleofbacon.org/movielinks.php">
+    Oracle of Bacon, based on imdb.
+    </a>
+  </div>
+  <div>
+    R. Albert, H. Jeong, A.-L. Barabási, <a href="http://www.barabasilab.com/pubs/CCNR-ALB_Publications/199909-09_Nature-DiameterWWW/199909-09_Nature-DiameterWWW.pdf">
+    Diameter of the world wide web
+    </a>
+  </div>
+</div>
+      </script>
+    </section>
+
 
     <section data-markdown>
       <script type="text/template">
 closeness centrality
 =================================
 
-- The reciprocal of the average length of geodesic paths between a node and all other nodes
-- Closeness centrality measure how close you are in general with other people in the network
+<img width="300" src="assets/closeness.png">
 
+- "How close you are in general with other people in the network."
+- The reciprocal of the average length of geodesic paths between a node and all other nodes
+
+\\(C\_s(v)=\frac{1}{\sum\_{w \in V}\delta(v,w)}\\)
 
       </script>
     </section>
@@ -115,33 +318,101 @@ closeness centrality
 betweenness centrality
 =================================
 
-- the total proportion of geodesic paths between any two nodes in which the node of interest lies.
-- A measure of how important a node in bridging the flow of information between other nodes.
+- <img width="300" src="assets/between-0.png" style="float:right"> "An important node lies on most of the paths between other nodes in the network", bridging the connectivity between other nodes.
+- The total proportion of geodesic paths between any two nodes in which the node of interest lies.
+\\(C\_b(v)=\sum\_{v\neq s \in V}\sum\_{v \neq t \in V}\frac{\sigma\_{st}(v)}{\sigma\_{st}}\\)
+
+where:
+
+- \\(\sigma_{st}\\) is the number of geodesic paths from node \\(s\\) to node \\(t\\)
+- \\(\sigma_{st}(v)\\) is the number of those paths that pass through \\(v\\)
+- \\(\frac{\sigma\_{st}(v)}{\sigma\_{st}}\\) is the proportion of geodesic paths from node \\(s\\) to node \\(t\\) that pass through \\(v\\)
       </script>
     </section>
 
     <section data-markdown>
       <script type="text/template">
-        S. Wasserman and K. Faust, Social Network Analysis. Cambridge University Press, Cambridge (1994).
+betweenness centrality
+---------------------
 
-        http://faculty.ucr.edu/~hanneman/
+<img style="float:right" src="assets/between-2.png">
 
-        yEd Graph Editor (for editing .graphml file)
-        http://www.yworks.com/en/products_yed_about.html
+*list of geodesic paths*
+
+| node | A | B | C | D | E |
+|-----:|:--:|:--:|:--:|:--:|:--:|
+|A		 |    | AB | ABC| ABD|ABCE, ABDE|
+|B		 |	  |    | BC | BD |BDE, BCE |
+|C		 |		|    |    | CD |	CE |
+|D		 |		|    |    |    | 	DE |
+
+|node	|in between|proportion|centralities (normalised)|
+|-|-|-:|-|
+|A	| none|	0|	0|
+|B	|A-C, A-D, A-E	|1/1+1/1+2/2 = 3|1
+|C	|A-E, B-E	|1/2+1/2 = 1|	0.33|
+|D	|A-E, B-E	|1/2+1/2 = 1|	0.33|
+|E	| none	|0|	0|
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+graph drawing
+--------------
+
+- Various graph "layouts": Radial, Circular, **Force-directed**, ...
+- Force-directed: iterative, nodes as magnets (repulsive), edges as spring (pull)
+
+<iframe style="width:800px;height:500px" frameborder="0" allowfullscreen src="http://bl.ocks.org/mbostock/raw/4062045/"></iframe>
+
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+database systems
+=================================
+
+- Relational: PostgreSQL, MySQL, MS SQL, Oracle
+- Document/NoSql: MongoDB, CouchDB, Cassandra
+- **Graph**: neo4j
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+The Power of Networks
+-------
+
+<iframe style="width:800px;height:500px" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/nJmGrNdJ5Gw"></iframe>
       </script>
     </section>
 
 
+    <section data-markdown>
+      <script type="text/template">
+Resources
+========
 
+Books:
 
+- S. Wasserman & K. Faust (1994). Social Network Analysis.
+- A.-L. Barabási. [Network Science](http://barabasi.com/networksciencebook/).
+- D. Easley and J. Kleinberg. [Networks, Crowds, and Markets: Reasoning About a Highly Connected World](http://www.cs.cornell.edu/home/kleinber/networks-book/).
+- R. Hanneman & M. Riddle (2005). [Introduction to social network methods](http://faculty.ucr.edu/~hanneman/).
 
+Tools:
 
-
-
-
-
-
-
+- [NetworkX](https://networkx.github.io/)
+- [NetworkX port in JS](http://jsnetworkx.org/examples.html)
+- [Gephi - The Open Graph Viz Platform](gephi.github.io/)
+- [Gephi - Tutorial](https://gephi.github.io/tutorials/gephi-tutorial-quick_start.pdf)
+- [SigmaJS - JS Graph Drawing](sigmajs.org)
+- [yEd Graph Editor](http://www.yworks.com/en/products_yed_about.html)
+      </script>
+    </section>
 
   </div>
 </div>
