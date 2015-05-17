@@ -64,10 +64,8 @@ networks as graphs
       </script>
     </section>
 
-    <section data-markdown>
-      <script type="text/template">
+    <section>
 <img src="assets/basics.png">
-      </script>
     </section>
 
     <section data-markdown>
@@ -82,6 +80,22 @@ networks as graphs
 
 - ABCE, ABDE are geodesic paths between A and E
 - ABCDE is a path between A and E but geodesic one.
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+graph as adjacency matrix
+=========================
+<img src="assets/between-2.png">
+
+||A|B|C|D|E|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|A|0|1|0|0|0|
+|B|1|1|1|1|0|
+|C|0|1|0|1|1|
+|D|0|1|1|0|1|
+|E|0|0|1|1|0|
       </script>
     </section>
 
@@ -197,9 +211,9 @@ analysing graph
   - Traveling salesman problem
 - Graph coloring
 - General properties
-  - Homophily
+  - Radius
   - Density
-  - Width of the graph
+  - Diameter
 - Graph drawing/layout
   - Radial layout
   - Force-directed
@@ -357,17 +371,34 @@ betweenness centrality
       </script>
     </section>
 
-    <section data-markdown>
-      <script type="text/template">
-graph drawing
---------------
+    <section>
+<h2>graph drawing</h2>
 
-- Various graph "layouts": Radial, Circular, **Force-directed**, ...
-- Force-directed: iterative, nodes as magnets (repulsive), edges as spring (pull)
+<ul>
+<li>Various graph "layouts": Radial, Circular,Force-directed, ...</li>
+<li>Force-directed: iterative, nodes as magnets (repulsive), edges as spring (pull)</li>
+</ul>
+<div id="force-container" style="width:800px;height:500px;margin-left:0px"></div>
+<style>
+  .node {
+    stroke: #888;
+    stroke-width: 2px;
+  }
 
-<iframe style="width:800px;height:500px" frameborder="0" allowfullscreen src="http://bl.ocks.org/mbostock/raw/4062045/"></iframe>
-
-      </script>
+  .link {
+    stroke: #888;
+    stroke-opacity: .6;
+  }
+</style>
+<script src="force-directed/force-directed.js">
+</script>
+<script>
+  ix.register(function () {
+    ix.figures.forceDirected("#force-container");
+  });
+</script>
+<!--
+<iframe style="width:800px;height:500px" frameborder="0" allowfullscreen src="http://bl.ocks.org/mbostock/raw/4062045/"></iframe>-->
     </section>
 
     <section data-markdown>
