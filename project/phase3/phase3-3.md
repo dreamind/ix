@@ -1,7 +1,7 @@
 An interactive web application
 ===============================
 
-**This project specification may be updated to make corrections or clarifications; we will make an announcement about significant changes (Last updated: 14 May 2015, 11.30pm).**
+**This project specification may be updated to make corrections or clarifications; we will make an announcement about significant changes (Last updated: 20 May 2015, 17.30pm).**
 
 **To be completed by small groups (three students)<br />
 Late penalty: You will lose two marks for every day (or part thereof) that your submission is late.**
@@ -50,7 +50,7 @@ You should produce an interactive web application that has at least the followin
 
 - It should be implemented in Python, and must function correctly when hosted
 on IVLE.
-- You should implement your own Pivot Table builder, do not use Google Pivot table feature or any Python libraries that provide ready-to-use pivot capability. 
+- You should implement your own Pivot Table builder, do not use Google Pivot table feature or any Python libraries that provide ready-to-use pivot capability.
 - It must use CGI and forms to get input from the user.
 - It must use valid XHTML or HTML5 to display output to the user.
 - It must use CSS appropriately in providing the visual aspect of the
@@ -73,6 +73,8 @@ Your program will be assessed for correctness and quality. A program of high qua
 - It avoids unnecessary repetition of code.
 - Program constants, such as file names and special numbers, are defined in one place so they can be modified easily.
 - It is reasonably robust and can deal with errors gracefully.
+
+Detail marking sheet is available [here](assets/phase_3_marking_sheet.doc).
 
 Submission
 ----------
