@@ -4,7 +4,7 @@ These lectures give a short introduction and overview to where informatics impac
 
 <a href="bigdata.ppt" file="ppt"> Big Data Slides</a>
 
-<a href="healthinformatics.ppt" file="ppt"> Health Informatics and Security Slides</a>
+<a href="health_informatics.ppt" file="ppt"> Health Informatics and Security Slides</a>
 
 
 
