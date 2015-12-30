@@ -1,0 +1,1 @@
+node_modules/grunt-mocha-phantomjs/node_modules/phantomjs/bin/phantomjs conf/lib/print-pdf.js http://localhost:9001/lectures/information/meaning.html?print-pdf target/slide.pdf
