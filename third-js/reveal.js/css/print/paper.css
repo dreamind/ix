@@ -47,7 +47,7 @@
 	/* SECTION 3: Set body font face, size, and color.
 	   Consider using a serif font for readability. */
 	body, p, td, li, div {
-		font-size: 20pt !important;
+		/*font-size: 20pt !important;*/
 		font-family: Georgia, "Times New Roman", Times, serif !important;
 		color: #000;
 	}
@@ -150,9 +150,9 @@
 		visibility: visible !important;
 		position: relative !important;
 		width: 100% !important;
-		height: auto !important;
+		height: auto !important; /* */
 		display: block !important;
-		overflow: visible !important;
+		overflow: hidden !important; /* */
 		left: 0 !important;
 		top: 0 !important;
 		margin-left: 0 !important;
