@@ -169,7 +169,7 @@ var ix = {
       }
       var base = node.getAttribute('base');
       var href = node.getAttribute('href');
-      if (base === 'disable') {
+      if (_.startsWith(base, 'disable')) {
         innerHTML = node.innerHTML;
         $(node).replaceWith(innerHTML);
       } else if (base in ix.bases) {
