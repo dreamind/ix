@@ -56,7 +56,7 @@ As with any other Python packages, you need to issue an `import` command to load
 
     >>> from lxml import etree
 
-In order to load an XML file and to represent it as a tree in computer memory, you need to parse the XML file. The `etree.parse()` function parses the XML file that is passed in as a parameter. 
+In order to load an XML file and to represent it as a tree in computer memory, you need to parse the XML file. The `etree.parse()` function parses the XML file that is passed in as a parameter.
 
     >>> xmltree = etree.parse("royal.xml")
 
@@ -150,7 +150,7 @@ Save the file as `book.xml`. This XML looks different to the `royal.xml` in that
 
 #### Exercise 4
 
-Write a Python script that presents the data inside `book.xml` in a web page. Use an HTML table to format the data. See the following example below.
+Write a Python script that presents the data inside `book.xml` as a web page. Use an HTML table to format the data. See the following example below.
 
 <table border="0" cellpadding="5" cellspacing="1">
 <tr bgcolor="#CCCC99"><td><b>Author</b></td><td><b>Salinger, J. D.</b></td></tr>
@@ -163,21 +163,23 @@ Write a Python script that presents the data inside `book.xml` in a web page. Us
 </table>
 
 *Tips and Hints:*
-To print a web page using Python script, you need to specify the `Content-Type` before printing out the HTML. The script below displays current temperature in New York.
+To produce an HTML page using Python, see the example below. The script displays current temperature in New York.
 
     from lxml import etree
+    from urllib import urlopen
 
     # Get the XML data of the current weather at Central Park, New York
-    xmltree = etree.parse("http://w1.weather.gov/xml/current_obs/KNYC.xml")
+    xmltree = etree.parse(urlopen("http://w1.weather.gov/xml/current_obs/KNYC.xml"))
     root = xmltree.getroot()
     location = root.find('location').text
     temp = root.find('temperature_string').text
 
     # Display the location and temperature in HTML
-    print 'Content-Type: text/html\n'
-    print '<html><body>'
-    print '<p>Current temperature at %s is %s</p>' % (location, temp)
-    print '</body></html>'
+    f = open('output.html', 'w')
+    f.write('<html><body>')
+    f.write('<p>Current temperature at %s is %s</p>' % (location, temp))
+    f.write('</body></html>')
+    f.close()
 
 \\}
 
@@ -202,7 +204,7 @@ As usual, to access or to manipulate this XML data, import `lxml` library, parse
     >>> from lxml import etree
     >>> xmltree = etree.parse('book.xml')
     >>> root = xmltree.getroot()
-    
+
 To create a new XML element, use `etree.Element()` function:
 
     >>> new_element = etree.Element('genre')
@@ -210,9 +212,9 @@ To create a new XML element, use `etree.Element()` function:
     >>> root.append(new_element)
     >>> etree.tostring(root[-1])  # the last element, the newly appended element
     <genre>Novel</genre>
-    
+
 *Tips*: You can create a totally a new XML tree by constructing the root element:
- 
+
     >>> root = etree.Element('book')
 
 You can also create new element using `SubElement()` function:
@@ -227,46 +229,46 @@ Use `insert()` to insert a new element at a specific location:
 
     >>> root.insert(4, etree.Element("country"))
     >>> root[4].text = "United States"
-    >>> etree.tostring(root[4]) 
+    >>> etree.tostring(root[4])
     <country>United States</country>
 
 You can set the attribute of the price element using `set()` command (assuming `price` element has just been created).
 
-    >>> root[-1].set("currency", "USD") # get the price element 
+    >>> root[-1].set("currency", "USD") # get the price element
     >>> print etree.tostring(root[-1])
     <price currency="USD">23.95</price>
 
 Alternatively, you can use `attrib` property:
 
     >>> root[-1].attrib["currency"] = "USD"
-    
+
 **Serialising XML data (printing as web content or writing into a file)**
 
 You can get the whole XML string by calling `etree.tostring()` with the root of the tree as the first paramater:
-  
+
     >>> output = etree.tostring(root, pretty_print=True, encoding="UTF-8")
 
 To write to a file, simply use the XML string in the file write operation:
-    
+
     >>> open('output.xml', 'w').write(output)
 
 You can also display the XML data in the browser by adding appropriate `Content-Type`:
 
     # serve_xml.py
-    ...    
+    ...
     # Display the location and temperature in HTML
     print 'Content-Type: text/xml\n'
     print output
-    
+
 \\{div class="exercise"
 
 #### Exercise 5
 
 - Assuming you have completed the tasks above, replace the text and the attribute of the `price` element to set the book price to **25 AUD**.
-- Create a new element called `pages`, set its content to `277`, and append it to the root. Confirm that the new element is created, by issuing the following command: 
+- Create a new element called `pages`, set its content to `277`, and append it to the root. Confirm that the new element is created, by issuing the following command:
 
 ```
->>> print etree.tostring(root[-1]). 
+>>> print etree.tostring(root[-1]).
 ```
 It should return `<pages>277</pages>`
 
@@ -286,9 +288,9 @@ Let's go back to the `book.xml` example. Imagine that this is the XML format use
       <price>44.95</price>
       <language>English</language>
       <publish_date>1951-07-16</publish_date>
-      <publisher>Little, Brown and Company</publisher>    
+      <publisher>Little, Brown and Company</publisher>
       <isbn>0-316-76953-3</isbn>
-      <description>A story about a few important days in the life 
+      <description>A story about a few important days in the life
       of Holden Caulfield</description>
     </book>
 
@@ -298,10 +300,10 @@ Imagine that another publisher (Verso) stores its book data in the following XML
     <book id="book002" lang="en">
       <ISBN>1857023994</ISBN>
       <publish_year>1996</publish_year>
-      <publisher>Verso</publisher>    
+      <publisher>Verso</publisher>
       <writer>Ernesto Che Guevara</writer>
       <translator>Ann Wright</translator>
-      <book_title>The Motorcycle Diaries: 
+      <book_title>The Motorcycle Diaries:
           A Journey Around South America</book_title>
       <price currency="USD">24.95</price>
       <summary>Traces Marxist revolutionary Che Guevara travelling 8,000
@@ -313,9 +315,9 @@ Suppose, you wanted to open an online book store (called Yarra); you had partner
 - You need to write two different programs to deal with each XML format;
 - You need to create a new structure to reconcile those two structures.
 
-To tackle these challenges, XML technologies provides a solution called XML schema. You can write a schema to guide the standardisation of the XML documents. The schema defines valid building blocks of an XML document. It prescribes a list of valid elements and attributes, and how they should be arranged. There are various styles of schema. One that you are going to use in this workshop is called Document Type Definition (DTD). 
+To tackle these challenges, XML technologies provides a solution called XML schema. You can write a schema to guide the standardisation of the XML documents. The schema defines valid building blocks of an XML document. It prescribes a list of valid elements and attributes, and how they should be arranged. There are various styles of schema. One that you are going to use in this workshop is called Document Type Definition (DTD).
 
-Before we work on the schema for the online book store example, let's start with a simple DTD exercise. 
+Before we work on the schema for the online book store example, let's start with a simple DTD exercise.
 
 First, type in (or copy to Notepad, recopy, and paste to IVLE) the following text in a file called `simplebook.xml`:
 
@@ -332,7 +334,7 @@ First, type in (or copy to Notepad, recopy, and paste to IVLE) the following tex
       <title>Totto-chan, the Little Girl at the Window</title>
     </book>
 
-The DTD for the XML data is included inside the file itself: 
+The DTD for the XML data is included inside the file itself:
 
     <!ELEMENT book (writer,title)>
     <!ELEMENT writer (#PCDATA)>
@@ -345,12 +347,12 @@ The DTD prescribes that:
 - `book` element has a compulsory attribute called `id`
 
 Any valid XML should conform to these properties.
-    
+
 \\{div class="exercise"
 
 #### Exercise 6
 
-Validate your `simplebook.xml` against the DTD, which is already part of the file. 
+Validate your `simplebook.xml` against the DTD, which is already part of the file.
 Use the following W3C online validator:
 
 http://validator.w3.org/#validate_by_input
@@ -374,7 +376,7 @@ You need to do the following tasks in this exercise:
 - Include the DTD within `newbook.xml` and refer the DTD externally in `newbook2.xml`.
 - Validate those two files in W3C validator.
 
-Find another student in your lab. Compare your DTD with his/hers. 
+Find another student in your lab. Compare your DTD with his/hers.
 Discuss if there are any differences and redesign a new DTD format to reconcile your two DTDs.
 
 *) When using external reference to the DTD, make sure, in IVLE, you publish your DTD file.
@@ -421,11 +423,11 @@ Create two XML files based on the DTD above to represent some information about 
 - http://www.amazon.com/Walking-Dream-Empire-Sun/dp/B001GXPHX0/
 - http://www.amazon.com/Raising-Robert-Plant-Alison-Krauss/dp/B000UMQDHC/
 
-Validate your XML to ensure that you apply the DTD correctly. 
+Validate your XML to ensure that you apply the DTD correctly.
 
 Check with your friends whether you come up with exactly the same XML files (remember that all of you are using the same DTD).
 
-Discuss and answer the following questions: 
+Discuss and answer the following questions:
 
 - Can DTD guarantee unambiguous data representation of a particular piece of information? Could there be multiple interpretations of a DTD?
 - Can you modify the DTD above in order to ensure that if the type attribute of creator element is equal to `"group"`, then the creator element can only contain `group-name` element but not `person-name` elements?
