@@ -1,7 +1,7 @@
 Project Phase 1 (Individual, 10%)
 =================================
 
-**This project specification may be changed at any time (Last updated: 24 March 2015, 11.30pm).**
+**This project specification may be changed at any time.**
 
 Aims
 ----
@@ -79,9 +79,8 @@ Another example:
 
 You also need to find the following:
 
-- **Mode(s)**, the most common value(s) in the column, except when the value only appears once.
-- **Unique values**, unique values of all the values in the column
-
+- **Mode(s)**, the most common value(s) in the column, except when the value only appears once. This means modes appear at least twice in the corresponding column.
+- **Unique values**, unique values of all the values in the column.
 
 Tasks
 -----
@@ -97,17 +96,18 @@ The result of this process should then be written into an XML file called `outpu
 This XML file should be well-formed valid against the following DTD (<a href="summary.dtd" file="code"> `summary.dtd`</a>).
 
 ```
-<!DOCTYPE summary [
-  <!ELEMENT summary (attribute*)>
-  <!ELEMENT attribute (name, property*, modes?, unique?)>
+<!DOCTYPE attributes [
+  <!ELEMENT attributes (attribute*)>
+  <!ELEMENT attribute (name, properties?, modes?, uniques?)>
   <!ELEMENT name (#PCDATA)>
+  <!ELEMENT properties (property+)>
   <!ELEMENT property (#PCDATA)>
   <!ELEMENT modes (mode+)>
   <!ELEMENT mode (#PCDATA)>
-  <!ELEMENT unique (value+)>
-  <!ELEMENT value (#PCDATA)>
-  <!ATTLIST property name (min|q1|median|q3|max) #REQUIRED>
+  <!ELEMENT uniques (unique+)>
+  <!ELEMENT unique (#PCDATA)>
   <!ATTLIST attribute type (integer|float|string) #REQUIRED>
+  <!ATTLIST property name (min|q1|median|q3|max) #REQUIRED>
 ]>
 ```
 
@@ -135,7 +135,7 @@ Your program will be marked according to:
 Submission
 --------------
 
-**Due Date: Friday Week 4, 5pm**:<br />
+**Due Date: Monday Week 5, 9am**:<br />
 **Late penalty: 1 mark for each late day**:
 
 You need to submit a single Python file called `phase1.py`. You can safely assume that `input.csv` and `summary.dtd` are available in the same directory with your `.py` file. Submit your work through the Submission section of the LMS.

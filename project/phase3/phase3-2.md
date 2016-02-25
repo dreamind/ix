@@ -18,7 +18,7 @@ You may use both Python and JavaScript in your application.
 
 By week 10, your team should have already had:
 
-- The final choice of data-set. You should have identified the type of the attributes (categorical or numerical) in the data-sets.
+- The final choice of dataset. You should have identified the type of the attributes (categorical or numerical) in the datasets.
 - The plan and design for part 1 of phase 3.
 - The plan and design for part 2 of phase 3. These should include 5 data analysis or visualisation items. You can either provide an in-depth analysis of a hypothesis (in which 5 visualisations are produced for 5 sub-questions of the hypothesis); or you can work with 5 hypothesis that have the same underlying theme (they form a story together about the data that you have chosen).
 - Your plan should include the structure of your web application and the job responsibilities of each member.
@@ -26,7 +26,7 @@ By week 10, your team should have already had:
 
 ## Deliverables
 
-By the end of week 10, you need to submit to the subject coordinator:
+By the end of week 10, you need to submit to your tutor:
 
 - The final team members
 - Final choice of domain and data-sets

@@ -63,11 +63,11 @@ The given data set contains information about 291 popular feature films produced
 
 #### Part 1 - Basic Task (individual, one unique question for each person in the group)
 
-Using spreadsheet formulas, answer the following questions.
+Using spreadsheet formulas, complete the following tasks and answer all the relevant questions.
 
-1. Compare the performance among movie genres based on the average metascore of the movies with the same genre. Ignore genres that have less than 5 movies. Visualise the comparison using appropriate chart type. Which three genres are the worst performers? Compare the performance of movie ratings (PG, G, etc) based on the same measure. Again, ignore ratings that have less than 5 movies. Visualise the comparison again. Do PG-rated movies generally score better than R-rated movie?
-2. Which three of the given reviewers in the movie data (Washington Post, Chicago Sun-Times, The New York Times, LA Weekly, Los Angeles Times, Rolling Stone, Wall Street Journal, Entertainment Weekly, Empire, Variety, Salon.com, The Onion (A.V. Club), TV Guide, Slate) are the most consistent with the 'metascore'? You can do this by calculating the average gaps between the metascore value and the score from a particular reviewer. Visualise the average gaps of all reviews to see how close they are to metascore.
+1. Which three of the given reviewers in the movie data (Washington Post, Chicago Sun-Times, The New York Times, LA Weekly, Los Angeles Times, Rolling Stone, Wall Street Journal, Entertainment Weekly, Empire, Variety, Salon.com, The Onion (A.V. Club), TV Guide, Slate) are the most consistent with the 'metascore'? You can do this by calculating the average gaps between the metascore value and the score from a particular reviewer. Visualise the average gaps of all reviews to see how close they are to metascore.
 Consider 0 as an empty score. State your assumption when dealing with missing data.
+2. Compare the performance among movie genres based on the worldwide gross of the movies with the same genre. Ignore genres that have less than 5 movies. Visualise the comparison using appropriate chart type. Which three genres are the worst performers? Compare the performance of movie ratings (PG, G, etc) based on the same measure. Again, ignore ratings that have less than 5 movies. Visualise the comparison again. Do PG-rated movies generally earn better than R-rated movie?
 3. Present a table of actors versus genres to show the number of movies in each genre that a particular actor is featured in. Colour the cells that contain these counts so that higher counts can be distinguished from lower counts. Include as the last column the total number of movies the actor is featured in. Show only actors which have appeared in at least 5 movies. Present the actors and genres in ascending order.
 
 |&nbsp;|...|genre|...|

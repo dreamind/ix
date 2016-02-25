@@ -1,24 +1,23 @@
 An interactive web application
 ===============================
 
-**This project specification may be updated to make corrections or clarifications; we will make an announcement about significant changes (Last updated: 20 May 2015, 17.30pm).**
+**This project specification may be updated to make corrections or clarifications; we will make an announcement about significant changes.**
 
-**To be completed by small groups (three students)<br />
-Late penalty: You will lose two marks for every day (or part thereof) that your submission is late.**
+**To be completed by small groups (three students). Late penalty: You will lose two marks for every day (or part thereof) that your submission is late.**
 
 Overview
 --------
 
 The purpose of the project is to give you an experience in creating a non-trivial web-application that combines many of the skills and technologies you have learnt during the semester. It is also an opportunity for you to gain experience working in a team on a challenging task.
 
-You will implement an interactive web application in Python, which will be ideally hosted on IVLE. Developing this application will involve data gathering, data processing, data visualisation and data analysis.
+You will implement an interactive web application in Python. Developing this application will involve data gathering, data processing, data visualisation and data analysis.
 
 What data should you use for the application?
 -----------------------------------
 
-A dataset of your choice. Your application could use data in any format (CSV, XML or JSON), the data can be hosted in IVLE or retrieved remotely from an on-demand data service. You do not have to use all the data in the file, only a sufficient number of entries to show all the required functionality of the application and an interesting insight from the data. Note that IVLE places limiting constraints on how much computation your application can perform. Large data sets may cause your application to overstep those constraints.
+A dataset of your choice. Your application could use data in any format (CSV, XML or JSON), the data can be hosted in your application or retrieved remotely from an on-demand data service. You do not have to use all the data in the file, only a sufficient number of entries to show all the required functionality of the application and an interesting insight from the data.
 
-Part 1: A pivot table builder (7%)
+Part 1: A pivot table builder (5%)
 -----------------------------------
 
 You need to design an interactive pivot builder of your selected dataset. This application should allow users to select two categorical attributes of your selected dataset, an attribute for the aggregated value, and a filter by value option. The cells of the pivot table output should be coloured according to the aggregated value. The colours can be taken from monochromatic or dichromatic palette.
@@ -27,7 +26,7 @@ Building pivot table means your dataset needs to have two or more categorical at
 
 The example application is available [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/solution/phase3/form.py). Note that this example is a very rudimentary solution to part 1. Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks. Please also look at [an example of past student submissions](http://students.informatics.unimelb.edu.au/~zhout1/stuff/pivotal_stocks/cgi.py/pivot)
 
-Part 2: An open-ended task (10%)
+Part 2: An open-ended task (12%)
 -----------------------------------
 
 The goal of the second part of phase 3 is to demonstrate your capability in taking a dataset and showing some interesting insights from the data through visualisation (visual analytics) You can view this goal as developing an application for confirmatory data analytics.
@@ -41,20 +40,17 @@ Reuse the dataset you work with in part 1. You may reuse some of your work in pa
 - You are not required to use a single Python file. You can organise your files or structure your application in anyway you feel appropriate. In the submission, you need to provide us with a README file to explain how to run/serve your application.
 - You can pre-process your data using any method you feel appropriate for the
 required processing task. You can use spreadsheets, Python scripts or combination of tools, but you need to document the steps that you have performed to produce the data used by your application. You will need to present and discuss this during project presentation.
-- If you are experiencing a problem when producing an image using matplotlib, please see the following [fix](assets/matplotlib-fix.py) and include it into your Python file.
 
 Requirements
 -----------
 
 You should produce an interactive web application that has at least the following properties:
 
-- It should be implemented in Python, and must function correctly when hosted
-on IVLE.
-- You should implement your own Pivot Table builder, do not use Google Pivot table feature or any Python libraries that provide ready-to-use pivot capability.
-- It must use CGI and forms to get input from the user.
+- It should be implemented in Python.
+- You could implement your own Pivot Table builder or any Python libraries that provide pivot capability. The data processing should be carried out in the server side, do not use JavaScript library to process the data.
+- It must allow user to interact with the application.
 - It must use valid XHTML or HTML5 to display output to the user.
-- It must use CSS appropriately in providing the visual aspect of the
-application.
+- It must use CSS appropriately in providing the visual aspect of the application.
 - You may use JavaScript for your application.
 
 Marking Guide for the application
@@ -89,7 +85,7 @@ application.
 - [Group declaration of academic honesty](assets/declaration-of-academic-honesty.pdf).
 
 
-It is a good idea to test your ZIP file before you submit. You can do this by uploading the ZIP file to a new folder in the IVLE space of one of your group members. It is your responsibility as a group to make sure that all relevant files are included in your submission, and submit your work correctly. Technical problems in the submission will NOT be accepted as an excuse for late submission.
+It is a good idea to test your ZIP file before you submit. It is your responsibility as a group to make sure that all relevant files are included in your submission, and submit your work correctly. Technical problems in the submission will NOT be accepted as an excuse for late submission.
 
 Presentation
 ------------
@@ -103,6 +99,9 @@ The presentation should address the following four issues:
 - Describe the structure of your application?
 
 You should be prepared to answer questions from your workshop demonstrator and the other students in your workshop at the end of the presentation.
+
+Marking Guide for the presentation
+---------------------------------
 
 Your presentation will be marked according to the following criteria:
 
