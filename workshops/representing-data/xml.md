@@ -433,3 +433,15 @@ Discuss and answer the following questions:
 - Can you modify the DTD above in order to ensure that if the type attribute of creator element is equal to `"group"`, then the creator element can only contain `group-name` element but not `person-name` elements?
 
 \\}
+
+### Note: Mixed content model
+
+  <!ELEMENT parent (#PCDATA|child1|child2)* >
+
+parent can contain any combination of zero or more #PCDATA, child1, and child2 elements
+
+  <!ELEMENT parent (child1|child2)+ >
+
+parent can contain any combination of one or more child1, and child2 elements
+
+Order of the children does not matter in mixed content model.
