@@ -1,0 +1,73 @@
+<html>
+<head>
+
+    <title>Example of parsing JSON using JQuery</title>
+    
+    <!-- Set up some styling -->
+    <style>
+        body{            
+            font-family: arial;
+        }
+
+        .button{
+            margin:20px;
+            font-size:16px;
+            font-weight: bold;
+            padding:5px 10px;
+        }
+    </style>
+    
+    <!-- Import the JQuery libraries (from Google AJAX API this time) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    <script>
+        
+        var htmlOutput = '<h1>Details</h1>';
+
+        //When DOM is loaded we attach a click event to the button
+        $(document).ready(function() {
+            
+            //After the button is clicked, the data is downloaded
+            $('.button').click(function(){
+
+                //Ajax request started
+                $.ajax({
+                    
+                    url: "data.json",
+                    
+                    //Handle the data as text (required)
+                    dataType: "text",
+                    success: function(data) {
+                        
+                        //Pass the downloaded data to the parseJSON function
+                        var json = $.parseJSON(data);
+                        
+                        //Now the json variable contains data in json format, and can be displayed
+                        //htmlOutput += '<strong>ID:</strong> ' + json.id + '<br /><br/><strong>Edition (' + json.publish_date[0].edition + "):</strong> " + json.publish_date[0].date;
+                        $('#results').html(htmlOutput);
+                    }
+                });
+            });
+        });
+    </script>
+    
+</head>
+    
+<body>
+    
+    <!-- Display the raw JSON file -->
+    <p>
+    <a href="data.json" target="_blank">Open JSON file</a>
+    </p>
+    
+    <!-- Invoke the JSON parsing functions defined in the page head -->
+    <p>
+    <input type="button" value="Get and parse JSON" class="button" />
+    </p>
+    
+    <p>
+    <span id="results"></span>
+    </p>
+    
+</body>
+</html>
