@@ -1,7 +1,7 @@
 ﻿Workshop - Infrastructure
 =========================
 
-This workshop introduces students to infrastructure concepts that underpin the use of the Internet for informatics and data processing. Specifically we will be looking at the Hypertext Transfer Protocol (HTTP), Common Gateway Interface (CGI) and briefly Hypertext Markup Language (HTML). These three areas are fundamental to understanding the mechanics of information transfer across networks, and are therefore an essential platform to building knowledge in informatics.
+This workshop introduces students to infrastructure concepts that underpin the use of the Internet for informatics and data processing. Specifically we will be looking at the Hypertext Transfer Protocol (HTTP), Web Application Framework (using Flask) and briefly Hypertext Markup Language (HTML). These three areas are fundamental to understanding the mechanics of information transfer across networks, and are therefore an essential platform to building knowledge in informatics.
 
 The structure of the workshop will be a slide presentation on each area, followed by a series of guided questions for you to work through and understand the basic concept. The answers to these will be covered within the workshop. This will be followed by a set of exercises that are for you to complete at the end of the workshop and in your own time to develop your understanding and prepare for the final exam. Answers to these questions will be made available a week after the workshop.
 
@@ -50,13 +50,82 @@ Now connect to www.google.com in the same way.
 1. What HTTP code has been returned this time?
 2. What does this tell you about the website?
 
+Creating Web App
+---------------------
 
+Follow the following recipe, to create a simple web application using Flask. First,
+create a file called `app.py` that contains the following code:
+
+    from flask import Flask
+    app = Flask(__name__, static_folder='.', static_url_path='')
+
+    @app.route("/")
+    def main():
+        return 'Hello World'
+
+    if __name__ == "__main__":
+        app.run(debug=True)
+
+Run the application using the following command:
+
+    C:\Documents> python app.py
+
+If there is an issue, you may want to use the complete path for the python program:
+
+    C:\Documents> C:\Users\username\AppData\Local\Continuum\Anaconda2\python app.py
+
+You should see something like:
+
+    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+    * Restarting with stat
+    * Debugger is active!
+
+Launch a browser and put http://127.0.0.1:5000/ in the addrress bar.
+
+#### Exercise:
 
 B. Hyper-Text Mark-up Language (HTML)
 ----------------------------------
 Presentation: slides 11 and 12.
 
 Note that this is a *very* brief discussion about HTML just to understand what is being communicated across the network using HTTP. The details of mark-up languages will be covered in week 4.
+
+\\{div class="exercise"
+
+#### Exercise 4
+
+Write a Python script that rewrites the data inside `book.xml` as a web page (HTML). Use an HTML table to format the data. See the following example below.
+
+<table border="0" cellpadding="5" cellspacing="1">
+<tr bgcolor="#CCCC99"><td><b>Author</b></td><td><b>Salinger, J. D.</b></td></tr>
+<tr bgcolor="#CCCC99"><td><b>Title</b></td><td><b>The Catcher in the Rye</b></td></tr>
+<tr bgcolor="#CCCC99"><td>Language</td><td>English</td></tr>
+<tr bgcolor="#CCCC99"><td>Publish date</td><td>1951-07-16</td></tr>
+<tr bgcolor="#CCCC99"><td>Publisher</td><td>Little, Brown and Company</td></tr>
+<tr bgcolor="#CCCC99"><td>Isbn</td><td>0-316-76953-3</td></tr>
+<tr bgcolor="#CCCC99"><td>Description</td><td>A story about a few important days in the life of Holden Caulfield</td></tr>
+</table>
+
+*Tips and Hints:*
+To produce an HTML page using Python, see the example below. The script displays current temperature in New York.
+
+    from lxml import etree
+    from urllib import urlopen
+
+    # Get the XML data of the current weather at Central Park, New York
+    xmltree = etree.parse(urlopen("http://w1.weather.gov/xml/current_obs/KNYC.xml"))
+    root = xmltree.getroot()
+    location = root.find('location').text
+    temp = root.find('temperature_string').text
+
+    # Display the location and temperature in HTML
+    f = open('output.html', 'w')
+    f.write('<html><body>')
+    f.write('<p>Current temperature at %s is %s</p>' % (location, temp))
+    f.write('</body></html>')
+    f.close()
+
+\\}
 
 Open up a browser and navigate to this page [form example](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/form_example.html). Click on “View” then “Source” (or ctrl-U as the keyboard shortcut) and look at the output returned.
 
@@ -70,58 +139,12 @@ Open up a browser and navigate to this page [form example](http://students.infor
 Now go to www.amazon.com. Again, view the page source and look at the output. What is different about this page?
 
 
-C. Common Gateway Interface (CGI)
-------------------------------
-Presentation: slides 13 to 29
-
-**Question 1**
-
-Serve the following [python script](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/env.py) (or navigate to it through a browser) and look at the output.
-
-1. What is the server’s IP address?
-2. What is the server application that is running (e.g. Apache, Tomcat?) and what version?
-3. Which variable tells you information about the browser that *you* are connecting with (as the client)?
-
-**Question 2**
-
-Serve the same script again. But this time add the following parameters by inputting them through the URI:
-
-- `name = blofeld`
-- `mission = destroy+world`
-
-1. What is the full string that you add to the URI?
-2. Which variable does this information appear in?
-
-**Question 3**
-
-Now serve this page again [form example](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/form_example.html), put a text or number value in the box and click “submit”.
-
-1. Which variable does this information appear in?
-2. What is the name of the variable and where is this set in the requesting form?
-
-**Question 4**
-
-Finally, serve this [python script](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/fieldstore.py) and add the parameters in the URI as in question 2.
-
-1. What does the output look like?
-2. Look at the way the python script prints the output (in the source code) – what is the advantage of formatting data like this?
-
-Exercises
+Exercise (Optional)
 ---------
 
-1. HTTP is a stateless protocol, by which we mean that it has no memory of one transaction to the next.
-  1. Create an HTML form to submit some parameters to another page (you can use slide 13 as a template or look up `http://www.w3schools.com` for help. Note that you should use the "serve" version of the file URI in IVLE to add to the form method, rather than the file listing URI).
-  2. Pass a parameter to a CGI script, which you will write using Python, using the `<input type="hidden">` tag.
-  3. The CGI script will output HTML displaying the value of all the parameters that you've passed through, including the hidden ones. (Note: remember to specify the content type of the HTML output from the CGI script)
-  4. Now, in the HTML page that has been output, add another form.
-  5. Pass one of the parameters into this new form and repeat the process to pass the information to a new CGI script and HTML output (creating a chain).
-  6. Briefly sketch in a block diagram the sequence of HTML form, CGI scripts and parameters passed between them.
+a) Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP, HTML and CGI, but their size makes this communication difficult.
 
-   Can you see how this process allows one page to *remember* another and pass information down a chain of HTTP requests? Can you think of another way for pages to remember the conversation from one HTTP conversation to the next (hint: think about persistent data and text files).
-
-2. Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP, HTML and CGI, but their size makes this communication difficult.
-
-  1. Using this [data-set](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/wk2_infrastructure_data.csv), write a CGI script that reads in the CSV file and outputs the data to an HTML table. 
+  1. Using this [data-set](assets/data.csv), write a script that reads in the CSV file and outputs the data to an HTML table, using Flask.
 
   2. How long does it take to render? (Note: you may want to use the `time.clock()` Python library and function for this)
 
@@ -132,8 +155,6 @@ Exercises
   5. When breaking up the data processing in the question above, is there an overhead in finding the last processing place in the data-set again?
 
   For references to help, try the [Python CSV library](https://docs.python.org/2/library/csv.html) for handling CSV files in Python and [w3schools](http://www.w3schools.com) for HTML tags.
-
-3. As demonstrated above, you can display environment variables on a server by invoking a form, and these provide information about the client (e.g. `HTTP_USER_AGENT` and `HTTP_REFERER`). You can manipulate and hide these client variables by changing settings in your browser. What are the security implications of this? A demonstration of this will only work on browsers where you have administrator rights - speak to your tutor to see how this could be done on Mozilla Firefox.
 
 
 Other Resources

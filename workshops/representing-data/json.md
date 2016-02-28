@@ -1,15 +1,13 @@
-﻿Workshop - JavaScript Object Notation (JSON)
+﻿Workshop - Representing Data with JSON (JavaScript Object Notation)
 =================================
 
-The JSON workshop allows students to explore the properties of JavaScript Object Notation as a method of representing, storing and exchanging data. The workshop will start with a brief presentation re-iterating syntax rules from the lecture and emphasising the tools that we will be using to explore JSON (Javascript, JQuery and the Mozilla and Chrome development suites). We will then go through two guided questions that create and manipulate JSON representations and validate them against JSONLint, and also represent the JSON information in HTML and JQuery. The extended exercise questions ask for more complex representation in JSON, introduce the use of Javascript as a database query engine, and explore the security implications of JSON being Javascript executable.
+Noww, we are gouing to explore the properties of JavaScript Object Notation as a method of representing, storing and exchanging data. The workshop will start with a brief presentation re-iterating syntax rules from the lecture and emphasising the tools that we will be using to explore JSON. We will then go through two guided questions that create and manipulate JSON representations and validate them against JSONLint, and also represent the JSON information in HTML and JQuery. The extended exercise questions ask for more complex representation in JSON, introduce the use of Javascript as a database query engine, and explore the security implications of JSON being Javascript executable.
 
 <a target="_blank" href="json_workshop.ppt" file="ppt"> Slides used for this workshop - JSON</a>
 
 JSON Presentation: slides 1 to 7
 
-**Question 1**
-
-Previously in this workshop, you created the following XML file to represent a book (`book.xml`):
+Previously, in the last week workshop, you created the following XML file to represent a book (`book.xml`):
 
     <?xml version="1.0" encoding="utf-8"?>
     <book id="book001">
@@ -23,23 +21,36 @@ Previously in this workshop, you created the following XML file to represent a b
       <description>A story about a few important days in the life of Holden Caulfield</description>
     </book>
 
-1. Represent this file as JSON. Create the new file in IVLE, give it the name `book.json`, and save as 'Text'. Begin with the following text and expand from there:
-    ```
+\\{div class="exercise"
+
+#### Exercise 1
+
+Represent this file as JSON. Create the new file, give it the name `book.json`, and save as 'Text'. Begin with the following text and expand from there:
+
     {
       "id": "book001",
       "author": "Salinger, J. D."
-    }```
+    }
 
-2. Validate your JSON solution against [JSONLint](http://www.jsonlint.com). [Note: as with the XML validator, be careful of white-space or missing control characters]
+Validate your JSON solution against [JSONLint](http://www.jsonlint.com). [Note: as with the XML validator, be careful of white-space or missing control characters]
 
-3. In your JSON solution, add `Spanish` and `German` as two extra languages represented as an array. Save this file as `book2.json`. Validate it on [JSONLint](http://www.jsonlint.com).
+\\}
 
-4. Now modify the `publish_date` parameter. Make this an array of two objects that have properties of `edition` (`first`, `second`) and `date` (`1951-07-16`,`1979-01-01`) respectively. Save this file as `book3.json`. Validate it on [JSONLint](http://www.jsonlint.com).
+\\{div class="exercise"
 
+#### Exercise 2
 
-**Question 2**
+In your JSON solution, add `Spanish` and `German` as two extra languages represented as an array. Save this file as `book2.json`. Validate it on [JSONLint](http://www.jsonlint.com).
 
-Now create a python code that represents the HTML table (seen before in the XML workshop).
+Now modify the `publish_date` parameter. Make this an array of two objects that have properties of `edition` (`first`, `second`) and `date` (`1951-07-16`,`1979-01-01`) respectively. Save this file as `book3.json`. Validate it on [JSONLint](http://www.jsonlint.com).
+
+\\}
+
+\\{div class="exercise"
+
+#### Exercise 3
+
+Now create a python code that represents the HTML table (seen before in the XML workshop) by using `json` library.
 
     import json
 
@@ -48,19 +59,27 @@ Now create a python code that represents the HTML table (seen before in the XML 
     # write your Python code from this point
     # ...
 
-**Question 3**
+View the HTML file on the browser.
+\\}
 
-Now we're going to import JSON data into an HTML page and format it. Copy and paste this [HTML file](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/json_workshop_week4/scripts/jquery_book_example.html) into the same directory as book3.json.
 
-1. Replace all the references in the file to `data.json` with `book3.json` and uncomment line 47 (adding output for ID and publish dates). Serve the file and click the button marked **Get and parse JSON**. What is output on screen?
-2. Retrieve some of the root items in `book3.json` and render them as bold and italic (hint: use the `<strong>` and `<em>` tags around the text)
-
+Now we're going to import JSON data into an HTML page and format it. Copy and paste this [HTML file](jquery_book_example.html) into the same directory as book3.json.
 
 \\{div class="exercise"
 
-#### Exercises
+#### Exercise 4
 
-Now produce a large HTML file from a JSON data source retrieved from a public interface. You display the data in an appropriate format, e.g. table. As an example, you can use [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON). 
+Replace all the references in the file to `data.json` with `book3.json` and uncomment line 47 (adding output for ID and publish dates). Load the file and click the button marked **Get and parse JSON**. What is output on screen?
+
+Retrieve some of the root items in `book3.json` and render them as bold and italic (hint: use the `<strong>` and `<em>` tags around the text).
+
+\\}
+
+\\{div class="exercise"
+
+#### Exercise 5 (optional)
+
+Now produce a large HTML file from a JSON data source retrieved from a public interface. You display the data in an appropriate format, e.g. table. As an example, you can use [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON).
 
 You can also use any other public JSON data sources:
 

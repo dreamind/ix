@@ -1,4 +1,4 @@
-Part B: Interactive Web Applications using JavaScript
+# Interactive Web Applications using JavaScript
 
 JavaScript is one of the technologies most commonly used to develop Rich Internet Applications. It allows client-side (browser-based) scripting capability, which provides more engaging and interactive web pages. On the other hand, server side scripting frameworks--such as ASP, PHP, and Python--generate HTML codes in the server side and the generated codes form the web page that you see in the browser. No further changes to page can be done using this method from the server side (see the figure below).
 
@@ -117,5 +117,3 @@ The minimum skeleton for an Ajax call is as the following:
 
 Inspect the `ajax.py` to see how the Ajax response is constructed.
 
-Mash-up examples using JavaScript (and jQuery)
-Google Maps example (Note that you need to apply for your own API key, if you want to serve this page in IVLE)

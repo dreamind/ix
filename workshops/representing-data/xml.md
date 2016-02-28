@@ -1,4 +1,4 @@
-Workshop - eXtensible Markup Language (XML)
+Workshop - Representing Data with XML (eXtensible Markup Language)
 =====================
 
 The JSON workshop allows students to explore XML as a method of representing, validating and exchanging data. You are going to learn `lxml` package, a Python library that can be used to handle XML data.
@@ -146,60 +146,10 @@ Save the file as `book.xml`. This XML looks different to the `royal.xml` in that
     >>> for child in root:
     ...   print child.tag + ": " + child.text
 
-\\{div class="exercise"
-
-#### Exercise 4
-
-Write a Python script that rewrites the data inside `book.xml` as a web page (HTML). Use an HTML table to format the data. See the following example below.
-
-<table border="0" cellpadding="5" cellspacing="1">
-<tr bgcolor="#CCCC99"><td><b>Author</b></td><td><b>Salinger, J. D.</b></td></tr>
-<tr bgcolor="#CCCC99"><td><b>Title</b></td><td><b>The Catcher in the Rye</b></td></tr>
-<tr bgcolor="#CCCC99"><td>Language</td><td>English</td></tr>
-<tr bgcolor="#CCCC99"><td>Publish date</td><td>1951-07-16</td></tr>
-<tr bgcolor="#CCCC99"><td>Publisher</td><td>Little, Brown and Company</td></tr>
-<tr bgcolor="#CCCC99"><td>Isbn</td><td>0-316-76953-3</td></tr>
-<tr bgcolor="#CCCC99"><td>Description</td><td>A story about a few important days in the life of Holden Caulfield</td></tr>
-</table>
-
-*Tips and Hints:*
-To produce an HTML page using Python, see the example below. The script displays current temperature in New York.
-
-    from lxml import etree
-    from urllib import urlopen
-
-    # Get the XML data of the current weather at Central Park, New York
-    xmltree = etree.parse(urlopen("http://w1.weather.gov/xml/current_obs/KNYC.xml"))
-    root = xmltree.getroot()
-    location = root.find('location').text
-    temp = root.find('temperature_string').text
-
-    # Display the location and temperature in HTML
-    f = open('output.html', 'w')
-    f.write('<html><body>')
-    f.write('<p>Current temperature at %s is %s</p>' % (location, temp))
-    f.write('</body></html>')
-    f.close()
-
-\\}
-
 Building XML data
 ----------------
 
-Let's go back to the `book.xml` example.
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <book id="book001">
-      <author>Salinger, J. D.</author>
-      <title>The Catcher in the Rye</title>
-      <language>English</language>
-      <publish_date>1951-07-16</publish_date>
-      <publisher>Little, Brown and Company</publisher>
-      <isbn>0-316-76953-3</isbn>
-      <description>A story about a few important days in the life of Holden Caulfield</description>
-    </book>
-
-As usual, to access or to manipulate this XML data, import `lxml` library, parse the XML tree, and get the root of the tree:
+Let's go back to the `book.xml` example above. As usual, use `lxml` library to parse the XML and get the root of the tree:
 
     >>> from lxml import etree
     >>> xmltree = etree.parse('book.xml')
@@ -254,7 +204,7 @@ To write to a file, simply use the XML string in the file write operation:
 
 \\{div class="exercise"
 
-#### Exercise 5
+#### Exercise 4
 
 - Assuming you have completed the tasks above, replace the text and the attribute of the `price` element to set the book price to **25 AUD**.
 - Create a new element called `pages`, set its content to `277`, and append it to the root. Confirm that the new element is created, by issuing the following command:
@@ -342,7 +292,7 @@ Any valid XML should conform to these properties.
 
 \\{div class="exercise"
 
-#### Exercise 6
+#### Exercise 5
 
 Validate your `simplebook.xml` against the DTD, which is already part of the file.
 Use the following W3C online validator:
@@ -357,7 +307,7 @@ Now modify `simplebook.xml` by changing the `<writer>` tag to `<reader>`, and re
 
 \\{div class="exercise"
 
-#### Exercise 7
+#### Exercise 6
 
 Let's go back to the XML data used for online book store. Examine `book.xml` and `book2.xml`. In order to continue with building your online book store, you intend to design a new XML structure to reconcile the differences in the formats used by the two publishers. You need to write the design in a DTD and to share it with the two publishers, so that they can provide their catalog data in this new standardized format.
 
@@ -375,7 +325,7 @@ Discuss if there are any differences and redesign a new DTD format to reconcile 
 
 \\}
 
-Creating XML data based on a DTD (optional)
+Creating XML data based on a DTD (advanced)
 --------------------------------
 
 So far, you start with XML data and attempt to formalise its structure using a DTD. Let's now start with the a DTD. Consider the following DTD, which is created for representing a music album:
@@ -408,7 +358,7 @@ So far, you start with XML data and attempt to formalise its structure using a D
 
 \\{div class="exercise"
 
-#### Exercise 8
+#### Exercise 7
 
 Create two XML files based on the DTD above to represent some information about the following two albums:
 
@@ -426,14 +376,3 @@ Discuss and answer the following questions:
 
 \\}
 
-### Note: Mixed content model
-
-  <!ELEMENT parent (#PCDATA|child1|child2)* >
-
-parent can contain any combination of zero or more #PCDATA, child1, and child2 elements
-
-  <!ELEMENT parent (child1|child2)+ >
-
-parent can contain any combination of one or more child1, and child2 elements
-
-Order of the children does not matter in mixed content model.
