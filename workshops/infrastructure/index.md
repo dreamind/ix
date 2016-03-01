@@ -50,29 +50,29 @@ Now connect to www.google.com in the same way.
 1. What HTTP code has been returned this time?
 2. What does this tell you about the website?
 
-Creating Web App
+Flask Web App and HTML
 ---------------------
 
 Follow the following recipe, to create a simple web application using Flask. First,
-create a file called `app.py` that contains the following code:
+create a file called [`hello.py`](flask/code/hello.py) that contains the following code:
 
     from flask import Flask
     app = Flask(__name__, static_folder='.', static_url_path='')
 
     @app.route("/")
-    def main():
-        return 'Hello World'
+    def root():
+        return 'Hello World!'
 
     if __name__ == "__main__":
         app.run(debug=True)
 
 Run the application using the following command:
 
-    C:\Documents> python app.py
+    C:\Documents> python hello.py
 
 If there is an issue, you may want to use the complete path for the python program:
 
-    C:\Documents> C:\Users\username\AppData\Local\Continuum\Anaconda2\python app.py
+    C:\Documents> C:\Users\username\AppData\Local\Continuum\Anaconda2\python hello.py
 
 You should see something like:
 
@@ -80,19 +80,22 @@ You should see something like:
     * Restarting with stat
     * Debugger is active!
 
-Launch a browser and put http://127.0.0.1:5000/ in the addrress bar.
-
-#### Exercise:
-
-B. Hyper-Text Mark-up Language (HTML)
-----------------------------------
-Presentation: slides 11 and 12.
-
-Note that this is a *very* brief discussion about HTML just to understand what is being communicated across the network using HTTP. The details of mark-up languages will be covered in week 4.
+Launch a browser and put http://127.0.0.1:5000/ in the addrress bar, you should see your
+first Hello World Flask application
 
 \\{div class="exercise"
 
-#### Exercise 4
+#### Exercise
+
+Save as hello.py and modify the application to print the current time (use strftime from time module).
+
+\\}
+
+Note that this is a *very* brief discussion about HTML just to understand what is being communicated across the network using HTTP. The details of mark-up languages will be covered in another workshop.
+
+\\{div class="exercise"
+
+#### Exercise
 
 Write a Python script that rewrites the data inside `book.xml` as a web page (HTML). Use an HTML table to format the data. See the following example below.
 
@@ -127,16 +130,20 @@ To produce an HTML page using Python, see the example below. The script displays
 
 \\}
 
-Open up a browser and navigate to this page [form example](http://students.informatics.unimelb.edu.au/~astell/foi/mywork/infrastructure_workshop_week2/scripts/form_example.html). Click on “View” then “Source” (or ctrl-U as the keyboard shortcut) and look at the output returned.
 
-**Question 1**
+\\{div class="exercise"
+
+#### Exercise
+
+Save the following files to your own directory and launcged python form.py .
+Load form.html in the browser.
 
 1. What tags can you see?
 2. Do you know what these represent?
 
-**Question 2**
+\\}
 
-Now go to www.amazon.com. Again, view the page source and look at the output. What is different about this page?
+
 
 
 Exercise (Optional)
