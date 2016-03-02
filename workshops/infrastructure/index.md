@@ -3,22 +3,18 @@
 
 This workshop introduces students to infrastructure concepts that underpin the use of the Internet for informatics and data processing. Specifically we will be looking at the Hypertext Transfer Protocol (HTTP), Web Application Framework (using Flask) and briefly Hypertext Markup Language (HTML). These three areas are fundamental to understanding the mechanics of information transfer across networks, and are therefore an essential platform to building knowledge in informatics.
 
-The structure of the workshop will be a slide presentation on each area, followed by a series of guided questions for you to work through and understand the basic concept. The answers to these will be covered within the workshop. This will be followed by a set of exercises that are for you to complete at the end of the workshop and in your own time to develop your understanding and prepare for the final exam. Answers to these questions will be made available a week after the workshop.
+The structure of the workshop will be a series of guided exercises for you to work through and understand the basic concept. The answers to these will be covered within the workshop. This will be followed by a set of further exercises that are for you to complete at the end of the workshop and in your own time to develop your understanding and prepare for the final exam. Answers to these questions will be made available about two weeks after the workshop.
 
-<a target="_blank" href="infrastructure.ppt" file="ppt"> Slides used for this workshop</a>
+## Hyper-Text Transfer Protocol (HTTP)
 
-A. Hyper-Text Transfer Protocol (HTTP)
------------------------------------
-Presentation: slides 1 to 10.
-
-Open up Putty (Windows button then put “putty” into the search box).
+Open up Putty (Windows button then put `putty` into the search box).
 Configure the screen as shown in figure 1.
 
 <img src="images/image001.png">
 
-*Figure 1*: the configuration screen for Putty. Put in the hostname “www.unimelb.edu.au”,port “80”, connection type “Raw”, Close window on exit “Never”.
+*Figure 1*: The configuration screen for Putty. Put in the hostname “www.unimelb.edu.au”, port “80”, connection type “Raw”, Close window on exit “Never”.
 
-Open notepad and write the following HTTP request information as shown in figure 2.
+Open Notepad and write the following HTTP request information as shown in figure 2.
 
 <img src="images/image002.png">
 
@@ -28,9 +24,11 @@ As the webpage returned will likely be large, you may need to set the scrollable
 
 <img src="images/image003.png">
 
-*Figure 3*: configuring the scroll size of the Putty window
+*Figure 3*: Configuring the scroll size of the Putty window
 
-**Question 1**
+\\{div class="exercise"
+
+#### Exercise 1
 
 Open a terminal using Putty as described above and connect to www.unimelb.edu.au by copying and pasting the commands from Notepad into the terminal window and pressing return twice. Look at the output that is returned.
 
@@ -39,19 +37,17 @@ Open a terminal using Putty as described above and connect to www.unimelb.edu.au
 3. What HTTP code has been returned?
 4. Try again with the input “GET /test.html HTTP/1.1” on the first line. What code is returned this time?
 
-**Question 2**
+\\}
+
+\\{div class="exercise"
+
+#### Exercise 2
 
 Compare the output from the Putty terminal and the output of the web-page in a browser. How do they differ? We’re about to demonstrate how information is passed between one page and another – if you can’t see it, do you think the information is hidden/protected?
 
-**Question 3 (only works on UniWireless connection)**
+\\}
 
-Now connect to www.google.com in the same way.
-
-1. What HTTP code has been returned this time?
-2. What does this tell you about the website?
-
-Flask Web App and HTML
----------------------
+## Flask Web App and HTML
 
 Follow the following recipe, to create a simple web application using Flask. First,
 create a file called [`hello.py`](flask/code/hello.py) that contains the following code:
@@ -87,7 +83,7 @@ first Hello World Flask application
 
 #### Exercise
 
-Save as hello.py and modify the application to print the current time (use strftime from time module).
+Save as hello.py and modify the application to print the current time (use [strftime](https://docs.python.org/2/library/time.html#time.strftime) from time module).
 
 \\}
 
@@ -110,10 +106,13 @@ Write a Python script that rewrites the data inside `book.xml` as a web page (HT
 </table>
 
 *Tips and Hints:*
-To produce an HTML page using Python, see the example below. The script displays current temperature in New York.
+To produce an HTML page using Python and Flask, see the example below. The script displays current temperature in New York.
 
+    from flask import Flask
     from lxml import etree
     from urllib import urlopen
+
+    app = Flask(__name__, static_folder='.', static_url_path='')
 
     # Get the XML data of the current weather at Central Park, New York
     xmltree = etree.parse(urlopen("http://w1.weather.gov/xml/current_obs/KNYC.xml"))
@@ -122,11 +121,21 @@ To produce an HTML page using Python, see the example below. The script displays
     temp = root.find('temperature_string').text
 
     # Display the location and temperature in HTML
-    f = open('output.html', 'w')
-    f.write('<html><body>')
-    f.write('<p>Current temperature at %s is %s</p>' % (location, temp))
-    f.write('</body></html>')
-    f.close()
+    html = '''
+    <!doctype html>
+    <html>
+    <body>
+    <p>Current temperature at %s is %s</p>
+    </body>
+    </html>
+    '''
+
+    @app.route("/")
+    def root():
+        return html % (location, temp)
+
+    if __name__ == "__main__":
+        app.run(debug=True)
 
 \\}
 
@@ -135,34 +144,43 @@ To produce an HTML page using Python, see the example below. The script displays
 
 #### Exercise
 
-Save the following files to your own directory and launcged python form.py .
-Load form.html in the browser.
+Save and unzip the following [file](flask/code.zip) to your own directory. From the command line, call:
+
+   C:\> python form.py
+
+Load `form.html` in the browser and answer the following questions
 
 1. What tags can you see?
 2. Do you know what these represent?
+3. Fill the form and click submit, observe the output and examine how `form.py` processes the form submission.
+
+Open `form.html` in a text editor and change the following line:
+
+    <form method="get" action="handler">
+
+to:
+
+    <form method="post" action="handler">
+
+Reload `form.html` and resubmit the form. Observe how the user input gets transmitted to the python code.
 
 \\}
 
+\\{div class="exercise"
 
+#### Exercise (optional)
 
+Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP, HTML and CGI, but their size makes this communication difficult.
 
-Exercise (Optional)
----------
+1. Using this [data-set](assets/data.csv), write a script that reads in the CSV file and outputs the data to an HTML table, using Flask.
+2. How long does it take to render? (Note: you may want to use the `time.clock()` Python library and function for this)
+3. Is the way the information organised in the data important for the data processing time? What would be the impact if the lines in the data-set were of differing length?
+4. Consider the user experience of viewing this data. If the data takes a long time to render, can you think of a way to process some information in the background whilst presenting initial results? Add this solution to your code (hint: think about breaking the data up into pages).
+5. When breaking up the data processing in the question above, is there an overhead in finding the last processing place in the data-set again?
 
-a) Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP, HTML and CGI, but their size makes this communication difficult.
+For references to help, try the [Python CSV library](https://docs.python.org/2/library/csv.html) for handling CSV files in Python and [w3schools](http://www.w3schools.com) for HTML tags.
 
-  1. Using this [data-set](assets/data.csv), write a script that reads in the CSV file and outputs the data to an HTML table, using Flask.
-
-  2. How long does it take to render? (Note: you may want to use the `time.clock()` Python library and function for this)
-
-  3. Is the way the information organised in the data important for the data processing time? What would be the impact if the lines in the data-set were of differing length?
-
-  4. Consider the user experience of viewing this data. If the data takes a long time to render, can you think of a way to process some information in the background whilst presenting initial results? Add this solution to your code (hint: think about breaking the data up into pages).
-
-  5. When breaking up the data processing in the question above, is there an overhead in finding the last processing place in the data-set again?
-
-  For references to help, try the [Python CSV library](https://docs.python.org/2/library/csv.html) for handling CSV files in Python and [w3schools](http://www.w3schools.com) for HTML tags.
-
+\\}
 
 Other Resources
 ---------------

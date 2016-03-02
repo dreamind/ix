@@ -5,8 +5,6 @@ Noww, we are gouing to explore the properties of JavaScript Object Notation as a
 
 <a target="_blank" href="json_workshop.ppt" file="ppt"> Slides used for this workshop - JSON</a>
 
-JSON Presentation: slides 1 to 7
-
 Previously, in the last week workshop, you created the following XML file to represent a book (`book.xml`):
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -50,7 +48,7 @@ Now modify the `publish_date` parameter. Make this an array of two objects that 
 
 #### Exercise 3
 
-Now create a python code that represents the HTML table (seen before in the XML workshop) by using `json` library.
+Now create a python code that represents the HTML table (seen before earlier in the workshop) by using `json` library.
 
     import json
 
@@ -62,22 +60,9 @@ Now create a python code that represents the HTML table (seen before in the XML 
 View the HTML file on the browser.
 \\}
 
-
-Now we're going to import JSON data into an HTML page and format it. Copy and paste this [HTML file](jquery_book_example.html) into the same directory as book3.json.
-
 \\{div class="exercise"
 
-#### Exercise 4
-
-Replace all the references in the file to `data.json` with `book3.json` and uncomment line 47 (adding output for ID and publish dates). Load the file and click the button marked **Get and parse JSON**. What is output on screen?
-
-Retrieve some of the root items in `book3.json` and render them as bold and italic (hint: use the `<strong>` and `<em>` tags around the text).
-
-\\}
-
-\\{div class="exercise"
-
-#### Exercise 5 (optional)
+#### Exercise 4 (optional)
 
 Now produce a large HTML file from a JSON data source retrieved from a public interface. You display the data in an appropriate format, e.g. table. As an example, you can use [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON).
 
