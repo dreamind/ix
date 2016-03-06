@@ -3,6 +3,7 @@ Lectures - Tools of Analysis
 
 These lectures introduce various tools of analysis: Bivariate Analysis using Rank Correlation and Pearson rho, and Decision Tree
 
+- <a href="analysis-2.ppt" file="ppt"> Analysis - 2</a>
 - <a target="_blank" href="langid.html" file="html"> Language Detection</a>
 - <a href="lang_detect.zip" file="code"> Language Detection - Code</a>
 - <a target="_blank" href="https://spreadsheets.google.com/ccc?key=1Y9-6XqWNc0hnHfQscfxtKSRDVqW7ccG_Ns4ZA2aJI8o&newcopy" file="html"> Bivariate Tools Spreadsheet</a>

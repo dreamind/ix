@@ -3,7 +3,7 @@ Workshop - Presenting Data on the Web
 
 This workshop will allow students to gain practical experience in manipulating
 HTML and CSS so that they can present information efficiently and effectively
- on the Web. In addition, student will learn how to use CGI interface to build an interactive and dynamic web page.
+ on the Web. In addition, student will learn how to use Flask framework to build an interactive and dynamic web page.
 
 Part A - HTML and CSS
 ---------------------
@@ -12,7 +12,7 @@ Part A - HTML and CSS
 
 #### Exercise A-1
 
-Type in (or copy and paste) the following HTML5 code in the IVLE text editor.
+Type in (or copy and paste) the following HTML5 code in a text editor.
 
     <!DOCTYPE html>
     <html>
@@ -35,7 +35,7 @@ Type in (or copy and paste) the following HTML5 code in the IVLE text editor.
     </body>
     </html>​​​
 
-Save the file in your IVLE space, and name it `table.html`. Serve the file in the browser.
+Save the file in your PC, and name it `table.html`. Serve the file in the browser.
 Observe the output of the HTML page.
 
 Using *embedded* CSS, stylise the table's cells with **1px solid grey-colored** border. You can do this by inserting the following snippet in the `<head>` element.
@@ -122,7 +122,7 @@ Finally, try using CSS3's `:nth-child()` pseudo class to achieve the same effect
 
 \\}
 
-Part B - HTML, CSS and CGI
+Part B - HTML and Dynamic CSS
 --------------------------
 
 Let's start with the following HTML page (`table2.html`), which displays 3 x 3 table:
@@ -195,18 +195,31 @@ Without modifying the HTML code, add some CSS rules so that the table will look 
 
 Now, we're going to produce CSS rules dynamically from a Python script. We want to produce a 3 x 3 table with a random background color in each cell. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/b-2/table.html). Reload the page several times to see that random palettes are generated randomly.
 
-In the same directory where `table2.htnl` is, create an empty Python script called `css.py` and add the following lines:
+In the same directory where `table2.html` is, create an empty Python script called `css.py` and add the following lines:
 
-    print 'Content-Type: text/css'
-    print
-    # Write your code from here
-    # ...
+    from flask import Flask
+    app = Flask(__name__, static_folder='.', static_url_path='')
+
+    @app.route("/css-generator")
+    def root():
+      css = ''
+      # Write your code that generates css here
+      return css, 200, {'Content-Type': 'text/css; charset=utf-8'}
+
+    if __name__ == "__main__":
+        app.run(debug=True)
 
 Remove the embedded CSS in `table2.html` and replace with the following line.
 
-    <link type="text/css" href="css.py" rel="stylesheet" />
+    <link type="text/css" href="css-generator" rel="stylesheet" />
 
-Now continue writing `css.py` so that it produces the CSS rules that are required to produce the intended effect.
+Run your Python application using the command:
+
+    C:\Documents>python css.py
+
+And access it from the browser through this URL `http://localhost:5000/table2.html`.
+
+Now continue modify `css.py` so that it produces the CSS rules that are required to produce the intended effect.
 
 Hint: User `random` module and `random.randint` function.
 
@@ -243,7 +256,7 @@ ix.register(function () {
 
 #### Exercise B-3
 
-We build upon your result of B-2 exercise. Now, we want to dynamically produce an `n` x `n` table that contains cells with the background colors of the same hue, with `n` supplied by the user through a CGI-based form input. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/b-3/form.html).
+We build upon your result of B-2 exercise. Now, we want to dynamically produce an `n` x `n` table that contains cells with the background colors of the same hue, with `n` supplied by the user through a form input, using Flask. See the behaviour of the application [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/public/workshops/presenting-data/b-3/form.html).
 
 User will also need to select the hue for the table. Use the following HTML control to allow the hue selection:
 
