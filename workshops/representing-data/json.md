@@ -48,7 +48,7 @@ Now modify the `publish_date` parameter. Make this an array of two objects that 
 
 #### Exercise 3
 
-Now create a python code that represents the HTML table (seen before earlier in the workshop) by using `json` library.
+Now create a python code that represents the HTML table (seen before earlier in the workshop) by using `json` library. The library allows you to read JSON file and access its content as dictionary-like object in Python. You can simply make your code to write an HTML page or you can use Flask to produce an application that write HTML from the JSON file dynamically.
 
     import json
 
@@ -64,10 +64,11 @@ View the HTML file on the browser.
 
 #### Exercise 4 (optional)
 
-Now produce a large HTML file from a JSON data source retrieved from a public interface. You display the data in an appropriate format, e.g. table. As an example, you can use [Yahoo! Developer Network Flickr](https://developer.yahoo.com/flickr/). Click on "Search for photos by location" (defaults to London, UK). In the box marked "Endpoint", copy and paste the URI into your python script (copy and paste into your browser to see the raw JSON).
+Now produce a large HTML file from a JSON data source retrieved from a public interface. You display the data in an appropriate format, e.g. table. As an example, you can use [City of Melbourne Public BBQ Data Set](https://data.melbourne.vic.gov.au/Assets-Infrastructure/Public-Barbeques/5nb5-w7hq). Display the data as a list of places and their coordinates (latitude and longitude). The JSON is available [here](https://data.melbourne.vic.gov.au/api/views/5nb5-w7hq/rows.json?accessType=DOWNLOAD).
 
 You can also use any other public JSON data sources:
 
+- [City of Melbourne Open Data](https://data.melbourne.vic.gov.au/)
 - [Absolute Drinks API](https://addb.absolutdrinks.com/docs/)
 - [Weather data from Yahoo Developer API](https://developer.yahoo.com/everything.html)
 - [rottentomatoes.com](http://developer.rottentomatoes.com/docs/read/JSON)
@@ -82,8 +83,6 @@ Other Resources
 ---------------
 
 - **http://www.json.org** - This is the JSON specification in reference, but still readable, format. It describes the syntax rules in five pictures and with a brief glossary. It also provides useful links to (current, as of recent access) language-specific JSON parsers and community groups.
-
-- Douglas Crockford (2008). [Javascript: the good parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1425589713&sr=8-1&keywords=javascript+the+good+parts) - Even though this is a reference book, Crockford is a very engaging writer and it is quite thin so is readable from cover-to-cover. I recommend trying to do this or dipping in to read a couple of chapters at random - if you're even just slightly interested in Javascript and JSON it is well worth it.
 
 - **Google Chrome Developer Tools** - [Developer Tools](https://developer.chrome.com/devtools). User guide to the invaluable developer suite in Google Chrome that allows you to analyse and debug CSS, Javascript and other browser-based technologies that had been mysterious for so long.
 

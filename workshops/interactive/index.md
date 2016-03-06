@@ -161,3 +161,8 @@ Inspect the `ajax.py` to see how the Ajax response is constructed. Modify both `
 
 \\}
 
+Other Resources
+---------------
+
+
+- Douglas Crockford (2008). [Javascript: the good parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_1?ie=UTF8&qid=1425589713&sr=8-1&keywords=javascript+the+good+parts) - Even though this is a reference book, Crockford is a very engaging writer and it is quite thin so is readable from cover-to-cover. I recommend trying to do this or dipping in to read a couple of chapters at random - if you're even just slightly interested in Javascript and JSON it is well worth it.

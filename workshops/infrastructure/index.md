@@ -1,9 +1,7 @@
-﻿Workshop - Infrastructure
+﻿Workshop - The Mechanics of the Web
 =========================
 
 This workshop introduces students to infrastructure concepts that underpin the use of the Internet for informatics and data processing. Specifically we will be looking at the Hypertext Transfer Protocol (HTTP), Web Application Framework (using Flask) and briefly Hypertext Markup Language (HTML). These three areas are fundamental to understanding the mechanics of information transfer across networks, and are therefore an essential platform to building knowledge in informatics.
-
-The structure of the workshop will be a series of guided exercises for you to work through and understand the basic concept. The answers to these will be covered within the workshop. This will be followed by a set of further exercises that are for you to complete at the end of the workshop and in your own time to develop your understanding and prepare for the final exam. Answers to these questions will be made available about two weeks after the workshop.
 
 ## Hyper-Text Transfer Protocol (HTTP)
 
@@ -49,8 +47,10 @@ Compare the output from the Putty terminal and the output of the web-page in a b
 
 ## Flask Web App and HTML
 
-Follow the following recipe, to create a simple web application using Flask. First,
-create a file called [`hello.py`](flask/code/hello.py) that contains the following code:
+With Flask, you can create a web application, which is basically a service that can reponse to user interactively via web browser. In this case, you will launch Flask as a web server that runs through port 5000.
+
+Follow the recipe below, to create a simple web application using Flask. First,
+create a file called [`hello.py`](codes/hello.py) that contains the following code:
 
     from flask import Flask
     app = Flask(__name__, static_folder='.', static_url_path='')
@@ -64,36 +64,36 @@ create a file called [`hello.py`](flask/code/hello.py) that contains the followi
 
 Run the application using the following command:
 
-    C:\Documents> python hello.py
+    C:\> python hello.py
 
-If there is an issue, you may want to use the complete path for the python program:
+If there is an issue in locating the Python executable (`python.exe`), you may want to use the complete path for the installed Python:
 
-    C:\Documents> C:\Users\username\AppData\Local\Continuum\Anaconda2\python hello.py
+    C:\> C:\Users\username\AppData\Local\Continuum\Anaconda2\python hello.py
 
-You should see something like:
+Once you invoke the command, you should see something like:
 
     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
     * Restarting with stat
     * Debugger is active!
 
-Launch a browser and put http://127.0.0.1:5000/ in the addrress bar, you should see your
-first Hello World Flask application
+Launch a browser and put http://127.0.0.1:5000/ in the address bar, you should see your
+first Hello World Flask application.
 
 \\{div class="exercise"
 
-#### Exercise
+#### Exercise 3
 
 Save as hello.py and modify the application to print the current time (use [strftime](https://docs.python.org/2/library/time.html#time.strftime) from time module).
 
 \\}
 
-Note that this is a *very* brief discussion about HTML just to understand what is being communicated across the network using HTTP. The details of mark-up languages will be covered in another workshop.
+Note that the following exercise touches briefly on HTML just to understand what is being communicated across the network using HTTP. The in-depth exploration of HTML will be covered in another workshop.
 
 \\{div class="exercise"
 
-#### Exercise
+#### Exercise 4
 
-Write a Python script that rewrites the data inside `book.xml` as a web page (HTML). Use an HTML table to format the data. See the following example below.
+Write a Python script that rewrites the data inside `book.xml` (download [here](assets/book.xml)) as a web page (HTML). Use an HTML table to format the data. See the following example below.
 
 <table border="0" cellpadding="5" cellspacing="1">
 <tr bgcolor="#CCCC99"><td><b>Author</b></td><td><b>Salinger, J. D.</b></td></tr>
@@ -144,13 +144,13 @@ To produce an HTML page using Python and Flask, see the example below. The scrip
 
 #### Exercise
 
-Save and unzip the following [file](flask/code.zip) to your own directory. From the command line, call:
+Save and unzip the following [file](codes.zip) to your own directory. From the command line, call:
 
-   C:\> python form.py
+        C:\> python form.py
 
-Load `form.html` in the browser and answer the following questions
+Load `form.html` in the browser via the following URL, `http://localhost:5000/form.html` and answer the following questions
 
-1. What tags can you see?
+1. View the source of `form.html`. What tags can you see?
 2. Do you know what these represent?
 3. Fill the form and click submit, observe the output and examine how `form.py` processes the form submission.
 
@@ -163,22 +163,6 @@ to:
     <form method="post" action="handler">
 
 Reload `form.html` and resubmit the form. Observe how the user input gets transmitted to the python code.
-
-\\}
-
-\\{div class="exercise"
-
-#### Exercise (optional)
-
-Consider a scenario where you have a large number of calculations and a large resulting data-set. In many web-enabled informatics processes you must communicate such calculations and data between pages using HTTP, HTML and CGI, but their size makes this communication difficult.
-
-1. Using this [data-set](assets/data.csv), write a script that reads in the CSV file and outputs the data to an HTML table, using Flask.
-2. How long does it take to render? (Note: you may want to use the `time.clock()` Python library and function for this)
-3. Is the way the information organised in the data important for the data processing time? What would be the impact if the lines in the data-set were of differing length?
-4. Consider the user experience of viewing this data. If the data takes a long time to render, can you think of a way to process some information in the background whilst presenting initial results? Add this solution to your code (hint: think about breaking the data up into pages).
-5. When breaking up the data processing in the question above, is there an overhead in finding the last processing place in the data-set again?
-
-For references to help, try the [Python CSV library](https://docs.python.org/2/library/csv.html) for handling CSV files in Python and [w3schools](http://www.w3schools.com) for HTML tags.
 
 \\}
 
