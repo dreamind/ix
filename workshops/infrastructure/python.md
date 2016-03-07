@@ -13,26 +13,25 @@ To get Python set up, please find several options:
 ### 1. Ananconda's Python Distribution
 
 Ananconda is basically a collection of Python, various useful libraries (modules),
-and tools that support the management of the whole collection. It provides many useful libraries
-for data processing and data science in general.
+and tools that support the management of the whole collection. It provides many useful libraries for data processing and data science in general.
 
-Download and install the distribution for the appropriate version and operating system
-from: [https://www.continuum.io/downloads](https://www.continuum.io/downloads).
-We suggest you use version 2.x because, while Python 3.x is great and better,
+In the computer lab, Anaconda should be installed in `C:\Anaconda2` directory. To test this installation, use the following commands.
+
+    C:\> set path=C:\Anaconda2;C:\Anaconda2\Scripts;C:\Anaconda2\Library\bin;%path%
+    C:\> python
+
+If you want to install your own computer, you can download the distribution for the appropriate version and operating system from: [https://www.continuum.io/downloads](https://www.continuum.io/downloads). We suggest you use version 2.x because, while Python 3.x is great and better,
 many useful Python libraries are still developed only for Python 2.x.
 
 When installing Anaconda in your own PC/laptop, just follow the installation instruction and leave the default options as they are. Install in any location that you have access to. It may also be a good idea to install Anaconda in your external drive (USB thumbdrive) so you can have a portable version of Python.
 
-If you install in the computer lab, Anaconda should be installed under your home directory (`username` is your login id):
+\\{div class="exercise"
+
+#### Installing Anaconda in Computer Lab (if it's not available)
+
+If you install in the computer lab, Anaconda can be installed under your home directory (`username` is your login id):
 
     C:\Users\username\AppData\Local\Continuum\Anaconda2
-
-Once Anaconda is installed, you should be able to launch `python` from the command line
-and you should see the version of Python that you have:
-
-    C:\>python
-    Python 2.7.11 |Anaconda 2.5.0 (x86_64)| (default, Dec  6 2015, 18:57:58)
-    [GCC 4.2.1 (Apple Inc. build 5577)] on darwin
 
 Often you have multiple versions/installations of Python in your computer and
 sometimes calling `python` from the command line launches an incorrect version. To solve this,
@@ -43,9 +42,22 @@ get your `path` to point to the location of the Python installation (replace `us
       C:\Users\username\AppData\Local\Continuum\Anaconda2\Library\bin;%path%
     C:\> python
 
-Or, you can call python using its full path:
+\\}
+
+Once Anaconda is installed, you should be able to launch `python` from the command line
+and you should see the version of Python that you have:
+
+    C:\>python
+    Python 2.7.11 |Anaconda 2.5.0 (x86_64)| (default, Dec  6 2015, 18:57:58)
+    [GCC 4.2.1 (Apple Inc. build 5577)] on darwin
+
+If that does not work, you can call python using its full path:
 
     C:\Users\username\AppData\Local\Continuum\Anaconda2\python.exe
+
+or:
+
+    C:\Anaconda2\python.exe
 
 Once you are able to launch Anaconda's Python, you can also use two useful tools **spyder**
 and **jupyter**. **Spyder** is IDE (Integrated Development Environment, advanced editor) for Python that allows you debug your Python code interactively.
