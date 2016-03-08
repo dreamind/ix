@@ -25,9 +25,9 @@ Description: %s
     interests = request.args.getlist('interests')
     car = request.args.get('car')
     description = request.args.get('description')
-    
+
   body = body % (name, gender, interests, car, description)
   return body, 200, {'Content-Type': 'text/plain'}
-        
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=80)
