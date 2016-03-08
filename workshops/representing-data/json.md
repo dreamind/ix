@@ -1,7 +1,7 @@
 ﻿Workshop - Representing Data with JSON (JavaScript Object Notation)
 =================================
 
-Noww, we are gouing to explore the properties of JavaScript Object Notation as a method of representing, storing and exchanging data. The workshop will start with a brief presentation re-iterating syntax rules from the lecture and emphasising the tools that we will be using to explore JSON. We will then go through two guided questions that create and manipulate JSON representations and validate them against JSONLint, and also represent the JSON information in HTML and JQuery. The extended exercise questions ask for more complex representation in JSON, introduce the use of Javascript as a database query engine, and explore the security implications of JSON being Javascript executable.
+Noww, we are gouing to explore the properties of JavaScript Object Notation as a method of representing, storing and exchanging data. The workshop will start with a brief presentation re-iterating syntax rules from the lecture and emphasising the tools that we will be using to explore JSON. We will then go through two guided exercises that create and manipulate JSON representations and validate them against JSONLint.
 
 <a target="_blank" href="json_workshop.ppt" file="ppt"> Slides used for this workshop - JSON</a>
 
