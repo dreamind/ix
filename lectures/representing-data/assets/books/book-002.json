@@ -1,0 +1,11 @@
+{
+    "id": "book-002",
+    "author": "Marquez, Gabriel Garcia",
+    "title": "Love in the Time of Cholera",
+    "price": "9.95",
+    "language": "English",
+    "publish_date": "2007-10-05",
+    "publisher": "Penguin",
+    "isbn": "978-0307389732",
+    "description": "A painfully, terribly long-winded love story"
+}

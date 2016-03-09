@@ -50,6 +50,7 @@ Thumbs.db
 
 atlassian-ide-plugin.xml
 
+.ipynb_checkpoints/
 dist/
 docs/
 log/

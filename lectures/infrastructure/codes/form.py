@@ -4,7 +4,7 @@ root = os.path.abspath(os.path.dirname(__file__)) + '/'
 from flask import Flask, request
 app = Flask(__name__, static_folder='.', static_url_path='')
 
-@app.route('/handlerxxx', methods=['POST', 'GET'])
+@app.route('/handler', methods=['POST', 'GET'])
 def handler():
   body = '''Name: %s
 Gender: %s
@@ -25,9 +25,9 @@ Description: %s
     interests = request.args.getlist('interests')
     car = request.args.get('car')
     description = request.args.get('description')
-    
+
   body = body % (name, gender, interests, car, description)
   return body, 200, {'Content-Type': 'text/plain'}
-        
+
 if __name__ == "__main__":
     app.run(debug=True)
