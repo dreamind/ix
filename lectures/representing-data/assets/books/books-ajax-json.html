@@ -11,9 +11,9 @@
 <div id="result"></div>
 <script>
   $('a').on('click', function (e) {
-    console.log(arguments);
     var element = e.target;
     var id = element.id;
+
     $.ajax( id + ".json" )
       .done(function(data) {
         result = '<ul>';

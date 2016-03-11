@@ -52,7 +52,7 @@ create a file called [`hello.py`](codes/hello.py) that contains the following co
         return 'Hello World!'
 
     if __name__ == "__main__":
-        app.run(debug=True, host='0.0.0.0', port=80)
+        app.run(debug=True, host='127.0.0.1', port=80)
 
 Run the application using the following command:
 
@@ -64,11 +64,11 @@ If there is an issue in locating the Python executable (`python.exe`), you may w
 
 Once you invoke the command, you should see something like:
 
-    * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+    * Running on http://127.0.0.1:80/ (Press CTRL+C to quit)
     * Restarting with stat
     * Debugger is active!
 
-THe URL of your local web server contains the IP address of your computer, which is 0.0.0.0 or 127.0.0.1. Alternatively you can use `localhost`. Launch a browser and put http://0.0.0.0/ in the address bar, you should see your
+THe URL of your local web server contains the IP address of your computer, which is 127.0.0.1 or 0.0.0.0. Alternatively you can use `localhost`. Launch a browser and put http://127.0.0.1/ in the address bar, you should see your
 first Hello World Flask application.
 
 \\{div class="exercise"
@@ -134,7 +134,7 @@ To produce an HTML page using Python and Flask, see the example below. The scrip
         return html % (location, temp)
 
     if __name__ == "__main__":
-        app.run(debug=True, host='0.0.0.0', port=80)
+        app.run(debug=True, host='127.0.0.1', port=80)
 
 \\}
 
@@ -181,7 +181,8 @@ Examine `read_image_url` function and see how you can issue an HTTP request usin
     ...
 
     def read_image_url(url):
-      user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36' # spoof the agent, pretend to be browser
+      # spoof the agent, pretend to be browser
+      user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
       headers = {
         'User-Agent': user_agent
       }
