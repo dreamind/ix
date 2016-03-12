@@ -1,33 +1,34 @@
-# Serve this file, print the xml content as HTML list
+from flask import Flask
+app = Flask(__name__, static_folder='.', static_url_path='')
 
 from lxml import etree
 import sys
 
+def gen_html():
 
-tree = etree.parse( "demo-1.xml" )
-root = tree.getroot()
+    tree = etree.parse( "demo-1.xml" )
+    root = tree.getroot()
 
-print "Content-Type: text/html\n"
-print '''<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Unicode demo</title>
-</head>
-<body>
-''' # specify the web page is in UTF-8, so that the browser can interpret correctly
+    str = '''<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Unicode demo</title>
+    </head>
+    <body>
+    ''' # specify the web page is in UTF-8, so that the browser can interpret correctly
 
-print '<ul>'
-for sentence in root:
-    print '<li>', sentence.text, '</li>' # attempt to print Unicode string directly
-print '</ul>'
+    str += '<ul>'
+    for sentence in root:
+        str += '<li>' + sentence.text + '</li>' # attempt to print Unicode string directly
+    str += '</ul>'
 
-#  Traceback (most recent call last): File "/home/.../unicode2/demo.1.1.web.py", line 21, in  print '
-# ', sentence.text, '
-# UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128) 
+    str += '''<body>
+    <html>'''
+    return str
 
-# This script will generate UnicodeEncodeError
-# because Python tries to convert Unicode string into byte string using default encoding (ascii)
-# Unfortunately, ascii encoding can only contain values between 0-127.
+@app.route("/demo-unicode")
+def root():
+    return gen_html()
 
-print '''<body>
-<html>'''
+if __name__ == "__main__":
+    app.run(debug=True)

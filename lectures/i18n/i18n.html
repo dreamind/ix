@@ -506,39 +506,18 @@ consuming utf-8 xml
 
     <section data-markdown>
       <script type="text/template">
-producing data in utf-8
+producing web page in utf-8
 =====================
 
-    from lxml import etre
-    etree = etree.parse("demo-1.xml")
-    root = tree.getroot()
-    print "Content-Type: text/html\n"
-
-    print '<html>'
-    print '  <head>'
-    # specify the web page as UTF-8
+    str = '''<html>
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <title>Unicode demo</title>
+    </head>
+    <body>
+    '''
+    # specify the web page is in UTF-8,
     # so that the browser can interpret correctly
-    print '    <meta http-equiv="content-type" '
-    print '          content="text/html; charset=UTF-8">'
-    print '    <title>Unicode demo</title>'
-    print '  </head>'
-    print '  <body>'
-    ...
-
-    </script>
-    </section>
-
-    <section data-markdown>
-      <script type="text/template">
-producing data in utf-8 (cont'd)
-----------------------
-
-    ...
-    print '<ul>'
-    for sentence in root:
-      # attempt to print Unicode string directly
-      print '<li>', sentence.text, '</li>'
-    print '</ul>'
     ...
 
     </script>
@@ -552,32 +531,30 @@ producing data in utf-8 (output)
     **UnicodeEncodeError: 'ascii' codec can't encode characters in
     position 0-2: ordinal not in range(128)**
 
-in line:
-
-    print '<li>', sentence.text, '</li>'
-
       </script>
     </section>
 
 
     <section data-markdown>
       <script type="text/template">
-diagnosis
+issue
 ========
 
-1. `sentence.text` is a Unicode string
-2. Everytime you send a Unicode string to a device, a network, or a disk (e.g. using `print` or `file.write()`), the *Unicode string* needs to be encoded to as *byte string*. If programmer do not do that explicitly, Python does this for you automatically.
-3. Since no encoding is specified, it uses the default `ascii`.
+- Everytime you send a Unicode string to a device, a network, or a disk (e.g. using `print` or `file.write()`), the *Unicode string* needs to be encoded to as *byte string*. If programmer do not do that explicitly, Python does this for you automatically.
+- If no encoding is specified, it uses the default encoding (sometimes `ascii`).
 ```
 >>> import sys
 >>> sys.getdefaultencoding()
 'ascii'
 ```
-4. But not all Unicode characters can be encoded as ASCII (0-127)
+- Not all Unicode characters can be encoded in target encoding (e.g. ASCII (0-127))
 
-**Solution**: Explicitly encode using UTF-8 encoding.
+**Solution**: Explicitly encode using supported encoding (e.g UTF-8).
 
-    print '<li>', sentence.text.encode('utf-8'), '</li>'
+    ...
+    print a_unicode_string.encode('utf-8')
+    ...
+
       </script>
     </section>
 
