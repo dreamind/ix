@@ -7,5 +7,5 @@ These lectures introduce issues in the globalisation and internationalisation of
 - <a href="codes.zip" file="code"> Codes</a>
 
 ### Readings
-- [Unicode character table](table http://unicode-table.com/en/).
+- [Unicode character table](http://unicode-table.com/en/).
 
