@@ -47,6 +47,7 @@ Thumbs.db
 .bower_components/
 .sass-cache/
 *.tmp
+*.pyc
 
 atlassian-ide-plugin.xml
 
