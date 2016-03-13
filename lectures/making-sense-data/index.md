@@ -1,7 +1,7 @@
 ﻿Lectures - Making Sense of Data
 ===============================
 
-In this lecture we introduce some of the basic concepts of analytics. We’ve covered communication, formatting, raw data handling with spreadsheets and visualisation – this allows students to turn this into understanding of data-sets to answer real-life questions. Several examples are outlined where these methods are used in everyday life, the broad steps of data analysis are outlined and the concepts of grouping and prediction are introduced.
+In this lecture we introduce some of the basic concepts of analytics. We’ve covered communication, formatting, raw data handling with spreadsheets and visualisation – this allows students to turn this into understanding of data-sets to answer real-life questions. Several examples are outlined where these methods are used in everyday life, the broad steps of data analysis are outlined.
 
 <a href="analysis-1.ppt" file="ppt"> Power Point Slides</a>
 

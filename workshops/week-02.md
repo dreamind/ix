@@ -1,4 +1,4 @@
-Workshop 02 - The Mechanis of the Web and JSON
+Workshop 02 - The Mechanics of the Web and JSON
 =========================
 
 This workshop will allow students to have hands-on experience of understanding various concepts and tools in developing a web application: HTTP, basic HTML, Flask and JSON.
