@@ -18,7 +18,8 @@ For each one identify the format of the data and in your own words (not the file
 
 **Question 2 - Cleaning data**
 
-Now download, open and study this CSV file showing [United States population smoking data from 1995 to 2010](smoking_data_us_1995_2010.csv). Make a copy of this file, upload it to your Google Drive account (click on `My Drive` and `Upload files...`) and choose the option to Edit the document with Google Sheets.
+In this part, you will use Google Sheets
+to import and export CSV data. Download, open and study this CSV file showing [United States population smoking data from 1995 to 2010](smoking_data_us_1995_2010.csv). Make a copy of this file, upload it to your Google Drive account (click on `My Drive` and `Upload files...`) and choose the option to Edit the document with Google Sheets.
 
 If you are not familiar with Google Sheets, please see Getting Started section of the [Introduction to Google Sheets page](https://sites.google.com/site/gssheet/home).
 
@@ -28,15 +29,13 @@ In the first twenty rows, there are seven errors that all fall into one of the f
 2. Range errors
 3. Format errors
 
-Identify the errors and what category they fall into. Where possible fix the errors and save the new spreadsheet as `smoking-data-corrected.csv`. If you can't fix the error then how should you deal with the data?
+Identify the errors and what category they fall into. Where possible fix the errors manually and save the new spreadsheet as `smoking-data-corrected.csv`.
 
-Create a Python program to identify these errors.
+Now, having been able to manually identify the errors, create a Python program that can detect these errors.
 
 **Question 3 - Transforming data**
 
-Now, from your corrected spreadsheet, you will create a `smoking-data-transformed.csv` using Python. The CSV should contains the following columns:
-`Indexed Year`, `State`, `Never smoked`, and `Has smoked`.
-We are going to look at two new columns and perform various transformations on them:
+Now, you will perform various transformations on your manually corrected spreadsheet and produce a new data-set, called `smoking-data-transformed.csv`, using Python. The new CSV should contains the following columns: `Indexed Year`, `State`, `Never smoked`, and `Has smoked`. 'State' and 'Never smoked' come from the original data-set. The new two columns are produced as follows:
 
 1. Value-mapping: look at the column headed `Year`. Is this a nominal or ordinal variable? Convert to a numerical variable by mapping the year to `year since start of data-set` (e.g. 1995 = 0, 1996 = 1, etc). Put the value in the column called `Indexed Year`.
 2. Aggregation: look at the columns headed `Smoke everyday`, `Smoke some days`, `Former smoker`. Sum these columns and display the aggregated result in a separate column headed `Has smoked`.
