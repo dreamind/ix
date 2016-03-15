@@ -135,7 +135,7 @@ Your program will be marked according to:
 Submission
 --------------
 
-**Due Date: Monday Week 5, 9am**:<br />
+**Due Date: Monday Week 5, 5pm**:<br />
 **Late penalty: 1 mark for each late day**:
 
 You need to submit a single Python file called `phase1.py`. You can safely assume that `input.csv` and `summary.dtd` are available in the same directory with your `.py` file. Submit your work through the Submission section of the LMS.
