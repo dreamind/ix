@@ -1,7 +1,7 @@
 from PIL import Image, ImageOps
 from urllib2 import urlopen, Request
 
-def gen_palette(r, g, b):  
+def gen_palette(r, g, b):
   return reduce(lambda palette, i: palette + [r*i/255, g*i/255, b*i/255], range(255), [])
 
 def read_image_url(url):
@@ -12,8 +12,10 @@ def read_image_url(url):
   req = Request(url, None, headers)
   return urlopen(req)
 
-# url = 'https://berniesanders.com/wp-content/uploads/2015/05/bernie-sanders-portrait-02-1056x1280.jpg'
-url = 'http://about.unimelb.edu.au/__data/assets/image/0011/731873/Banner.jpg'
+# try this url without headers
+url = 'https://berniesanders.com/wp-content/uploads/2015/05/bernie-sanders-portrait-02-1056x1280.jpg'
+# try this one, too
+# url = 'http://about.unimelb.edu.au/__data/assets/image/0011/731873/Banner.jpg'
 
 def tint_image(url):
   im = Image.open(read_image_url(url))
