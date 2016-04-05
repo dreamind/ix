@@ -10,7 +10,7 @@ This lecture will explore the history of HTML markup language as the primary cur
 ## CSS
 Closely tied to the use of markup language on the web is the ability to maintain the presentation and style of the highly visual Internet. We will look at the development of CSS, the various features that allow a website to be maintained with minimal effort, and a look into the more advanced features that allow rich interactive web experiences to be built, with many examples and demonstrations.
 
-<a href="http://davismarques.com/projects/info20002/css/"> CSS Slides</a>
+<a href="http://davismarques.com/projects/info20002/css/"> CSS Slides</a> (<a href="info20002-css-slides.pdf" file="pdf"> PDF version</a>)
 
 ### Resources
 - HTML, CSS and JS Code Playgrounds, which allow instant rendering of the web page
