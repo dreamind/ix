@@ -18,5 +18,10 @@ The second lecture looks at more advanced spreadsheet usage, in particular the u
 
 <a href="spreadsheet2.ppt" file="ppt"> Spreadsheet 2 - Power Point Slides</a>
 
+- <a href="https://docs.google.com/spreadsheets/d/1rshU-89cScfbjTT7F7Gwqb2wIHN_7rP-vMpO8n-TAVU/copy" file="data"> Filtering and Sorting</a>
+- <a href="https://docs.google.com/spreadsheets/d/18vXZW8IkRYIZTVRV03t5tt2dsVT2KXwROOecj5m-Tl0/copy" file="data"> Pivot 1</a>
+- <a href="https://docs.google.com/spreadsheets/d/1rltpjkN_jpQ_1UNeYzZ2Onicx-11ZdVqfPFKGuIbyvs/copy" file="data"> Pivot 2</a>
+- <a href="https://docs.google.com/spreadsheets/d/1b9vV1Ong_PaTBwEfLTW7Bm96diX_L_C4HeI2xhNng5c/copy" file="data"> Pivot 3</a>
+
 ### Reference resources
 - [Google Sheets reference](https://support.google.com/docs/#topic=2811806)
