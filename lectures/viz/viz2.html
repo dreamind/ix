@@ -356,11 +356,6 @@ Measuring visualisation effectiveness
       <img src="images-2/dir-high.png">
     </section>
 
-
-    <section>
-      <img src="images-2/soua-cloud.png">
-    </section>
-
     <section>
       <p>Vietnam Veterans Memorial, Washington DC.<br>
         <strong>Problem</strong>: How to display 58,195 names in a memorial space?
@@ -425,14 +420,15 @@ matplotlib - structure of usage
   Provide a set of functions on top of the underlying matplotlib library<br>
   Provide functions like `plot`, `boxplot`, and `bar`
 
-  `>>> from pylab import *`
+  `>>> from pylab import * # or import matplotlib.pyplot as plt`
+
       </script>
     </section>
 
     <section data-markdown>
       <script type="text/template">
-using matplotlib - cgi
-======================
+using matplotlib
+================
 
 To display the plot result in a web page, put this code at the start of your script:
 
@@ -441,19 +437,19 @@ To display the plot result in a web page, put this code at the start of your scr
 
 and this code at the end:
 
-    savefig("plot.png", dpi=100)
-    print 'Content-Type: text/html'
-    print
-    print '<html><body>'
-    print '<img src="plot.png"/>'
-    print '</body></html>'
+    @app.route('/viz-app', methods=['GET'])
+    def handler():
+      savefig("plot.png", dpi=100)
+      body = '<html><body><img src="plot.png" /></body></html>'
+      return body, 200, {'Content-Type': 'text/html'}
+
       </script>
     </section>
 
     <section data-markdown>
       <script type="text/template">
-using matplotlib - cgi
-======================
+using matplotlib
+================
 
 To send the plot result directly to the browser, put this code at the start of your script:
 
@@ -462,10 +458,12 @@ To send the plot result directly to the browser, put this code at the start of y
 
 and this code at the end:
 
-    savefig("plot.png", dpi=100)
-    print 'Content-Type: image/png'
-    print
-    print open("plot.png").read()
+    @app.route('/viz-app', methods=['GET'])
+    def handler():
+      savefig("plot.png", dpi=100)
+      binary = open('plot.png').read()
+      return binary, 200, {'Content-Type': 'image/png'}
+
       </script>
     </section>
 
