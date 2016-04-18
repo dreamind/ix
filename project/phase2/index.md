@@ -5,7 +5,7 @@
 Project Phase 2 (Individual and Group, 10%)
 =================================
 
-**This project specification may be changed at any time (Last updated: 22 April 2015).**
+**This project specification may be changed at any time (Last updated: 18 April 2016).**
 
 Aims
 ----
