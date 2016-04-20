@@ -1,7 +1,6 @@
 ﻿# Example of kNN implemented from Scratch in Python
 # http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/
 
-
 import csv
 import random
 import math
@@ -59,7 +58,7 @@ def getAccuracy(testSet, predictions):
         if testSet[x][-1] == predictions[x]:
             correct += 1
     return (correct/float(len(testSet))) * 100.0
-    
+
 #6. Run the program
 def main():
     # prepare data
@@ -81,5 +80,5 @@ def main():
         print('> predicted=' + repr(result) + ', actual=' + repr(testSet[x][-1]))
     accuracy = getAccuracy(testSet, predictions)
     print('Accuracy: ' + repr(accuracy) + '%')
-    
+
 main()​
