@@ -6,7 +6,6 @@ These lectures introduce various tools of analysis: Bivariate Analysis using Ran
 - <a href="tools-analysis-1.ppt" file="ppt"> Tools of Analysis - 1</a>
 - <a target="_blank" href="https://spreadsheets.google.com/ccc?key=1Y9-6XqWNc0hnHfQscfxtKSRDVqW7ccG_Ns4ZA2aJI8o&newcopy" file="html"> Bivariate Tools Spreadsheet</a>
 
-
 - <a href="tools-analysis-2.ppt" file="ppt"> Tools of Analysis - 2</a>
 - <a target="_blank" href="langid.html" file="html"> Language Detection</a>
 - <a href="lang_detect.zip" file="code"> Language Detection - Code</a>

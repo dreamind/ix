@@ -30,25 +30,9 @@ While you can implement your own Pearson's correlation, you may use scipy's [Pea
     >>> pearsonr([1,2,4],[0.6,0.777,0.91])[0]
     0.96326521432463141
 
+What can you say about the relationships across these variables?
+
 The data-set is used in the following article: [Fitting Percentage of Body Fat to Simple Body Measurements](http://www.amstat.org/publications/jse/v4n1/datasets.johnson.html). Summary of the data-set is available [here](http://lib.stat.cmu.edu/datasets/bodyfat).
-
-*Note*:
-
-Note that you may encounter an issue when importing `scipy` in IVLE due to a bug. Please apply the following fix in the beginning of your script:
-
-    # --- fix to IVLE's problem in using matplotlib
-    import os, sys
-    os.dup2(2, 3)
-    stderr = os.fdopen(2, 'a')
-    stderr.close()
-    # ---
-
-    from scipy.stats.stats import pearsonr
-
-    # --- fix to IVLE's problem in using matplotlib
-    os.dup2(3, 2)
-    sys.__stderr__ = sys.stderr = os.fdopen(2, 'a')
-    # ---
 
 Part B: Transforming data
 -------------------------
@@ -67,24 +51,28 @@ Colour the columns according to [colorbrewer](http://colorbrewer2.org)'s sequent
 
 2. (Optional) Quartile intervals – similar to the calculations in phase 1 project, define the maximum/minimum/q1/q3/median, iterate through the data and result in a count for each quartile (bin)
 
-3. (Optional) Jenks’ natural breaks method – as shown in the example in the slides test all possible intervals (every combination of 260 divided by 4). Get the mean of all the values and get the standard deviation of the overall values array. For each interval tested, get the standard deviation of each class and calculate the goodness of fit. Use the intervals that provide the highest GVF value. For a simple worked example, look at slide 15 of the bivariate analysis lecture. Display the four boxes as above with the appropriate colours. (Note: this exercise will take longer as there are far more combinations to test.)
-
-Part C: Specificity and Sensitivity
+Part C: Measuring the performance of a classifier
 ------------------------------------
 
-[The following python program](assets/knn_classifier.py) is known as a **k nearest-neighbour** algorithm, which allows categorical classifications to be made based on proximity to other data points in the set. Study the code and understand the different sections:
+The following python code demonstrates the use **k nearest-neighbour** algorithm, which allows categorical classifications to be made based on proximity to other data points in the set, on the [Pima Indian Diabetes dataset](http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes. The dataset contains some [health measures](http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.names) of several hundreds patients and the last column indicates the class (class value 1 is interpreted as "positive for diabetes"). The csv is available [here](assets/pima-indians-diabetes.csv):
 
-1. Handle the data
-2. Calculate the similarity
-3. Collect the k most similar instances (neighbours)
-4. Devise a predicted response based on those neighbours
-5. Evaluate the accuracy of the predictions
+    import csv
+
+    data = list(csv.reader(open('pima-indians-diabetes.csv')))
+    features = [row[:-1] for row in data]
+    classes = [row[-1] for row in data
+
+    from sklearn import neighbors
+    knn = neighbors.KNeighborsClassifier()
+    knn.fit(features, classes)
+    predicted = knn.predict(features)
+    print('KNN score: %f' % knn.score(features, classes))
+
+Calling `knn.fit` triggers the learning process of the classifier, or training the classifier. Once this is completed, you can use `knn.predict` to a new data instance (or even an existing one). The `knn.score` provides you with the accuracy of the model.
+
+In the example above, we reuse the training data as the test dataset. We predict the classes (sick or healthy) of the original dataset and compare them with the actual classes. The variable `classes` contains the actual classes of the original data and `predicted` contains the classes predicted given by the classifier. Examine these variables, and generate true positives, true negatives, false positives and false negatives for the result of the classification. Manually write them into a *confusion matrix* as seen in lectures. What information does this give us in addition to the model accuracy?
 
 The “split” function, allows you to divide the data-set into a section to train the classification model and a section to test this model. Run the program against the [iris.data](assets/iris.data) data-set (recall this from the phase 1 project) and note what the accuracy of the model is.
 
-Currently this split is set to 0.67 or 2/3, which means that out of the 150 in the Iris data-set, 100 entries will be used to train the model and 50 will be tested and classified, selected at random. This randomness leads to a non-deterministic output of the classification accuracy - run the program two or three more times and note the accuracy for each.
-
-Now change the split to 0.10 and 0.05. Note the number of records for training that this translates to and also note how this affects the accuracy (run each split at least three times). What conclusion can you draw? (Note that if you get an error when the split number is below 0.10, simply try again until it runs - this error sometimes occurs due to no training data points being assigned).
-
-Now run these three splits again, but this time add and display variables containing counts of true positives, true negatives, false positives and false negatives for one of the categories (e.g. Iris-virginica). Manually write them into a “confusion matrix” as seen in lectures. What information does this give us in addition to the model accuracy? In general, of the two false categories “false positive” and “false negative”, which do you think is the most misleading in terms of the accuracy of a model and why?
+Now split the dataset into two groups. You will then train the classifier using the first group and test it using the second one. Find out the accuracy of the classifier and compare it with the accuracy of the classifier when tested using the same training set. Could you guess why the accuracy changes? This method of splitting dataset is called 2-fold cross-validation. Re-run this method of validation 10 times but shuffle the data before you split the dataset at each iteration.
 
