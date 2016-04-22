@@ -9,7 +9,9 @@ These lectures introduce various tools of analysis: Bivariate Analysis using Ran
 - <a href="tools-analysis-2.ppt" file="ppt"> Tools of Analysis - 2</a>
 - <a target="_blank" href="langid.html" file="html"> Language Detection</a>
 - <a href="lang_detect.zip" file="code"> Language Detection - Code</a>
+- <a href="langid-nb.zip" file="code"> Language Detection - Notebook</a>
 - <a target="_blank" href="https://spreadsheets.google.com/ccc?key=1s6f8_mvVHtIKg8Ttz8Hivh508Fwe-4G4th5uG3u3eBw&newcopy" file="html"> Decision Tree Spreadsheet</a>
+- <a href="assets/digit-classification.ipynb" file="code"> Digit Classification - Notebook</a>
 
 ### Resources
 - [bigml: decision tree on the cloud](https://bigml.com.au/features).
