@@ -47,7 +47,7 @@ Requirements
 You should produce an interactive web application that has at least the following properties:
 
 - It should be implemented in Python.
-- You could implement your own Pivot Table builder or any Python libraries that provide pivot capability. The data processing should be carried out in the server side, do not use JavaScript library to process the data.
+- You could implement your own Pivot Table builder or any Python libraries that provide pivot capability (e.g. `pandas`). The data processing should be carried out in the server side, do not use JavaScript library to process the data.
 - It must allow user to interact with the application.
 - It must use valid XHTML or HTML5 to display output to the user.
 - It must use CSS appropriately in providing the visual aspect of the application.

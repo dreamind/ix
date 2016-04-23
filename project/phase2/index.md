@@ -118,9 +118,9 @@ Submission
 **Due Date: Friday Week 8, 5pm**:<br />
 **Late penalty: 1 mark for each late day**:
 
-Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use multiple sheets for a single question if it helps you to provide an answer systematically but name your sheet systematically, e.g. Q1_STEP1, Q1_STEP2, ...). While there is no limit in the number of sheets that you can create, please use a reasonable amount.
+Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. Use one sheet for each question (you may use multiple sheets for a single question if it helps you to provide an answer systematically but name your sheet systematically, e.g. **q1_step1**, **q1_step2**, ...). While there is no limit in the number of sheets that you can create, please use a reasonable amount.
 
-Make sure you put your student id in the solution for the individual question.
+Make sure you put your student login id in the solution for the individual question, e.g **q1_step1 (ivow)**.
 
 Name your Google Spreadsheet document using the name supplied here (TBA). <!-- <a href="https://docs.google.com/spreadsheets/d/1SaipQFvs3j7IrSvwrCt1HfvzxhOHrwnXPTUpcEoHD2g/pubhtml">here</a> -->
 
