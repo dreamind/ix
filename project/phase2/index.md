@@ -122,7 +122,7 @@ Solutions to Part 1 and 2 should be provided in a single Spreadsheet document. U
 
 Make sure you put your student login id in the solution for the individual question, e.g **q1_step1 (ivow)**.
 
-Name your Google Spreadsheet document using the name supplied here (TBA). <!-- <a href="https://docs.google.com/spreadsheets/d/1SaipQFvs3j7IrSvwrCt1HfvzxhOHrwnXPTUpcEoHD2g/pubhtml">here</a> -->
+Name your Google Spreadsheet document using the name supplied <a href="https://docs.google.com/spreadsheets/d/1b6oGh7-qas-Qw7L9kQLFypYR-ITp1Grx86hb0k9SmnA/pubhtml">here</a>.
 
 Share your Google Spreadsheet to us. Use `Share` > `Sharing Setting`s > `Add People` command, and put down the following emails: `informatix.one@gmail.com` and the email of your tutor. Make sure you give us edit access, not only view access. Make sure you do not change the spreadsheet after deadline because we will overwrite any changes made with the last version just before the due date.
 
