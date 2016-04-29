@@ -1,11 +1,9 @@
 ## Interactivity
-The ability to interact with data through web applications is largely driven by one language: JavaScript. In these lectures we introduce the language with some basics on how to get up and running, and some understanding of syntax and grammar. In the second lecture we focus on the more advanced techniques that give JavaScript it's interactive power and how you can use these within frameworks that enable you to produce rich and visually appealing output on the web.
+The ability to interact with data through web applications is largely driven by one language: JavaScript. In these lectures we introduce the language with some basics on how to get up and running, the particular features that allow JavaScript to make websites interactive, and we cover the relationship between JavaScript, JSON and AJAX. In the second lecture we focus on the higher-level libraries that are built on top of JavaScript, such as JQuery, Bootstrap, D3 and HighCharts, which enable you to produce rich, visually-appealing and interactive output on the web.
 
 <a href="interactivity1.ppt" file="ppt"> Power Point Slides (#1)</a>
 
 <a href="interactivity2.ppt" file="ppt"> Power Point Slides (#2)</a>
-
-<a href="scope_examples.zip">Scope demonstration (Python, JavaScript, HTML)</a> - these are two equivalent operations run in Python and in JavaScript (served through HTML - you can observe the output by opening developer tools in the browser). If you run both you can see that the JavaScript version modifies the 'thing' variable from inside a block in a way that maintains once the block is closed. However in Python the modification stops once the block is closed. Python exhibits block scope, JavaScript does not.
 
 
 ### Readings, tutorials and frameworks
@@ -18,3 +16,5 @@ The ability to interact with data through web applications is largely driven by 
 - [HighCharts](http://www.highcharts.com) -- useful framework for producing JavaScript-driven interactive data charts
 
 - [Twitter Bootstrap](http://getbootstrap.com/) -- one of the most useful frameworks in producing robust applications that will run on any browser or device
+
+- [D3](http://d3js.org/) -- Data-Driven Documents, another package that allows you to produce beautiful applications, whilst binding directly to your data
