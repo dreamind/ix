@@ -24,7 +24,7 @@ You need to design an interactive pivot builder of your selected dataset. This a
 
 Building pivot table means your dataset needs to have two or more categorical attributes (or columns). If your dataset contains only numerical data, generate new categorical attributes by applying equal interval classification (binning) on the selected numerical attributes.
 
-The example application is available [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/solution/phase3/form.py). Note that this example is a very rudimentary solution to part 1. Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks. Please also look at [an example of past student submissions](http://students.informatics.unimelb.edu.au/~zhout1/stuff/pivotal_stocks/cgi.py/pivot)
+The example application is available [here](http://students.informatics.unimelb.edu.au/~ivow/foi/mywork/solution/phase3/form.py). Note that this example is a very rudimentary solution to part 1. Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks. Please also look at [an example of past student submissions](http://students.informatics.unimelb.edu.au/~ivow/stuff/pub/sample-projects/cgi.py)
 
 Part 2: An open-ended task (12%)
 -----------------------------------
