@@ -3,7 +3,7 @@ The ability to interact with data through web applications is largely driven by 
 
 <a href="interactivity1.ppt" file="ppt"> Power Point Slides (#1)</a>
 
-<!--<a href="interactivity2.ppt" file="ppt"> Power Point Slides (#2)</a>-->
+<a href="interactivity2.ppt" file="ppt"> Power Point Slides (#2)</a>
 
 
 ### Readings, tutorials and frameworks
