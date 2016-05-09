@@ -25,7 +25,7 @@ Now download and do the same mark-up into an HTML table for this set of pseudony
 
 [Medical information records 2015](http://www.anthonystell.com/informatics_20002/data2.json)
 
-The data-set contains information with the following columns: medical conditions, drugs prescribed, Medicare numbers, Hospital locations, patient postcodes
+The data-set contains information with the following columns: medical conditions, drugs prescribed, Medicare numbers, hospital locations, patient postcodes
 
 Note that a `pseudonymised` bit of information is one that is currently anonymous, but could be identified using an explicitly connecting bit of information (for instance a Medicare number does not obviously identify an individual, but many mappings between Medicare numbers and individuals' names and addresses exist, so the data point is not completely anonymous).
 
@@ -55,9 +55,9 @@ Some of your hacker friends have made you aware of a health-insurance record dat
 
 [MediShank Information 2015 (protected)](http://www.anthonystell.com/informatics_20002/data3.html)
 
-The data-set contains information on the following columns: full names, addresses, Medicare numbers, Hospital locations, MediShank numbers, phone numbers
+The data-set contains information on the following columns: full names, addresses, Medicare numbers, MediShank numbers, phone numbers
 
-Once you have sourced the data-set, as before in question 2, join the data-set with the others gathered above, on Medicare number and hospital locations. List some of the medical information you are able to know about specific individuals.
+Once you have sourced the data-set, as before in question 2, join the data-set with the others gathered above, on Medicare number. List some of the medical information you are able to know about specific individuals.
 
 <img src="twitter_feed.png" >
 
