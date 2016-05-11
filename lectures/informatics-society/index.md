@@ -3,7 +3,7 @@ These lectures give a short introduction to the impact of Data Science and Infor
 
 <a href="bigdata.ppt" file="ppt"> Big Data Slides</a>
 
-<!--<a href="security_privacy.ppt" file="ppt">Data Security and Privacy Slides</a>-->
+<a href="security.ppt" file="ppt">Data Privacy and Security Slides</a>
 
 
 
