@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <meta charset="utf-8" />
+    <title>Highcharts - Scatter Demo</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://colorbrewer2.org/export/colorbrewer.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/chroma-js/0.7.2/chroma.min.js"></script>
+  </head>
+  <body>
+    <div id="container" style="width:500px; height: 500px; margin: 0 auto"></div>
+<script type="text/javascript">
+
+function plotScatter(series) {
+  $('#container').highcharts({ // put the chart in the div id="container"
+    chart: {
+      type: 'scatter',
+      plotBorderWidth: 1
+    },
+    title: {
+      text: 'Iris data: petal length vs petal width'
+    },
+    xAxis: {
+      title: {
+        enabled: true,
+        text: 'Petal length (cm)'
+      },
+      tickInterval: 1,
+      min: 0,
+      startOnTick: true,
+      endOnTick: true
+    },
+    yAxis: {
+      title: {
+        text: 'Petal width (cm)'
+      },
+      min: 0,
+      tickInterval: 1,
+      tickWidth: 1,
+      tickLength: 10,
+      gridLineWidth: 0,
+      minorGridLineWidth: 0
+    },
+    credits: { enabled: false },
+    legend: {
+      layout: 'vertical',
+      align: 'left',
+      verticalAlign: 'top',
+      x: 60,
+      y: 50,
+      floating: true,
+      backgroundColor: 'white',
+      borderWidth: 1
+    },
+    plotOptions: {
+      scatter: {
+        marker: {
+          radius: 5,
+          states: {
+            hover: { // hover effect for each point
+              enabled: true,
+              lineColor: 'rgb(100,100,100)'
+            }
+          }
+        },
+        tooltip: {
+          headerFormat: '<b>{series.name}</b><br>',
+          pointFormat: '{point.x} cm, {point.y} cm'
+        }
+      }
+    },
+    series: series
+  });
+}
+
+function getData() {
+  $.ajax({
+    type: "GET",
+    url: "iris.json",
+    success: function(data) {
+      var hash = {}, classNum = 0, series = [];
+      $.each(data, function (index, row) {
+        var klass, serie, x, y;
+
+        klass = row["class"];
+        x = row["petal length"];
+        y = row["petal width"];
+        serie = hash[klass];
+        if (!serie) { // new class
+          // get color from colorbrewer library
+          var color = colorbrewer.Paired[12][classNum % 12];
+          // make the color 50% transparent
+          color = chroma(color).alpha(0.5).css();
+          serie = hash[klass] = {
+            name: klass,
+            data: [],
+            color: color
+          };
+          classNum++;
+        }
+        serie.data.push([x, y]);
+      });
+      $.each(hash, function (klass, serie) {
+        series.push(serie);
+      });
+      plotScatter(series);
+    }
+  });
+}
+
+$(document).ready(getData);
+
+</script>
+  </body>
+</html>
