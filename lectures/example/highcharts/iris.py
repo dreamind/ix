@@ -13,4 +13,4 @@ def iris():
   return body, 200, {'Content-Type': 'application/json'}
 
 if __name__ == "__main__":
-    app.run(debug=True, host='127.0.0.1', port=8765)
+    app.run(debug=True, host='127.0.0.1', port=8767)

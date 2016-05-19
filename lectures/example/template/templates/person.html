@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" type="text/css" class="ui" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
+  <title>Hello from {{ data["name"] }}!</title>
+  <style>
+    body {
+      margin: 10px;
+    }
+    .centralized {
+      margin: auto !important;
+    }
+  </style>
+</head>
+
+<div class="ui card centralized">
+  <div class="image">
+    <img src="{{ data['pic'] }}">
+  </div>
+  <div class="content">
+    <div class="header">{{ data["name"] }}</div>
+    <div class="meta">{{ data["description"] }}</div>
+  </div>
+</div>
