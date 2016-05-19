@@ -1,0 +1,58 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" type="text/css" class="ui" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <title></title>
+  <style>
+    body {
+      margin: 10px;
+    }
+
+    .centralized {
+      margin: auto !important;
+    }
+  </style>
+</head>
+<body>
+<div class="ui card centralized">
+  <div class="image">
+    <img src="">
+  </div>
+  <div class="content">
+    <div class="header"></div>
+    <div class="meta"></div>
+  </div>
+  <div class="ui two buttons">
+    <button id="ivo" class="ui button">Ivo</button>
+    <button id="ant" class="ui button">Anthony</button>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  function loadPerson(id) {
+    var url = id + '.json';
+    var other = (id === 'ivo') ? 'ant' : 'ivo';
+    $('#' + other).removeClass('active');
+    $('#' + id).addClass('active');
+    $.ajax({
+      type: "GET",
+      url: url,
+      dataType: 'json',
+      success: function (data) {
+        $('img')[0].setAttribute('src', data.pic);
+        $('.header').html(data.name);
+        $('.meta').html(data.description);
+      }
+    });
+  }
+
+  $(document).ready(function () {
+    loadPerson('ivo'); // default
+
+    $('button').click(function () {
+      loadPerson(this.id);  // "this" points to button and id is either ivo or ant
+    });
+  });
+</script>
+</body>
