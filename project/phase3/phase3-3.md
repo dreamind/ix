@@ -24,7 +24,7 @@ You need to design an interactive pivot builder of your selected dataset. This a
 
 Building pivot table means your dataset needs to have two or more categorical attributes (or columns). If your dataset contains only numerical data, generate new categorical attributes by applying equal interval classification (binning) on the selected numerical attributes.
 
-Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks. Please also look at [an example of past student submissions](https://app.lms.unimelb.edu.au/bbcswebdav/courses/INFO20002_2016_SM1/media/demo-phase3.mov)
+Your application needs to demonstrate more finesse, graceful error handling, and sophisticated interaction (e.g. selection of formulas applied to the value attribute, or better classification method) in order to get a high marks. Please also look at [an example of past student submissions](https://app.lms.unimelb.edu.au/bbcswebdav/courses/INFO20002_2017_SM1/media/demo-phase3.mov)
 
 Part 2: An open-ended task (12%)
 -----------------------------------

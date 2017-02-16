@@ -15,7 +15,7 @@ static data | live (web) data sources in context
 Python | Python, XML, XHTML, JSON, CSS
 programming skills (machine-oriented) | applied (human-oriented)
 
-The programming component of the subject will use Python, which you have learned in Foundation of Computing. If you feel that you need to refresh your Python skills, you can go through a series of self-paced online worksheets, included in the [Informatics Virtual Learning Environment (IVLE)](http://ivle.informatics.unimelb.edu.au).
+The programming component of the subject will use Python, which you have learned in Foundation of Computing.
 
 Staff
 -----
@@ -24,9 +24,11 @@ The following people are involved in this subject:
 
 &nbsp; | Name	| Email
 --- | --- | ---
-Coordinator/Lecturer |	Mr Ivo Widjaja | ivow(at)unimelb(dot)edu(dot)au
-Coordinator/Lecturer	| Mr Anthony Stell |	anthony.stell(at)unimelb(dot)edu(dot)au
-Tutor | &nbsp; | &nbsp;
+Coordinator/Lecturer |	Ivo Widjaja | ivow(at)unimelb(dot)edu(dot)au
+Coordinator/Lecturer	| Anthony Stell |	anthony.stell(at)unimelb(dot)edu(dot)au
+Tutor | Luke Zappia | lzappia(at)student(dot)unimelb(dot)edu(dot)au
+Tutor | Jason Zeyu Zhao | zeyu(dot)zhao(at)unimelb(dot)edu(dot)au
+Tutor | Yang Lu | luy4(at)student(dot)unimelb(dot)edu(dot)au 
 
 The subject coordinators are responsible for the overall organization of the subject and for the design of lecture material, workshop exercises, and assignments. For any enquiries, the lecturers may be contacted by email appointment.
 
