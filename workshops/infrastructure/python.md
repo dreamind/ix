@@ -1,7 +1,7 @@
 # Python Infrastructure
 
 Most of the project components and the workshop exercises need to be completed in Python.
-We suggest that you use the latest version of Python 2.x since many Python libraries do not
+We suggest that you use the latest version of Python 2.7.x since many Python libraries do not
 support Python 3.x yet.
 
 There are various ways to get you going and running with Python, e.g. using pre-installed Python
@@ -73,7 +73,7 @@ The command above will launch an application server that can be accessed from th
 
     http://localhost:8888/
 
-This is basically like having your own web-based Python environment (similar to Grok and IVLE). To try jupyter, select **New - Python 2** file. In the `In` cell, type in the following code:
+This is basically like having your own web-based Python environment (similar to Grok). To try jupyter, select **New - Python 2** file. In the `In` cell, type in the following code:
 
     %matplotlib inline
 
@@ -89,11 +89,7 @@ This is basically like having your own web-based Python environment (similar to 
 
 Presss Shift-Enter to execute the code. You should see a graph generated for you.
 
-### 2. IVLE (Informatics Virtual Learning Environment)
-
-[IVLE](http://ivle.informatics.unimelb.edu.au) is an infrastructure provided by the University for the Informatics stream. It provides a web-based console and CGI-based web application hosting. You can use this platform if Anaconda installation does not work for you.
-
-### 3. pythonanywhere
+### 2. pythonanywhere
 
 [pythonanywhere](https://www.pythonanywhere.com) is a cloud-based Python platform that provides hosting for Python codes and in-browser Python console (in the similar way to IVLE). You can develop your application using various frameworks: Django, web2py, Bottle, Flask, and WSGI (unfortunately, no CGI support).
 
