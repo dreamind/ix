@@ -1,13 +1,13 @@
 import time
 
 from flask import Flask
-app = Flask(__name__, static_folder='.', static_url_path='')
+app = Flask(__name__, static_folder='images', static_url_path='/img')
 
 html = '''
 <!doctype html>
 <html>
 <body>
-<img src="images/flask.png" />
+<img src="img/flask.png" />
 <p>Current time: %s</p>
 </body>
 </html>
