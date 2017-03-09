@@ -315,7 +315,7 @@ You need to do the following tasks in this exercise:
 
 - Design a new XML structure for describing a book and create a DTD for that structure.
 - Rewrite `book.xml` and `book2.xml` based on the new DTD. Called them `newbook.xml` and `newbook2.xml`.
-- Include the DTD within `newbook.xml` and refer the DTD externally in `newbook2.xml`.
+- Include the DTD within `newbook.xml` and `newbook2.xml`.
 - Validate those two files in W3C validator.
 
 Find another student in your lab. Compare your DTD with his/hers.
