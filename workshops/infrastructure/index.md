@@ -141,7 +141,7 @@ To produce an HTML page using Python and Flask, see the example below. The scrip
 
 \\{div class="exercise"
 
-#### Exercise 4
+#### Exercise 4 (optional)
 
 Save and unzip the following [file](codes.zip) to your own directory. From the command line, call:
 
