@@ -197,6 +197,15 @@ Now, your task is to create web application that uses `tint.py` (You can develop
 
 \\}
 
+Multi-page Flask Examples
+-------------------------
+
+- **Google Maps using Flask** (http://www.compjour.org/lessons/flask-single-page/multiple-dynamic-routes-in-flask/) – good, basic step-through example of creating an easy to create and navigate Flask application, that has a big visual impact.
+
+- **First News App** (https://first-news-app.readthedocs.io/en/latest/) – more advanced web application development that uses Git, Flask, HTML and Javascript to create a regularly-updated news application.
+
+
+
 Other Resources
 ---------------
 

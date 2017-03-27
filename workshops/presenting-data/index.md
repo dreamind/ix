@@ -1,9 +1,11 @@
-Workshop - Presenting Data on the Web
+﻿Workshop - Presenting Data on the Web
 =========================
 
 This workshop will allow students to gain practical experience in manipulating
 HTML and CSS so that they can present information efficiently and effectively
  on the Web. In addition, student will learn how to use Flask framework to build an interactive and dynamic web page.
+
+<a target="_blank" href="html_css_workshop.ppt" file="ppt"> Slides used for this workshop - HTML/CSS</a>
 
 Part A - HTML and CSS
 ---------------------
